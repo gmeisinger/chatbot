@@ -10,10 +10,15 @@
         </div>    
         <div id="chatbox"></div>
         
-        <form name="message" action="" method="POST">
+        <form name="message" action="{{ url_for('submit') }}" method="POST">
             <input name="usermsg" type="text" id="usermsg" size="63" />
             <input name="submitmsg" type="submit"  id="submitmsg" value="Send" />
         </form>
     </div>
-    <script type="text/javascript" src="static/index.js" ></script>
+    {% block javascript %}
+    <!--<script type="text/javascript" src="{{ url_for('static', filename='index.js') }}" ></script>-->
+    <script>
+        document.getElementById("chatbox").innerHTML = "{{msg}}"
+    </script>
+    {% endblock %}
 {% endblock %}

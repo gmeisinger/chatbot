@@ -52,5 +52,11 @@ $(function () {
         add_text(entered_text)
     })
 
+    //$.post( "/postmethod", {
+    //    canvas_data: JSON.stringify(outputData)
+    //}, function(err, req, resp){
+    //    window.location.href = "/results/"+resp["responseJSON"]["uuid"];  
+    //  });
+
 })
 

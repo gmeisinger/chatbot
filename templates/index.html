@@ -8,7 +8,11 @@
             <p class="welcome">Welcome to the chat!</p>
             <div style="clear:both"></div>
         </div>    
-        <div id="chatbox"></div>
+        <div id="chatbox">
+	{% for entry in chat_history %}
+	
+	{% endfor %}
+	</div>
         
         <form name="message" action="{{ url_for('submit') }}" method="POST">
             <input name="usermsg" type="text" id="usermsg" size="63" />
@@ -18,8 +22,11 @@
     {% block javascript %}
     <!--<script type="text/javascript" src="{{ url_for('static', filename='index.js') }}" ></script>-->
     <script>
+	document.getElementById("usermsg").focus();
+	var htmlObj = $("{{msg}}");
+	document.getElementById("chatbox").append(htmlObj);
         //$("#chatbox").append("{{msg}}")
-	document.getElementById("chatbox").appendChild(document.createTextNode("{{msg}}"));
+	//document.getElementById("chatbox").appendChild(document.createTextNode("{{msg}}"));
     </script>
     {% endblock %}
 {% endblock %}

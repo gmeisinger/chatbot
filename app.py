@@ -3,6 +3,7 @@ from flask import Flask, send_from_directory, url_for, render_template, request
 application = Flask(__name__, static_folder='templates/static')
 
 chat_history = []
+username = "User"
 
 @application.route("/")
 def index():

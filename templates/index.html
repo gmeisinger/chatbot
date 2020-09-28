@@ -12,7 +12,7 @@
 	    {% for entry in chat %}
         <div class="row">
             <div class="column">
-                <b>{{ entry.author }}: </b> {{ entry.text }}
+                <b>{{ entry[0] }}: </b> {{ entry[1] }}
             </div>
         </div>
     	{% endfor %}
@@ -27,8 +27,8 @@
     <!--<script type="text/javascript" src="{{ url_for('static', filename='index.js') }}" ></script>-->
     <script>
 	document.getElementById("usermsg").focus();
-	var htmlObj = $("{{msg}}");
-	document.getElementById("chatbox").append(htmlObj);
+	//var htmlObj = $("{{msg}}");
+	//document.getElementById("chatbox").append(htmlObj);
         //$("#chatbox").append("{{msg}}")
 	//document.getElementById("chatbox").appendChild(document.createTextNode("{{msg}}"));
     </script>

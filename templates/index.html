@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Homepage - {{ super() }}{% endblock %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="menu">
+            <p class="welcome">Welcome to the chat!</p>
+            <div style="clear:both"></div>
+        </div>    
+        <div id="chatbox"></div>
+        
+        <form name="message" action="" method="POST">
+            <input name="usermsg" type="text" id="usermsg" size="63" />
+            <input name="submitmsg" type="submit"  id="submitmsg" value="Send" />
+        </form>
+    </div>
+    <script type="text/javascript" src="static/index.js" ></script>
+{% endblock %}

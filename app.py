@@ -1,4 +1,4 @@
-from flask import Flask, send_from_directory, url_for, render_template
+from flask import Flask, send_from_directory, url_for, render_template, request
 
 application = Flask(__name__, static_folder='templates/static')
 
@@ -9,7 +9,7 @@ def get_chat_history():
     ret = ""
     for entry in chat_history:
         html_str = '<div class="row"> <div class="col"><b>' + 'user' + ': </b>' + entry + '</div> </div>'
-        ret += html_str + '\n'
+        ret += html_str
     return ret
 
 @application.route("/")

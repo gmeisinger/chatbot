@@ -18,7 +18,8 @@
     {% block javascript %}
     <!--<script type="text/javascript" src="{{ url_for('static', filename='index.js') }}" ></script>-->
     <script>
-        document.getElementById("chatbox").innerHTML = "{{msg}}"
+        //$("#chatbox").append("{{msg}}")
+	document.getElementById("chatbox").appendChild(document.createTextNode("{{msg}}"));
     </script>
     {% endblock %}
 {% endblock %}

@@ -4,13 +4,13 @@ application = Flask(__name__, static_folder='templates/static')
 
 chat_history = []
 
-# returns chat history as a string of html
-def get_chat_history():
-    ret = ""
-    for entry in chat_history:
-        html_str = '<div class="row"> <div class="col"><b>' + 'user' + ': </b>' + entry + '</div> </div>'
-        ret += html_str
-    return ret
+class Msg:
+    text = ""
+    author = ""
+
+    def __init__(self, author, text):
+        self.text = text
+        self.author = author
 
 @application.route("/")
 def index():
@@ -20,10 +20,9 @@ def index():
 @application.route("/submit", methods=["GET", "POST"])
 def submit():
     if request.method == "POST":
-        msg = request.form["usermsg"]
+        msg = new Msg(username, request.form["usermsg"])
         chat_history.append(msg)
-        chat = get_chat_history()
-        return render_template("index.html", msg=chat)
+        return render_template("index.html", chat=chat_history)
     else:
         return render_template("index.html")
 

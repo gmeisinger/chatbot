@@ -9,10 +9,14 @@
             <div style="clear:both"></div>
         </div>    
         <div id="chatbox">
-	{% for entry in chat_history %}
-	
-	{% endfor %}
-	</div>
+	    {% for entry in chat %}
+        <div class="row">
+            <div class="column">
+                <b>{{ entry.author }}: </b> {{ entry.text }}
+            </div>
+        </div>
+    	{% endfor %}
+	    </div>
         
         <form name="message" action="{{ url_for('submit') }}" method="POST">
             <input name="usermsg" type="text" id="usermsg" size="63" />

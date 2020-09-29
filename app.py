@@ -1,6 +1,7 @@
 from flask import Flask, send_from_directory, url_for, render_template, request, session
 
 application = Flask(__name__, static_folder='templates/static')
+app.config['SECRET_KEY'] = "its a secret!"
 
 username = "User"
 session["chat_history"] = []

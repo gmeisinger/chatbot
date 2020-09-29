@@ -4,7 +4,11 @@ application = Flask(__name__, static_folder='templates/static')
 application.config['SECRET_KEY'] = "its a secret!"
 
 username = "User"
-session["chat_history"] = []
+
+@application.before_request
+def before_request():
+    if "chat_history" not in session:
+        session["chat_history"] = []
 
 @application.route("/")
 def index():

@@ -1,7 +1,9 @@
 from flask import Flask, send_from_directory, url_for, render_template, request, session
+from flask_session import Session
 
 application = Flask(__name__, static_folder='templates/static')
-application.config['SECRET_KEY'] = "its a secret!"
+application.config['SESSION_TYPE'] = 'filesystem'
+application.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 Session(application)
 
@@ -15,7 +17,7 @@ def generate_response(msg=None):
 
 @application.route("/")
 def index():
-    if session["chat"] is None:
+    if "chat" not in session:
         session["chat"] = []
     #return render_template("index.html", chat=session["chat_history"])
     return render_template("index.html", chat=session["chat"])

@@ -6,6 +6,11 @@ application.config['SECRET_KEY'] = "its a secret!"
 chat_history = []
 username = "User"
 
+def generate_response(msg=None):
+    author = "Chatbot"
+    text = "What?"
+    return [author, text]
+
 @application.before_request
 def before_request():
     if "chat_history" not in session:
@@ -22,6 +27,8 @@ def submit():
         msg = [username, request.form["usermsg"]]
         #session["chat_history"].append(msg)
         chat_history.append(msg)
+        response = generate_response(msg)
+        chat_history.append(response)
     #return render_template("index.html", chat=session["chat_history"])
     return render_template("index.html", chat=chat_history)
 

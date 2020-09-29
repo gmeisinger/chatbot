@@ -26,7 +26,9 @@
     {% block javascript %}
     <!--<script type="text/javascript" src="{{ url_for('static', filename='index.js') }}" ></script>-->
     <script>
-	document.getElementById("usermsg").focus();
+    document.getElementById("usermsg").focus();
+    var chat = document.getElementById("chatbox");
+    chat.scrollTop = chat.scrollHeight;
     </script>
     {% endblock %}
 {% endblock %}

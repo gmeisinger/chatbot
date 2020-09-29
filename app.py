@@ -10,9 +10,9 @@ Session(application)
 chat_history = []
 username = "User"
 
-def generate_response(msg=None):
+def generate_response(msg):
     author = "Chatbot"
-    text = "What?"
+    text = hello(msg)
     return [author, text]
 
 @application.route("/")
@@ -32,6 +32,12 @@ def submit():
         session["chat"].append(response)
     #return render_template("index.html", chat=session["chat_history"])
     return render_template("index.html", chat=session["chat"])
+	
+def hello(msg):
+  if "hello" in msg:
+    return "Hello, how can I help you?"
+  else:
+    return "What?"
 
 if __name__ == "__main__":
     application.run(host='0.0.0.0')

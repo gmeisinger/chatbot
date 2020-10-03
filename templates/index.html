@@ -19,17 +19,18 @@
     	{% endfor %}
 	    </div>
         
-        <form name="message" action="{{ url_for('submit') }}" method="POST">
+        <form name="message" action="" method="POST">
             <input name="usermsg" type="text" id="usermsg" size="63" />
             <input name="submitmsg" type="submit"  id="submitmsg" value="Send" />
         </form>
     </div>
-    {% block javascript %}
-    <!--<script type="text/javascript" src="{{ url_for('static', filename='index.js') }}" ></script>-->
+    <div id="log">
+    </div>
+    
+    <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}" ></script>
     <script>
     document.getElementById("usermsg").focus();
     var chat = document.getElementById("chatbox");
     chat.scrollTop = chat.scrollHeight;
     </script>
-    {% endblock %}
 {% endblock %}

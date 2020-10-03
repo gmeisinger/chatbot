@@ -15,7 +15,6 @@ $(document).ready(function(){
         $("#chatbox").append(
             '<div class="row"> <div class="col"><b>' + uname + ': </b>' + entered_text + '</div> </div>')
         $("#usermsg").val("")
-        chat.scrollTop = chat.scrollHeight;
     }
 
     socket.on('connect', function () {
@@ -32,7 +31,8 @@ $(document).ready(function(){
                 'images': [],
                 'relation': ''
             })
-        }
+        })
+        chat.scrollTop = chat.scrollHeight;
     });
 
     //receive details from server

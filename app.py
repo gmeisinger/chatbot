@@ -18,34 +18,23 @@ application.config['SECRET_KEY'] = 'secret!'
 
 socketio = SocketIO(application, cors_allowed_origins="*", async_mode=None, logger=True, engineio_logger=True)
 
-#random number Generator Thread
-thread = Thread()
-thread_stop_event = Event()
-
-def randomNumberGenerator():
-    """
-    Generate a random number every 1 second and emit to a socketio instance (broadcast)
-    Ideally to be run in a separate thread?
-    """
-    #infinite loop of magical random numbers
-    print("Making random numbers")
-    while not thread_stop_event.isSet():
-        number = round(random()*10, 3)
-        print(number)
-        socketio.emit('newnumber', {'number': number})
-        socketio.sleep(5)
-"""
-def generate_response(msg):
-    author = "Chatbot"
-    text = hello(msg)
-    return [author, text]
+def generate_response(msg, author):
+    response = {
+        'question': '',
+        'name': 'Chatbot',
+        'code': '',
+        'images': [],
+        'relation': ''
+    }
+    response['question'] = hello(msg)
+    return response
 
 def hello(msg):
   if "hello" in msg:
     return "Hello, how can I help you?"
   else:
     return "What?"
-"""
+
 @application.route("/")
 def index():
     return render_template("index.html")
@@ -53,18 +42,15 @@ def index():
 @socketio.on('sendout')
 def inputoutput(json):
     print('User input received!', flush=True)
-    pass
+    text = json['question']
+    author = json['name']
+    response = generate_response(text, author)
+    emit('response', response)
 
 @socketio.on('connect')
 def test_connect():
-    # need visibility of the global thread object
-    global thread
     print('Client connected', flush=True)
 
-    #Start the random number generator thread only if the thread has not been started before.
-    if not thread.isAlive():
-        print("Starting Thread")
-        thread = socketio.start_background_task(randomNumberGenerator)
 
 @socketio.on('disconnect')
 def test_disconnect():

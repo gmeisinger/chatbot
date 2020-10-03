@@ -16,7 +16,7 @@ application.config['SECRET_KEY'] = 'secret!'
 #chat_history = []
 #username = "User"
 
-socketio = SocketIO(application, async_mode=None, logger=True, engineio_logger=True)
+socketio = SocketIO(application, cors_allowed_origins="*", async_mode=None, logger=True, engineio_logger=True)
 
 #random number Generator Thread
 thread = Thread()

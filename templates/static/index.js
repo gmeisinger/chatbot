@@ -1,3 +1,4 @@
+var username = 'user';
 
 $(document).ready(function(){
     //connect to the socket server.
@@ -19,6 +20,19 @@ $(document).ready(function(){
 
     socket.on('connect', function () {
         console.log('Socket Connection Establised!')
+
+        var form = $('form').on('submit', function(e) {
+            e.preventDefault()
+            var entered_text = $("#usermsg").val()
+            add_text(username, entered_text)
+            socket.emit('sendout', {
+                'question': entered_text,
+                'name': username,
+                'code': '',
+                'images': [],
+                'relation': ''
+            })
+        }
     });
 
     //receive details from server

@@ -32,7 +32,7 @@ def randomNumberGenerator():
     while not thread_stop_event.isSet():
         number = round(random()*10, 3)
         print(number)
-        socketio.emit('newnumber', {'number': number}, namespace='/test')
+        socketio.emit('newnumber', {'number': number})
         socketio.sleep(5)
 """
 def generate_response(msg):
@@ -50,17 +50,16 @@ def hello(msg):
 def index():
     return render_template("index.html")
 
-"""
-@socketio.on('message')
-def receive_message(message):
-    print("Got a message!", flush=True)
-    return "Echo: %s"%(message,)
-"""
+@socketio.on('sendout')
+def inputoutput(json):
+    print('User input received!', flush=True)
+    pass
+
 @socketio.on('connect')
 def test_connect():
     # need visibility of the global thread object
     global thread
-    print('Client connected')
+    print('Client connected', flush=True)
 
     #Start the random number generator thread only if the thread has not been started before.
     if not thread.isAlive():
@@ -69,7 +68,7 @@ def test_connect():
 
 @socketio.on('disconnect')
 def test_disconnect():
-    print('Client disconnected')
+    print('Client disconnected', flush=True)
 
 if __name__ == '__main__':
     socketio.run(app)

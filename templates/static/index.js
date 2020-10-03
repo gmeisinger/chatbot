@@ -32,7 +32,7 @@ $(document).ready(function(){
                 'relation': ''
             })
         })
-        chat.scrollTop = chat.scrollHeight;
+        chatbox.scrollTop = chatbox.scrollHeight;
     });
 
     //receive details from server

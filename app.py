@@ -56,7 +56,7 @@ def receive_message(message):
     print("Got a message!", flush=True)
     return "Echo: %s"%(message,)
 """
-@socketio.on('connect', namespace='/test')
+@socketio.on('connect')
 def test_connect():
     # need visibility of the global thread object
     global thread
@@ -67,7 +67,7 @@ def test_connect():
         print("Starting Thread")
         thread = socketio.start_background_task(randomNumberGenerator)
 
-@socketio.on('disconnect', namespace='/test')
+@socketio.on('disconnect')
 def test_disconnect():
     print('Client disconnected')
 

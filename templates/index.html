@@ -9,27 +9,13 @@
             <div style="clear:both"></div>
         </div>    
         <div id="chatbox">
-	    {% for entry in chat %}
-        <div class="row">
-            <div class="column">
-                <b>{{ entry[0] }}: </b> {{ entry[1] }}
-            </div>
-        </div>
-        <br />
-    	{% endfor %}
 	    </div>
         
-        <form name="message" action="{{ url_for('submit') }}" method="POST">
+        <form name="message" action="" method="POST">
             <input name="usermsg" type="text" id="usermsg" size="63" />
             <input name="submitmsg" type="submit"  id="submitmsg" value="Send" />
         </form>
     </div>
-    {% block javascript %}
-    <!--<script type="text/javascript" src="{{ url_for('static', filename='index.js') }}" ></script>-->
-    <script>
-    document.getElementById("usermsg").focus();
-    var chat = document.getElementById("chatbox");
-    chat.scrollTop = chat.scrollHeight;
-    </script>
-    {% endblock %}
+    
+    <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}" ></script>
 {% endblock %}

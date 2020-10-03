@@ -1,43 +1,60 @@
 from flask import Flask, send_from_directory, url_for, render_template, request, session
-from flask_session import Session
+#from flask_session import Session
+from flask_socketio import SocketIO, emit
+
+from random import random
+from time import sleep
+from threading import Thread, Event
+
 
 application = Flask(__name__, static_folder='templates/static')
-application.config['SESSION_TYPE'] = 'filesystem'
-application.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+application.config['DEBUG'] = True
+application.config['SECRET_KEY'] = 'secret!'
 
-Session(application)
+#Session(application)
 
-chat_history = []
-username = "User"
+#chat_history = []
+#username = "User"
 
-def generate_response(msg):
-    author = "Chatbot"
-    text = hello(msg)
-    return [author, text]
+socketio = SocketIO(application, cors_allowed_origins="*", async_mode=None, logger=True, engineio_logger=True)
 
-@application.route("/")
-def index():
-    if "chat" not in session:
-        session["chat"] = []
-    #return render_template("index.html", chat=session["chat_history"])
-    return render_template("index.html", chat=session["chat"])
+def generate_response(msg, author):
+    response = {
+        'question': '',
+        'name': 'Chatbot',
+        'code': '',
+        'images': [],
+        'relation': ''
+    }
+    response['question'] = hello(msg)
+    return response
 
-@application.route("/submit", methods=["GET", "POST"])
-def submit():
-    if request.method == "POST":
-        msg = [username, request.form["usermsg"]]
-        #session["chat_history"].append(msg)
-        session["chat"].append(msg)
-        response = generate_response(msg)
-        session["chat"].append(response)
-    #return render_template("index.html", chat=session["chat_history"])
-    return render_template("index.html", chat=session["chat"])
-	
 def hello(msg):
   if "hello" in msg:
     return "Hello, how can I help you?"
   else:
     return "What?"
 
-if __name__ == "__main__":
-    application.run(host='0.0.0.0')
+@application.route("/")
+def index():
+    return render_template("index.html")
+
+@socketio.on('sendout')
+def inputoutput(json):
+    print('User input received!', flush=True)
+    text = json['question']
+    author = json['name']
+    response = generate_response(text, author)
+    emit('response', response)
+
+@socketio.on('connect')
+def test_connect():
+    print('Client connected', flush=True)
+
+
+@socketio.on('disconnect')
+def test_disconnect():
+    print('Client disconnected', flush=True)
+
+if __name__ == '__main__':
+    socketio.run(app)

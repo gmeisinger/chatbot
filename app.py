@@ -89,7 +89,7 @@ def test_connect():
     print('Client connected', flush=True)
     countries = get_countries()
     random_country = countries[random.randint(0, len(countries))]
-    response_string = "Hello, I'm Chatbot! Ask me about global COVID data. Currently, " + random_country['Country'] + " has " + random_country['TotalConfirmed'] + " confirmed cases of COVID-19."
+    response_string = "Hello, I'm Chatbot! Ask me about global COVID data. Currently, " + random_country['Country'] + " has " + str(random_country['TotalConfirmed']) + " confirmed cases of COVID-19."
     response = {
         'question': response_string,
         'name': 'Chatbot',

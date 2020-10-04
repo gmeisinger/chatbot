@@ -39,6 +39,7 @@ def clean_text(text):
     words = text.lower().split()
     table = str.maketrans('', '', string.punctuation)
     stripped = [w.translate(table) for w in words]
+    print(stripped, flush=True)
     return stripped
 
 

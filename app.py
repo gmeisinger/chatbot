@@ -50,6 +50,14 @@ def inputoutput(json):
 @socketio.on('connect')
 def test_connect():
     print('Client connected', flush=True)
+    response = {
+        'question': "Hello, I'm Chatbot! Ask me about COVID data.",
+        'name': 'Chatbot',
+        'code': '',
+        'images': [],
+        'relation': ''
+    }
+    emit('init_convo', [response])
 
 
 @socketio.on('disconnect')

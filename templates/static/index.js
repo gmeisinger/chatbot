@@ -20,6 +20,16 @@ $(document).ready(function(){
     socket.on('connect', function () {
         console.log('Socket Connection Establised!')
 
+        socket.on('init_convo', function(conversation) {
+            console.log(conversation)
+            for (ind = 0; ind < conversation.length; ind++) {
+                add_text(conversation[ind].name, conversation[ind].question)
+                //add_code(conversation[ind].name, conversation[ind].code)
+                //add_image(conversation[ind].name, conversation[ind].images);
+            }
+            chatbox.scrollTop = chatbox.scrollHeight;
+        })
+
         var form = $('form').on('submit', function(e) {
             e.preventDefault()
             var entered_text = $("#usermsg").val()

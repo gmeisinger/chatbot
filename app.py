@@ -57,11 +57,17 @@ def hello(msg):
 
 ### COVID API ###
 
+# returns a list of dictionaries, each with data about a country
 def get_countries():
     r = req.get("https://api.covid19api.com/summary")
     data = r.json()
     return data['Countries']
 
+# gets data about a specific country
+def get_country(country_name):
+    countries = get_countries()
+    data = next((item for item in countries if item["Country"] == country_name), None)
+    return data
 
 ### Graphs and plots ###
 

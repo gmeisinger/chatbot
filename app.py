@@ -2,7 +2,14 @@ from flask import Flask, send_from_directory, url_for, render_template, request,
 #from flask_session import Session
 from flask_socketio import SocketIO, emit
 
+# for handling data and using api
+import requests as req
+import pandas as pd
+
 import string
+
+# using for tests
+import random
 
 application = Flask(__name__, static_folder='templates/static')
 application.config['DEBUG'] = True
@@ -39,7 +46,6 @@ def clean_text(text):
     words = text.lower().split()
     table = str.maketrans('', '', string.punctuation)
     stripped = [w.translate(table) for w in words]
-    print(stripped, flush=True)
     return stripped
 
 
@@ -48,6 +54,14 @@ def hello(msg):
     return "Hello, how can I help you?"
   else:
     return "What?"
+
+### COVID API ###
+
+def get_countries():
+    r = req.get("https://api.covid19api.com/summary")
+    data = r.json()
+    return data['Countries']
+
 
 ### Graphs and plots ###
 
@@ -73,8 +87,11 @@ def inputoutput(json):
 @socketio.on('connect')
 def test_connect():
     print('Client connected', flush=True)
+    countries = get_countries()
+    random_country = countries[random.randint(0, len(countries))]
+    response_string = "Hello, I'm Chatbot! Ask me about global COVID data. Currently, " + random_country['Country'] + " has " + random_country['TotalConfirmed'] + " confirmed cases of COVID-19."
     response = {
-        'question': "Hello, I'm Chatbot! Ask me about COVID data.",
+        'question': response_string,
         'name': 'Chatbot',
         'code': '',
         'images': [],

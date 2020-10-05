@@ -5,6 +5,8 @@ from flask_socketio import SocketIO, emit
 # for handling data and using api
 import requests as req
 import pandas as pd
+# for plots
+import pygal
 
 import string
 
@@ -72,6 +74,70 @@ def get_country(country_name):
 ### Graphs and plots ###
 
 # going to use the same code from the old repo, using pygal
+# data format Category1,1,2,3,4,5:Category2,2,3,4,6,6,7,3,4,2:Category3,2,3,4,5,2,3,4
+def Linechart(id, title, data):
+    line_chart = pygal.Line()
+    line_chart.title = title
+
+    data_cols = data.split(':')
+    for x in range(0, len(data_cols)):
+        data_num = []
+        data_cols_split = data_cols[x].split(',')
+
+        for y in range(1, len(data_cols_split)):
+            print(data_cols_split[y])
+            data_num.append(int(data_cols_split[y]))
+
+            print(data_num)
+        line_chart.add(str(data_cols_split[0]), data_num)
+
+    line_chart.render_to_png('linechart.png')
+
+    with open("linechart.png", "rb") as imageFile:
+        imgstring = base64.b64encode(imageFile.read())
+    return imgstring
+
+def Pie (id,title,data): ##data format Category1,25:Category2,75
+    pie_chart = pygal.Pie()
+    pie_chart.title = title
+
+    data_cols = data.split(':')
+    for x in range(0,len(data_cols)):
+        data_num = []
+        data_cols_split = data_cols[x].split(',')
+
+
+        for y in range(1,len(data_cols_split)):
+            print(data_cols_split[y])
+            data_num.append(int(data_cols_split[y]))
+
+            print(data_num)
+        pie_chart.add(str(data_cols_split[0]), data_num)
+    pie_chart.render_to_png('pie.png')
+
+    with open("pie.png", "rb") as imageFile:
+        imgstring = base64.b64encode(imageFile.read())
+    return imgstring
+
+def Scatter(id,title,data): ## data format  category.(1,2).(2,2).(1,3):category2.(2,3).(2,3).(4,2).(4,2)
+    scatter_chart = pygal.XY(stroke=False)
+    scatter_chart.title = title
+    data_cols = data.split(':')
+    for x in range(0,len(data_cols)):
+        data_num = []
+        data_cols_split = data_cols[x].split('.')
+
+        for y in range(1,len(data_cols_split)):
+            print(data_cols_split[y])
+            data_num.append(data_cols_split[y])
+        print(data_num)
+        scatter_chart.add(str(data_cols_split[0]), [literal_eval(strtuple) for strtuple in data_num])
+
+        scatter_chart.render_to_png('scatter.png')
+
+    with open("scatter.png", "rb") as imageFile:
+        imgstring = base64.b64encode(imageFile.read())
+    return imgstring
 
 ### Flask and SocketIO routes below ###
 

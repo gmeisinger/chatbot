@@ -122,11 +122,12 @@ def Linechart(id, title, data):
             print(data_num)
         line_chart.add(str(data_cols_split[0]), data_num)
     """
-    line_chart.render_to_png('linechart.png')
+    return line_chart.render_data_uri()
+    #line_chart.render_to_png('linechart.png')
 
-    with open("linechart.png", "rb") as imageFile:
-        imgstring = base64.b64encode(imageFile.read())
-    return imgstring
+    #with open("linechart.png", "rb") as imageFile:
+    #    imgstring = base64.b64encode(imageFile.read())
+    #return imgstring
 
 def Pie (id,title,data): ##data format Category1,25:Category2,75
     pie_chart = pygal.Pie()
@@ -205,11 +206,11 @@ def test_connect():
         'relation': ''
     }
     # TEST PYGAL
-    #us_data = get_case_history("united-states", "confirmed")
-    #linechart = Linechart(0, "United States Confirmed Cases", [us_data])
-    tester = test_image()
+    us_data = get_case_history("united-states", "confirmed")
+    linechart = Linechart(0, "United States Confirmed Cases", [us_data])
+    #tester = test_image()
     #response['question'] += str(len(us_data))
-    response['images'].append(tester)
+    response['images'].append(linechart)
     emit('init_convo', [response])
 
 # user disconnects

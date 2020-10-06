@@ -7,6 +7,7 @@ import requests as req
 import pandas as pd
 # for plots
 import pygal
+import base64
 
 import string
 

@@ -24,6 +24,8 @@ application.config['SECRET_KEY'] = 'secret!'
 
 socketio = SocketIO(application, cors_allowed_origins="*", async_mode=None, logger=True, engineio_logger=True)
 
+country_slugs = {}
+
 ### Chatbot helper functions ###
 
 # given a message from the user, generates and returns a response from Chatbot
@@ -59,6 +61,12 @@ def hello(msg):
 
 ### COVID API ###
 
+# returns a list of country slugs used in API calls
+def get_country_slugs():
+    r = req.get("https://api.covid19api.com/countries")
+    data = r.json()
+    return data
+
 # returns a list of dictionaries, each with data about a country
 def get_countries():
     r = req.get("https://api.covid19api.com/summary")
@@ -69,6 +77,15 @@ def get_countries():
 def get_country(country_name):
     countries = get_countries()
     data = next((item for item in countries if item["Country"] == country_name), None)
+    return data
+
+# returns daily case data for a country from the first case onward
+# country must be a valid country slug
+# case type can be confirmed, recovered, deaths
+def get_case_history(country, case_type="confirmed"):
+    r_string = "https://api.covid19api.com/total/dayone/country/" + country + "/status/" + case_type
+    r = req.get(r_string)
+    data = r.json()
     return data
 
 ### Graphs and plots ###
@@ -159,9 +176,14 @@ def inputoutput(json):
 @socketio.on('connect')
 def test_connect():
     print('Client connected', flush=True)
+    # init country list
+    if country_slugs.empty():
+        country_slugs = get_country_slugs()
+    # test greeting
     countries = get_countries()
     random_country = countries[random.randint(0, len(countries))]
-    response_string = "Hello, I'm Chatbot! Ask me about global COVID data. Currently, " + random_country['Country'] + " has " + str(random_country['TotalConfirmed']) + " confirmed cases of COVID-19."
+    response_string = "Hello, I'm Chatbot! Ask me about global COVID data."
+    #response_string = "Hello, I'm Chatbot! Ask me about global COVID data. Currently, " + random_country['Country'] + " has " + str(random_country['TotalConfirmed']) + " confirmed cases of COVID-19."
     response = {
         'question': response_string,
         'name': 'Chatbot',
@@ -169,6 +191,9 @@ def test_connect():
         'images': [],
         'relation': ''
     }
+    # TEST PYGAL
+    us_data = get_case_history("united-states", "confirmed")
+    response['question'] += str(len(us_data))
     emit('init_convo', [response])
 
 # user disconnects

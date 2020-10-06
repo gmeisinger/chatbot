@@ -91,6 +91,11 @@ def get_case_history(country, case_type="confirmed"):
 
 ### Graphs and plots ###
 
+def test_image():
+    with open("test_image.png", "rb") as imageFile:
+        imgstring = base64.b64encode(imageFile.read())
+    return imgstring
+
 # going to use the same code from the old repo, using pygal
 # data format Category1,1,2,3,4,5:Category2,2,3,4,6,6,7,3,4,2:Category3,2,3,4,5,2,3,4
 def Linechart(id, title, data):
@@ -200,10 +205,11 @@ def test_connect():
         'relation': ''
     }
     # TEST PYGAL
-    us_data = get_case_history("united-states", "confirmed")
-    linechart = Linechart(0, "United States Confirmed Cases", [us_data])
-    response['question'] += str(len(us_data))
-    response['images'].append(linechart)
+    #us_data = get_case_history("united-states", "confirmed")
+    #linechart = Linechart(0, "United States Confirmed Cases", [us_data])
+    tester = test_image()
+    #response['question'] += str(len(us_data))
+    response['images'].append(tester)
     emit('init_convo', [response])
 
 # user disconnects

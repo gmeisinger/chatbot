@@ -23,7 +23,7 @@ $(document).ready(function(){
         console.log(images[0])
         for (i = 0; i < images.length; i++) {
             $("#chatbox").append(
-                '<div class="row"> <div class="col"><img src=' + '"' + 'data:image/png;base64,' + images[i] + '"' + '></div> </div>')
+                '<div class="row"> <div class="col"><img src=' + '"' + images[i] + '"' + '></div> </div>')
         }
     }
 

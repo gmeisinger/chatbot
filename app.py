@@ -202,6 +202,7 @@ def test_connect():
     us_data = get_case_history("united-states", "confirmed")
     linechart = Linechart(0, "United States Confirmed Cases", [us_data])
     response['question'] += str(len(us_data))
+    response['images'].append(linechart)
     emit('init_convo', [response])
 
 # user disconnects

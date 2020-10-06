@@ -22,6 +22,7 @@ a {
     padding-bottom:25px;
     background:#EBF4FB;
     min-width:504px;
+    max-width:1008px;
     border:1px solid #ACD8F0; }
   
 #loginform { padding-top:18px; }
@@ -36,6 +37,8 @@ a {
     background:#fff;
     min-height:270px;
     min-width:430px;
+    max-height:540px;
+    max-width:860px;
     border:1px solid #ACD8F0;
     overflow:auto; }
   

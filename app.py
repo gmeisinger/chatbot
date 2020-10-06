@@ -96,6 +96,14 @@ def Linechart(id, title, data):
     line_chart = pygal.Line()
     line_chart.title = title
 
+    # changes
+    for category in data:
+        data_num = []
+        for entry in category:
+            data_num.append(int(entry['Cases']))
+        line_chart.add(str(category[0]['Country']), data_num)
+
+    """
     data_cols = data.split(':')
     for x in range(0, len(data_cols)):
         data_num = []
@@ -107,7 +115,7 @@ def Linechart(id, title, data):
 
             print(data_num)
         line_chart.add(str(data_cols_split[0]), data_num)
-
+    """
     line_chart.render_to_png('linechart.png')
 
     with open("linechart.png", "rb") as imageFile:
@@ -192,6 +200,7 @@ def test_connect():
     }
     # TEST PYGAL
     us_data = get_case_history("united-states", "confirmed")
+    linechart = Linechart(0, "United States Confirmed Cases", [us_data])
     response['question'] += str(len(us_data))
     emit('init_convo', [response])
 

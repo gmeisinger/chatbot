@@ -20,7 +20,7 @@ $(document).ready(function(){
     var add_images = function (uname, images) {
         if (images === [])
             return
-        console.log(images)
+        console.log(images[0])
         for (i = 0; i < images.length; i++) {
             $("#chatbox").append(
                 '<div class="row"> <div class="col"><img src=' + '"' + 'data:image/png;base64, ' + images[i] + '"' + '></div> </div>')

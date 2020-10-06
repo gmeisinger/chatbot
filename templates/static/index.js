@@ -17,6 +17,16 @@ $(document).ready(function(){
         $("#usermsg").val("")
     }
 
+    var add_images = function (uname, images) {
+        if (images === [])
+            return
+        console.log(images)
+        for (i = 0; i < images.length; i++) {
+            $("#chatbox").append(
+                '<div class="row"> <div class="col"><img src=' + '"' + images[i] + '"' + '></div> </div>')
+        }
+    }
+
     socket.on('connect', function () {
         console.log('Socket Connection Establised!')
 
@@ -48,6 +58,9 @@ $(document).ready(function(){
     socket.on('response', function(utterance) {
         console.log('This is the response for user:', utterance)
         add_text(utterance.name, utterance.question)
+        if(!utterance.images.empty()) {
+            add_images(utterance.images)
+        }
         chatbox.scrollTop = chatbox.scrollHeight;
     })
 })

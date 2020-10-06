@@ -121,7 +121,6 @@ def Linechart(id, title, data):
 
     with open("linechart.png", "rb") as imageFile:
         imgstring = base64.b64encode(imageFile.read())
-    print(imgstring, flush=True)
     return imgstring
 
 def Pie (id,title,data): ##data format Category1,25:Category2,75

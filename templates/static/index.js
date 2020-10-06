@@ -58,7 +58,7 @@ $(document).ready(function(){
     socket.on('response', function(utterance) {
         console.log('This is the response for user:', utterance)
         add_text(utterance.name, utterance.question)
-        if(!utterance.images.empty()) {
+        if(utterance.images.length > 0) {
             add_images(utterance.images)
         }
         chatbox.scrollTop = chatbox.scrollHeight;

@@ -35,7 +35,7 @@ $(document).ready(function(){
             for (ind = 0; ind < conversation.length; ind++) {
                 add_text(conversation[ind].name, conversation[ind].question)
                 //add_code(conversation[ind].name, conversation[ind].code)
-                //add_image(conversation[ind].name, conversation[ind].images);
+                add_images(conversation[ind].name, conversation[ind].images);
             }
             chatbox.scrollTop = chatbox.scrollHeight;
         })
@@ -58,9 +58,7 @@ $(document).ready(function(){
     socket.on('response', function(utterance) {
         console.log('This is the response for user:', utterance)
         add_text(utterance.name, utterance.question)
-        if(utterance.images.length > 0) {
-            add_images(utterance.images)
-        }
+        add_images(utterance.images)
         chatbox.scrollTop = chatbox.scrollHeight;
     })
 })

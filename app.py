@@ -97,8 +97,9 @@ def test_image():
     return imgstring
 
 # going to use the same code from the old repo, using pygal
-# data format Category1,1,2,3,4,5:Category2,2,3,4,6,6,7,3,4,2:Category3,2,3,4,5,2,3,4
-def Linechart(id, title, data):
+# data is formatted as a list of dictionaries, with value_tag and label_tag as keys
+# each dictionary 
+def Linechart(title, data, value_tag, label_tag):
     line_chart = pygal.Line()
     line_chart.title = title
 
@@ -106,8 +107,8 @@ def Linechart(id, title, data):
     for category in data:
         data_num = []
         for entry in category:
-            data_num.append(int(entry['Cases']))
-        line_chart.add(str(category[0]['Country']), data_num)
+            data_num.append(int(entry[value_tag]))
+        line_chart.add(str(category[0][label_tag]), data_num)
 
     return line_chart.render_data_uri()
 
@@ -181,7 +182,7 @@ def test_connect():
     }
     # TEST PYGAL
     us_data = get_case_history("united-states", "confirmed")
-    linechart = Linechart(0, "United States Confirmed Cases", [us_data])
+    linechart = Linechart("United States Confirmed Cases", [us_data], "Cases", "Country")
     #tester = test_image()
     #response['question'] += str(len(us_data))
     response['images'].append(linechart)

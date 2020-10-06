@@ -177,8 +177,7 @@ def inputoutput(json):
 def test_connect():
     print('Client connected', flush=True)
     # init country list
-    if country_slugs.empty():
-        country_slugs = get_country_slugs()
+    #country_slugs = get_country_slugs()
     # test greeting
     countries = get_countries()
     random_country = countries[random.randint(0, len(countries))]

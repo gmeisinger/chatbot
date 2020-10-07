@@ -15,7 +15,8 @@ class InputProcessor:
            is to have it output a structure that can be utilized by a content planner
            to begin constructing an intelligent response."""
 
-        greetings = ['hey', 'hi', 'hello', 'what\'s up']
+        # cleaned text won't have ' anymore!
+        greetings = ['hey', 'hi', 'hello', 'whats up']
         for x in greetings:
             if x in self.cleanText:
                 return x.capitalize() + '! How can I help you?'

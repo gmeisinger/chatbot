@@ -66,6 +66,11 @@ def hello(msg):
 
 ### COVID API ###
 
+# https://api.covid19api.com/live/country/:country/status/:status/date/:date
+# date format yyyy-mm-ddT00:00:00Z
+# ?from=2020-03-01T00:00:00Z&to=2020-04-01T00:00:00Z
+midnight = "T00:00:00Z"
+
 # returns a list of country slugs used in API calls
 def get_country_slugs():
     r = req.get("https://api.covid19api.com/countries")
@@ -87,8 +92,12 @@ def get_country(country_name):
 # returns daily case data for a country from the first case onward
 # country must be a valid country slug
 # case type can be confirmed, recovered, deaths
-def get_case_history(country, case_type="confirmed"):
-    r_string = "https://api.covid19api.com/total/dayone/country/" + country + "/status/" + case_type
+def get_case_history(country, case_type="confirmed", start_date=None, end_date=None):
+    r_string = "https://api.covid19api.com/live/country/" + country + "/status/" + case_type
+    if start_date not None and type(start_date) is str:
+        r_string +=  "?from=" + start_date + midnight
+        if end_date not None and type(end_date) is str:
+            r_string += "&to=" + start_date + midnight
     r = req.get(r_string)
     data = r.json()
     return data
@@ -185,8 +194,8 @@ def test_connect():
         'relation': ''
     }
     # TEST PYGAL
-    us_data = get_case_history("united-states", "confirmed")
-    linechart = Linechart("United States Confirmed Cases", [us_data], "Cases", "Country")
+    us_data = get_case_history("united-states", "confirmed", "2020-03-01", "2020-04-01")
+    linechart = Linechart("United States Confirmed Cases in March", [us_data], "Cases", "Country")
     #tester = test_image()
     #response['question'] += str(len(us_data))
     response['images'].append(linechart)

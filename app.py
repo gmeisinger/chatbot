@@ -94,9 +94,9 @@ def get_country(country_name):
 # case type can be confirmed, recovered, deaths
 def get_case_history(country, case_type="confirmed", start_date=None, end_date=None):
     r_string = "https://api.covid19api.com/live/country/" + country + "/status/" + case_type
-    if start_date not None and type(start_date) is str:
+    if start_date != None and type(start_date) is str:
         r_string +=  "?from=" + start_date + midnight
-        if end_date not None and type(end_date) is str:
+        if end_date != None and type(end_date) is str:
             r_string += "&to=" + start_date + midnight
     r = req.get(r_string)
     data = r.json()

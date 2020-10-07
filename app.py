@@ -74,7 +74,7 @@ midnight = "T00:00:00Z"
 
 # gets the current datetime formatted for use with the api
 def get_datetime_now():
-    now = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+    now = datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
     print("now: " + now, flush=True)
     return now
 

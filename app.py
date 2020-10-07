@@ -74,8 +74,7 @@ midnight = "T00:00:00Z"
 
 # gets the current datetime formatted for use with the api
 def get_datetime_now():
-    now = datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
-    print("now: " + now, flush=True)
+    now = datetime.now().strftime("%Y-%m-%d")
     return now
 
 
@@ -107,7 +106,7 @@ def get_case_history(country, case_type="confirmed", start_date=None, end_date=N
         if end_date != None and type(end_date) is str:
             r_string += "&to=" + end_date + midnight
         else:
-            r_string += "&to=" + get_datetime_now()
+            r_string += "&to=" + get_datetime_now() + midnight
     print("r-string: " + r_string, flush=True)
     r = req.get(r_string)
     data = r.json()

@@ -3,6 +3,7 @@ from flask import Flask, send_from_directory, url_for, render_template, request,
 from flask_socketio import SocketIO, emit
 
 # for handling data and using api
+from datetime import datetime
 import requests as req
 import pandas as pd
 # for plots
@@ -71,6 +72,12 @@ def hello(msg):
 # ?from=2020-03-01T00:00:00Z&to=2020-04-01T00:00:00Z
 midnight = "T00:00:00Z"
 
+# gets the current datetime formatted for use with the api
+def get_datetime_now():
+    now = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+    return now
+
+
 # returns a list of country slugs used in API calls
 def get_country_slugs():
     r = req.get("https://api.covid19api.com/countries")
@@ -98,6 +105,8 @@ def get_case_history(country, case_type="confirmed", start_date=None, end_date=N
         r_string +=  "?from=" + start_date + midnight
         if end_date != None and type(end_date) is str:
             r_string += "&to=" + end_date + midnight
+        else:
+            r_string += "&to=" + get_datetime_now()
     print("r-string: " + r_string, flush=True)
     print("https://api.covid19api.com/total/country/united-states/status/deaths?from=2020-03-01T00:00:00Z&to=2020-04-01T00:00:00Z" == r_string, flush=True)
     r = req.get(r_string)
@@ -196,7 +205,7 @@ def test_connect():
         'relation': ''
     }
     # TEST PYGAL
-    us_data = get_case_history("united-states", "confirmed", "2020-03-01", "2020-04-01")
+    us_data = get_case_history("united-states", "confirmed", "2020-03-01")
     print(len(us_data), flush=True)
     linechart = Linechart("United States Confirmed Cases in March", [us_data], "Cases", "Country")
     #tester = test_image()

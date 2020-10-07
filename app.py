@@ -97,7 +97,7 @@ def get_case_history(country, case_type="confirmed", start_date=None, end_date=N
     if start_date != None and type(start_date) is str:
         r_string +=  "?from=" + start_date + midnight
         if end_date != None and type(end_date) is str:
-            r_string += "&to=" + start_date + midnight
+            r_string += "&to=" + end_date + midnight
     print("r-string: " + r_string, flush=True)
     print("https://api.covid19api.com/total/country/united-states/status/deaths?from=2020-03-01T00:00:00Z&to=2020-04-01T00:00:00Z" == r_string, flush=True)
     r = req.get(r_string)

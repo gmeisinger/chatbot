@@ -195,6 +195,7 @@ def test_connect():
     }
     # TEST PYGAL
     us_data = get_case_history("united-states", "confirmed", "2020-03-01", "2020-04-01")
+    print(len(us_data), flush=True)
     linechart = Linechart("United States Confirmed Cases in March", [us_data], "Cases", "Country")
     #tester = test_image()
     #response['question'] += str(len(us_data))

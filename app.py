@@ -14,6 +14,8 @@ import string
 # using for tests
 import random
 
+from InputProcessor import InputProcessor
+
 application = Flask(__name__, static_folder='templates/static')
 application.config['DEBUG'] = True
 application.config['SECRET_KEY'] = 'secret!'
@@ -42,8 +44,10 @@ def generate_response(msg, author):
         'relation': ''
     }
     # find intent
+    in_proc = InputProcessor(cleaned_text)
+    
     # generate response
-    response['question'] = hello(msg)
+    response['question'] = in_proc.process()
     return response
 
 # tokenizes and cleans text. returns a list of words

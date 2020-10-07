@@ -98,6 +98,7 @@ def get_case_history(country, case_type="confirmed", start_date=None, end_date=N
         r_string +=  "?from=" + start_date + midnight
         if end_date != None and type(end_date) is str:
             r_string += "&to=" + start_date + midnight
+    print("r-string: " + r_string, flush=True)
     r = req.get(r_string)
     data = r.json()
     return data

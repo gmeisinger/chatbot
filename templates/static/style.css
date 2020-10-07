@@ -41,7 +41,11 @@ a {
     max-width:860px;
     border:1px solid #ACD8F0;
     overflow:auto; }
-  
+
+#chatbox.row {
+    padding-top: 5px;
+}
+
 #usermsg {
     width:395px;
     border:1px solid #ACD8F0; }

@@ -175,7 +175,7 @@ def test_connect():
     #response_string = "Hello, I'm Chatbot! Ask me about global COVID data. Currently, " + random_country['Country'] + " has " + str(random_country['TotalConfirmed']) + " confirmed cases of COVID-19."
     response = {
         'question': response_string,
-        'name': 'Chatbot',
+        'name': 'SCITalk',
         'code': '',
         'images': [],
         'relation': ''

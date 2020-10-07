@@ -93,7 +93,7 @@ def get_country(country_name):
 # country must be a valid country slug
 # case type can be confirmed, recovered, deaths
 def get_case_history(country, case_type="confirmed", start_date=None, end_date=None):
-    r_string = "https://api.covid19api.com/live/country/" + country + "/status/" + case_type
+    r_string = "https://api.covid19api.com/total/country/" + country + "/status/" + case_type
     if start_date != None and type(start_date) is str:
         r_string +=  "?from=" + start_date + midnight
         if end_date != None and type(end_date) is str:

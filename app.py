@@ -86,6 +86,7 @@ def get_country_slugs():
 # returns a list of dictionaries, each with data about a country
 def get_countries():
     data = get_summary()
+    print(data.keys(), flush=True)
     return data['Countries']
 
 # gets daily summary, which contains new and total case data globally and for each country

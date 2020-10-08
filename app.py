@@ -220,7 +220,7 @@ def test_connect():
     for i in range(3):
         random_country = countries[random.randint(0, len(countries))]
         categories.append(random_country)
-    piechart = Pie("Pie Chart", categories, "TotalDeaths", "Country")
+    piechart = Pie("Total Deaths by Country", categories, "TotalDeaths", "Country")
     response['images'].append(piechart)
     # send response
     emit('init_convo', [response])

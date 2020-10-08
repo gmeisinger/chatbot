@@ -146,21 +146,9 @@ def Pie (title, data, value_tag, label_tag):
         data_num = []
         data_num.append(int(category[value_tag]))
         pie_chart.add(category[label_tag], data_num)
-        """
-        for entry in category:
-
-        data_cols_split = data_cols[x].split(',')
-
-
-        for y in range(1,len(data_cols_split)):
-            print(data_cols_split[y])
-            data_num.append(int(data_cols_split[y]))
-
-            print(data_num)
-        pie_chart.add(str(data_cols_split[0]), data_num)
-        """
     return pie_chart.render_data_uri()
 
+# not ready
 ## data format  category.(1,2).(2,2).(1,3):category2.(2,3).(2,3).(4,2).(4,2)
 def Scatter(id,title,data):
     scatter_chart = pygal.XY(stroke=False)

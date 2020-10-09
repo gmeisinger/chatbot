@@ -187,7 +187,7 @@ def inputoutput(json):
 def test_connect():
     print('Client connected', flush=True)
     
-    response_string = "Hello, I'm Chatbot! Ask me about global COVID data."
+    response_string = "Hello, I'm SCITalk! Ask me about global COVID data."
     #response_string = "Hello, I'm Chatbot! Ask me about global COVID data. Currently, " + random_country['Country'] + " has " + str(random_country['TotalConfirmed']) + " confirmed cases of COVID-19."
     response = {
         'question': response_string,
@@ -199,7 +199,6 @@ def test_connect():
     # TEST PYGAL
     # line chart
     us_data = get_case_history("united-states", "confirmed", "2020-03-01")
-    print(len(us_data), flush=True)
     linechart = Linechart("United States Confirmed Cases in March", [us_data], "Cases", "Country")
     response['images'].append(linechart)
     # pie chart

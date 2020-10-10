@@ -23,6 +23,9 @@ class InputProcessor:
 
         #goodbye words
         goodbyes = ['goodbye', 'adios', 'have a nice day', 'I\'ll talk to you later', 'see you later', 'Hasta la vista, baby']
+
+        #question words
+        quetions = ['can', 'what', 'why', 'where', 'show','where', 'when']
         
         # words indicative that user wants to view death-related info
         death_keywords = ['deaths', 'died']

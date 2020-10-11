@@ -20,7 +20,6 @@ $(document).ready(function(){
     var add_images = function (uname, images) {
         if (images === [])
             return
-        console.log(images[0])
         for (i = 0; i < images.length; i++) {
             $("#chatbox").append(
                 '<div class="row"> <div class="col"><img src=' + '"' + images[i] + '"' + '></div> </div>')
@@ -28,7 +27,7 @@ $(document).ready(function(){
     }
 
     socket.on('connect', function () {
-        console.log('Socket Connection Establised!')
+        console.log('Socket Connection Established!')
 
         socket.on('init_convo', function(conversation) {
             console.log(conversation)

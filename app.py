@@ -106,19 +106,22 @@ def demo(msg, cleaned):
         print(case_string, flush=True)
         if len(target_countries) == 0:
             # show global data
-            response['question'] = "There are " + str(summary['Global'][case_string]) + " " + case_type + " cases globally."
+            response['question'] = "There are " + str(summary['Global'][case_string]) + " total " + case_type + " cases globally."
             if case_type == "deaths":
                 response['question'] = response['question'].replace(" cases", "")
+            if new_or_total == "New":
+                response['question'] = response['question'].replace("total", "new")
             return response
         elif len(target_countries) == 1:
             # one country, possible line chart
             #history = get_case_history(target_countries[0], case_type)
             target = target_countries[0]
-            
             data = next((item for item in countries if (item['Slug'] == target or item['Country'] == target)), None)
-            response['question'] = "There are " + str(data[case_string]) + " " + case_type + " cases in " + target + "."
+            response['question'] = "There are " + str(data[case_string]) + " total " + case_type + " cases in " + target + "."
             if case_type == "deaths":
                 response['question'] = response['question'].replace(" cases", "")
+            if new_or_total == "New":
+                response['question'] = response['question'].replace("total", "new")
             return response
         else:
             # multiple countries, possible pie chart

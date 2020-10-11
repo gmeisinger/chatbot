@@ -37,7 +37,7 @@ $(document).ready(function(){
                 //add_code(conversation[ind].name, conversation[ind].code)
                 add_images(conversation[ind].name, conversation[ind].images);
             }
-            chatbox.scrollTop = chatbox.scrollHeight;
+            document.getElementById("chatbox").scrollTop = document.getElementById("chatbox").scrollHeight;
         })
 
         var form = $('form').on('submit', function(e) {

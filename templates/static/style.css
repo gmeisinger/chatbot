@@ -43,7 +43,7 @@ a {
     overflow:auto; }
 
 #chatbox.row {
-    padding-top: 5px;
+    margin-top: 5px;
 }
 
 #usermsg {
@@ -56,7 +56,11 @@ a {
     max-width:860px;
     background-color: #EBF4FB;
 }
-  
+
+#show-feedback {
+    margin-top: 50px;
+}
+
 .error { color: #ff0000; }
   
 #menu { padding:12.5px 25px 12.5px 25px; }

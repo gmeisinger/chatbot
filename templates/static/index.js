@@ -1,5 +1,11 @@
 var username = 'user';
 
+// feedback stuff
+function showFeedback() {
+    document.getElementById("feedback").hidden = false;
+    document.getElementById("show-feedback").hidden = true;
+}
+
 $(document).ready(function(){
     //connect to the socket server.
     var socket = io.connect('http://' + document.domain + ':' + location.port);
@@ -10,11 +16,7 @@ $(document).ready(function(){
 
     user_input.focus();
 
-    // feedback stuff
-    function showFeedback() {
-        document.getElementById("feedback").hidden = false;
-        document.getElementById("show-feedback").hidden = true;
-    }
+    
 
     // adding elements to chat
     var add_text = function (uname, entered_text) {

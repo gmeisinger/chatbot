@@ -50,8 +50,8 @@ $(document).ready(function(){
                 'images': [],
                 'relation': ''
             })
+            chatbox.scrollTop = chatbox.scrollHeight;
         })
-        chatbox.scrollTop = chatbox.scrollHeight;
     });
 
     socket.on('response', function(utterance) {

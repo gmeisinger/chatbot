@@ -74,7 +74,7 @@ def demo(msg, cleaned):
         response['question'] = "Hello, how can I help you?"
         return response
     # case count
-    death_count_regex = r".*how many .*(died|deaths|cases|confirmed|recovered) .*"
+    death_count_regex = r".*how many .*(died|deaths|cases|confirmed|recovered).*"
     match = re.search(death_count_regex, msg)
     if match != None:
         # finding case count
@@ -83,7 +83,7 @@ def demo(msg, cleaned):
         # get country slug
         data = get_country_slugs()
         for country in data:
-            if country['Slug'] in match.string:
+            if country['Slug'] in match.string or country['Country'] in match.string:
                 target_countries.append(country['Slug'])
         # find case type
         case_regex = r"(died|deaths|cases|confirmed|recovered)"
@@ -110,7 +110,7 @@ def demo(msg, cleaned):
             #history = get_case_history(target_countries[0], case_type)
             target = target_countries[0]
             
-            data = next((item for item in countries if item['Country'] == target), None)
+            data = next((item for item in countries if (item['Slug'] == target or item['Country'] == target)), None)
             response['question'] = "There are " + data[case_string] + " " + case_type + " cases in " + target + "."
             if case_type == "deaths":
                 response['question'] = response['question'].replace(" cases", "")

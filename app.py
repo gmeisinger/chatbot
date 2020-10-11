@@ -90,9 +90,9 @@ def demo(msg, cleaned):
         case_type = re.search(case_regex, msg).group()
         if case_type == "died":
             case_type = deaths
-        elif case_type = "cases":
+        elif case_type == "cases":
             case_type = "confirmed"
-        elif case_type = "":
+        elif case_type == "":
             case_type = "confirmed"
         # get history
         summary = get_summary()

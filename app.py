@@ -62,8 +62,7 @@ def clean_text(text):
 
 
 def demo(msg, cleaned):
-    table = str.maketrans('', '', string.punctuation)
-    msg = msg.translate(table)
+    msg = msg.replace("?","")
     response = {
         'question': 'Huh?',
         'name': 'SCITalk',

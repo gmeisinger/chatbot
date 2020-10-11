@@ -101,7 +101,7 @@ def demo(msg, cleaned):
         print(case_string, flush=True)
         if len(target_countries) == 0:
             # show global data
-            response['question'] = "There are " + summary['Global'][case_string] + " " + case_type + " cases globally."
+            response['question'] = "There are " + int(summary['Global'][case_string]) + " " + case_type + " cases globally."
             if case_type == "deaths":
                 response['question'] = response['question'].replace(" cases", "")
             return response

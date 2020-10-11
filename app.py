@@ -187,7 +187,7 @@ def inputoutput(json):
 def test_connect():
     print('Client connected', flush=True)
     
-    response_string = "Hello, I'm Chatbot! Ask me about global COVID data."
+    response_string = "Hello, I'm SCITalk! Ask me about global COVID data."
     #response_string = "Hello, I'm Chatbot! Ask me about global COVID data. Currently, " + random_country['Country'] + " has " + str(random_country['TotalConfirmed']) + " confirmed cases of COVID-19."
     response = {
         'question': response_string,

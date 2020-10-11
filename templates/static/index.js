@@ -42,18 +42,17 @@ $(document).ready(function(){
         var form = $('form').on('submit', function(e) {
             e.preventDefault()
             var entered_text = $("#usermsg").val()
-            if(entered_text === "") {
-                return
+            if(entered_text !== "") {
+                add_text(username, entered_text)
+                socket.emit('sendout', {
+                    'question': entered_text,
+                    'name': username,
+                    'code': '',
+                    'images': [],
+                    'relation': ''
+                })
+                chatbox.scrollTop = chatbox.scrollHeight;
             }
-            add_text(username, entered_text)
-            socket.emit('sendout', {
-                'question': entered_text,
-                'name': username,
-                'code': '',
-                'images': [],
-                'relation': ''
-            })
-            chatbox.scrollTop = chatbox.scrollHeight;
         })
     });
 

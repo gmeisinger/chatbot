@@ -42,6 +42,9 @@ $(document).ready(function(){
         var form = $('form').on('submit', function(e) {
             e.preventDefault()
             var entered_text = $("#usermsg").val()
+            if(entered_text === "") {
+                return
+            }
             add_text(username, entered_text)
             socket.emit('sendout', {
                 'question': entered_text,

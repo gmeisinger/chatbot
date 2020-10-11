@@ -111,7 +111,7 @@ def demo(msg, cleaned):
             target = target_countries[0]
             
             data = next((item for item in countries if (item['Slug'] == target or item['Country'] == target)), None)
-            response['question'] = "There are " + data[case_string] + " " + case_type + " cases in " + target + "."
+            response['question'] = "There are " + str(data[case_string]) + " " + case_type + " cases in " + target + "."
             if case_type == "deaths":
                 response['question'] = response['question'].replace(" cases", "")
             return response

@@ -14,6 +14,7 @@ import string
 
 # using for tests
 import random
+import re
 
 from InputProcessor import InputProcessor
 
@@ -39,7 +40,7 @@ def generate_response(msg, author):
     # response template
     response = {
         'question': '',
-        'name': 'Chatbot',
+        'name': 'SCITalk',
         'code': '',
         'images': [],
         'relation': ''
@@ -48,7 +49,8 @@ def generate_response(msg, author):
     in_proc = InputProcessor(cleaned_text)
     
     # generate response
-    response['question'] = in_proc.process()
+    #response['question'] = in_proc.process()
+    response = demo(msg.lower(), cleaned_text)
     return response
 
 # tokenizes and cleans text. returns a list of words
@@ -59,11 +61,66 @@ def clean_text(text):
     return stripped
 
 
-def hello(msg):
-  if "hello" in msg:
-    return "Hello, how can I help you?"
-  else:
-    return "What?"
+def demo(msg, cleaned):
+    response = {
+        'question': 'Huh?',
+        'name': 'SCITalk',
+        'code': '',
+        'images': [],
+        'relation': ''
+    }
+    greetings = ['hey', 'hi', 'hello']
+    if msg in greetings:
+        response['question'] = "Hello, how can I help you?"
+        return response
+    # case count
+    death_count_regex = r".* how many .* (died|deaths|cases|confirmed|recovered) .* in .*"
+    match = re.search(death_count_regex, msg)
+    if match != None:
+        # finding case count
+        target_countries = []
+        case_type = ""
+        # get country slug
+        data = get_country_slugs()
+        for country in data:
+            if country['Slug'] in match.string:
+                target_countries.append(country['Slug'])
+        # find case type
+        case_regex = r"(died|deaths|cases|confirmed|recovered)"
+        case_type = re.search(case_regex, msg).group()
+        if case_type == "died":
+            case_type = deaths
+        elif case_type = "cases":
+            case_type = "confirmed"
+        elif case_type = "":
+            case_type = "confirmed"
+        # get history
+        summary = get_summary()
+        countries = summary['Countries']
+        if target_countries.empty():
+            # show global data
+            response['question'] = "There are " + summary['Global']["Total" + case_type.capitalize()] + " " + case_type + " cases globally."
+            if case_type == "deaths":
+                response['question'] = response['question'].replace(" cases", "")
+            return response
+        elif len(target_countries) == 1:
+            # one country, possible line chart
+            #history = get_case_history(target_countries[0], case_type)
+            target = target_countries[0]
+            
+            data = next((item for item in countries if item['Country'] == target), None)
+            response['question'] = "There are " + data["Total" + case_type.capitalize()] + " " + case_type + " cases in " + target + "."
+            if case_type == "deaths":
+                response['question'] = response['question'].replace(" cases", "")
+            return response
+        else:
+            # multiple countries, possible pie chart
+            for target in target_countries:
+                pass
+                #history = get_case_history(target, case_type)
+        # show or tell
+    return response
+        
 
 ### COVID API ###
 
@@ -77,7 +134,7 @@ def get_datetime_now():
     now = datetime.now().strftime("%Y-%m-%d")
     return now
 
-# returns a list of country slugs used in API calls
+# returns a list of dicts of country slugs used in API calls
 def get_country_slugs():
     r = req.get("https://api.covid19api.com/countries")
     data = r.json()
@@ -86,7 +143,7 @@ def get_country_slugs():
 # returns a list of dictionaries, each with data about a country
 def get_countries():
     data = get_summary()
-    print(data.keys(), flush=True)
+    #print(data.keys(), flush=True)
     return data['Countries']
 
 # gets daily summary, which contains new and total case data globally and for each country
@@ -114,7 +171,6 @@ def get_case_history(country, case_type="confirmed", start_date=None, end_date=N
             r_string += "&to=" + end_date + midnight
         else:
             r_string += "&to=" + get_datetime_now() + midnight
-    print("r-string: " + r_string, flush=True)
     r = req.get(r_string)
     data = r.json()
     return data

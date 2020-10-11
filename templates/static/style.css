@@ -51,6 +51,11 @@ a {
     border:1px solid #ACD8F0; }
   
 #submit { width: 60px; }
+
+#feedback {
+    max-width:860px;
+    background-color: #EBF4FB;
+}
   
 .error { color: #ff0000; }
   

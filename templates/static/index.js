@@ -10,6 +10,12 @@ $(document).ready(function(){
 
     user_input.focus();
 
+    // feedback stuff
+    function showFeedback() {
+        document.getElementById("feedback").hidden = false;
+        document.getElementById("show-feedback").hidden = true;
+    }
+
     // adding elements to chat
     var add_text = function (uname, entered_text) {
         $("#chatbox").append(
@@ -39,7 +45,7 @@ $(document).ready(function(){
             chatbox.scrollTop = chatbox.scrollHeight;
         })
 
-        var form = $('form').on('submit', function(e) {
+        var form = $('#msg-form').on('submit', function(e) {
             e.preventDefault()
             var entered_text = $("#usermsg").val()
             if(entered_text !== "") {

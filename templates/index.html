@@ -3,7 +3,7 @@
 {% block title %}Homepage - {{ super() }}{% endblock %}
 
 {% block body %}
-    <h1>SCITalk</h1>
+    <h1 id="title">SCITalk</h1>
     <div id="wrapper">
         <div id="menu">
             <p class="welcome">Welcome to the chat!</p>
@@ -12,9 +12,26 @@
         <div id="chatbox">
 	    </div>
         
-        <form name="message" action="" method="POST">
+        <form name="message" id="msg-form" action="" method="POST">
             <input name="usermsg" type="text" id="usermsg" size="63" />
             <input name="submitmsg" type="submit"  id="submitmsg" value="Send" />
+        </form>
+    </div>
+
+    <!--Feedback-->
+    <button id="show-feedback" onclick="showFeedback()">Give us feedback!</button>
+    <div id="feedback" hidden>
+        <form name="feedback" id="feedback-form" action="" method="POST">
+            <p>Was the chatbot able to answer your question?</p>
+            <input type="radio" id="f-yes" name="correct" value="yes">
+            <label for="f-yes">Yes</label>
+            <input type="radio" id="f-no" name="correct" value="no">
+            <label for="f-no">No</label><br>
+
+            <label for="comments">Comments</label>
+            <textarea id="comments" name="comments" placeholder="Tell us more.." style="height:200px"></textarea>
+            <p>Your conversation will be saved with your feedback!</p>
+            <input type="submit" value="Submit">
         </form>
     </div>
     

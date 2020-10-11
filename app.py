@@ -178,6 +178,8 @@ def index():
 def inputoutput(json):
     print('User input received!', flush=True)
     text = json['question']
+    if text.equals(""):
+        return
     author = json['name']
     response = generate_response(text, author)
     emit('response', response)

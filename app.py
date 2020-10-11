@@ -98,6 +98,7 @@ def demo(msg, cleaned):
         summary = get_summary()
         countries = summary['Countries']
         case_string = "Total" + case_type.capitalize()
+        print(case_string, flush=True)
         if len(target_countries) == 0:
             # show global data
             response['question'] = "There are " + summary['Global'][case_string] + " " + case_type + " cases globally."

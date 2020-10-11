@@ -20,7 +20,7 @@ class InputProcessor:
         
         ret_string = '' # string to return
 
-            greetings = ['hey', 'hi', 'hello']
+        greetings = ['hey', 'hi', 'hello']
 
         #goodbye words
         goodbyes = ['goodbye', 'adios', 'have a nice day', 'I\'ll talk to you later', 'see you later', 'Hasta la vista, baby']

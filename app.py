@@ -97,7 +97,7 @@ def demo(msg, cleaned):
         # get history
         summary = get_summary()
         countries = summary['Countries']
-        if target_countries.empty():
+        if len(target_countries) == 0:
             # show global data
             response['question'] = "There are " + summary['Global']["Total" + case_type.capitalize()] + " " + case_type + " cases globally."
             if case_type == "deaths":

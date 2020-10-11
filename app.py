@@ -89,7 +89,7 @@ def demo(msg, cleaned):
         case_regex = r"(died|deaths|cases|confirmed|recovered)"
         case_type = re.search(case_regex, msg).group()
         if case_type == "died":
-            case_type = deaths
+            case_type = "deaths"
         elif case_type == "cases":
             case_type = "confirmed"
         elif case_type == "":
@@ -256,17 +256,17 @@ def test_connect():
     }
     # TEST PYGAL
     # line chart
-    us_data = get_case_history("united-states", "confirmed", "2020-03-01")
-    linechart = Linechart("United States Confirmed Cases in March", [us_data], "Cases", "Country")
-    response['images'].append(linechart)
+    #us_data = get_case_history("united-states", "confirmed", "2020-03-01")
+    #linechart = Linechart("United States Confirmed Cases in March", [us_data], "Cases", "Country")
+    #response['images'].append(linechart)
     # pie chart
-    countries = get_countries()
-    categories = []
-    for i in range(3):
-        random_country = countries[random.randint(0, len(countries))]
-        categories.append(random_country)
-    piechart = Pie("Total Deaths by Country", categories, "TotalDeaths", "Country")
-    response['images'].append(piechart)
+    #countries = get_countries()
+    #categories = []
+    #for i in range(3):
+    #    random_country = countries[random.randint(0, len(countries))]
+    #    categories.append(random_country)
+    #piechart = Pie("Total Deaths by Country", categories, "TotalDeaths", "Country")
+    #response['images'].append(piechart)
     # send response
     emit('init_convo', [response])
 

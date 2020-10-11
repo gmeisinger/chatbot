@@ -97,9 +97,10 @@ def demo(msg, cleaned):
         # get history
         summary = get_summary()
         countries = summary['Countries']
+        case_string = "Total" + case_type.capitalize()
         if len(target_countries) == 0:
             # show global data
-            response['question'] = "There are " + summary['Global']["Total" + case_type.capitalize()] + " " + case_type + " cases globally."
+            response['question'] = "There are " + summary['Global'][case_string] + " " + case_type + " cases globally."
             if case_type == "deaths":
                 response['question'] = response['question'].replace(" cases", "")
             return response
@@ -109,7 +110,7 @@ def demo(msg, cleaned):
             target = target_countries[0]
             
             data = next((item for item in countries if item['Country'] == target), None)
-            response['question'] = "There are " + data["Total" + case_type.capitalize()] + " " + case_type + " cases in " + target + "."
+            response['question'] = "There are " + data[case_string] + " " + case_type + " cases in " + target + "."
             if case_type == "deaths":
                 response['question'] = response['question'].replace(" cases", "")
             return response

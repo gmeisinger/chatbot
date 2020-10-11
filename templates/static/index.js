@@ -60,6 +60,8 @@ $(document).ready(function(){
         add_text(utterance.name, utterance.question)
         add_images(utterance.name, utterance.images)
         chatbox.scrollTop = chatbox.scrollHeight;
+        console.log(chatbox.scrollTop);
+        console.log(chatbox.scrollHeight);
     })
 })
 

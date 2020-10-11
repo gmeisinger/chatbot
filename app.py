@@ -74,7 +74,7 @@ def demo(msg, cleaned):
         response['question'] = "Hello, how can I help you?"
         return response
     # case count
-    death_count_regex = r".* how many .* (died|deaths|cases|confirmed|recovered) .* in .*"
+    death_count_regex = r".*how many .*(died|deaths|cases|confirmed|recovered) .*"
     match = re.search(death_count_regex, msg)
     if match != None:
         # finding case count
@@ -119,6 +119,8 @@ def demo(msg, cleaned):
                 pass
                 #history = get_case_history(target, case_type)
         # show or tell
+    else:
+        response['question'] = "Input did not match."
     return response
         
 

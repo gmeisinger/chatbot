@@ -43,23 +43,7 @@ class InputProcessor:
     #words indacative of graphs
     graph_words = ['graph', 'line', 'line graph','scatter', 'scatter plot', 'pie', 'pie chart', 'bar', 'bar graph']
 
-    # keywords related to countries
-    r = req.get("https://api.covid19api.com/countries")
-    data = r.json()
-    countries = []
-    for country in data:
-        countries.append(country['Slug'])
-    '''
-        To represent multi-word countries, I'm going to build finite state machines.
-        For example: the FSM for United Kingdom will have 3 states (e.g. 0,1,2). It will
-        be initialized to state 0, when we come across 'united' in the cleaned text, it
-        will transition to state 1. In state 1, 'kingdom' will cause a transition to
-        state 2. State 2 will be the accept state, then united-kingdom will be marked in
-        the input!! One word countries will be represented as 2-state FSMs. This will create
-        some memory overhead for sure, but I think it's about as good as we can get with
-        respect to time-complexity. Let me know if you think we can improve upon this!
-        - Andrew
-    '''
+    
     # keywords related to global numbers
     glob_keywords = ['internationally', 'globally']
 
@@ -79,6 +63,24 @@ class InputProcessor:
            to begin constructing an intelligent response."""
         
         ret_string = '' # string to return
+
+        # keywords related to countries
+        r = req.get("https://api.covid19api.com/countries")
+        data = r.json()
+        countries = []
+        for country in data:
+            countries.append(country['Slug'])
+        '''
+            To represent multi-word countries, I'm going to build finite state machines.
+            For example: the FSM for United Kingdom will have 3 states (e.g. 0,1,2). It will
+            be initialized to state 0, when we come across 'united' in the cleaned text, it
+            will transition to state 1. In state 1, 'kingdom' will cause a transition to
+            state 2. State 2 will be the accept state, then united-kingdom will be marked in
+            the input!! One word countries will be represented as 2-state FSMs. This will create
+            some memory overhead for sure, but I think it's about as good as we can get with
+            respect to time-complexity. Let me know if you think we can improve upon this!
+            - Andrew
+        '''
 
         for x in greetings:
             if x in self.cleanText:

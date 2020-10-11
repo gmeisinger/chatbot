@@ -19,7 +19,7 @@ $(document).ready(function(){
 
     var add_images = function (uname, images) {
         if (images === [])
-            return
+            return;
         for (i = 0; i < images.length; i++) {
             $("#chatbox").append(
                 '<div class="row"> <div class="col"><img src=' + '"' + images[i] + '"' + '></div> </div>')
@@ -36,7 +36,7 @@ $(document).ready(function(){
                 //add_code(conversation[ind].name, conversation[ind].code)
                 add_images(conversation[ind].name, conversation[ind].images);
             }
-            document.getElementById("chatbox").scrollTop = document.getElementById("chatbox").scrollHeight;
+            chatbox.scrollTop = chatbox.scrollHeight;
         })
 
         var form = $('form').on('submit', function(e) {

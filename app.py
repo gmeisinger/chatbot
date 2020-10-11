@@ -62,6 +62,8 @@ def clean_text(text):
 
 
 def demo(msg, cleaned):
+    table = str.maketrans('', '', string.punctuation)
+    msg = msg.translate(table)
     response = {
         'question': 'Huh?',
         'name': 'SCITalk',
@@ -97,7 +99,10 @@ def demo(msg, cleaned):
         # get history
         summary = get_summary()
         countries = summary['Countries']
-        case_string = "Total" + case_type.capitalize()
+        new_or_total = "Total"
+        if "new" in msg:
+            new_or_total = "New"
+        case_string = new_or_total + case_type.capitalize()
         print(case_string, flush=True)
         if len(target_countries) == 0:
             # show global data

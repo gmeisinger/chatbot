@@ -1,5 +1,11 @@
 var username = 'user';
 
+// feedback stuff
+function showFeedback() {
+    document.getElementById("feedback").hidden = false;
+    document.getElementById("show-feedback").hidden = true;
+}
+
 $(document).ready(function(){
     //connect to the socket server.
     var socket = io.connect('http://' + document.domain + ':' + location.port);
@@ -9,6 +15,8 @@ $(document).ready(function(){
     var user_input = document.getElementById("usermsg");
 
     user_input.focus();
+
+    
 
     // adding elements to chat
     var add_text = function (uname, entered_text) {
@@ -26,6 +34,11 @@ $(document).ready(function(){
         }
     }
 
+    var save_conversation = function() {
+        // for now lets just save the html
+        return chatbox.innerHTML
+    }
+
     socket.on('connect', function () {
         console.log('Socket Connection Established!')
 
@@ -39,7 +52,7 @@ $(document).ready(function(){
             chatbox.scrollTop = chatbox.scrollHeight;
         })
 
-        var form = $('form').on('submit', function(e) {
+        var form = $('#msg-form').on('submit', function(e) {
             e.preventDefault()
             var entered_text = $("#usermsg").val()
             if(entered_text !== "") {
@@ -54,6 +67,26 @@ $(document).ready(function(){
                 chatbox.scrollTop = chatbox.scrollHeight;
             }
         })
+
+        var feedback = $('#feedback-form').on('submit', function(e) {
+            e.preventDefault()
+            // get comments
+            var comments = $("#comments").val()
+            // did it answer correctly?
+            var correct = $("#f-yes").checked
+            // date
+            var date = Date(Date.now());
+            // save conversation
+            var conversation = save_conversation();
+            // send it to flask
+            socket.emit('feedback', {
+                'comments': comments,
+                'corrent': correct,
+                'conversation': conversation,
+                'date': date.toString()
+            })
+            
+        })
     });
 
     socket.on('response', function(utterance) {
@@ -63,6 +96,10 @@ $(document).ready(function(){
         chatbox.scrollTop = chatbox.scrollHeight;
         console.log(chatbox.scrollTop);
         console.log(chatbox.scrollHeight);
+    })
+
+    socket.on('feedback_confirm', function() {
+        document.getElementById("feedback").innerHTML = "Thank you for your feedback!";
     })
 })
 

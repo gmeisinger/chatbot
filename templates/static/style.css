@@ -71,8 +71,7 @@ a {
 }
 
 #comments {
-    display: flex;
-    align-items: center;
+    vertical-align: middle;
 }
 
 #show-feedback {

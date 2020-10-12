@@ -142,7 +142,7 @@ def demo(msg, cleaned):
             # pie chart
             if "show" in msg:
                 title += "."
-                title = response['question'].replace(",.", ".")
+                title = title.replace(",.", ".")
                 piechart = Pie(title, targets, case_string, "Country")
                 response['images'].append(piechart)
             return response

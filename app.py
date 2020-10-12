@@ -249,6 +249,17 @@ def inputoutput(json):
     response = generate_response(text, author)
     emit('response', response)
 
+# receiving user feedback
+@socketio.on('feedback')
+def feedback(json):
+    print('User feedback received!', flush=True)
+    timestamp = json['date'].replace(":", "-")
+    filename = timestamp.replace(" ", "") + ".json"
+    with open(filename, 'w') as file:
+        json.dump(json, file)
+    emit('feedback_confirm')
+
+
 # user connects, greet them
 @socketio.on('connect')
 def test_connect():

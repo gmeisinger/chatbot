@@ -34,6 +34,11 @@ $(document).ready(function(){
         }
     }
 
+    var save_conversation = function() {
+        // for now lets just save the html
+        return chatbox.innerHTML
+    }
+
     socket.on('connect', function () {
         console.log('Socket Connection Established!')
 
@@ -62,6 +67,26 @@ $(document).ready(function(){
                 chatbox.scrollTop = chatbox.scrollHeight;
             }
         })
+
+        var feedback = $('#feedback-form').on('submit', function(e) {
+            e.preventDefault()
+            // get comments
+            var comments = $("#comments").val()
+            // did it answer correctly?
+            var correct = $("#f-yes").checked
+            // date
+            var date = Date(Date.now());
+            // save conversation
+            var conversation = save_conversation();
+            // send it to flask
+            socket.emit('feedback', {
+                'comments': comments,
+                'corrent': correct,
+                'conversation': conversation,
+                'date': date.toString()
+            })
+            
+        })
     });
 
     socket.on('response', function(utterance) {
@@ -71,6 +96,10 @@ $(document).ready(function(){
         chatbox.scrollTop = chatbox.scrollHeight;
         console.log(chatbox.scrollTop);
         console.log(chatbox.scrollHeight);
+    })
+
+    socket.on('feedback_confirm', function() {
+        document.getElementById("feedback").innerHTML = "Thank you for your feedback!";
     })
 })
 

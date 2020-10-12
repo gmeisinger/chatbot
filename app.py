@@ -144,6 +144,7 @@ def demo(msg, cleaned):
                 title += "."
                 title = response['question'].replace(",.", ".")
                 piechart = Pie(title, targets, case_string, "Country")
+                response['images'].append(piechart)
             return response
                 #history = get_case_history(target, case_type)
         # show or tell

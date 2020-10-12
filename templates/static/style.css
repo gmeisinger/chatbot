@@ -53,8 +53,11 @@ a {
 #submit { width: 60px; }
 
 #feedback {
+    text-align: center;
+    margin: 10px 50px auto;
     max-width:860px;
     background-color: #EBF4FB;
+    border:1px solid #ACD8F0;
 }
 
 #show-feedback {

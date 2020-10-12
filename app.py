@@ -130,7 +130,7 @@ def demo(msg, cleaned):
                 #history = get_case_history(target, case_type)
         # show or tell
     else:
-        response['question'] = "Input did not match."
+        response['question'] = "Huh?"
     return response
         
 

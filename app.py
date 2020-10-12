@@ -255,7 +255,7 @@ def inputoutput(_json):
 def feedback(_json):
     print('User feedback received!', flush=True)
     timestamp = _json['date'].replace(":", "-")
-    filename = timestamp.replace(" ", "") + ".json"
+    filename = "feedback/" + timestamp.replace(" ", "") + ".json"
     with open(filename, 'w') as file:
         j.dump(_json, file)
     emit('feedback_confirm')

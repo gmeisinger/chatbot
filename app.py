@@ -132,7 +132,7 @@ def demo(msg, cleaned):
                 data = next((item for item in countries if (item['Slug'] == target or item['Country'] == target)), None)
                 targets.append(data)
                 title += data['Country'] + ", "
-                response['question'] += str(data[case_string]) + " total " + case_type + " cases in " + target + ","
+                response['question'] += str(data[case_string]) + " total " + case_type + " cases in " + target + ", "
                 if case_type == "deaths":
                     response['question'] = response['question'].replace(" cases", "")
                 if new_or_total == "New":

@@ -2,6 +2,7 @@ from flask import Flask, send_from_directory, url_for, render_template, request,
 #from flask_session import Session
 from flask_socketio import SocketIO, emit
 
+import json as j
 # for handling data and using api
 from datetime import datetime
 import requests as req
@@ -242,21 +243,21 @@ def index():
 
 # receiving input from user in the form of an utterance
 @socketio.on('sendout')
-def inputoutput(json):
+def inputoutput(_json):
     print('User input received!', flush=True)
-    text = json['question']
-    author = json['name']
+    text = _json['question']
+    author = _json['name']
     response = generate_response(text, author)
     emit('response', response)
 
 # receiving user feedback
 @socketio.on('feedback')
-def feedback(json):
+def feedback(_json):
     print('User feedback received!', flush=True)
-    timestamp = json['date'].replace(":", "-")
+    timestamp = _json['date'].replace(":", "-")
     filename = timestamp.replace(" ", "") + ".json"
     with open(filename, 'w') as file:
-        json.dump(json, file)
+        j.dump(_json, file)
     emit('feedback_confirm')
 
 

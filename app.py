@@ -100,7 +100,7 @@ def demo(msg, cleaned):
         summary = get_summary()
         countries = summary['Countries']
         new_or_total = "Total"
-        if "new" in msg:
+        if "new" in msg or "today" in msg:
             new_or_total = "New"
         case_string = new_or_total + case_type.capitalize()
         print(case_string, flush=True)
@@ -125,8 +125,26 @@ def demo(msg, cleaned):
             return response
         else:
             # multiple countries, possible pie chart
+            targets = []
+            title = case_string + " in "
+            response['question'] = "There are "
             for target in target_countries:
-                pass
+                data = next((item for item in countries if (item['Slug'] == target or item['Country'] == target)), None)
+                targets.append(data)
+                title += data['Country'] + ", "
+                response['question'] += str(data[case_string]) + " total " + case_type + " cases in " + target + ","
+                if case_type == "deaths":
+                    response['question'] = response['question'].replace(" cases", "")
+                if new_or_total == "New":
+                    response['question'] = response['question'].replace("total", "new")
+            response['question'] += "."
+            response['question'] = response['question'].replace(",.", ".")
+            # pie chart
+            if "show" in msg:
+                title += "."
+                title = response['question'].replace(",.", ".")
+                piechart = Pie(title, targets, case_string, "Country")
+            return response
                 #history = get_case_history(target, case_type)
         # show or tell
     else:

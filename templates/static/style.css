@@ -3,8 +3,14 @@ body {
     font:14px arial;
     color: #222;
     text-align:center;
-    padding:35px; }
-  
+    padding:35px;
+}
+
+#title {
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 form, p, span {
     margin:0;
     padding:0; }

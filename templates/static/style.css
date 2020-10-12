@@ -71,6 +71,11 @@ a {
     border:1px solid #ACD8F0;
 }
 
+#feedback p {
+    padding: 10px 0px;
+}
+
+
 #comments {
     padding-top: 10px;
     vertical-align: middle;

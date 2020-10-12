@@ -64,6 +64,7 @@ a {
 #feedback {
     text-align: center;
     margin: auto;
+    padding: 10px 0px;
     margin-top: 50px;
     max-width:860px;
     background-color: #EBF4FB;
@@ -71,6 +72,7 @@ a {
 }
 
 #comments {
+    padding-top: 10px;
     vertical-align: middle;
 }
 

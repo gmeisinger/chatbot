@@ -129,7 +129,7 @@ def demo(msg, cleaned):
             title = case_string + " in "
             response['question'] = "There are "
             for target in target_countries:
-                data = next((item for item in countries if (item['Slug'] == target or item['Country'] == target)), None)
+                data = next((item for item in countries if (item['Slug'] == target or item['Country'].lower() == target)), None)
                 targets.append(data)
                 title += data['Country'] + ", "
                 response['question'] += str(data[case_string]) + " total " + case_type + " cases in " + target + ", "

@@ -138,7 +138,7 @@ def demo(msg, cleaned):
                 if new_or_total == "New":
                     response['question'] = response['question'].replace("total", "new")
             response['question'] += "."
-            response['question'] = response['question'].replace(",.", ".")
+            response['question'] = response['question'].replace(", .", ".")
             # pie chart
             if "show" in msg:
                 title += "."

@@ -1,5 +1,6 @@
 #First attempt at taking input and deciphering intent
 import requests as req
+from FSM import FSM
 
 class InputProcessor:
     """A class created with the intent of processing user input for SCITalk Chatbot"""
@@ -36,7 +37,7 @@ class InputProcessor:
         case_keywords = ['case', 'cases']
 
         # indicative user wants to view gender-related info
-        gender_keywords = ['men', 'women', 'girls', 'boys', 'gender', 'sex']
+        gender_keywords = ['men', 'women', 'man', 'woman', 'girl', 'boy', 'girls', 'boys', 'gender', 'sex']
         
         # words indicating user wants to see comparison between two things
         comp_keywords = ['difference', 'compare', 'comparison', 'between', 'different', 'than', 'vs']
@@ -71,7 +72,9 @@ class InputProcessor:
         data = r.json()
         countries = []
         for country in data:
-            countries.append(country['Slug'])
+            country_slug = country['Slug'] # e.g. united-states
+            countries.append(FSM(country_slug))
+
         '''
             To represent multi-word countries, I'm going to build finite state machines.
             For example: the FSM for United Kingdom will have 3 states (e.g. 0,1,2). It will
@@ -119,8 +122,11 @@ class InputProcessor:
                 intents['age'] = True
             if word in months:
                 intents['month'] += word.capitalize() + ', '
-            if word in countries:
-                intents['country'] += word.capitalize() + ', '
+            # simulate country FSMs on current word
+            for fsm in countries:
+                fsm.simulate_on_input(word)
+                if fsm.accept():
+                    intents['countries'] += fsm.country_string() + ', '
             if word in glob_keywords:
                 intents['global'] = True
         

@@ -32,6 +32,19 @@ socketio = SocketIO(application, cors_allowed_origins="*", async_mode=None, logg
 
 country_slugs = {}
 
+### RASA ###
+
+def get_rasa_response(text):
+    data = {
+        "sender" : "user",
+        "message" : text
+    }
+    r = req.post("http://localhost:5005/webhooks/rest/webhook", data = data)
+    response = r.json()
+    if response != None:
+        return response["text"]
+    return None
+
 ### Chatbot helper functions ###
 
 # given a message from the user, generates and returns a response from Chatbot
@@ -52,6 +65,9 @@ def generate_response(msg, author):
     # generate response
     #response['question'] = in_proc.process()
     response = demo(msg.lower(), cleaned_text)
+    rasa = get_rasa_response(msg)
+    if rasa != None:
+        response['question'] = rasa
     return response
 
 # tokenizes and cleans text. returns a list of words

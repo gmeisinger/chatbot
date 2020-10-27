@@ -35,11 +35,12 @@ country_slugs = {}
 ### RASA ###
 
 def get_rasa_response(text):
+    headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
     data = {
         "sender" : "user",
         "message" : text
     }
-    r = req.post("http://localhost:5005/webhooks/rest/webhook", data = data)
+    r = req.post("http://localhost:5005/webhooks/rest/webhook", data = j.dumps(data), headers = headers)
     response = r.json()
     if response != None:
         return response["text"]

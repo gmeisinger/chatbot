@@ -90,3 +90,88 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: ask_about_new_national_cases_today
+  examples: |
+    - how many new cases in [the united states](country) [today](day)?
+    - how many new [covid](virus) cases were there in [germany](country) [today](day)?
+    - were there any new [covid](virus) cases in [aruba](country) [today](day)?
+
+- intent: ask_about_new_national_deaths_today
+  examples: |
+    - how many people [died](deaths) of [covid](virus) today in [france](country)?
+    - did anyone [die](deaths) in [south africa](country) today?
+    - were there new [deaths](deaths) in [mexico](country) [today](day)?
+
+- intent: ask_about_national_deaths_no_time
+  examples: |
+    - how many people [died](deaths) of [coronavirus](virus) in [china](country)?
+    - did anybody [die](deaths) in [south korea](country)?
+    - has [canada](country) seen any more [deaths](deaths)?
+
+- intent: ask_about_deaths_no_time_or_place
+  examples: |
+    - how many people have [died](deaths)?
+    - how many [deaths](deaths) have there been?
+    - how many people has covid [killed](deaths)?
+    - how many [lives have been lost](deaths)?
+
+- lookup: deaths
+  examples: |
+    - deaths
+    - death
+    - died
+    - die
+    - fatalities
+    - lives lost
+
+- lookup: mortality_rate
+  examples: |
+    - mortality rate
+    - rate of death
+    - death rate
+
+- lookup: recovery
+  examples: |
+    - recover
+    - recovery
+    - recovered
+    - recovr
+    - survived
+    - improved
+
+- lookup: months
+  examples: |
+    - january
+    - february
+    - march
+    - april
+    - may
+    - june
+    - july
+    - august
+    - september
+    - october
+    - november
+    - december
+
+- lookup: weekday
+  examples: |
+    - monday
+    - tuesday
+    - wednesday
+    - thursday
+    - friday
+    - saturday
+    - sunday
+
+- lookup: virus
+  examples: |
+    - coronavirus
+    - covid19
+    - covid-19
+    - covid
+    - corona
+    - the virus
+    - pandemic
+    - the pandemic

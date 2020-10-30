@@ -29,6 +29,12 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
+  utter_case_count:
+  - text: "There are {count} {scope} {case_type} cases in {country}."
+
+actions:
+  - action_case_count
+  
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

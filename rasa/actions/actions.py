@@ -25,3 +25,54 @@
 #         dispatcher.utter_message(text="Hello World!")
 #
 #         return []
+
+from rasa_sdk import Action, Tracker
+from rasa_sdk.executor import CollectingDispatcher
+
+import requests
+import json
+
+# this action gets a case count for a specific country.
+# case types are (Confirmed, Recovered, Deaths)
+# scope is (Total, New)
+# country needs to be a slug
+class ActionCaseCount(Action):
+
+    @staticmethod
+    def required_fields():
+        return [
+            EntityFormField("scope", "scope"),
+            EntityFormField("case_type", "case_type"),
+            EntityFormField("country", "country")
+        ]
+
+    def name(self):
+        return "action_case_count"
+    
+    def run(self, dispatcher, tracker, domain):
+        # get data
+        scope = tracker.get_slot('scope')
+        case_type = tracker.get_slot('case_type')
+        country = tracker.get_slot('country')
+        summary = get_summary()
+        # target a country
+        countries = summary['Countries']
+        data = next((item for item in countries if (item['Slug'] == country or item['Country'] == country)), None)
+        key_string = scope.capitalize() + case_type.capitalize()
+        count = data[key_string]
+        # report the information
+        dispatcher.utter_message(
+            template="utter_case_count",
+            count=count,
+            scope=scope,
+            case_type=case_type,
+            country=country
+        )
+        return []
+    
+    # gets daily summary, which contains new and total case data globally and for each country
+    # dict with keys "Global", "Countries", "Date", "Message"
+    def get_summary():
+        r = requests.get("https://api.covid19api.com/summary")
+        data = r.json()
+        return data

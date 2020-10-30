@@ -1,0 +1,4705 @@
+{
+	"Cov1": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Hey, what kind of questions can you answer?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Show list of types of questions SCITalk can answer}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov2": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "What symptom of COVID has been the most likely in infected patients?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "x is the most prominent symptom in COVID patients.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Can you show me a list of the most common symptoms?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{show a list of symptoms in order of prominence}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov3": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Can you tell me how many people have gotten COVID by country?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{show a table of cases by  country}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov4": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Can you tell me how many people have gotten COVID by gender in x Country?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{show a table of cases by gender in x}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov5": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Can you tell me how many people have died from COVID by country?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{show a table of deaths by country}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov6": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Can you tell me how many people have died from COVID by gender in x country?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{show a table of deaths by gender in x}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov7": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Can you tell me how many people have recovered from COVID by country?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{show a table of recovered by country}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov8": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Can you tell me how many people have recovered from COVID by gender in country?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{show a table of recovered by gender in x}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov9": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Can you show me a graph of number of cases per country?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{show a bar graph of countries by confirmed cases}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov10": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Can you show me the trend of number of deaths and x country?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": " {show a line graph of number of deaths by x country}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov11": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Hello",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "Hello, what would you like to know?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "How many Corona deaths worldwide?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output statistic from api}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov12": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Hi, I was wondering if you could tell me about deaths by gender?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "Worldwide or by a country?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Worldwide",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output worldwide deaths by gender from api}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov13": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Hi, I was wondering if you could tell me about deaths by gender?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "Worldwide or by a country?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "England",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output England deaths by gender from api}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov14": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Can you show me the trend of corona cases worldwide?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output trendline from api}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov15": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "How many died from covid since in the last 2 weeks?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "Worldwide or for a specific country?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Global",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output total global deaths from 2 weeks ago to present}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov16": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Are covid case counts rising?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "Worldwide or for a specific country?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Worldwide",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output a line chart with global case counts over the past 30 days}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Can you show the last 2 weeks instead?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output a line chart with global case counts over the past 14 days}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov17": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "How many deaths in Russia?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "New deaths or total deaths?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "New deaths",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output new deaths for Russia}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov18": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Which country has the most cases of covid?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "New cases or total cases?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "total cases",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output country with the most total confirmed cases}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov19": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Which countries have the most cases of covid-19?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "new or total cases?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "total",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output table of top 10 countries by total case count}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "Would you like to see a graph of this data?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "yes",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output bar graph of top 10 countries by total case count}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov20": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "How many people have covid in my country?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "Which country?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "US",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output total confirmed cases for US}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov21": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "How have case counts changed this week?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "Worldwide or for a specific country?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "for a specific country",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "Which country?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "France",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output a line chart showing total case counts for France over the last 7 days}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov22": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "How many have died from covid 19?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "worldwide or in a specific country?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "worldwide",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output total global deaths}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov23": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Were there more deaths or recoveries in Germany today?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output new deaths and new recoveries in Germany} ",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov24": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Which countries have more than 1000 cases of covid?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "new cases or total cases?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "total cases",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output list of countries with over 1000 total confirmed cases}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov25": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Do any countries have 0 new cases today?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output list of countries with 0 new confirmed cases}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov26": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Which country has the most recoveries from covid 19?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "new recoveries or total recoveries?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "total",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output country with most total recoveries}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov27": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "How many countries have decreasing case counts?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "new cases or total cases?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "total",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output all countries with less total cases today than the previous day}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov28": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Do any countries have more cases than the US?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "total cases or new cases?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "total",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output all countries with more total confirmed cases than the US}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov29": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": " I was wondering about the number of recoveries from COVID in the United States.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": " {output recoveries}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov30": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Can you show me the ratio of deaths from COVID in the US and China",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "Total deaths or deaths today?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Total deaths",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output pie chart of total deaths in US and China}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov31": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Can you show me the ratio of deaths from COVID in the France and Italy",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "Total deaths or deaths today?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "deaths today",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output pie chart of new deaths in France and Italy}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov32": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Can you show me the ratio of recoveries from COVID in the Russia and Ukraine",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "Total recoveries or recoveries today?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Total recoveries",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output pie chart of total recoveries in Russia and Ukraine}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov33": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Can you show me the ratio of recoveries from COVID in the US and Mexico",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "Total recoveries or recoveries today?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "recoveries today",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output pie chart of recoveries today in US and Mexico}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov34": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "How many more people have died in the US than the country with the second highest number of deaths?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output difference between total US deaths and second most deadly country\u2019s deaths}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov35": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "What are the leading 10 countries in deaths from COVID?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output list of 10 countries with most total COVID deaths}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov36": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "What country has had the most deaths today?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output country with most deaths today}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "What about recoveries today?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output country with most recoveries today}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov37": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "What are the leading 10 countries in recoveries from COVID?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output list of 10 countries with most total COVID recoveries}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov38": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "What country has had the most recoveries today?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output country with most recoveries today}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "What about new cases today?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output country with most new cases today}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov39": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Which country has the highest recovery rate from COVID?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output country with highest ratio of number of recoveries per number of cases}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov40": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Which country has the highest death rate from COVID?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output country with highest ratio of number of deaths per number of cases}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov41": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Which continent has the highest number of deaths total?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output continent with highest number of deaths total}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov42": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Which continent has the highest number of recoveries total?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output continent with highest number of recoveries total}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov43": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Which continent has the highest number of cases total?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output continent with highest number of cases total}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov44": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Which continent has the highest number of deaths today?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output continent with highest number of deaths today}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov45": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Which continent has the highest number of recoveries today?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output continent with highest number of recoveries today}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov46": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Which continent has the highest number of cases today?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output continent with highest number of cases today}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov47": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Which continent has the highest death rate total?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output continent with highest number of deaths per number of cases total}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov48": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Which continent has the highest recovery rate total?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output continent with highest number of recoveries per number of cases total}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov49": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "What country had the most cases of COVID by the end of their Day 1?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output country with most cases on Day 1}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov50": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "What country had the least cases of COVID by the end of their Day 1?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output country with least cases on Day 1}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov51": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Are there any countries who had any deaths on their Day 1?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Yes or no depending on if any deaths on Day 1}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov52": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Which continent has the lowest number of recoveries total?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output continent with lowest number of recoveries total}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov53": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Which continent has the lowest number of cases total?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output continent with lowest number of cases total}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov54": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Which continent has the lowest number of deaths today?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output continent with lowest number of deaths today}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov55": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Which continent has the lowest number of recoveries today?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output continent with lowest number of recoveries today}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov56": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Which continent has the lowest number of cases today?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output continent with lowest number of cases today}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov57": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Which continent has the lowest death rate total?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output continent with lowest number of deaths per number of cases total}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov58": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Which continent has the lowest recovery rate total?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output continent with lowest number of recoveries per number of cases total}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov59": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Which continent has the lowest number of deaths total?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output continent with lowest number of deaths total}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov60": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": " How many active cases of COVID are there in Germany?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output number of cases - number of deaths and recoveries total from Germany}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov61": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": " How many active cases of COVID are there in North America?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output number of cases - number of deaths and recoveries total from North America}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov62": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "What country has the lowest number of active cases?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output country with lowest number of cases - number of deaths and recoveries total}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov63": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Can you show me the trend of active cases in the United States by month?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output line graph of number of cases - number of deaths and recoveries total in the US by month}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov64": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Can you show me the trend of active cases in Europe by day?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output line graph of number of cases - number of deaths and recoveries total in Europe by day}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov65": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Can you show me the trend of active cases in each country in North America by month?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output line graph of number of cases - number of deaths and recoveries total of countries in North America by month}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov66": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": " Which countries have 0 active cases?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output list of countries with number of cases - deaths - recoveries total = 0}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov67": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": " What are all the countries you have information on?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output list of all countries in API}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov68": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": " Can you show me a bar graph of deaths of all countries in Asia?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "total deaths or deaths today?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "total deaths",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "utput bar graph of total deaths of all countries in Asia}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov69": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": " Show me a pie chart of the total number of cases in the world by continent",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output pie chart of total cases in the world by continent",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov70": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": " Show me a pie chart of the total number of cases in the world by country",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output pie chart of total cases in the world by country",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov71": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": " Show me a pie chart of the total number of cases in the Europe by country",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output pie chart of total cases in the Europe by country",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov72": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": " Which continent has had the most recoveries per total cases?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output continent with most recoveries per total cases}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov73": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": " Which country has had the most recoveries per total cases?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output country with most recoveries per total cases}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov74": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": " Can you show me a bar graph of total deaths of all countries with more than 50000 deaths?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output bar graph of total deaths of countries with more than 50000 total deaths}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov75": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": " Can you show me a bar graph of total cases of all countries with more than 200,000 cases?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output bar graph of total cases of countries with more than 200,000 total cases}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov76": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": " Show me a bar graph of the total deaths per country of the 10 countries with the best recovery rate",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output bar graph of total deaths per country of 10 countries with most total recoveries over total cases}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov77": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": " Show me a line graph of the average number of deaths per country by month",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output line graph of average number of deaths per country by month}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov78": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": " Can you show me a line graph of the total number of cases in the world by month?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output line graph of the total number of cases in the world by month}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov79": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": " Show me a bar graph of new cases by country today",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output bar graph of new cases by country}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov80": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": " Can you show me the number of new cases in Alabama from yesterday?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "Sorry, I don\u2019t have data on individual states in the United States. I can answer questions on a country-by-country basis!",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov81": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": " What was the highest number of new cases Russia saw in one day?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "Russia saw {output highest number of new cases in one day in Russia} cases on {output relevant date}. Will that be all?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "What about Poland?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "Poland saw {output highest number of new cases in one day in Poland} cases on {output relevant date}. Will that be all?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Yes.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "Okay, bye!",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov82": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": " What country is doing the worst with COVID right now?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "With respect to what? Deaths? New cases?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Deaths.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "Okay, do you mean who has the most new deaths today? Or do you want an average across a certain time span?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "The most new deaths in the last seven days.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "Okay. {output country with the most new deaths in the last 7 days} saw the most new deaths in the last seven days, averaging {output average of daily new deaths in country over the last seven days} new deaths per day. Does that answer your question?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Yes.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "Okay. Anything else?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "No, I don\u2019t think so.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "Okay, bye!",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov83": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": " No you can\u2019t.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "You dare challenge me, mortal?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "I take it back, I\u2019m sorry. How many new cases are there in Mexico?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "Since yesterday?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Yes.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "There are {output number of new cases in Mexico since yesterday} new cases in Mexico since yesterday.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "Will that be all?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov84": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": " Which three countries lead the world in total cases?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output number of cases for each leading country, combined total cases. Show pie chart with three countries and case numbers}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov85": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": " Which country has seen the least deaths?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{output country, number of deaths, of country with lowest amount of deaths}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov86": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": " Can you compare recovered cases in the United States to recovered cases in China?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "Do you mean total recovered cases or do you mean as a percent?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "As a percent.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "Do you want an overall comparison or a comparison over a span of time?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": "Comparison in the last month.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{show line graph with percent recovered cases over the last month with United States and China}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	},
+	"Cov87": {
+		"Dialogue": [
+			{
+				"Sender": "SCITalk",
+				"Message": "Hi, I can answer your questions about global COVID data.",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "User",
+				"Message": " Is this the 100th example convo?",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			},
+			{
+				"Sender": "SCITalk",
+				"Message": "{Output yes, I\u2019m struggling to come up with more ideas}",
+				"Intent": "",
+				"Entities": [
+					{
+						"Start": 0,
+						"End": 0,
+						"Value": "",
+						"Entity": ""
+					}
+				]
+			}
+		]
+	}
+}

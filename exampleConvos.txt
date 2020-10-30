@@ -1,0 +1,509 @@
+Cov 3:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Hey, what kind of questions can you answer?
+[SCITalk]: {Show list of types of questions SCITalk can answer}
+
+Cov 4:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: What symptom of COVID has been the most likely in infected patients?
+[SCITalk]: x is the most prominent symptom in COVID patients.
+[User]: Can you show me a list of the most common symptoms?
+[SCITalk]: {show a list of symptoms in order of prominence}
+
+Cov 5 :
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Can you tell me how many people have gotten COVID by country?
+[SCITalk]: {show a table of cases by  country}
+
+Cov 6:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Can you tell me how many people have gotten COVID by gender in x Country?
+[SCITalk]: {show a table of cases by gender in x}
+
+
+Cov 9:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Can you tell me how many people have died from COVID by country?
+[SCITalk]: {show a table of deaths by country}
+
+Cov 10:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Can you tell me how many people have died from COVID by gender in x country?
+[SCITalk]: {show a table of deaths by gender in x}
+
+
+Cov 13:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Can you tell me how many people have recovered from COVID by country?
+[SCITalk]: {show a table of recovered by country}
+
+Cov 14:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Can you tell me how many people have recovered from COVID by gender in country?
+[SCITalk]: {show a table of recovered by gender in x}
+
+
+Cov 17:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Can you show me a graph of number of cases per country?
+[SCITalk]: {show a bar graph of countries by confirmed cases}
+
+Cov 18:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Can you show me the trend of number of deaths and x country?
+[SCITalk]:  {show a line graph of number of deaths by x country}
+
+Cov 19 :
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Hello
+[SCITalk]: Hello, what would you like to know?
+[User]: How many Corona deaths worldwide?
+{SCITalk]: {output statistic from api}
+
+Cov 20:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Hi, I was wondering if you could tell me about deaths by gender?
+[SCITalk]: Worldwide or by a country?
+[User]: Worldwide
+[SCITalk]: {output worldwide deaths by gender from api}
+
+Cov 21:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Hi, I was wondering if you could tell me about deaths by gender?
+[SCITalk]: Worldwide or by a country?
+[User]: England
+[SCITalk]: {output England deaths by gender from api}
+
+Cov 22:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Can you show me the trend of corona cases worldwide?
+[SCITalk]: {output trendline from api}
+
+Cov 23:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: How many died from covid since in the last 2 weeks?
+[SCITalk]: Worldwide or for a specific country?
+[User]: Global
+[SCITalk]: {output total global deaths from 2 weeks ago to present}
+
+Cov 24:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Are covid case counts rising?
+[SCITalk]: Worldwide or for a specific country?
+[User]: Worldwide
+[SCITalk]: {output a line chart with global case counts over the past 30 days}
+[User]: Can you show the last 2 weeks instead?
+[SCITalk]: {output a line chart with global case counts over the past 14 days}
+
+Cov 25:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: How many deaths in Russia?
+[SCITalk]: New deaths or total deaths?
+[User]: New deaths
+[SCITalk]: {output new deaths for Russia}
+
+Cov 26:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Which country has the most cases of covid?
+[SCITalk]: New cases or total cases?
+[User]: total cases
+[SCITalk]: {output country with the most total confirmed cases}
+Cov 27:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Which countries have the most cases of covid-19?
+[SCITalk]: new or total cases?
+[User]: total
+[SCITalk]: {output table of top 10 countries by total case count}
+[SCITalk]: Would you like to see a graph of this data?
+[User]: yes
+[SCITalk]: {output bar graph of top 10 countries by total case count}
+
+Cov 28:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: How many people have covid in my country?
+[SCITalk]: Which country?
+[User]: US
+[SCITalk]: {output total confirmed cases for US}
+
+Cov 29:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: How have case counts changed this week?
+[SCITalk]: Worldwide or for a specific country?
+[User]: for a specific country
+[SCITalk]: Which country?
+[User]: France
+[SCITalk]: {output a line chart showing total case counts for France over the last 7 days}
+
+Cov 30:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: How many have died from covid 19?
+[SCITalk]: worldwide or in a specific country?
+[User]: worldwide
+[SCITalk]: {output total global deaths}
+
+Cov 31:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Were there more deaths or recoveries in Germany today?
+[SCITalk]: {output new deaths and new recoveries in Germany} 
+
+Cov 32:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Which countries have more than 1000 cases of covid?
+[SCITalk]: new cases or total cases?
+[User]: total cases
+[SCITalk]: {output list of countries with over 1000 total confirmed cases}
+
+Cov 33:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Do any countries have 0 new cases today?
+[SCITalk]: {output list of countries with 0 new confirmed cases}
+
+Cov 34:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Which country has the most recoveries from covid 19?
+[SCITalk]: new recoveries or total recoveries?
+[User]: total
+[SCITalk]: {output country with most total recoveries}
+
+Cov 35:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: How many countries have decreasing case counts?
+[SCITalk]: new cases or total cases?
+[User]: total
+[SCITalk]: {output all countries with less total cases today than the previous day}
+
+Cov 36:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Do any countries have more cases than the US?
+[SCITalk]: total cases or new cases?
+[User]: total
+[SCITalk]: {output all countries with more total confirmed cases than the US}
+
+Cov 37:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]:  I was wondering about the number of recoveries from COVID in the United States.
+[SCITalk]:  {output recoveries}
+Cov 38:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Can you show me the ratio of deaths from COVID in the US and China
+[SCITalk]: Total deaths or deaths today?
+[User]: Total deaths
+[SCITalk]: {output pie chart of total deaths in US and China}
+
+Cov 39:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Can you show me the ratio of deaths from COVID in the France and Italy
+[SCITalk]: Total deaths or deaths today?
+[User]: deaths today
+[SCITalk]: {output pie chart of new deaths in France and Italy}
+
+Cov 40:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Can you show me the ratio of recoveries from COVID in the Russia and Ukraine
+[SCITalk]: Total recoveries or recoveries today?
+[User]: Total recoveries
+[SCITalk]: {output pie chart of total recoveries in Russia and Ukraine}
+
+Cov 41:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Can you show me the ratio of recoveries from COVID in the US and Mexico
+[SCITalk]: Total recoveries or recoveries today?
+[User]: recoveries today
+[SCITalk]: {output pie chart of recoveries today in US and Mexico}
+
+Cov 42:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: How many more people have died in the US than the country with the second highest number of deaths?
+[SCITalk]: {output difference between total US deaths and second most deadly country’s deaths}
+
+Cov 43:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: What are the leading 10 countries in deaths from COVID?
+[SCITalk]: {Output list of 10 countries with most total COVID deaths}
+
+Cov 44:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: What country has had the most deaths today?
+[SCITalk]: {Output country with most deaths today}
+[User]: What about recoveries today?
+[SCITalk]: {Output country with most recoveries today}
+
+Cov 45:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: What are the leading 10 countries in recoveries from COVID?
+[SCITalk]: {Output list of 10 countries with most total COVID recoveries}
+
+Cov 46:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: What country has had the most recoveries today?
+[SCITalk]: {Output country with most recoveries today}
+[User]: What about new cases today?
+[SCITalk]: {Output country with most new cases today}
+
+Cov 47:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Which country has the highest recovery rate from COVID?
+[SCITalk]: {output country with highest ratio of number of recoveries per number of cases}
+
+Cov 48:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Which country has the highest death rate from COVID?
+[SCITalk]: {output country with highest ratio of number of deaths per number of cases}
+
+Cov 49:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Which continent has the highest number of deaths total?
+[SCITalk]: {Output continent with highest number of deaths total}
+
+Cov 50:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Which continent has the highest number of recoveries total?
+[SCITalk]: {Output continent with highest number of recoveries total}
+
+Cov 51:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Which continent has the highest number of cases total?
+[SCITalk]: {Output continent with highest number of cases total}
+
+Cov 52:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Which continent has the highest number of deaths today?
+[SCITalk]: {Output continent with highest number of deaths today}
+
+Cov 53:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Which continent has the highest number of recoveries today?
+[SCITalk]: {Output continent with highest number of recoveries today}
+
+Cov 54:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Which continent has the highest number of cases today?
+[SCITalk]: {Output continent with highest number of cases today}
+
+Cov 55:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Which continent has the highest death rate total?
+[SCITalk]: {Output continent with highest number of deaths per number of cases total}
+
+Cov 56:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Which continent has the highest recovery rate total?
+[SCITalk]: {Output continent with highest number of recoveries per number of cases total}
+
+Cov 57:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: What country had the most cases of COVID by the end of their Day 1?
+[SCITalk]: {Output country with most cases on Day 1}
+
+Cov 58:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: What country had the least cases of COVID by the end of their Day 1?
+[SCITalk]: {Output country with least cases on Day 1}
+
+Cov 59:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Are there any countries who had any deaths on their Day 1?
+[SCITalk]: {Yes or no depending on if any deaths on Day 1}
+
+Cov 60:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Which continent has the lowest number of recoveries total?
+[SCITalk]: {Output continent with lowest number of recoveries total}
+
+Cov 61:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Which continent has the lowest number of cases total?
+[SCITalk]: {Output continent with lowest number of cases total}
+
+Cov 62:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Which continent has the lowest number of deaths today?
+[SCITalk]: {Output continent with lowest number of deaths today}
+
+Cov 63:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Which continent has the lowest number of recoveries today?
+[SCITalk]: {Output continent with lowest number of recoveries today}
+
+Cov 64:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Which continent has the lowest number of cases today?
+[SCITalk]: {Output continent with lowest number of cases today}
+
+Cov 65:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Which continent has the lowest death rate total?
+[SCITalk]: {Output continent with lowest number of deaths per number of cases total}
+
+Cov 66:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Which continent has the lowest recovery rate total?
+[SCITalk]: {Output continent with lowest number of recoveries per number of cases total}
+
+Cov 67:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Which continent has the lowest number of deaths total?
+[SCITalk]: {Output continent with lowest number of deaths total}
+
+Cov 68:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]:  How many active cases of COVID are there in Germany?
+[SCITalk]: {Output number of cases - number of deaths and recoveries total from Germany}
+
+Cov 69:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]:  How many active cases of COVID are there in North America?
+[SCITalk]: {Output number of cases - number of deaths and recoveries total from North America}
+
+Cov 70:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: What country has the lowest number of active cases?
+[SCITalk]: {Output country with lowest number of cases - number of deaths and recoveries total}
+
+Cov 71:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Can you show me the trend of active cases in the United States by month?
+[SCITalk]: {Output line graph of number of cases - number of deaths and recoveries total in the US by month}
+
+Cov 72:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Can you show me the trend of active cases in Europe by day?
+[SCITalk]: {Output line graph of number of cases - number of deaths and recoveries total in Europe by day}
+
+Cov 73:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]: Can you show me the trend of active cases in each country in North America by month?
+[SCITalk]: {Output line graph of number of cases - number of deaths and recoveries total of countries in North America by month}
+
+Cov 74:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]:  Which countries have 0 active cases?
+[SCITalk]: {Output list of countries with number of cases - deaths - recoveries total = 0}
+
+Cov 75:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]:  What are all the countries you have information on?
+[SCITalk]: {Output list of all countries in API}
+
+Cov 76:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]:  Can you show me a bar graph of deaths of all countries in Asia?
+[SCITalk]: total deaths or deaths today?
+[User]: total deaths
+[SCITalk}{output bar graph of total deaths of all countries in Asia}
+
+Cov 77:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]:  Show me a pie chart of the total number of cases in the world by continent
+[SCITalk]: {Output pie chart of total cases in the world by continent
+
+Cov 78:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]:  Show me a pie chart of the total number of cases in the world by country
+[SCITalk]: {Output pie chart of total cases in the world by country
+
+Cov 79:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]:  Show me a pie chart of the total number of cases in the Europe by country
+[SCITalk]: {Output pie chart of total cases in the Europe by country
+
+Cov 80:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]:  Which continent has had the most recoveries per total cases?
+[SCITalk]: {Output continent with most recoveries per total cases}
+
+Cov 81:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]:  Which country has had the most recoveries per total cases?
+[SCITalk]: {Output country with most recoveries per total cases}
+
+Cov 82:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]:  Can you show me a bar graph of total deaths of all countries with more than 50000 deaths?
+[SCITalk]: {Output bar graph of total deaths of countries with more than 50000 total deaths}
+
+Cov 83:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]:  Can you show me a bar graph of total cases of all countries with more than 200,000 cases?
+[SCITalk]: {Output bar graph of total cases of countries with more than 200,000 total cases}
+
+Cov 84:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]:  Show me a bar graph of the total deaths per country of the 10 countries with the best recovery rate
+[SCITalk]: {Output bar graph of total deaths per country of 10 countries with most total recoveries over total cases}
+
+Cov 85:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]:  Show me a line graph of the average number of deaths per country by month
+[SCITalk]: {Output line graph of average number of deaths per country by month}
+
+Cov 86:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]:  Can you show me a line graph of the total number of cases in the world by month?
+[SCITalk]: {Output line graph of the total number of cases in the world by month}
+
+Cov 87:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]:  Show me a bar graph of new cases by country today
+[SCITalk]: {Output bar graph of new cases by country}
+
+Cov 88:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]:  Can you show me the number of new cases in Alabama from yesterday?
+[SCITalk]: Sorry, I don’t have data on individual states in the United States. I can answer questions on a country-by-country basis!
+
+Cov 89:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]:  What was the highest number of new cases Russia saw in one day?
+[SCITalk]: Russia saw {output highest number of new cases in one day in Russia} cases on {output relevant date}. Will that be all?
+[User]: What about Poland?
+[SCITalk]: Poland saw {output highest number of new cases in one day in Poland} cases on {output relevant date}. Will that be all?
+[User]: Yes.
+[SCITalk]: Okay, bye!
+
+Cov 91:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]:  What country is doing the worst with COVID right now?
+[SCITalk]: With respect to what? Deaths? New cases?
+[User]: Deaths.
+[SCITalk]: Okay, do you mean who has the most new deaths today? Or do you want an average across a certain time span?
+[User]: The most new deaths in the last seven days.
+[SCITalk]: Okay. {output country with the most new deaths in the last 7 days} saw the most new deaths in the last seven days, averaging {output average of daily new deaths in country over the last seven days} new deaths per day. Does that answer your question?
+[User]: Yes.
+[SCITalk]: Okay. Anything else?
+[User]: No, I don’t think so.
+[SCITalk]: Okay, bye!
+
+Cov 92:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]:  No you can’t.
+[SCITalk]: You dare challenge me, mortal?
+[User]: I take it back, I’m sorry. How many new cases are there in Mexico?
+[SCITalk]: Since yesterday?
+[User]: Yes.
+[SCITalk]: There are {output number of new cases in Mexico since yesterday} new cases in Mexico since yesterday.
+[SCITalk]: Will that be all?
+
+Cov 93:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]:  Which three countries lead the world in total cases?
+[SCITalk]: {output number of cases for each leading country, combined total cases. Show pie chart with three countries and case numbers}
+
+Cov 94:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]:  Which country has seen the least deaths?
+[SCITalk]: {output country, number of deaths, of country with lowest amount of deaths}
+
+Cov 95:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]:  Can you compare recovered cases in the United States to recovered cases in China?
+[SCITalk]: Do you mean total recovered cases or do you mean as a percent?
+[User]: As a percent.
+[SCITalk]: Do you want an overall comparison or a comparison over a span of time?
+[User]: Comparison in the last month.
+[SCITalk]: {show line graph with percent recovered cases over the last month with United States and China}
+
+Cov 100:
+[SCITalk]: Hi, I can answer your questions about global COVID data.
+[User]:  Is this the 100th example convo?
+[SCITalk]: {Output yes, I’m struggling to come up with more ideas}

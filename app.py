@@ -65,8 +65,9 @@ def generate_response(msg, author):
     
     # generate response
     #response['question'] = in_proc.process()
-    response = demo(msg.lower(), cleaned_text)
-    rasa = get_rasa_response(msg)
+    #response = demo(msg.lower(), cleaned_text)
+    
+	rasa = get_rasa_response(msg)
     if rasa != None:
         response['question'] = rasa
     return response

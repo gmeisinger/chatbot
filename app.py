@@ -43,7 +43,8 @@ def get_rasa_response(text):
     r = req.post("http://localhost:5005/webhooks/rest/webhook", data = j.dumps(data), headers = headers)
     response = r.json()
     if response != None:
-        return response[0]["text"]
+        return type(response)
+#        return response[0]["text"]
     return None
 
 ### Chatbot helper functions ###

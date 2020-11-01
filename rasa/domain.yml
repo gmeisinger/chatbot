@@ -27,7 +27,7 @@ responses:
   - text: "Bye"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "I am SCITalk, built by Pitt students and powered by Rasa."
 
   utter_case_count:
   - text: "There are {count} {scope} {case_type} cases in {country}."

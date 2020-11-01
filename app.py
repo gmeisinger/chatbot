@@ -43,8 +43,8 @@ def get_rasa_response(text):
     r = req.post("http://localhost:5005/webhooks/rest/webhook", data = j.dumps(data), headers = headers)
     response = r.json()
     if response != None:
-        print(response, flush=True)
-        return str(type(response))
+        print(response[0], flush=True)
+        return str(type(response[0]))
 #        return response[0]["text"]
     return None
 

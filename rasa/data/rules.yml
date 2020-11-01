@@ -12,3 +12,7 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
+- rule: Give case counts when the use asks
+  steps:
+  - intent: ask_about_case_count
+  - action: action_case_count

@@ -91,13 +91,6 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
 
-- intent: ask_about_case_count
-  examples: |
-    - \.*how many .*(died|deaths|cases|confirmed|recovered).*\
-    - how many [new](scope) [deaths](case_type) in [russia](country)?
-    - how many [total](scope) people [recovered](case_type) from covid in [ireland](country)?
-    - how many [new](scope) [confirmed](case_type) cases are in [mexico](country)?
-
 - intent: ask_about_new_national_cases_today
   examples: |
     - how many new cases in [the united states](country) [today](relative_time)?

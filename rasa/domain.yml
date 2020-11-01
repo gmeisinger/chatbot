@@ -8,7 +8,6 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
-  - ask_about_case_count
 
 responses:
   utter_greet:
@@ -28,7 +27,7 @@ responses:
   - text: "Bye"
 
   utter_iamabot:
-  - text: "I am SCITalk, built by Pitt students and powered by Rasa."
+  - text: "I am a bot, powered by Rasa."
 
   utter_case_count:
   - text: "There are {count} {scope} {case_type} cases in {country}."

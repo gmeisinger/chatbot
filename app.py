@@ -42,10 +42,10 @@ def get_rasa_response(text):
     }
     r = req.post("http://localhost:5005/webhooks/rest/webhook", data = j.dumps(data), headers = headers)
     response = r.json()
-    if response != None:
+    if response != None and len(response) > 0:
         print(response[0], flush=True)
-        return str(type(response[0]))
-#        return response[0]["text"]
+        #return str(type(response[0]))
+        return response[0]["text"]
     return None
 
 ### Chatbot helper functions ###
@@ -56,14 +56,14 @@ def generate_response(msg, author):
     cleaned_text = clean_text(msg)
     # response template
     response = {
-        'question': '',
+        'question': 'Huh?',
         'name': 'SCITalk',
         'code': '',
         'images': [],
         'relation': ''
     }
     # find intent
-    in_proc = InputProcessor(cleaned_text)
+    #in_proc = InputProcessor(cleaned_text)
     
     # generate response
     #response['question'] = in_proc.process()

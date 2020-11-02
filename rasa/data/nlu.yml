@@ -1,5 +1,4 @@
 version: "2.0"
-
 nlu:
 - intent: greet
   examples: |
@@ -16,7 +15,7 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
+    - Hi
 - intent: goodbye
   examples: |
     - good afternoon
@@ -30,7 +29,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: affirm
   examples: |
     - yes
@@ -39,7 +37,6 @@ nlu:
     - of course
     - that sounds good
     - correct
-
 - intent: deny
   examples: |
     - no
@@ -49,7 +46,6 @@ nlu:
     - don't like that
     - no way
     - not really
-
 - intent: mood_great
   examples: |
     - perfect
@@ -66,7 +62,6 @@ nlu:
     - so so perfect
     - so good
     - so perfect
-
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -83,26 +78,24 @@ nlu:
     - extremly sad
     - so saad
     - so sad
-
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-
+    - Are you a bot?
 - intent: ask_about_case_count
   examples: |
-    - \.*how many .*(died|deaths|cases|confirmed|recovered).*\
-    - how many [new](scope) [deaths](case_type) in [russia](country)?
+    - \.*how many .*(cases|confirmed|recovered).*\
     - how many [total](scope) people [recovered](case_type) from covid in [ireland](country)?
     - how many [new](scope) [confirmed](case_type) cases are in [mexico](country)?
     - how many [new](scope) cases in [the united states](country) [today](relative_time)?
     - how many [new](scope) [covid](virus) cases were there in [germany](country) [today](relative_time)?
     - how many [active cases](act_cases) are there in [russia](country)?
-
 - intent: ask_about_deaths
   examples: |
+    - - \.*how many .*(died|deaths).*\
     - how many people [died](deaths) of [covid](virus) [today](relative_time) in [france](country)?
     - did anyone [die](deaths) in [south africa](country) [today](relative_time)?
     - how many people [died](deaths) of [coronavirus](virus) in [china](country)?
@@ -112,7 +105,9 @@ nlu:
     - how many [lives have been lost](deaths)?
     - how many people [died](deaths) in [april](month)?
     - were there any [deaths](deaths) in [january](month)?
-
+    - How many [deaths](deaths) are there in [the United States](country)?
+    - how many [new](scope) [deaths](deaths) in [russia](country)?
+    - How many people have [died](deaths) in [Venezuela](country)?
 - lookup: deaths
   examples: |
     - deaths
@@ -121,13 +116,11 @@ nlu:
     - die
     - fatalities
     - lives lost
-
 - lookup: mortality_rate
   examples: |
     - mortality rate
     - rate of death
     - death rate
-
 - lookup: recovery
   examples: |
     - recover
@@ -136,7 +129,6 @@ nlu:
     - recovr
     - survived
     - improved
-
 - lookup: month
   examples: |
     - january
@@ -151,7 +143,6 @@ nlu:
     - october
     - november
     - december
-
 - lookup: weekday
   examples: |
     - monday
@@ -161,7 +152,6 @@ nlu:
     - friday
     - saturday
     - sunday
-
 - lookup: virus
   examples: |
     - coronavirus
@@ -172,7 +162,6 @@ nlu:
     - the virus
     - pandemic
     - the pandemic
-
 - lookup: relative_time
   examples: |
     - today

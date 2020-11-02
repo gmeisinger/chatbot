@@ -1,65 +1,58 @@
-version: "2.0"
-
-intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - ask_about_case_count
-
-entities:
-  - country
-  - deaths
-
-slots:
-  country:
-    type: text
-
-  scope:
-    type: categorical
-    values:
-    - new 
-    - total
-  
-  case_type:
-    type: categorical
-    values:
-    - deaths
-    - recovered
-    - confirmed
-  
-  count:
-    type: text
-
-responses:
-  utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am SCITalk, built by Pitt students and powered by Rasa."
-
-  utter_case_count:
-  - text: "There are {count} {scope} {case_type} cases in {country}."
-
-actions:
-  - action_case_count
-  
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+intents:
+- greet
+- ask_about_deaths
+- bot_challenge
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- ask_about_case_count
+entities:
+- country
+- deaths
+slots:
+  case_type:
+    type: categorical
+    influence_conversation: true
+    values:
+    - recovered
+    - confirmed
+    - __other__
+  count:
+    type: text
+    influence_conversation: true
+  country:
+    type: text
+    influence_conversation: true
+  scope:
+    type: categorical
+    influence_conversation: true
+    values:
+    - new
+    - total
+    - __other__
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am SCITalk, built by Pitt students and powered by Rasa.
+  utter_case_count:
+  - text: There are {count} {scope} {case_type} cases in {country}.
+actions:
+- action_case_count
+- utter_greet
+- utter_iamabot
+version: '2.0'

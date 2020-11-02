@@ -28,3 +28,30 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: interactive_story_2
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - intent: ask_about_deaths
+    entities:
+    - deaths: deaths
+    - country: the United States
+  - slot_was_set:
+    - country: the United States
+
+- story: interactive_story_3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_about_deaths
+    entities:
+    - deaths: died
+    - country: Venezuela
+  - slot_was_set:
+    - country: Venezuela

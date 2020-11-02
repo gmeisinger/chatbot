@@ -10,6 +10,30 @@ intents:
   - bot_challenge
   - ask_about_case_count
 
+entities:
+  - country
+  - deaths
+
+slots:
+  country:
+    type: text
+
+  scope:
+    type: categorical
+    values:
+    - new 
+    - total
+  
+  case_type:
+    type: categorical
+    values:
+    - deaths
+    - recovered
+    - confirmed
+  
+  count:
+    type: text
+
 responses:
   utter_greet:
   - text: "Hey! How are you?"

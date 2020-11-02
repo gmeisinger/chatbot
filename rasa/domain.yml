@@ -23,7 +23,9 @@ slots:
     influence_conversation: true
     values:
     - recovered
+    - recoveries
     - confirmed
+    - cases
     - deaths
     - __other__
   count:

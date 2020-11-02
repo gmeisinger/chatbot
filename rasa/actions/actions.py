@@ -55,7 +55,9 @@ class ActionCaseCount(Action):
         scope = tracker.get_slot('scope')
         case_type = tracker.get_slot('case_type')
         country = tracker.get_slot('country')
-        summary = self.get_summary()
+        # get data from api
+        r = requests.get("https://api.covid19api.com/summary")
+        summary = r.json()
         # target a country
         countries = summary['Countries']
         data = next((item for item in countries if (item['Slug'] == country or item['Country'] == country)), None)
@@ -75,10 +77,3 @@ class ActionCaseCount(Action):
         #    country=country
         #)
         return [slot_scope, slot_case_type, slot_country, slot_count, evt]
-    
-    # gets daily summary, which contains new and total case data globally and for each country
-    # dict with keys "Global", "Countries", "Date", "Message"
-    def get_summary():
-        r = requests.get("https://api.covid19api.com/summary")
-        data = r.json()
-        return data

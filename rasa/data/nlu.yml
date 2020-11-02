@@ -92,22 +92,19 @@ nlu:
     - how many [new](scope) [confirmed](case_type) cases are in [mexico](country)?
     - how many [new](scope) cases in [the united states](country) [today](relative_time)?
     - how many [new](scope) [covid](virus) cases were there in [germany](country) [today](relative_time)?
-    - how many [active cases](act_cases) are there in [russia](country)?
-- intent: ask_about_deaths
-  examples: |
-    - - \.*how many .*(died|deaths).*\
-    - how many people [died](deaths) of [covid](virus) [today](relative_time) in [france](country)?
-    - did anyone [die](deaths) in [south africa](country) [today](relative_time)?
-    - how many people [died](deaths) of [coronavirus](virus) in [china](country)?
-    - has anybody [died](deaths) in [south korea](country)?
-    - how many people have [died](deaths) from [covid](virus)?
-    - how many people has covid [killed](deaths)?
-    - how many [lives have been lost](deaths)?
-    - how many people [died](deaths) in [april](month)?
-    - were there any [deaths](deaths) in [january](month)?
-    - How many [deaths](deaths) are there in [the United States](country)?
-    - how many [new](scope) [deaths](deaths) in [russia](country)?
-    - How many people have [died](deaths) in [Venezuela](country)?
+    - how many [total](scope) [confirmed](case_type) cases are there in [russia](country)?
+    - how many people [deaths](case_type) of [covid](virus) [today](relative_time) in [france](country)?
+    - did anyone [deaths](case_type) in [south africa](country) [today](relative_time)?
+    - how many people [deaths](case_type) of [coronavirus](virus) in [china](country)?
+    - has anybody [deaths](case_type) in [south korea](country)?
+    - how many people have [deaths](case_type) from [covid](virus)?
+    - how many people has covid [deaths](case_type)?
+    - how many [deaths](case_type)?
+    - how many people [deaths](case_type) in [april](month)?
+    - were there any [deaths](case_type) in [january](month)?
+    - How many [deaths](case_type) are there in [the United States](country)?
+    - how many [new](scope) [deaths](case_type) in [russia](country)?
+    - How many people have [deaths](case_type) in [Venezuela](country)?
 - lookup: deaths
   examples: |
     - deaths
@@ -116,6 +113,7 @@ nlu:
     - die
     - fatalities
     - lives lost
+    - killed
 - lookup: mortality_rate
   examples: |
     - mortality rate

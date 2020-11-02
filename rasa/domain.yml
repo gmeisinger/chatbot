@@ -24,6 +24,7 @@ slots:
     values:
     - recovered
     - confirmed
+    - deaths
     - __other__
   count:
     type: text

@@ -42,8 +42,8 @@ class ActionCaseCount(Action):
     @staticmethod
     def required_fields():
         return [
-            EntityFormField("scope", "scope"),
-            EntityFormField("case_type", "case_type"),
+            #EntityFormField("scope", "scope"),
+            #EntityFormField("case_type", "case_type"),
             EntityFormField("country", "country")
         ]
 
@@ -53,14 +53,21 @@ class ActionCaseCount(Action):
     def run(self, dispatcher, tracker, domain):
         # get data
         scope = tracker.get_slot('scope')
+        if scope == None:
+            scope = "total"
         case_type = tracker.get_slot('case_type')
+        if case_type == None:
+            case_type = "confirmed"
         country = tracker.get_slot('country')
         # get data from api
         r = requests.get("https://api.covid19api.com/summary")
         summary = r.json()
         # target a country
         countries = summary['Countries']
-        data = next((item for item in countries if (item['Slug'] == country or item['Country'] == country)), None)
+        if country == None:
+            data = summary['Global']
+        else:
+            data = next((item for item in countries if (item['Slug'] == country or item['Country'] == country)), None)
         key_string = scope.capitalize() + case_type.capitalize()
         count = data[key_string]
         # report the information
@@ -69,11 +76,12 @@ class ActionCaseCount(Action):
         slot_country = SlotSet(key='country', value=country)
         slot_count = SlotSet(key='count', value=count)
         evt = FollowupAction(name = "utter_case_count")
-        #dispatcher.utter_message(
-        #    template="utter_case_count",
-        #    count=count,
-        #    scope=scope,
-        #    case_type=case_type,
-        #    country=country
-        #)
-        return [slot_scope, slot_case_type, slot_country, slot_count, evt]
+        dispatcher.utter_message(
+            template="utter_case_count",
+            count=count,
+            scope=scope,
+            case_type=case_type,
+            country=country
+        )
+        #return [slot_scope, slot_case_type, slot_country, slot_count, evt]
+        return []

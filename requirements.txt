@@ -20,7 +20,7 @@ cloudpickle==1.4.1
 colorclass==2.2.0
 coloredlogs==14.0
 colorhash==1.0.2
-cryptography==3.1.1
+cryptography>=3.2
 cssselect==1.1.0
 cssselect2==0.3.0
 cycler==0.10.0
@@ -130,7 +130,7 @@ tensorflow-addons==0.11.2
 tensorflow-estimator==2.3.0
 tensorflow-hub==0.9.0
 tensorflow-probability==0.11.1
-tensorflow-text==2.3.0
+tensorflow-text>=2.3.0
 termcolor==1.1.0
 terminaltables==3.1.0
 threadpoolctl==2.1.0

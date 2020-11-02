@@ -101,30 +101,17 @@ nlu:
     - how many [new](scope) [covid](virus) cases were there in [germany](country) [today](relative_time)?
     - how many [active cases](act_cases) are there in [russia](country)?
 
-- intent: ask_about_new_national_deaths_today
+- intent: ask_about_deaths
   examples: |
-    - how many people [died](deaths) of [covid](virus) today in [france](country)?
+    - how many people [died](deaths) of [covid](virus) [today](relative_time) in [france](country)?
     - did anyone [die](deaths) in [south africa](country) [today](relative_time)?
-    - were there new [deaths](deaths) in [mexico](country) [today](day)?
-
-- intent: ask_about_national_deaths_no_time
-  examples: |
     - how many people [died](deaths) of [coronavirus](virus) in [china](country)?
-    - did anybody [die](deaths) in [south korea](country)?
-    - has [canada](country) seen any more [deaths](deaths)?
-
-- intent: ask_about_deaths_no_time_or_place
-  examples: |
-    - how many people have [died](deaths)?
-    - how many [deaths](deaths) have there been?
+    - has anybody [died](deaths) in [south korea](country)?
+    - how many people have [died](deaths) from [covid](virus)?
     - how many people has covid [killed](deaths)?
     - how many [lives have been lost](deaths)?
-
-- intent: ask_about_deaths_time_no_place
-  examples: |
     - how many people [died](deaths) in [april](month)?
     - were there any [deaths](deaths) in [january](month)?
-    - how many [died](deaths) [yesterday](relative_time)?
 
 - lookup: deaths
   examples: |

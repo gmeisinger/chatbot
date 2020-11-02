@@ -55,3 +55,19 @@ stories:
     - country: Venezuela
   - slot_was_set:
     - country: Venezuela
+
+- story: interactive_story_4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_about_case_count_multiple_country
+    entities:
+    - deaths: died
+    - countries: 
+      - Venezuela
+      - columbia
+  - slot_was_set:
+    - countries: 
+      - Venezuela
+      - columbia
+  - action: action_case_count_multiple_country

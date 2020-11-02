@@ -13,6 +13,8 @@ intents:
 entities:
   - country
   - deaths
+  - scope
+  - case_type
 
 slots:
   country:

@@ -28,6 +28,7 @@
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+#from rasa_sdk.events import 
 
 import requests
 import json
@@ -38,13 +39,13 @@ import json
 # country needs to be a slug
 class ActionCaseCount(Action):
 
-    @staticmethod
-    def required_fields():
-        return [
-            EntityFormField("scope", "scope"),
-            EntityFormField("case_type", "case_type"),
-            EntityFormField("country", "country")
-        ]
+    #@staticmethod
+    #def required_fields():
+    #    return [
+    #        EntityFormField("scope", "scope"),
+    #        EntityFormField("case_type", "case_type"),
+    #        EntityFormField("country", "country")
+    #    ]
 
     def name(self):
         return "action_case_count"
@@ -61,14 +62,19 @@ class ActionCaseCount(Action):
         key_string = scope.capitalize() + case_type.capitalize()
         count = data[key_string]
         # report the information
-        dispatcher.utter_message(
-            template="utter_case_count",
-            count=count,
-            scope=scope,
-            case_type=case_type,
-            country=country
-        )
-        return []
+        slot_scope = SlotSet(key='scope', value=scope)
+        slot_case_type = SlotSet(key='case_type', value=case_type)
+        slot_country = SlotSet(key='country', value=country)
+        slot_count = SlotSet(key='count', value=count)
+        evt = FollowupAction(name = "utter_case_count")
+        #dispatcher.utter_message(
+        #    template="utter_case_count",
+        #    count=count,
+        #    scope=scope,
+        #    case_type=case_type,
+        #    country=country
+        #)
+        return [slot_scope, slot_case_type, slot_country, slot_count, evt]
     
     # gets daily summary, which contains new and total case data globally and for each country
     # dict with keys "Global", "Countries", "Date", "Message"

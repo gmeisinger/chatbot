@@ -28,6 +28,7 @@
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+#from rasa_sdk.events import 
 
 import requests
 import json
@@ -54,25 +55,25 @@ class ActionCaseCount(Action):
         scope = tracker.get_slot('scope')
         case_type = tracker.get_slot('case_type')
         country = tracker.get_slot('country')
-        summary = get_summary()
+        # get data from api
+        r = requests.get("https://api.covid19api.com/summary")
+        summary = r.json()
         # target a country
         countries = summary['Countries']
         data = next((item for item in countries if (item['Slug'] == country or item['Country'] == country)), None)
         key_string = scope.capitalize() + case_type.capitalize()
         count = data[key_string]
         # report the information
-        dispatcher.utter_message(
-            template="utter_case_count",
-            count=count,
-            scope=scope,
-            case_type=case_type,
-            country=country
-        )
-        return []
-    
-    # gets daily summary, which contains new and total case data globally and for each country
-    # dict with keys "Global", "Countries", "Date", "Message"
-    def get_summary():
-        r = requests.get("https://api.covid19api.com/summary")
-        data = r.json()
-        return data
+        slot_scope = SlotSet(key='scope', value=scope)
+        slot_case_type = SlotSet(key='case_type', value=case_type)
+        slot_country = SlotSet(key='country', value=country)
+        slot_count = SlotSet(key='count', value=count)
+        evt = FollowupAction(name = "utter_case_count")
+        #dispatcher.utter_message(
+        #    template="utter_case_count",
+        #    count=count,
+        #    scope=scope,
+        #    case_type=case_type,
+        #    country=country
+        #)
+        return [slot_scope, slot_case_type, slot_country, slot_count, evt]

@@ -12,16 +12,10 @@ intents:
 - mood_unhappy
 - ask_about_case_count
 entities:
-<<<<<<< HEAD
-- country
-- deaths
-=======
   - country
   - deaths
   - scope
   - case_type
-
->>>>>>> d44374cdd5af294199bbaaec520a0b3e40dcc328
 slots:
   case_type:
     type: categorical

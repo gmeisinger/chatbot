@@ -55,7 +55,7 @@ class ActionCaseCount(Action):
         scope = tracker.get_slot('scope')
         case_type = tracker.get_slot('case_type')
         country = tracker.get_slot('country')
-        summary = get_summary()
+        summary = self.get_summary()
         # target a country
         countries = summary['Countries']
         data = next((item for item in countries if (item['Slug'] == country or item['Country'] == country)), None)

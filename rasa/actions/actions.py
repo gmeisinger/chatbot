@@ -39,13 +39,13 @@ import json
 # country needs to be a slug
 class ActionCaseCount(Action):
 
-    #@staticmethod
-    #def required_fields():
-    #    return [
-    #        EntityFormField("scope", "scope"),
-    #        EntityFormField("case_type", "case_type"),
-    #        EntityFormField("country", "country")
-    #    ]
+    @staticmethod
+    def required_fields():
+        return [
+            EntityFormField("scope", "scope"),
+            EntityFormField("case_type", "case_type"),
+            EntityFormField("country", "country")
+        ]
 
     def name(self):
         return "action_case_count"

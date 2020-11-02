@@ -16,6 +16,7 @@ entities:
   - deaths
   - scope
   - case_type
+
 slots:
   case_type:
     type: categorical

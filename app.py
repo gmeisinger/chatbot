@@ -42,32 +42,25 @@ def get_rasa_response(text):
     }
     r = req.post("http://localhost:5005/webhooks/rest/webhook", data = j.dumps(data), headers = headers)
     response = r.json()
-    if response != None and len(response) > 0:
-        print(response[0], flush=True)
-        #return str(type(response[0]))
-        return response[0]["text"]
-    return None
-
-### Chatbot helper functions ###
-
-# given a message from the user, generates and returns a response from Chatbot
-def generate_response(msg, author):
-    # clean the text
-    cleaned_text = clean_text(msg)
-    # response template
-    response = {
+    rasa = {
         'question': 'Huh?',
         'name': 'SCITalk',
         'code': '',
         'images': [],
         'relation': ''
     }
-    # find intent
-    #in_proc = InputProcessor(cleaned_text)
-    
-    # generate response
-    #response['question'] = in_proc.process()
-    #response = demo(msg.lower(), cleaned_text)
+    if response != None and len(response) > 0:
+        rasa['question'] = response[0]["text"]
+        if response['image'] != None:
+            rasa['images'].append(response['image'])
+    return rasa
+
+### Chatbot helper functions ###
+
+# given a message from the user, generates and returns a response from Chatbot
+def generate_response(msg, author):
+    # clean the text
+    #cleaned_text = clean_text(msg)
     rasa = get_rasa_response(msg)
     if rasa != None:
         response['question'] = rasa

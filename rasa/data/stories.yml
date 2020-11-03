@@ -62,7 +62,7 @@ stories:
   - action: utter_greet
   - intent: ask_about_case_count_multiple_country
     entities:
-    - deaths: died
+    - case_type: deaths
     - countries: 
       - Venezuela
       - columbia

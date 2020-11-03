@@ -13,9 +13,9 @@ intents:
 - ask_about_case_count
 - ask_about_case_count_multiple_country
 entities:
+  - name
   - country
   - countries
-  - deaths
   - scope
   - case_type
 
@@ -25,14 +25,12 @@ slots:
     influence_conversation: true
     values:
     - recovered
-    - recoveries
     - confirmed
-    - cases
     - deaths
-    - __other__
   count:
     type: text
     influence_conversation: true
+    auto_fill: False
   country:
     type: text
     influence_conversation: true
@@ -45,7 +43,6 @@ slots:
     values:
     - new
     - total
-    - __other__
 responses:
   utter_greet:
   - text: Hey! How are you?

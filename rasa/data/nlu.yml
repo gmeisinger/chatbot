@@ -132,14 +132,17 @@ nlu:
     - mortality rate
     - rate of death
     - death rate
-- lookup: recovery
+- lookup: recovered
   examples: |
     - recover
     - recovery
-    - recovered
     - recovr
     - survived
     - improved
+- lookup: confirmed
+  examples: |
+    - active
+    - cases
 - lookup: month
   examples: |
     - january

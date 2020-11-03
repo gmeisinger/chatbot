@@ -7,8 +7,8 @@ rules:
   - intent: goodbye
   - action: utter_goodbye
 
-- rule: Give case counts when the use asks
-  steps:
-  - intent: ask_about_case_count
-  - action: action_case_count
+# - rule: Give case counts when the use asks
+#   steps:
+#   - intent: ask_about_case_count
+#   - action: action_case_count
 

@@ -16,6 +16,7 @@ nlu:
     - goodevening
     - good afternoon
     - Hi
+    - Hey
 - intent: goodbye
   examples: |
     - good afternoon
@@ -104,6 +105,8 @@ nlu:
     - How many [deaths](case_type) are there in [the United States](country)?
     - how many [new](scope) [deaths](case_type) in [russia](country)?
     - How many people have [deaths](case_type) in [Venezuela](country)?
+    - How many cases in [Argentina](country)?
+    - How many cases in [Canada](country)?
 - intent: ask_about_case_count_multiple_country
   examples: |
     - how many [total](scope) people [recovered](case_type) from covid in [ireland](countries) and [england](countries)?

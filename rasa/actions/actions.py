@@ -32,6 +32,7 @@ from rasa_sdk.events import SlotSet, FollowupAction
 
 import requests
 import json
+import pygal
 
 # this action gets a case count for a specific country.
 # case types are (Confirmed, Recovered, Deaths)
@@ -173,4 +174,72 @@ class ActionCaseCountMultCountry(Action):
             # else:
             #     dispatcher.utter_message(text="Well why didnt this work?")
         #return [slot_scope, slot_case_type, slot_country, slot_count, evt]
+        return []
+
+class ActionCaseSummaryGraph(Action):
+    @staticmethod
+    def required_fields():
+        return [
+            EntityFormField("countries", "countries")
+        ]
+
+    def name(self):
+        return "action_case_summary_graph"
+
+    def Linechart(title, data, value_tag, label_tag):
+    line_chart = pygal.Line()
+    line_chart.title = title
+
+    # changes
+    for category in data:
+        data_num = []
+        for entry in category:
+            data_num.append(int(entry[value_tag]))
+        line_chart.add(str(category[0][label_tag]), data_num)
+
+    return line_chart.render_data_uri()
+
+    def run(self, dispatcher, tracker, domain):
+        case_type = tracker.get_slot('case_type')
+        if case_type == None:
+            case_type = "confirmed"
+
+        country = tracker.get_slot('country')
+        # get data from api
+        r = requests.get("https://api.covid19api.com/summary")
+        summary = r.json()
+        # target a country
+        countries = summary['Countries']
+        if country == None:
+            data = summary['Global']
+        else:
+            data = next((item for item in countries if (item['Slug'] == country or item['Country'] == country)), None)
+
+        # extract slug
+        slug = ""
+        if data != None:
+            slug = data['Slug']
+
+        else:
+            return []
+
+        # preparing to query api for dayone data
+        qstring = "https://api.covid19api.com/dayone/country/" + slug + "/status/" + case_type
+
+        # get data from api
+        r = requests.get(qstring)
+        dayone = r.json()
+
+        # build linechart
+        title = ''
+        vtag = ''
+        ltag = 'Country'
+        if case_type == 'deaths':
+            title = 'Deaths in ' + data['Country']
+            vtag = 'Deaths'
+        else:
+            title = case_type.capitalize() + ' Cases in' + data['Country']
+            vtag = case_type.capitalize() + ' Cases'
+        linechart = Linechart(title, [dayone], vtag, ltag)
+
         return []

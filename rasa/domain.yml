@@ -11,9 +11,11 @@ intents:
 - mood_great
 - mood_unhappy
 - ask_about_case_count
+- ask_about_case_count_multiple_country
 entities:
   - name
   - country
+  - countries
   - scope
   - case_type
 
@@ -31,6 +33,9 @@ slots:
     auto_fill: False
   country:
     type: text
+    influence_conversation: true
+  countries:
+    type: list
     influence_conversation: true
   scope:
     type: categorical
@@ -54,8 +59,11 @@ responses:
   - text: I am SCITalk, built by Pitt students and powered by Rasa.
   utter_case_count:
   - text: There are {count} {scope} {case_type} cases in {country}.
+  utter_case_count_two_country:
+  - text: There are {count1} {scope} {case_type} cases in {country1} and {count2} {scope} {case_type} cases in {country2}.
 actions:
 - action_case_count
+- action_case_count_multiple_country
 - utter_greet
 - utter_iamabot
 version: '2.0'

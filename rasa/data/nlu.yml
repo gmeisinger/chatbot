@@ -88,25 +88,32 @@ nlu:
     - Are you a bot?
 - intent: ask_about_case_count
   examples: |
-    - how many [total](scope) people [recovered](case_type) from covid in [ireland](country)?
-    - how many [new](scope) [confirmed](case_type) cases are in [mexico](country)?
-    - how many [new](scope) cases in [the united states](country) [today](relative_time)?
-    - how many [new](scope) [covid](virus) cases were there in [germany](country) [today](relative_time)?
-    - how many [total](scope) [confirmed](case_type) cases are there in [russia](country)?
-    - how many people [deaths](case_type) of [covid](virus) [today](relative_time) in [france](country)?
-    - did anyone [deaths](case_type) in [south africa](country) [today](relative_time)?
-    - how many people [deaths](case_type) of [coronavirus](virus) in [china](country)?
-    - has anybody [deaths](case_type) in [south korea](country)?
+    - how many [total](scope) people [recovered](case_type) from covid in [ireland](countries)?
+    - how many [new](scope) [confirmed](case_type) cases are in [mexico](countries)?
+    - how many [new](scope) cases in [the united states](countries) [today](relative_time)?
+    - how many [new](scope) [covid](virus) cases were there in [germany](countries) [today](relative_time)?
+    - how many [total](scope) [confirmed](case_type) cases are there in [russia](countries)?
+    - how many people [deaths](case_type) of [covid](virus) [today](relative_time) in [france](countries)?
+    - did anyone [deaths](case_type) in [south africa](countries) [today](relative_time)?
+    - how many people [deaths](case_type) of [coronavirus](virus) in [china](countries)?
+    - has anybody [deaths](case_type) in [south korea](countries)?
     - how many people have [deaths](case_type) from [covid](virus)?
     - how many people has covid [deaths](case_type)?
     - how many [deaths](case_type)?
     - how many people [deaths](case_type) in [april](month)?
     - were there any [deaths](case_type) in [january](month)?
-    - How many [deaths](case_type) are there in [the United States](country)?
+    - How many [deaths](case_type) are there in the [United States](country)?
     - how many [new](scope) [deaths](case_type) in [russia](country)?
     - How many people have [deaths](case_type) in [Venezuela](country)?
     - How many cases in [Argentina](country)?
     - How many cases in [Canada](country)?
+    - How many [deaths](case_type) are there in [the United States](countries)?
+    - how many [new](scope) [deaths](case_type) in [russia](countries)?
+    - How many people have [deaths](case_type) in [Venezuela](countries)?
+- intent: ask_about_case_count_by_time
+  examples: |
+    - how many deaths have there been in [mexico](country) per [month](by_time)?
+    - how many confirmed cases has there been in [china](country) by [day](by_time) in [october](month)?
 - intent: ask_about_case_count_multiple_country
   examples: |
     - how many [total](scope) people [recovered](case_type) from covid in [ireland](countries) and [england](countries)?
@@ -184,6 +191,11 @@ nlu:
     - yesterday
     - last week
     - last month
+- lookup: by_time
+  examples: |
+    -month
+    -day
+    -year
 - lookup: countries
   examples: |
     - niger

@@ -93,7 +93,7 @@ class ActionCaseCountMultCountry(Action):
         return [
             #EntityFormField("scope", "scope"),
             #EntityFormField("case_type", "case_type"),
-            EntityFormField("country", "country")
+            EntityFormField("countries", "countries")
         ]
 
     def name(self):

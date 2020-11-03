@@ -107,7 +107,6 @@ nlu:
     - How many people have [deaths](case_type) in [Venezuela](country)?
 - intent: ask_about_case_count_multiple_country
   examples: |
-    - \.*how many .*(cases|confirmed|recovered).*\
     - how many [total](scope) people [recovered](case_type) from covid in [ireland](countries) and [england](countries)?
     - how many [new](scope) [confirmed](case_type) cases are in [mexico](countries), [the united states](countries), and [canada](countries)?
     - how many [new](scope) cases in [the united states](countries) and [mexico](countries) [today](relative_time)?

@@ -284,23 +284,47 @@ class ActionCaseCountByTime(Action):
                 m = 3
                 counts = {}
                 for x in summary:
-                    if x["Date"][5:7] == m:
+                    if int(x["Date"][5:7]) == m:
                         m += 1
                         counts[m] = x["Cases"]
-
-#do some stuff
-
-
-
-        countries = summary['Countries']
-        if country == None:
-            data = summary['Global']
-        else:
-            data = next((item for item in countries if (item['Slug'] == country or item['Country'] == country)), None)
-        key_string = scope.capitalize() + case_type.capitalize()
-        count = data[key_string]
-        for x in data:
-            print("data[" + str(x) + "] = " + str(data[x]))
+                text = "In " + country + " there have been "
+                m = 1
+                numM = len(counts)
+                for x in counts:
+                    text = text + str(counts[x]) + " " + scope + " " + case_type + " in "
+                    if x == 1:
+                        text = text + "January"
+                    elif x == 2:
+                        text = text + "February"
+                    elif x == 3:
+                        text = text + "March"
+                    elif x == 4:
+                        text = text + "April"
+                    elif x == 5:
+                        text = text + "May"
+                    elif x == 6:
+                        text = text + "June"
+                    elif x == 7:
+                        text = text + "July"
+                    elif x == 8:
+                        text = text + "August"
+                    elif x == 9:
+                        text = text + "September"
+                    elif x == 10:
+                        text = text + "October"
+                    elif x == 11:
+                        text = text + "November"
+                    else:
+                        text = text + "December"
+                    
+                    if numM == m + 1:
+                        text = text + ", and "
+                    elif numM != m:
+                        text = text + ", "
+                    m += 1
+                text = text + "."
+                dispatcher.utter_message(text = text)
+       
         # report the information
         # slot_scope = SlotSet(key='scope', value=scope)
         # slot_case_type = SlotSet(key='case_type', value=case_type)

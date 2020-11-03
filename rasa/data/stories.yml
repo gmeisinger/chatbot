@@ -81,11 +81,11 @@ stories:
   - intent: ask_about_case_count_by_time
     entities:
     - case_type: confirmed
-    - countries: russia
+    - country: mexico
     - bytime: month
   - slot_was_set:
     - case_type: confirmed
-    - countries: russia
+    - country: mexico
     - bytime: month
   - action: action_case_count_by_time
 
@@ -96,12 +96,12 @@ stories:
   - intent: ask_about_case_count_by_time
     entities:
     - case_type: deaths
-    - countries: china
+    - country: china
     - bytime: day
     - bysubtime: october
   - slot_was_set:
     - case_type: deaths
-    - countries: china
+    - country: china
     - bytime: day
     - bysubtime: october
   - action: action_case_count_by_time

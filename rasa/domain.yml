@@ -19,6 +19,8 @@ entities:
   - countries
   - scope
   - case_type
+  - bytime
+  - bysubtime
 
 slots:
   case_type:

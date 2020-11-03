@@ -106,8 +106,14 @@ nlu:
     - How many people have [deaths](case_type) in [Venezuela](country)?
 - intent: ask_about_case_count_by_time
   examples: |
-    - how many deaths have there been in [mexico](country) per [month](by_time)?
-    - how many confirmed cases has there been in [china](country) by [day](by_time) in [october](month)?
+    - how many [deaths](case_type) have there been in [mexico](country) per [month](bytime)?
+    - how many [deaths](case_type) have there been in [china](country) by [day](bytime) in [october](month)?
+    - how many [deaths](case_type) have there been in [russia](country) by [month](bytime)?
+    - how many [confirmed](case_type) cases has there been in [france](country) per [day](bytime) in [july](month)?
+    - how many [confirmed](case_type) cases have there been in [ukraine](country) per [month](bytime)?
+    - how many [confirmed](case_type) cases has there been in [canada](country) by [day](bytime) in [august](month)?
+    - how many [deaths](case_type) have there been in [poland](country) by [month](bytime)?
+    - how many [deaths](case_type) have there been in [venezuela](country) per [day](bytime) in [may](month)?
 - intent: ask_about_case_count_multiple_country
   examples: |
     - how many [total](scope) people [recovered](case_type) from covid in [ireland](countries) and [england](countries)?
@@ -185,7 +191,7 @@ nlu:
     - yesterday
     - last week
     - last month
-- lookup: by_time
+- lookup: bytime
   examples: |
     -month
     -day

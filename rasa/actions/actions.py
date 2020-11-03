@@ -131,34 +131,46 @@ class ActionCaseCountMultCountry(Action):
                 country=country
             )
         else:
-            print("country:")
+            text = "There are "
             for x in country:
-                print(x + ",\n")
-            if len(country) == 2: #try with just 2 to make sure it can work
-                data1 = next((item for item in countries if (item['Slug'] == country[0] or item['Country'] == country[0])), None)
-                key_string1 = scope.capitalize() + case_type.capitalize()
-                count1 = data1[key_string1]
-                data2 = next((item for item in countries if (item['Slug'] == country[1] or item['Country'] == country[1])), None)
-                key_string2 = scope.capitalize() + case_type.capitalize()
-                count2 = data2[key_string1]
-                # report the information
-                slot_scope = SlotSet(key='scope', value=scope)
-                slot_case_type = SlotSet(key='case_type', value=case_type)
-                slot_country = SlotSet(key='country1', value=country[0])
-                slot_country = SlotSet(key='country2', value=country[1])
-                slot_count = SlotSet(key='count1', value=count1)
-                slot_count = SlotSet(key='count2', value=count2)
-                evt = FollowupAction(name = "utter_case_count_two_country")
-                dispatcher.utter_message(
-                    template="utter_case_count_two_country",
-                    count1=count1,
-                    count2=count2,
-                    scope=scope,
-                    case_type=case_type,
-                    country1=country[0],
-                    country2=country[1]
-                )
-            else:
-                dispatcher.utter_message(text="Well why didnt this work?")
+                data = next((item for item in countries if (item['Slug'] == x or item['Country'] == x)), None)
+                key_string = scope.capitalize() + case_type.capitalize()
+                text = text + str(data[key_string]) + " " + scope + " " + case_type + " in " + x
+                if len(country) == 2 and country.index(x) != 1:
+                    text = text + " and "
+                elif len(country) == country.index(x) + 2:
+                    text = text + ", and "
+                elif len(country) == country.index(x) + 1:
+                    text = text + "."
+                else: 
+                    text = text + ", "
+            dispatcher.utter_message(text=text)
+
+            # if len(country) == 2: #try with just 2 to make sure it can work
+            #     data1 = next((item for item in countries if (item['Slug'] == country[0] or item['Country'] == country[0])), None)
+            #     key_string1 = scope.capitalize() + case_type.capitalize()
+            #     count1 = data1[key_string1]
+            #     data2 = next((item for item in countries if (item['Slug'] == country[1] or item['Country'] == country[1])), None)
+            #     key_string2 = scope.capitalize() + case_type.capitalize()
+            #     count2 = data2[key_string1]
+            #     # report the information
+            #     slot_scope = SlotSet(key='scope', value=scope)
+            #     slot_case_type = SlotSet(key='case_type', value=case_type)
+            #     slot_country = SlotSet(key='country1', value=country[0])
+            #     slot_country = SlotSet(key='country2', value=country[1])
+            #     slot_count = SlotSet(key='count1', value=count1)
+            #     slot_count = SlotSet(key='count2', value=count2)
+            #     evt = FollowupAction(name = "utter_case_count_two_country")
+            #     dispatcher.utter_message(
+            #         template="utter_case_count_two_country",
+            #         count1=count1,
+            #         count2=count2,
+            #         scope=scope,
+            #         case_type=case_type,
+            #         country1=country[0],
+            #         country2=country[1]
+            #     )
+            # else:
+            #     dispatcher.utter_message(text="Well why didnt this work?")
         #return [slot_scope, slot_case_type, slot_country, slot_count, evt]
         return []

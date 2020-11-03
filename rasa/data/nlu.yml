@@ -120,6 +120,8 @@ nlu:
     - how many [confirmed](case_type) cases has there been in [canada](countries) by [day](bytime) in [august](month)?
     - how many [deaths](case_type) have there been in [poland](countries) by [month](bytime)?
     - how many [deaths](case_type) have there been in [venezuela](countries) per [day](bytime) in [may](month)?
+    - how many [deaths](case_type) have there been per [month](bytime)
+    - how many [deaths](case_type) have there been per [day](bytime) in [july](month)
 - intent: ask_about_case_count_multiple_country
   examples: |
     - how many [total](scope) people [recovered](case_type) from covid in [ireland](countries) and [england](countries)?

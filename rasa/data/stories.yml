@@ -123,6 +123,21 @@ stories:
     entities:
     - case_type: deaths
     - countries: 
+    - bytime: month
+  - slot_was_set:
+    - case_type: deaths
+    - countries: 
+    - bytime: month
+  - action: action_case_count_by_time
+
+- story: interactive_story_9
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_about_case_count_by_time
+    entities:
+    - case_type: deaths
+    - countries: 
       - china
     - bytime: day
     - bysubtime: october

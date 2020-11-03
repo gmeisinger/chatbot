@@ -277,58 +277,129 @@ class ActionCaseCountByTime(Action):
         if by_time == None:
             by_time = "month"
             if by_time == "day" and by_sub_time == None:
-                by_sub = "january" #if they ask by day but dont specify... default to january?
+                by_sub_time = "january" #if they ask by day but dont specify... default to january?
     
         if by_time == "month":
-            if country == None:
-                country = "world"
+            r = ""
+            counts = {}
+            currentMonth = date.today().strftime("%m")
+            if country == "world":
+                for x in range(1,13):
+                    counts[x] = 0
+                text = "Globally there have been "
+                r = requests.get("https://api.covid19api.com/countries")
+                summary = r.json()
+                for x in summary:
+                    country = x["Country"]
+                    r2 = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-03-01T00:00:00Z&to=2020-" + currentMonth + "-01T00:00:00Z")
+                    summary2 = r2.json()
+                    m = 3
+                    for y in summary2:
+                        if int(y["Date"][5:7]) == m:
+                            m += 1
+                            counts[m] = counts[m] + y["Cases"]
+
             else:
-                currentMonth = date.today().strftime("%m")
+                text = "In " + country + " there have been "
                 r = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-03-01T00:00:00Z&to=2020-" + currentMonth + "-01T00:00:00Z")
                 summary = r.json()
                 m = 3
-                counts = {}
+                for x in summary:
+                    #note to jake, gotta sum by province per day
+                    if int(x["Date"][5:7]) == m:
+                        m += 1
+                        counts[m] = x["Cases"]
+            m = 1
+            numM = len(counts)
+            for x in counts:
+                text = text + str(counts[x]) + " " + scope + " " + case_type + " in "
+                if x == 1:
+                    text = text + "January"
+                elif x == 2:
+                    text = text + "February"
+                elif x == 3:
+                    text = text + "March"
+                elif x == 4:
+                    text = text + "April"
+                elif x == 5:
+                    text = text + "May"
+                elif x == 6:
+                    text = text + "June"
+                elif x == 7:
+                    text = text + "July"
+                elif x == 8:
+                    text = text + "August"
+                elif x == 9:
+                    text = text + "September"
+                elif x == 10:
+                    text = text + "October"
+                elif x == 11:
+                    text = text + "November"
+                else:
+                    text = text + "December"
+                
+                if numM == m + 1:
+                    text = text + ", and "
+                elif numM != m:
+                    text = text + ", "
+                m += 1
+            text = text + "."
+            dispatcher.utter_message(text = text)
+        else:
+            counts = {}
+            month = ""
+            day = ""
+            if by_sub_time == "january":
+                month = "01"
+                day = "31"
+            elif by_sub_time == "february":
+                month = "02"
+                day = "29"
+            elif by_sub_time == "march":
+                month = "03"
+                day = "31"
+            elif by_sub_time == "april":
+                month = "04"
+                day = "30"
+            elif by_sub_time == "may":
+                month = "05"
+                day = "31"
+            elif by_sub_time == "june":
+                month = "06"
+                day = "30"
+            elif by_sub_time == "july":
+                month = "07"
+                day = "31"
+            elif by_sub_time == "august":
+                month = "08"
+                day = "31"
+            elif by_sub_time == "september":
+                month = "09"
+                day = "30"
+            elif by_sub_time == "october":
+                month = "10"
+                day = "31"
+            elif by_sub_time == "november":
+                month = "11"
+                day = "30"
+            else:
+                month = "12"
+                day = "31"
+             
+            if country == "world":
+                #  stuff
+                text = "Globally there have been "
+            else:
+                text = "In " + country + " there have been "
+                r = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-" + month + "-01T00:00:00Z&to=2020-" + month + "-" + day + "T00:00:00Z")
+                summary = r.json()
+                print("sum:\n" + json.dumps(summary, indent = 4) + "\n")
+                #note to jake, gotta sum by province per day
+                m = 1
                 for x in summary:
                     if int(x["Date"][5:7]) == m:
                         m += 1
                         counts[m] = x["Cases"]
-                text = "In " + country + " there have been "
-                m = 1
-                numM = len(counts)
-                for x in counts:
-                    text = text + str(counts[x]) + " " + scope + " " + case_type + " in "
-                    if x == 1:
-                        text = text + "January"
-                    elif x == 2:
-                        text = text + "February"
-                    elif x == 3:
-                        text = text + "March"
-                    elif x == 4:
-                        text = text + "April"
-                    elif x == 5:
-                        text = text + "May"
-                    elif x == 6:
-                        text = text + "June"
-                    elif x == 7:
-                        text = text + "July"
-                    elif x == 8:
-                        text = text + "August"
-                    elif x == 9:
-                        text = text + "September"
-                    elif x == 10:
-                        text = text + "October"
-                    elif x == 11:
-                        text = text + "November"
-                    else:
-                        text = text + "December"
-                    
-                    if numM == m + 1:
-                        text = text + ", and "
-                    elif numM != m:
-                        text = text + ", "
-                    m += 1
-                text = text + "."
-                dispatcher.utter_message(text = text)
        
         # report the information
         # slot_scope = SlotSet(key='scope', value=scope)

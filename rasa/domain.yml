@@ -12,6 +12,7 @@ intents:
 - mood_unhappy
 - ask_about_case_count
 - ask_about_case_count_multiple_country
+- ask_about_case_count_by_time
 entities:
   - name
   - country
@@ -43,6 +44,28 @@ slots:
     values:
     - new
     - total
+  bytime:
+    type: categorical
+    influence_conversation: true
+    values:
+    - day
+    - month
+  bysubtime:
+    type: categorical
+    influence_conversation: true
+    values:
+    - january
+    - february
+    - march
+    - april
+    - may
+    - june
+    - july
+    - august
+    - september
+    - october
+    - november
+    - december
 responses:
   utter_greet:
   - text: Hey! How are you?
@@ -70,6 +93,7 @@ responses:
 actions:
 - action_case_count
 - action_case_count_multiple_country
+- action_case_count_by_time
 - utter_greet
 - utter_iamabot
 forms:

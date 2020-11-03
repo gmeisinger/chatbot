@@ -31,6 +31,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet, FollowupAction, EventType
 
 from typing import Dict, Text, List
+from datetime import date
 
 import requests
 import json
@@ -241,3 +242,74 @@ class ActionCaseSummaryGraph(Action):
         dispatcher.utter_message(image=linechart)
         return []
 
+class ActionCaseCountByTime(Action):
+
+    @staticmethod
+    def required_fields():
+        return [
+            #EntityFormField("scope", "scope"),
+            #EntityFormField("case_type", "case_type"),
+            EntityFormField("country", "country")
+        ]
+
+    def name(self):
+        return "action_case_count_by_time"
+    
+    def run(self, dispatcher, tracker, domain):
+        # get data
+        scope = tracker.get_slot('scope')
+        if scope == None:
+            scope = "total"
+        case_type = tracker.get_slot('case_type')
+        if case_type == None:
+            case_type = "confirmed"
+        country = tracker.get_slot('country')
+        by_time = tracker.get_slot('bytime')
+        by_sub_time = tracker.get_slot('bysubtime')
+        if by_time == None:
+            by_time = "month"
+            if by_time == "day" and by_sub_time == None:
+                by_sub = "january" #if they ask by day but dont specify... default to january?
+    
+        if by_time == "month":
+            if country == None:
+                country = "world"
+            else:
+                currentMonth = date.today().strftime("%m")
+                r = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-03-01T00:00:00Z&to=2020-" + currentMonth + "-01T00:00:00Z")
+                summary = r.json()
+                m = 3
+                counts = {}
+                for x in summary:
+                    if x["Date"][5:7] == m:
+                        m += 1
+                        counts[m] = x["Cases"]
+
+#do some stuff
+
+
+
+        countries = summary['Countries']
+        if country == None:
+            data = summary['Global']
+        else:
+            data = next((item for item in countries if (item['Slug'] == country or item['Country'] == country)), None)
+        key_string = scope.capitalize() + case_type.capitalize()
+        count = data[key_string]
+        for x in data:
+            print("data[" + str(x) + "] = " + str(data[x]))
+        # report the information
+        # slot_scope = SlotSet(key='scope', value=scope)
+        # slot_case_type = SlotSet(key='case_type', value=case_type)
+        # slot_country = SlotSet(key='country', value=country)
+        # slot_count = SlotSet(key='count', value=count)
+        # evt = FollowupAction(name = "utter_case_count")
+        # dispatcher.utter_message(
+        #     template="utter_case_count",
+        #     count=count,
+        #     scope=scope,
+        #     case_type=case_type,
+        #     country=country
+        # )
+        #return [slot_scope, slot_case_type, slot_country, slot_count, evt]
+        return []

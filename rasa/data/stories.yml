@@ -73,3 +73,35 @@ stories:
       - Venezuela
       - columbia
   - action: action_case_count_multiple_country
+
+- story: interactive_story_5
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_about_case_count_by_time
+    entities:
+    - case_type: confirmed
+    - countries: russia
+    - bytime: month
+  - slot_was_set:
+    - case_type: confirmed
+    - countries: russia
+    - bytime: month
+  - action: action_case_count_by_time
+
+- story: interactive_story_6
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_about_case_count_by_time
+    entities:
+    - case_type: deaths
+    - countries: china
+    - bytime: day
+    - bysubtime: october
+  - slot_was_set:
+    - case_type: deaths
+    - countries: china
+    - bytime: day
+    - bysubtime: october
+  - action: action_case_count_by_time

@@ -28,7 +28,9 @@
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet, FollowupAction
+from rasa_sdk.events import SlotSet, FollowupAction, EventType
+
+from typing import Dict, Text, List
 from datetime import date
 
 import requests
@@ -46,7 +48,7 @@ class ActionCaseCount(Action):
         return [
             #EntityFormField("scope", "scope"),
             #EntityFormField("case_type", "case_type"),
-            EntityFormField("country", "country")
+            EntityFormField("countries", "countries")
         ]
 
     def name(self):
@@ -57,10 +59,14 @@ class ActionCaseCount(Action):
         scope = tracker.get_slot('scope')
         if scope == None:
             scope = "total"
+            #fa = FollowupAction(name="case_count_form")
+            #return [fa]
         case_type = tracker.get_slot('case_type')
         if case_type == None:
             case_type = "confirmed"
-        country = tracker.get_slot('country')
+            #fa = FollowupAction(name="case_count_form")
+            #return [fa]
+        country = tracker.get_slot('countries')
         # get data from api
         r = requests.get("https://api.covid19api.com/summary")
         summary = r.json()
@@ -69,15 +75,11 @@ class ActionCaseCount(Action):
         if country == None:
             data = summary['Global']
         else:
+            country = country[0]
             data = next((item for item in countries if (item['Slug'] == country or item['Country'] == country)), None)
         key_string = scope.capitalize() + case_type.capitalize()
         count = data[key_string]
         # report the information
-        slot_scope = SlotSet(key='scope', value=scope)
-        slot_case_type = SlotSet(key='case_type', value=case_type)
-        slot_country = SlotSet(key='country', value=country)
-        slot_count = SlotSet(key='count', value=count)
-        evt = FollowupAction(name = "utter_case_count")
         dispatcher.utter_message(
             template="utter_case_count",
             count=count,
@@ -120,11 +122,6 @@ class ActionCaseCountMultCountry(Action):
             key_string = scope.capitalize() + case_type.capitalize()
             count = data[key_string]
             # report the information
-            slot_scope = SlotSet(key='scope', value=scope)
-            slot_case_type = SlotSet(key='case_type', value=case_type)
-            slot_country = SlotSet(key='country', value=country)
-            slot_count = SlotSet(key='count', value=count)
-            evt = FollowupAction(name = "utter_case_count")
             dispatcher.utter_message(
                 template="utter_case_count",
                 count=count,
@@ -181,13 +178,13 @@ class ActionCaseSummaryGraph(Action):
     @staticmethod
     def required_fields():
         return [
-            EntityFormField("countries", "countries")
+            EntityFormField("country", "country")
         ]
 
     def name(self):
         return "action_case_summary_graph"
 
-    def Linechart(title, data, value_tag, label_tag):
+    def Linechart(self, title, data, value_tag, label_tag):
         line_chart = pygal.Line()
         line_chart.title = title
 
@@ -233,16 +230,20 @@ class ActionCaseSummaryGraph(Action):
 
         # build linechart
         title = ''
-        vtag = ''
+        vtag = 'Cases'
         ltag = 'Country'
         if case_type == 'deaths':
             title = 'Deaths in ' + data['Country']
-            vtag = 'Deaths'
+            # vtag = 'deaths'
         else:
             title = case_type.capitalize() + ' Cases in' + data['Country']
-            vtag = case_type.capitalize() + ' Cases'
-        linechart = Linechart(title, [dayone], vtag, ltag)
-        dispatcher.utter_message(image=linechart)
+            # vtag = case_type
+        linechart = self.Linechart(title, [dayone], vtag, ltag)
+        dispatcher.utter_message(
+            template='utter_case_count',
+            image=linechart,
+            case_type=case_type,
+            country=country)
         return []
 
 class ActionCaseCountByTime(Action):

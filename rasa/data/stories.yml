@@ -78,6 +78,30 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
+  - intent: ask_about_case_count
+    entities:
+    - country: Argentina
+  - slot_was_set:
+    - country: Argentina
+  - action: action_case_count
+  - action: action_case_summary_graph
+
+- story: interactive_story_6
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_about_case_count
+    entities:
+    - country: Canada
+  - slot_was_set:
+    - country: Canada
+  - action: action_case_count
+  - action: action_case_summary_graph
+
+- story: interactive_story_7
+  steps:
+  - intent: greet
+  - action: utter_greet
   - intent: ask_about_case_count_by_time
     entities:
     - case_type: confirmed
@@ -89,7 +113,7 @@ stories:
     - bytime: month
   - action: action_case_count_by_time
 
-- story: interactive_story_6
+- story: interactive_story_8
   steps:
   - intent: greet
   - action: utter_greet

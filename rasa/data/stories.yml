@@ -45,16 +45,18 @@ stories:
 #   - slot_was_set:
 #     - country: the United States
 
-# - story: interactive_story_3
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: ask_about_case_count
-#     entities:
-#     - case_type: deaths
-#     - country: Venezuela
-#   - slot_was_set:
-#     - country: Venezuela
+- story: interactive_story_3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_about_case_count
+    entities:
+    - case_type: deaths
+    - country: Venezuela
+  - slot_was_set:
+    - country: Venezuela
+  - action: action_case_count
+
 
 - story: interactive_story_4
   steps:

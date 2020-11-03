@@ -87,7 +87,6 @@ nlu:
     - Are you a bot?
 - intent: ask_about_case_count
   examples: |
-    - \.*how many .*(cases|confirmed|recovered).*\
     - how many [total](scope) people [recovered](case_type) from covid in [ireland](country)?
     - how many [new](scope) [confirmed](case_type) cases are in [mexico](country)?
     - how many [new](scope) cases in [the united states](country) [today](relative_time)?

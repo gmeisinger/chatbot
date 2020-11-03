@@ -187,17 +187,17 @@ class ActionCaseSummaryGraph(Action):
         return "action_case_summary_graph"
 
     def Linechart(title, data, value_tag, label_tag):
-    line_chart = pygal.Line()
-    line_chart.title = title
+        line_chart = pygal.Line()
+        line_chart.title = title
 
-    # changes
-    for category in data:
-        data_num = []
-        for entry in category:
-            data_num.append(int(entry[value_tag]))
-        line_chart.add(str(category[0][label_tag]), data_num)
+        # changes
+        for category in data:
+            data_num = []
+            for entry in category:
+                data_num.append(int(entry[value_tag]))
+            line_chart.add(str(category[0][label_tag]), data_num)
 
-    return line_chart.render_data_uri()
+        return line_chart.render_data_uri()
 
     def run(self, dispatcher, tracker, domain):
         case_type = tracker.get_slot('case_type')
@@ -241,5 +241,5 @@ class ActionCaseSummaryGraph(Action):
             title = case_type.capitalize() + ' Cases in' + data['Country']
             vtag = case_type.capitalize() + ' Cases'
         linechart = Linechart(title, [dayone], vtag, ltag)
-
+        dispatcher.utter_message(image=linechart)
         return []

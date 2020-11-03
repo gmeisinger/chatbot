@@ -104,6 +104,10 @@ nlu:
     - How many [deaths](case_type) are there in [the United States](country)?
     - how many [new](scope) [deaths](case_type) in [russia](country)?
     - How many people have [deaths](case_type) in [Venezuela](country)?
+- intent: ask_about_case_count_by_time
+  examples: |
+    - how many deaths have there been in [mexico](country) per [month](by_time)?
+    - how many confirmed cases has there been in [china](country) by [day](by_time) in [october](month)?
 - intent: ask_about_case_count_multiple_country
   examples: |
     - how many [total](scope) people [recovered](case_type) from covid in [ireland](countries) and [england](countries)?
@@ -181,6 +185,11 @@ nlu:
     - yesterday
     - last week
     - last month
+- lookup: by_time
+  examples: |
+    -month
+    -day
+    -year
 - lookup: countries
   examples: |
     - niger

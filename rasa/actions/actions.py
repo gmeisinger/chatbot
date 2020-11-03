@@ -304,11 +304,19 @@ class ActionCaseCountByTime(Action):
                 r = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-03-01T00:00:00Z&to=2020-" + currentMonth + "-01T00:00:00Z")
                 summary = r.json()
                 m = 3
-                for x in summary:
-                    #note to jake, gotta sum by province per day
-                    if int(x["Date"][5:7]) == m:
-                        m += 1
-                        counts[m] = x["Cases"]
+                if summary[0]["Province"] == "":
+                    for x in summary:
+                        if int(x["Date"][5:7]) == m:
+                            m += 1
+                            counts[m] = x["Cases"]
+                else:
+                    for x in range(m,int(currentMonth) + 1):
+                        counts[x] = 0
+                    for x in range(len(summary)):
+                        if int(summary[x]["Date"][5:7]) == m and int(summary[x]["Date"][8:10]) == 1:
+                            counts[m] += summary[x]["Cases"]
+                        if x+1 != len(summary) and int(summary[x+1]["Date"][5:7]) != m:
+                            m += 1
             m = 1
             numM = len(counts)
             for x in counts:
@@ -393,14 +401,21 @@ class ActionCaseCountByTime(Action):
                 text = "In " + country + " there have been "
                 r = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-" + month + "-01T00:00:00Z&to=2020-" + month + "-" + day + "T00:00:00Z")
                 summary = r.json()
-                print("sum:\n" + json.dumps(summary, indent = 4) + "\n")
-                #note to jake, gotta sum by province per day
-                m = 1
-                for x in summary:
-                    if int(x["Date"][5:7]) == m:
-                        m += 1
-                        counts[m] = x["Cases"]
-       
+                d = 1
+                if summary[0]["Province"] == "":
+                    for x in summary:
+                        if int(x["Date"][8:10] == d):
+                            d += 1
+                            counts[m] = x["Cases"]
+                else:
+                    for x in range(d,int(day) + 1):
+                        counts[x] = 0
+                    for x in range(len(summary)):
+                        if int(summary[x]["Date"][8:10]) == d:
+                            counts[d] += summary[x]["Cases"]
+                        if x+1 != len(summary) and int(summary[x+1]["Date"][8:10]) != d:
+                            d += 1
+                    print(json.dumps(counts, indent = 4))
         # report the information
         # slot_scope = SlotSet(key='scope', value=scope)
         # slot_case_type = SlotSet(key='case_type', value=case_type)

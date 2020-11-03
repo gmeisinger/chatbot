@@ -260,7 +260,7 @@ class ActionCaseCountByTime(Action):
     def name(self):
         return "action_case_count_by_time"
     
-    def run(self, dispatcher, tracker, domain):
+    def run(self, dispatcher, tracker, domain): #note to jake, figure out why bysubtime isnt getting pulled in
         # get data
         scope = tracker.get_slot('scope')
         if scope == None:
@@ -276,9 +276,9 @@ class ActionCaseCountByTime(Action):
         by_sub_time = tracker.get_slot('bysubtime')
         if by_time == None:
             by_time = "month"
-            if by_time == "day" and by_sub_time == None:
-                by_sub_time = "january" #if they ask by day but dont specify... default to january?
-    
+        if by_time == "day" and by_sub_time == None:
+            by_sub_time = "january" #if they ask by day but dont specify... default to january?
+        text = ""
         if by_time == "month":
             r = ""
             counts = {}
@@ -352,7 +352,6 @@ class ActionCaseCountByTime(Action):
                     text = text + ", "
                 m += 1
             text = text + "."
-            dispatcher.utter_message(text = text)
         else:
             counts = {}
             month = ""
@@ -415,7 +414,25 @@ class ActionCaseCountByTime(Action):
                             counts[d] += summary[x]["Cases"]
                         if x+1 != len(summary) and int(summary[x+1]["Date"][8:10]) != d:
                             d += 1
-                    print(json.dumps(counts, indent = 4))
+                d = 1
+                for x in counts:
+                    text = text + str(counts[x]) + " " + scope + " " + case_type + " on " + str(by_sub_time) + " " + str(x)
+                    if str(x)[-1] == "1":
+                        text = text + "st"
+                    elif str(x)[-1] == "2":
+                        text = text + "nd"
+                    elif str(x)[-1] == "3":
+                        text = text + "rd"
+                    else:
+                        text = text + "th"
+                    
+                    if int(day) == d + 1:
+                        text = text + ", and "
+                    elif int(day) != d:
+                        text = text + ", "
+                    d += 1
+                text = text + "."
+        dispatcher.utter_message(text = text)
         # report the information
         # slot_scope = SlotSet(key='scope', value=scope)
         # slot_case_type = SlotSet(key='case_type', value=case_type)

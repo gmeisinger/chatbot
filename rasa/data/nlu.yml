@@ -113,15 +113,15 @@ nlu:
 - intent: ask_about_case_count_by_time
   examples: |
     - how many [deaths](case_type) have there been in [mexico](countries) per [month](bytime)?
-    - how many [deaths](case_type) have there been in [china](countries) by [day](bytime) in [october](month)?
+    - how many [deaths](case_type) have there been in [china](countries) by [day](bytime) in [month](bysubtime)?
     - how many [deaths](case_type) have there been in [russia](countries) by [month](bytime)?
-    - how many [confirmed](case_type) cases has there been in [france](countries) per [day](bytime) in [july](month)?
+    - how many [confirmed](case_type) cases has there been in [france](countries) per [day](bytime) in [month](bysubtime)?
     - how many [confirmed](case_type) cases have there been in [ukraine](countries) per [month](bytime)?
-    - how many [confirmed](case_type) cases has there been in [canada](countries) by [day](bytime) in [august](month)?
+    - how many [confirmed](case_type) cases has there been in [canada](countries) by [day](bytime) in [month](bysubtime)?
     - how many [deaths](case_type) have there been in [poland](countries) by [month](bytime)?
-    - how many [deaths](case_type) have there been in [venezuela](countries) per [day](bytime) in [may](month)?
+    - how many [deaths](case_type) have there been in [venezuela](countries) per [day](bytime) in [month](bysubtime)?
     - how many [deaths](case_type) have there been per [month](bytime)
-    - how many [deaths](case_type) have there been per [day](bytime) in [july](month)
+    - how many [deaths](case_type) have there been per [day](bytime) in [month](bysubtime)
 - intent: ask_about_case_count_multiple_country
   examples: |
     - how many [total](scope) people [recovered](case_type) from covid in [ireland](countries) and [england](countries)?

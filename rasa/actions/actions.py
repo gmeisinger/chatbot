@@ -178,13 +178,13 @@ class ActionCaseSummaryGraph(Action):
     @staticmethod
     def required_fields():
         return [
-            EntityFormField("countries", "countries")
+            EntityFormField("country", "country")
         ]
 
     def name(self):
         return "action_case_summary_graph"
 
-    def Linechart(title, data, value_tag, label_tag):
+    def Linechart(self, title, data, value_tag, label_tag):
         line_chart = pygal.Line()
         line_chart.title = title
 
@@ -230,16 +230,20 @@ class ActionCaseSummaryGraph(Action):
 
         # build linechart
         title = ''
-        vtag = ''
+        vtag = 'Cases'
         ltag = 'Country'
         if case_type == 'deaths':
             title = 'Deaths in ' + data['Country']
-            vtag = 'Deaths'
+            # vtag = 'deaths'
         else:
             title = case_type.capitalize() + ' Cases in' + data['Country']
-            vtag = case_type.capitalize() + ' Cases'
-        linechart = Linechart(title, [dayone], vtag, ltag)
-        dispatcher.utter_message(image=linechart)
+            # vtag = case_type
+        linechart = self.Linechart(title, [dayone], vtag, ltag)
+        dispatcher.utter_message(
+            template='utter_case_count',
+            image=linechart,
+            case_type=case_type,
+            country=country)
         return []
 
 class ActionCaseCountByTime(Action):

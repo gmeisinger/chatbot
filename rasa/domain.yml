@@ -2,6 +2,7 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- ask_about_case_count
 - greet
 - ask_about_deaths
 - bot_challenge
@@ -10,16 +11,14 @@ intents:
 - deny
 - mood_great
 - mood_unhappy
-- ask_about_case_count
 - ask_about_case_count_multiple_country
 - ask_about_case_count_by_time
 entities:
-  - name
-  - country
-  - countries
-  - scope
-  - case_type
-
+- case_type
+- countries
+- country
+- name
+- scope
 slots:
   case_type:
     type: categorical
@@ -28,15 +27,16 @@ slots:
     - recovered
     - confirmed
     - deaths
+    - __other__
   count:
     type: text
-    influence_conversation: true
-    auto_fill: False
-  country:
-    type: text
+    auto_fill: false
     influence_conversation: true
   countries:
     type: list
+    influence_conversation: true
+  country:
+    type: text
     influence_conversation: true
   scope:
     type: categorical
@@ -44,6 +44,7 @@ slots:
     values:
     - new
     - total
+    - __other__
   bytime:
     type: categorical
     influence_conversation: true
@@ -93,6 +94,7 @@ responses:
 actions:
 - action_case_count
 - action_case_count_multiple_country
+- action_case_summary_graph
 - action_case_count_by_time
 - utter_greet
 - utter_iamabot

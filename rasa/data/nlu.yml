@@ -16,6 +16,7 @@ nlu:
     - goodevening
     - good afternoon
     - Hi
+    - Hey
 - intent: goodbye
   examples: |
     - good afternoon
@@ -101,6 +102,11 @@ nlu:
     - how many [deaths](case_type)?
     - how many people [deaths](case_type) in [april](month)?
     - were there any [deaths](case_type) in [january](month)?
+    - How many [deaths](case_type) are there in the [United States](country)?
+    - how many [new](scope) [deaths](case_type) in [russia](country)?
+    - How many people have [deaths](case_type) in [Venezuela](country)?
+    - How many cases in [Argentina](country)?
+    - How many cases in [Canada](country)?
     - How many [deaths](case_type) are there in [the United States](countries)?
     - how many [new](scope) [deaths](case_type) in [russia](countries)?
     - How many people have [deaths](case_type) in [Venezuela](countries)?

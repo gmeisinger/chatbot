@@ -57,6 +57,12 @@ responses:
   - text: Bye
   utter_iamabot:
   - text: I am SCITalk, built by Pitt students and powered by Rasa.
+  utter_ask_scope:
+  - text: New or total cases?
+  utter_ask_case_type:
+  - text: Would you like data about recovered cases, confirmed cases, or deaths?
+  utter_ask_countries:
+  - text: Which countries would you like information about?
   utter_case_count:
   - text: There are {count} {scope} {case_type} cases in {country}.
   utter_case_count_two_country:
@@ -66,4 +72,15 @@ actions:
 - action_case_count_multiple_country
 - utter_greet
 - utter_iamabot
+forms:
+  case_count_form:
+    scope:
+      - type: from_entity
+      - entity: scope
+    case_type:
+      - type: from_entity
+      - entity: case_type
+    countries:
+      - type: from entity
+      - entity: countries
 version: '2.0'

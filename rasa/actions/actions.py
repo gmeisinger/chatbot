@@ -28,7 +28,9 @@
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet, FollowupAction
+from rasa_sdk.events import SlotSet, FollowupAction, EventType
+
+from typing import Dict, Text, List
 
 import requests
 import json
@@ -45,7 +47,7 @@ class ActionCaseCount(Action):
         return [
             #EntityFormField("scope", "scope"),
             #EntityFormField("case_type", "case_type"),
-            EntityFormField("country", "country")
+            EntityFormField("countries", "countries")
         ]
 
     def name(self):
@@ -56,10 +58,14 @@ class ActionCaseCount(Action):
         scope = tracker.get_slot('scope')
         if scope == None:
             scope = "total"
+            #fa = FollowupAction(name="case_count_form")
+            #return [fa]
         case_type = tracker.get_slot('case_type')
         if case_type == None:
             case_type = "confirmed"
-        country = tracker.get_slot('country')
+            #fa = FollowupAction(name="case_count_form")
+            #return [fa]
+        country = tracker.get_slot('countries')
         # get data from api
         r = requests.get("https://api.covid19api.com/summary")
         summary = r.json()
@@ -68,15 +74,11 @@ class ActionCaseCount(Action):
         if country == None:
             data = summary['Global']
         else:
+            country = country[0]
             data = next((item for item in countries if (item['Slug'] == country or item['Country'] == country)), None)
         key_string = scope.capitalize() + case_type.capitalize()
         count = data[key_string]
         # report the information
-        slot_scope = SlotSet(key='scope', value=scope)
-        slot_case_type = SlotSet(key='case_type', value=case_type)
-        slot_country = SlotSet(key='country', value=country)
-        slot_count = SlotSet(key='count', value=count)
-        evt = FollowupAction(name = "utter_case_count")
         dispatcher.utter_message(
             template="utter_case_count",
             count=count,
@@ -119,11 +121,6 @@ class ActionCaseCountMultCountry(Action):
             key_string = scope.capitalize() + case_type.capitalize()
             count = data[key_string]
             # report the information
-            slot_scope = SlotSet(key='scope', value=scope)
-            slot_case_type = SlotSet(key='case_type', value=case_type)
-            slot_country = SlotSet(key='country', value=country)
-            slot_count = SlotSet(key='count', value=count)
-            evt = FollowupAction(name = "utter_case_count")
             dispatcher.utter_message(
                 template="utter_case_count",
                 count=count,
@@ -243,3 +240,4 @@ class ActionCaseSummaryGraph(Action):
         linechart = Linechart(title, [dayone], vtag, ltag)
         dispatcher.utter_message(image=linechart)
         return []
+

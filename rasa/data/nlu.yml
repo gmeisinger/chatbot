@@ -182,3 +182,253 @@ nlu:
     - yesterday
     - last week
     - last month
+- lookup: countries
+  examples: |
+    - niger
+    - iraq
+    - netherlands
+    - seychelles
+    - afghanistan
+    - bhutan
+    - jersey
+    - united kingdom
+    - british virgin islands
+    - brunei
+    - congo brazzaville
+    - eritrea
+    - tajikistan
+    - svalbard and jan mayen islands
+    - jamaica
+    - lao pdr
+    - montenegro
+    - french polynesia
+    - grenada
+    - new caledonia
+    - benin
+    - ecuador
+    - equatorial guinea
+    - philippines
+    - venezuela
+    - vietnam
+    - wallis and futuna islands
+    - cyprus
+    - falkland islands malvinas
+    - france
+    - sierra leone
+    - sudan
+    - british indian ocean territory
+    - montserrat
+    - nigeria
+    - anguilla
+    - marshall islands
+    - norfolk island
+    - serbia
+    - bouvet island
+    - cambodia
+    - cote divoire
+    - malaysia
+    - saint kitts and nevis
+    - bolivia
+    - iceland
+    - moldova
+    - egypt
+    - mali
+    - palestine
+    - kosovo
+    - libya
+    - nauru
+    - austria
+    - french southern territories
+    - guam
+    - antigua and barbuda
+    - guinea
+    - réunion
+    - saint vincent and the grenadines
+    - kiribati
+    - kyrgyzstan
+    - macedonia
+    - guatemala
+    - guyana
+    - mexico
+    - spain
+    - costa rica
+    - china
+    - indonesia
+    - peru
+    - saint martin french part
+    - italy
+    - belarus
+    - mauritania
+    - micronesia
+    - portugal
+    - turkey
+    - bermuda
+    - ethiopia
+    - cocos keeling islands
+    - colombia
+    - greenland
+    - nicaragua
+    - united states
+    - madagascar
+    - suriname
+    - liberia
+    - papua new guinea
+    - sao tome and principe
+    - bahrain
+    - botswana
+    - cameroon
+    - congo kinshasa
+    - lesotho
+    - solomon islands
+    - south africa
+    - tanzania
+    - burkina faso
+    - panama
+    - bahamas
+    - denmark
+    - latvia
+    - namibia
+    - oman
+    - georgia
+    - macao sar china
+    - malta
+    - korea south
+    - togo
+    - armenia
+    - french guiana
+    - gibraltar
+    - kenya
+    - nepal
+    - syria
+    - zambia
+    - switzerland
+    - cape verde
+    - germany
+    - qatar
+    - korea north
+    - luxembourg
+    - paraguay
+    - saudi arabia
+    - timor leste
+    - cuba
+    - czech republic
+    - puerto rico
+    - myanmar
+    - thailand
+    - uzbekistan
+    - american samoa
+    - honduras
+    - malawi
+    - western sahara
+    - christmas island
+    - turks and caicos islands
+    - gabon
+    - isle of man
+    - tonga
+    - saint helena
+    - senegal
+    - slovenia
+    - trinidad and tobago
+    - belize
+    - hong kong sar china
+    - iran
+    - san marino
+    - tokelau
+    - aruba
+    - hungary
+    - russia
+    - rwanda
+    - albania
+    - haiti
+    - norway
+    - saint barthélemy
+    - virgin islands
+    - australia
+    - india
+    - djibouti
+    - finland
+    - kazakhstan
+    - comoros
+    - cook islands
+    - estonia
+    - romania
+    - taiwan
+    - andorra
+    - bangladesh
+    - japan
+    - uruguay
+    - guinea bissau
+    - heard and mcdonald islands
+    - kuwait
+    - algeria
+    - cayman islands
+    - dominican republic
+    - monaco
+    - south georgia and the south sandwich islands
+    - mauritius
+    - mozambique
+    - netherlands antilles
+    - south sudan
+    - pitcairn
+    - sri lanka
+    - tunisia
+    - barbados
+    - gambia
+    - ireland
+    - new zealand
+    - slovakia
+    - holy see vatican city state
+    - jordan
+    - yemen
+    - niue
+    - singapore
+    - swaziland
+    - antarctica
+    - burundi
+    - guadeloupe
+    - ukraine
+    - liechtenstein
+    - el salvador
+    - angola
+    - bulgaria
+    - canada
+    - dominica
+    - zimbabwe
+    - somalia
+    - sweden
+    - united arab emirates
+    - argentina
+    - palau
+    - vanuatu
+    - ala aland islands
+    - chile
+    - faroe islands
+    - mayotte
+    - samoa
+    - central african republic
+    - chad
+    - lithuania
+    - uganda
+    - belgium
+    - saint lucia
+    - israel
+    - poland
+    - turkmenistan
+    - tuvalu
+    - croatia
+    - mongolia
+    - saint pierre and miquelon
+    - bosnia and herzegovina
+    - fiji
+    - ghana
+    - northern mariana islands
+    - pakistan
+    - azerbaijan
+    - brazil
+    - guernsey
+    - lebanon
+    - morocco
+    - us minor outlying islands
+    - greece
+    - maldives
+    - martinique

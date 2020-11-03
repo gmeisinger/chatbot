@@ -78,24 +78,24 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: ask_about_case_count
+  - intent: ask_about_case_summary_graph
     entities:
     - country: Argentina
   - slot_was_set:
     - country: Argentina
-  - action: action_case_count
+  # - action: action_case_count
   - action: action_case_summary_graph
 
 - story: interactive_story_6
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: ask_about_case_count
+  - intent: ask_about_case_summary_graph
     entities:
     - country: Canada
   - slot_was_set:
     - country: Canada
-  - action: action_case_count
+  # - action: action_case_count
   - action: action_case_summary_graph
 
 - story: interactive_story_7
@@ -104,12 +104,14 @@ stories:
   - action: utter_greet
   - intent: ask_about_case_count_by_time
     entities:
-    - case_type: confirmed
-    - country: mexico
+    - case_type: deaths
+    - countries: 
+      - mexico
     - bytime: month
   - slot_was_set:
-    - case_type: confirmed
-    - country: mexico
+    - case_type: deaths
+    - countries: 
+      - mexico
     - bytime: month
   - action: action_case_count_by_time
 
@@ -120,12 +122,14 @@ stories:
   - intent: ask_about_case_count_by_time
     entities:
     - case_type: deaths
-    - country: china
+    - countries: 
+      - china
     - bytime: day
     - bysubtime: october
   - slot_was_set:
     - case_type: deaths
-    - country: china
+    - countries: 
+      - china
     - bytime: day
     - bysubtime: october
   - action: action_case_count_by_time

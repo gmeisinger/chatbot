@@ -13,6 +13,7 @@ intents:
 - mood_unhappy
 - ask_about_case_count_multiple_country
 - ask_about_case_count_by_time
+- ask_about_case_summary_graph
 entities:
   - name
   - country

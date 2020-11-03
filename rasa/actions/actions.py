@@ -242,6 +242,7 @@ class ActionCaseSummaryGraph(Action):
         dispatcher.utter_message(
             template='utter_case_count',
             image=linechart,
+            scope=scope,
             case_type=case_type,
             country=country)
         return []
@@ -253,7 +254,7 @@ class ActionCaseCountByTime(Action):
         return [
             #EntityFormField("scope", "scope"),
             #EntityFormField("case_type", "case_type"),
-            EntityFormField("country", "country")
+            EntityFormField("countries", "countries")
         ]
 
     def name(self):
@@ -267,7 +268,10 @@ class ActionCaseCountByTime(Action):
         case_type = tracker.get_slot('case_type')
         if case_type == None:
             case_type = "confirmed"
-        country = tracker.get_slot('country')
+        countries = tracker.get_slot('countries')
+        country = "world"
+        if countries != None:
+            country = countries[0]
         by_time = tracker.get_slot('bytime')
         by_sub_time = tracker.get_slot('bysubtime')
         if by_time == None:

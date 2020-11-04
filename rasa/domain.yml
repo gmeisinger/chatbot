@@ -35,12 +35,9 @@ slots:
   count:
     type: text
     auto_fill: false
-    influence_conversation: true
+    influence_conversation: false
   countries:
     type: list
-    influence_conversation: true
-  country:
-    type: text
     influence_conversation: true
   scope:
     type: categorical
@@ -74,6 +71,8 @@ slots:
 responses:
   utter_greet:
   - text: Hey! How are you?
+  - text: Hello!
+  - text: Hi!
   utter_cheer_up:
   - text: 'Here is something to cheer you up:'
     image: https://i.imgur.com/nGF1K8f.jpg
@@ -83,18 +82,20 @@ responses:
   - text: Great, carry on!
   utter_goodbye:
   - text: Bye
+  - text: Goodbye!
   utter_iamabot:
   - text: I am SCITalk, built by Pitt students and powered by Rasa.
   utter_ask_scope:
   - text: New or total cases?
   utter_ask_case_type:
   - text: Would you like data about recovered cases, confirmed cases, or deaths?
+  utter_ask_global:
+  - text: Would you like global data, or data for specific countries?
   utter_ask_countries:
   - text: Which countries would you like information about?
   utter_case_count:
   - text: There are {count} {scope} {case_type} cases in {country}.
-  utter_case_count_two_country:
-  - text: There are {count1} {scope} {case_type} cases in {country1} and {count2} {scope} {case_type} cases in {country2}.
+  - text: There are {count} {scope} {case_type} cases globally.
 actions:
 - action_case_count
 #- action_case_count_multiple_country
@@ -111,6 +112,6 @@ forms:
       - type: from_entity
       - entity: case_type
     countries:
-      - type: from entity
+      - type: from_entity
       - entity: countries
 version: '2.0'

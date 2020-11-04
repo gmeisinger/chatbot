@@ -2,33 +2,6 @@ version: "2.0"
 
 stories:
 
-- story: happy path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-
 - story: interactive_story_1
   steps:
   - intent: greet
@@ -52,9 +25,11 @@ stories:
   - intent: ask_about_case_count
     entities:
     - case_type: deaths
-    - country: Venezuela
+    - countries: 
+      - Venezuela
   - slot_was_set:
-    - country: Venezuela
+    - countries: 
+      - Venezuela
   - action: action_case_count
 
 
@@ -80,9 +55,11 @@ stories:
   - action: utter_greet
   - intent: ask_about_case_summary_graph
     entities:
-    - country: Argentina
+    - countries: 
+      - Argentina
   - slot_was_set:
-    - country: Argentina
+    - countries: 
+      - Argentina
   # - action: action_case_count
   - action: action_case_summary_graph
 
@@ -92,9 +69,11 @@ stories:
   - action: utter_greet
   - intent: ask_about_case_summary_graph
     entities:
-    - country: Canada
+    - countries: 
+      - Canada
   - slot_was_set:
-    - country: Canada
+    - countries: 
+      - Canada
   # - action: action_case_count
   - action: action_case_summary_graph
 
@@ -122,11 +101,9 @@ stories:
   - intent: ask_about_case_count_by_time
     entities:
     - case_type: deaths
-    - countries: 
     - bytime: month
   - slot_was_set:
-    - case_type: deaths
-    - countries: 
+    - case_type: deaths 
     - bytime: month
   - action: action_case_count_by_time
 

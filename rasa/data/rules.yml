@@ -7,10 +7,10 @@ rules:
   - intent: goodbye
   - action: utter_goodbye
 
-- rule: Give case counts when the use asks
-  steps:
-  - intent: ask_about_case_count
-  - action: action_case_count
+#- rule: Give case counts when the use asks
+#  steps:
+#  - intent: ask_about_case_count
+#  - action: action_case_count
 
 #- rule: Give case counts for multiple country when the use asks
 #  steps:
@@ -21,3 +21,17 @@ rules:
   steps:
   - intent: ask_about_case_count_by_time
   - action: action_case_count_by_time
+
+- rule: activate case count form
+  steps:
+    - intent: ask_about_case_count
+    - action: case_count_form
+    - active_loop: case_count_form
+
+- rule: submit case count form
+  condition:
+  - active_loop: case_count_form
+  steps:
+    - action: case_count_form
+    - active_loop: null
+    - action: action_case_count

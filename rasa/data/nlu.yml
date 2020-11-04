@@ -54,12 +54,12 @@ nlu:
     - no thanks
     - nope
 - intent: thankyou
-  examples:
-  - thank you
-  - thanks
-  - ty
-  - tysm
-  - tyvm
+  examples: |
+    - thank you
+    - thanks
+    - ty
+    - tysm
+    - tyvm
 - intent: mood_great
   examples: |
     - perfect
@@ -173,6 +173,7 @@ nlu:
     - deaths
     - death
     - died
+    - dead
     - die
     - fatalities
     - lives lost

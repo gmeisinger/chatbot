@@ -29,7 +29,8 @@
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet, FollowupAction, EventType
-from rasa_sdk.forms import FormAction
+from rasa_sdk import FormValidationAction
+from rasa_sdk.types import DomainDict
 
 from typing import Any, Text, Dict, List, Union
 from datetime import date
@@ -391,47 +392,45 @@ class ActionCaseCountByTime(Action):
 #  FORMS  #
 ###########
 
-class CaseCountForm(FormAction):
+class CaseCountFormValidator(FormValidationAction):
 
     def name(self):
-        return "case_count_form"
+        return "validate_case_count_form"
     
     @staticmethod
-    def required_slots(tracker):
-        req = ['scope', 'case_type', 'use_global']
-        if not tracker.get_slot('use_global'):
-            req.append('countries')
-        return req
+    def scope_db() -> List[Text]:
+        """Database of supported values"""
+        return ["new", "total"]
     
-    def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
-        """A dictionary to map required slots to
-            - an extracted entity
-            - intent: value pairs
-            - a whole message
-            or a list of them, where a first match will be picked"""
-        return {
-            "scope": [
-                self.from_entity(entity="scope")
-            ],
-            "case_type": [
-                self.from_entity(entity="case_type")
-            ],
-            "use_global": [
-                self.from_intent(intent="affirm", value=True),
-                self.from_intent(intent="deny", value=False)
-            ],
-            "countries": [
-                self.from_entity(entity="countries")
-            ]
-        }
-    
-    def submit(
-        self,
-        dispatcher: CollectingDispatcher,
-        tracker: Tracker,
-        domain: Dict[Text, Any],
-    ) -> List[Dict]:
+    @staticmethod
+    def case_type_db() -> List[Text]:
+        """Database of supported values"""
+        return ["confirmed", "recovered", "deaths"]
 
-        dispatcher.utter_message("Thanks, I'll get that info!")
-        fa = FollowupAction(action="action_case_count")
-        return [fa]
+    def validate_scope(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: DomainDict,) -> Dict[Text, Any]:
+        """Validate scope value."""
+        dispatcher.utter_message(text="validating scope...")
+        return {"scope": slot_value}
+
+    def validate_case_type(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: DomainDict,) -> Dict[Text, Any]:
+        """Validate case_type value."""
+        dispatcher.utter_message(text="validating case type...")
+        return {"case_type": slot_value}
+    
+    def validate_use_global(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: DomainDict,) -> Dict[Text, Any]:
+        #Validate use_global value.
+        dispatcher.utter_message(text="validating global...")
+        if isinstance(slot_value, str):
+            if "global" in slot_value:
+                return {"use_global": True}
+            else:
+                return {"use_global": False}
+        elif slot_value in [True, False]:
+            return {"use_global": slot_value}
+        else:
+            return {"use_global": False}   
+    
+    def validate_countries(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: DomainDict,) -> Dict[Text, Any]:
+        """Validate countries value."""
+        dispatcher.utter_message(text="validating countries...")
+        return {"countries": slot_value}

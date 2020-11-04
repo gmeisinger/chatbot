@@ -18,6 +18,27 @@ stories:
 #   - slot_was_set:
 #     - country: the United States
 
+- story: case_count_form_happy_path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_about_case_count
+  - action: case_count_form
+  - active_loop: case_count_form
+  - active_loop: null
+  - action: action_case_count
+
+- story: case_count_form_stop
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_about_case_count
+  - action: case_count_form
+  - active_loop: case_count_form
+  - intent: out_of_scope
+  - active_loop: null
+  - action: utter_what_else
+
 - story: interactive_story_3
   steps:
   - intent: greet
@@ -30,6 +51,9 @@ stories:
   - slot_was_set:
     - countries: 
       - Venezuela
+  - action: case_count_form
+  - active_loop: case_count_form
+  - active_loop: null
   - action: action_case_count
 
 
@@ -47,6 +71,9 @@ stories:
     - countries: 
       - Venezuela
       - columbia
+  - action: case_count_form
+  - active_loop: case_count_form
+  - active_loop: null
   - action: action_case_count
 
 - story: interactive_story_5

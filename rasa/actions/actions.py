@@ -59,13 +59,9 @@ class ActionCaseCount(Action):
         scope = tracker.get_slot('scope')
         if scope == None:
             scope = "total"
-            #fa = FollowupAction(name="case_count_form")
-            #return [fa]
         case_type = tracker.get_slot('case_type')
         if case_type == None:
             case_type = "confirmed"
-            #fa = FollowupAction(name="case_count_form")
-            #return [fa]
         country = tracker.get_slot('countries')
         # get data from api
         r = requests.get("https://api.covid19api.com/summary")
@@ -74,19 +70,44 @@ class ActionCaseCount(Action):
         countries = summary['Countries']
         if country == None:
             data = summary['Global']
-        else:
+            key_string = scope.capitalize() + case_type.capitalize()
+            count = data[key_string]
+            # report the information
+            dispatcher.utter_message(
+                template="utter_case_count",
+                count=count,
+                scope=scope,
+                case_type=case_type,
+                country=country
+            )
+        elif len(country) == 1:
             country = country[0]
             data = next((item for item in countries if (item['Slug'] == country or item['Country'] == country)), None)
-        key_string = scope.capitalize() + case_type.capitalize()
-        count = data[key_string]
-        # report the information
-        dispatcher.utter_message(
-            template="utter_case_count",
-            count=count,
-            scope=scope,
-            case_type=case_type,
-            country=country
-        )
+            key_string = scope.capitalize() + case_type.capitalize()
+            count = data[key_string]
+            # report the information
+            dispatcher.utter_message(
+                template="utter_case_count",
+                count=count,
+                scope=scope,
+                case_type=case_type,
+                country=country
+            )
+        else:
+            text = "There are "
+            for x in country:
+                data = next((item for item in countries if (item['Slug'] == x or item['Country'] == x)), None)
+                key_string = scope.capitalize() + case_type.capitalize()
+                text = text + str(data[key_string]) + " " + scope + " " + case_type + " in " + x
+                if len(country) == 2 and country.index(x) != 1:
+                    text = text + " and "
+                elif len(country) == country.index(x) + 2:
+                    text = text + ", and "
+                elif len(country) == country.index(x) + 1:
+                    text = text + "."
+                else: 
+                    text = text + ", "
+            dispatcher.utter_message(text=text)
         #return [slot_scope, slot_case_type, slot_country, slot_count, evt]
         return []
 
@@ -117,6 +138,7 @@ class ActionCaseCountMultCountry(Action):
         summary = r.json()
         # target a country
         countries = summary['Countries']
+
         if country == None:
             data = summary['Global']
             key_string = scope.capitalize() + case_type.capitalize()

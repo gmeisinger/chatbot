@@ -12,10 +12,10 @@ rules:
   - intent: ask_about_case_count
   - action: action_case_count
 
-- rule: Give case counts for multiple country when the use asks
-  steps:
-  - intent: ask_about_case_count_multiple_country
-  - action: action_case_count_multiple_country
+#- rule: Give case counts for multiple country when the use asks
+#  steps:
+#  - intent: ask_about_case_count_multiple_country
+#  - action: action_case_count_multiple_country
 
 - rule: Give case counts by time when the use asks
   steps:

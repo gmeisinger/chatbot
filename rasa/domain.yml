@@ -11,7 +11,7 @@ intents:
 - deny
 - mood_great
 - mood_unhappy
-- ask_about_case_count_multiple_country
+#- ask_about_case_count_multiple_country
 - ask_about_case_count_by_time
 - ask_about_case_summary_graph
 entities:
@@ -97,7 +97,7 @@ responses:
   - text: There are {count1} {scope} {case_type} cases in {country1} and {count2} {scope} {case_type} cases in {country2}.
 actions:
 - action_case_count
-- action_case_count_multiple_country
+#- action_case_count_multiple_country
 - action_case_summary_graph
 - action_case_count_by_time
 - utter_greet

@@ -14,6 +14,7 @@ intents:
 #- ask_about_case_count_multiple_country
 - ask_about_case_count_by_time
 - ask_about_case_summary_graph
+- out_of_scope
 entities:
   - name
   - country
@@ -39,6 +40,8 @@ slots:
   countries:
     type: list
     influence_conversation: true
+  use_global:
+    type: bool
   scope:
     type: categorical
     influence_conversation: true
@@ -89,7 +92,7 @@ responses:
   - text: New or total cases?
   utter_ask_case_type:
   - text: Would you like data about recovered cases, confirmed cases, or deaths?
-  utter_ask_global:
+  utter_ask_use_global:
   - text: Would you like global data, or data for specific countries?
   utter_ask_countries:
   - text: Which countries would you like information about?
@@ -104,14 +107,15 @@ actions:
 - utter_greet
 - utter_iamabot
 forms:
-  case_count_form:
-    scope:
-      - type: from_entity
-      - entity: scope
-    case_type:
-      - type: from_entity
-      - entity: case_type
-    countries:
-      - type: from_entity
-      - entity: countries
+  - case_count_form
+  #case_count_form:
+    #scope:
+    #  - type: from_entity
+    #  - entity: scope
+    #case_type:
+    #  - type: from_entity
+    #  - entity: case_type
+    #countries:
+    #  - type: from_entity
+    #  - entity: countries
 version: '2.0'

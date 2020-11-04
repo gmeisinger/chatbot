@@ -29,8 +29,9 @@
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet, FollowupAction, EventType
+from rasa_sdk.forms import FormAction
 
-from typing import Dict, Text, List
+from typing import Any, Text, Dict, List, Union
 from datetime import date
 
 import requests
@@ -385,3 +386,52 @@ class ActionCaseCountByTime(Action):
         # )
         #return [slot_scope, slot_case_type, slot_country, slot_count, evt]
         return []
+
+###########
+#  FORMS  #
+###########
+
+class CaseCountForm(FormAction):
+
+    def name(self):
+        return "case_count_form"
+    
+    @staticmethod
+    def required_slots(tracker):
+        req = ['scope', 'case_type', 'use_global']
+        if not tracker.get_slot('use_global'):
+            req.append('countries')
+        return req
+    
+    def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
+        """A dictionary to map required slots to
+            - an extracted entity
+            - intent: value pairs
+            - a whole message
+            or a list of them, where a first match will be picked"""
+        return {
+            "scope": [
+                self.from_entity(entity="scope")
+            ],
+            "case_type": [
+                self.from_entity(entity="case_type")
+            ],
+            "use_global": [
+                self.from_intent(intent="affirm", value=True),
+                self.from_intent(intent="deny", value=False)
+            ],
+            "countries": [
+                self.from_entity(entity="countries")
+            ]
+        }
+    
+    def submit(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict]:
+
+        dispatcher.utter_message("Thanks, I'll get that info!")
+        fa = FollowupAction(action="action_case_count")
+        return [fa]

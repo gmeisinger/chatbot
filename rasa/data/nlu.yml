@@ -38,6 +38,9 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - sure
+    - okay
+    - ok
 - intent: deny
   examples: |
     - no
@@ -47,6 +50,16 @@ nlu:
     - don't like that
     - no way
     - not really
+    - absolutely not
+    - no thanks
+    - nope
+- intent: thankyou
+  examples:
+  - thank you
+  - thanks
+  - ty
+  - tysm
+  - tyvm
 - intent: mood_great
   examples: |
     - perfect
@@ -86,6 +99,25 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
     - Are you a bot?
+- intent: out_of_scope
+  examples: |
+    - that's not what I want to do
+    - wait stop
+    - you're no help
+    - this is no help at all
+    - how old are you
+    - I want to order a pizza
+    - tell me the weather
+    - this isn't working
+    - I already told you that
+    - don't like that
+    - I don't want to tell you that
+    - none of your business
+    - that's not right
+    - stop asking
+    - nevermind
+    - I want to do something else
+    - I changed my mind
 - intent: ask_about_case_count
   examples: |
     - how many [total](scope) people [recovered](case_type) from covid in [ireland](countries)?

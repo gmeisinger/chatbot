@@ -6,22 +6,32 @@ pipeline:
 # # No configuration for the NLU pipeline was provided. The following default pipeline was used to train your model.
 # # If you'd like to customize it, uncomment and adjust the pipeline.
 # # See https://rasa.com/docs/rasa/tuning-your-model for more information.
-#   - name: WhitespaceTokenizer
-#   - name: RegexFeaturizer
-#   - name: LexicalSyntacticFeaturizer
-#   - name: CountVectorsFeaturizer
-#   - name: CountVectorsFeaturizer
-#     analyzer: char_wb
-#     min_ngram: 1
-#     max_ngram: 4
-#   - name: DIETClassifier
-#     epochs: 100
-#   - name: EntitySynonymMapper
-#   - name: ResponseSelector
-#     epochs: 100
-#   - name: FallbackClassifier
-#     threshold: 0.3
-#     ambiguity_threshold: 0.1
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: CRFEntityExtractor
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 4
+  - name: DIETClassifier
+    entity_recognition: False
+    epochs: 100
+  #- name: RegexEntityExtractor
+  #  # text will be processed with case insensitive as default
+  #  case_sensitive: False
+  #  # use lookup tables to extract entities
+  #  use_lookup_tables: True
+  #  # use regexes to extract entities
+  #  use_regexes: True
+  - name: EntitySynonymMapper
+  - name: ResponseSelector
+    epochs: 100
+  - name: FallbackClassifier
+    threshold: 0.3
+    ambiguity_threshold: 0.1
+  
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/

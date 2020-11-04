@@ -135,7 +135,7 @@ nlu:
     - has anybody [deaths](case_type) in [south korea](countries) and [north korea](countries)?
     - how many [new](scope) [deaths](case_type) in [russia](countries) and [japan](countries)?
     - How many people have [deaths](case_type) in [Venezuela](countries) as well as [columbia](countries)?
-- lookup: deaths
+- synonym: deaths
   examples: |
     - deaths
     - death
@@ -144,19 +144,19 @@ nlu:
     - fatalities
     - lives lost
     - killed
-- lookup: mortality_rate
+- synonym: mortality_rate
   examples: |
     - mortality rate
     - rate of death
     - death rate
-- lookup: recovered
+- synonym: recovered
   examples: |
     - recover
     - recovery
     - recovr
     - survived
     - improved
-- lookup: confirmed
+- synonym: confirmed
   examples: |
     - active
     - cases
@@ -183,7 +183,7 @@ nlu:
     - friday
     - saturday
     - sunday
-- lookup: virus
+- synonym: virus
   examples: |
     - coronavirus
     - covid19

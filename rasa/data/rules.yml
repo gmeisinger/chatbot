@@ -12,6 +12,11 @@ rules:
   - intent: greet
   - action: utter_greet
 
+- rule: Say you're welcome when thanked
+  steps:
+  - intent: thankyou
+  - action: utter_welcome
+
 - rule: Give case counts by time when the use asks
   steps:
   - intent: ask_about_case_count_by_time

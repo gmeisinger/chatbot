@@ -99,6 +99,8 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
     - Are you a bot?
+    - Who are you?
+    - What are you?
 - intent: out_of_scope
   examples: |
     - that's not what I want to do

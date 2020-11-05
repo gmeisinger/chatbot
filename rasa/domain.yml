@@ -87,6 +87,12 @@ responses:
   - text: Did that help you?
   utter_happy:
   - text: Great, carry on!
+  utter_welcome:
+  - text: You're welcome!
+  - text: It's my pleasure!
+  - text: Glad I could help!
+  - text: Of course.
+  - text: :)
   utter_goodbye:
   - text: Bye
   - text: Goodbye!

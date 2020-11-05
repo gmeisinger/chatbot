@@ -63,9 +63,9 @@ def generate_response(msg, author):
     # clean the text
     #cleaned_text = clean_text(msg)
     rasa = get_rasa_response(msg)
-    if rasa != None:
-        response['question'] = rasa
-    return response
+    #if rasa != None:
+        #response['question'] = rasa
+    return rasa
 
 # tokenizes and cleans text. returns a list of words
 def clean_text(text):

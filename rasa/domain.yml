@@ -13,6 +13,10 @@ intents:
 - ask_about_case_count_by_time
 - ask_about_case_summary_graph
 - out_of_scope
+- inform_scope
+- inform_case_type
+- inform_countries
+
 entities:
   - name
   - country

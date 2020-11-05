@@ -38,6 +38,9 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - sure
+    - okay
+    - ok
 - intent: deny
   examples: |
     - no
@@ -47,6 +50,16 @@ nlu:
     - don't like that
     - no way
     - not really
+    - absolutely not
+    - no thanks
+    - nope
+- intent: thankyou
+  examples: |
+    - thank you
+    - thanks
+    - ty
+    - tysm
+    - tyvm
 - intent: mood_great
   examples: |
     - perfect
@@ -86,6 +99,58 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
     - Are you a bot?
+- intent: out_of_scope
+  examples: |
+    - that's not what I want to do
+    - wait stop
+    - you're no help
+    - this is no help at all
+    - how old are you
+    - I want to order a pizza
+    - tell me the weather
+    - this isn't working
+    - I already told you that
+    - don't like that
+    - I don't want to tell you that
+    - none of your business
+    - that's not right
+    - stop asking
+    - nevermind
+    - I want to do something else
+    - I changed my mind
+- intent: inform_scope
+  examples: |
+    - [new](scope)
+    - [total](scope)
+    - [new](scope) cases
+    - [total](scope) cases
+    - only [new](scope) cases
+    - [all](scope) cases
+- intent: inform_case_type
+  examples: |
+    - [deaths](case_type)
+    - [confirmed](case_type)
+    - [recovered](case_type)
+    - [deaths](case_type) cases
+    - [confirmed](case_type) cases
+    - [recovered](case_type) cases
+    - only [deaths](case_type)
+    - just [confirmed](case_type)
+    - only [recovered](case_type)
+- intent: inform_countries
+  examples: |
+    - [mexico](countries)
+    - [canada](countries)
+    - [china](countries)
+    - [the united states](countries)
+    - [india](countries) and [france](countries)
+    - [japan](countries) and [brazil](countries)
+    - [the united states](countries) and [russia](countries)
+    - [nigeria](countries) and [north korea](countries)
+    - [indonesia](countries), [comoros](countries) and [jordan](countries)
+    - [bangladesh](countries), [dominican republic](countries) and [qatar](countries)
+    - [tokelau](countries), [taiwan](countries), [fiji](countries) and [estonia](countries)
+    - [slovakia](countries), [mayotte](countries), [new zealand](countries) and [samoa](countries)
 - intent: ask_about_case_count
   examples: |
     - how many [total](scope) people [recovered](case_type) from covid in [ireland](countries)?
@@ -135,12 +200,16 @@ nlu:
     - how many [deaths](case_type) have there been per [day](bytime) in [month](bysubtime)
 #- intent: ask_about_case_count_multiple_country
 #  examples: |
-    
+- synonym: total
+  examples: |
+    - all
+    - everything
 - synonym: deaths
   examples: |
     - deaths
     - death
     - died
+    - dead
     - die
     - fatalities
     - lives lost

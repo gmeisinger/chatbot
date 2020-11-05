@@ -170,3 +170,12 @@ stories:
     - bytime: day
     - bysubtime: october
   - action: action_case_count_by_time
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_about_case_summary_graph
+    entities:
+    - country: Argentina
+  - action: action_case_summary_graph

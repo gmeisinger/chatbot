@@ -200,8 +200,14 @@ nlu:
     - how many [deaths](case_type) have there been in [venezuela](countries) per [day](bytime) in [month](bysubtime)?
     - how many [deaths](case_type) have there been per [month](bytime)
     - how many [deaths](case_type) have there been per [day](bytime) in [month](bysubtime)
-#- intent: ask_about_case_count_multiple_country
-#  examples: |
+- intent: ask_about_case_summary_graph
+  examples: |
+    - can you show me a graph of [new](case_type) cases in [Mexico](countries)?
+    - show a graph of [deaths](case_type) in [Ukraine](countries)
+    - show graph of [confirmed](case_type) cases in [Taiwan](countries)
+    - graph [new](case_type) cases in [Canada](countries)
+    - show me a graph of [confirmed](case_type) cases in [Serbia](countries)
+    - Show me a graph of cases in [Argentina](country)
 - synonym: total
   examples: |
     - all
@@ -232,6 +238,16 @@ nlu:
   examples: |
     - active
     - cases
+- synonym: virus
+  examples: |
+    - coronavirus
+    - covid19
+    - covid-19
+    - covid
+    - corona
+    - the virus
+    - pandemic
+    - the pandemic
 - lookup: month
   examples: |
     - january
@@ -255,16 +271,6 @@ nlu:
     - friday
     - saturday
     - sunday
-- synonym: virus
-  examples: |
-    - coronavirus
-    - covid19
-    - covid-19
-    - covid
-    - corona
-    - the virus
-    - pandemic
-    - the pandemic
 - lookup: relative_time
   examples: |
     - today
@@ -273,9 +279,9 @@ nlu:
     - last month
 - lookup: bytime
   examples: |
-    -month
-    -day
-    -year
+    - month
+    - day
+    - year
 - lookup: countries
   examples: |
     - niger

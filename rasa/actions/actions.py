@@ -127,12 +127,24 @@ class ActionCaseSummaryGraph(Action):
         line_chart = pygal.Line()
         line_chart.title = title
 
-        # changes
-        for category in data:
-            data_num = []
-            for entry in category:
-                data_num.append(int(entry[value_tag]))
-            line_chart.add(str(category[0][label_tag]), data_num)
+        data_num = { }
+        
+        for entry in data:
+            p = entry['Province']
+            c = entry['Cases']
+            
+            if p in data_num:
+                data_num[p].append(int(c))
+            else:
+                data_num[p] = [int(c)]
+        
+        if '' in data_num:
+            line_chart.add(str(data[0]['Country']), data_num[''])
+        
+        for province in data_num:
+            if province == '':
+                continue
+            line_chart.add(province, data_num[province])
 
         return line_chart.render_data_uri()
 
@@ -141,7 +153,13 @@ class ActionCaseSummaryGraph(Action):
         if case_type == None:
             case_type = "confirmed"
 
-        country = tracker.get_slot('country')
+        countries_slot = tracker.get_slot('countries')
+
+        if countries_slot == None:
+            return []
+
+        country = str(countries_slot[0])
+
         # get data from api
         r = requests.get("https://api.covid19api.com/summary")
         summary = r.json()
@@ -177,11 +195,10 @@ class ActionCaseSummaryGraph(Action):
         else:
             title = case_type.capitalize() + ' Cases in' + data['Country']
             # vtag = case_type
-        linechart = self.Linechart(title, [dayone], vtag, ltag)
+        linechart = self.Linechart(title, dayone, vtag, ltag)
         dispatcher.utter_message(
             template='utter_case_count',
             image=linechart,
-            scope=scope,
             case_type=case_type,
             country=country)
         return []

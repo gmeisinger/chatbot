@@ -2,8 +2,9 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- ask_about_case_count
 - greet
+- ask_about_case_summary_graph
+- ask_about_case_count
 - bot_challenge
 - goodbye
 - affirm
@@ -11,54 +12,19 @@ intents:
 - mood_great
 - mood_unhappy
 - ask_about_case_count_by_time
-- ask_about_case_summary_graph
 - out_of_scope
 - inform_scope
 - inform_case_type
 - inform_countries
-
 entities:
-  - name
-  - country
-  - countries
-  - scope
-  - case_type
-  - bytime
-  - bysubtime
-
+- bysubtime
+- bytime
+- case_type
+- countries
+- country
+- name
+- scope
 slots:
-  case_type:
-    type: categorical
-    influence_conversation: false
-    values:
-    - recovered
-    - confirmed
-    - deaths
-  count:
-    type: text
-    auto_fill: false
-    influence_conversation: false
-  countries:
-    type: list
-    influence_conversation: true
-  countries_text:
-    type: text
-    influence_conversation: false
-  use_global:
-    type: bool
-    influence_conversation: false
-  scope:
-    type: categorical
-    influence_conversation: false
-    values:
-    - new
-    - total
-  bytime:
-    type: categorical
-    influence_conversation: true
-    values:
-    - day
-    - month
   bysubtime:
     type: categorical
     influence_conversation: true
@@ -75,6 +41,45 @@ slots:
     - october
     - november
     - december
+    - __other__
+  bytime:
+    type: categorical
+    influence_conversation: true
+    values:
+    - day
+    - month
+    - __other__
+  case_type:
+    type: categorical
+    influence_conversation: false
+    values:
+    - recovered
+    - confirmed
+    - deaths
+    - __other__
+  count:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+  countries:
+    type: list
+    influence_conversation: true
+  countries_text:
+    type: text
+    influence_conversation: false
+  requested_slot:
+    type: text
+    influence_conversation: false
+  scope:
+    type: categorical
+    influence_conversation: false
+    values:
+    - new
+    - total
+    - __other__
+  use_global:
+    type: bool
+    influence_conversation: false
 responses:
   utter_greet:
   - text: Hey! How are you?
@@ -115,34 +120,33 @@ responses:
   - text: There are {count} {scope} {case_type} cases in {country}.
 actions:
 - action_case_count
-#- action_case_count_multiple_country
-- action_case_summary_graph
 - action_case_count_by_time
+- action_case_summary_graph
 - utter_greet
 - utter_iamabot
 - validate_case_count_form
 forms:
   case_count_form:
     scope:
-      - type: from_entity
-        entity: scope
+    - type: from_entity
+      entity: scope
     case_type:
-      - type: from_entity
-        entity: case_type
+    - type: from_entity
+      entity: case_type
     use_global:
-      - type: from_entity
-        entity: countries
-        value: false
-      - type: from_intent
-        intent: affirm
-        value: true
-      - type: from_intent
-        intent: deny
-        value: false
+    - type: from_entity
+      entity: countries
+      value: false
+    - type: from_intent
+      intent: affirm
+      value: true
+    - type: from_intent
+      intent: deny
+      value: false
     countries_text:
-      - type: from_entity
-        entity: countries
-        value: example
-      - type: from_text
-        not_intent: out_of_scope
+    - type: from_entity
+      entity: countries
+      value: example
+    - type: from_text
+      not_intent: out_of_scope
 version: '2.0'

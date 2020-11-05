@@ -118,6 +118,39 @@ nlu:
     - nevermind
     - I want to do something else
     - I changed my mind
+- intent: inform_scope
+  examples: |
+    - [new](scope)
+    - [total](scope)
+    - [new](scope) cases
+    - [total](scope) cases
+    - only [new](scope) cases
+    - [all](scope) cases
+- intent: inform_case_type
+  examples: |
+    - [deaths](case_type)
+    - [confirmed](case_type)
+    - [recovered](case_type)
+    - [deaths](case_type) cases
+    - [confirmed](case_type) cases
+    - [recovered](case_type) cases
+    - only [deaths](case_type)
+    - just [confirmed](case_type)
+    - only [recovered](case_type)
+- intent: inform_countries
+  examples: |
+    - [mexico](countries)
+    - [canada](countries)
+    - [china](countries)
+    - [the united states](countries)
+    - [india](countries) and [france](countries)
+    - [japan](countries) and [brazil](countries)
+    - [the united states](countries) and [russia](countries)
+    - [nigeria](countries) and [north korea](countries)
+    - [indonesia](countries), [comoros](countries) and [jordan](countries)
+    - [bangladesh](countries), [dominican republic](countries) and [qatar](countries)
+    - [tokelau](countries), [taiwan](countries), [fiji](countries) and [estonia](countries)
+    - [slovakia](countries), [mayotte](countries), [new zealand](countries) and [samoa](countries)
 - intent: ask_about_case_count
   examples: |
     - how many [total](scope) people [recovered](case_type) from covid in [ireland](countries)?
@@ -167,7 +200,10 @@ nlu:
     - how many [deaths](case_type) have there been per [day](bytime) in [month](bysubtime)
 #- intent: ask_about_case_count_multiple_country
 #  examples: |
-    
+- synonym: total
+  examples: |
+    - all
+    - everything
 - synonym: deaths
   examples: |
     - deaths

@@ -404,33 +404,40 @@ class CaseCountFormValidator(FormValidationAction):
     
     @staticmethod
     def case_type_db() -> List[Text]:
-        """Database of supported values"""
+        #Database of supported values
         return ["confirmed", "recovered", "deaths"]
 
     def validate_scope(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: DomainDict,) -> Dict[Text, Any]:
-        """Validate scope value."""
-        dispatcher.utter_message(text="validating scope...")
+        #Validate scope value.
+        if slot_value == None:
+            return {"scope": "total"}
         return {"scope": slot_value}
 
     def validate_case_type(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: DomainDict,) -> Dict[Text, Any]:
-        """Validate case_type value."""
-        dispatcher.utter_message(text="validating case type...")
+        #Validate case_type value.
+        if slot_value == None:
+            return {"case_type": "confirmed"}
         return {"case_type": slot_value}
     
     def validate_use_global(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: DomainDict,) -> Dict[Text, Any]:
         #Validate use_global value.
-        dispatcher.utter_message(text="validating global...")
+
         if isinstance(slot_value, str):
             if "global" in slot_value:
                 return {"use_global": True}
             else:
                 return {"use_global": False}
-        elif slot_value in [True, False]:
+        elif type(slot_value) is bool:
             return {"use_global": slot_value}
         else:
             return {"use_global": False}   
     
-    def validate_countries(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: DomainDict,) -> Dict[Text, Any]:
-        """Validate countries value."""
-        dispatcher.utter_message(text="validating countries...")
-        return {"countries": slot_value}
+    def validate_countries_text(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: DomainDict,) -> Dict[Text, Any]:
+        #Validate countries value.
+        countries = tracker.get_slot("countries")
+        if countries != None:
+            c_text = ""
+            for c in countries:
+                c_text += ", " + c
+            return {"countries_text": countries[0]}
+        return {"countries_text": None}

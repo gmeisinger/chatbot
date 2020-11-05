@@ -51,8 +51,9 @@ def get_rasa_response(text):
     }
     if response != None and len(response) > 0:
         rasa['question'] = response[0]["text"]
-        if response[0]['image'] != None:
-            rasa['images'].append(response[0]['image'])
+        print(str(type(response), flush=True)
+        #if response[0]['image'] != None:
+        #    rasa['images'].append(response[0]['image'])
     return rasa
 
 ### Chatbot helper functions ###

@@ -335,6 +335,16 @@ nlu:
     - graph [new](case_type) cases in [Canada](countries)
     - show me a graph of [confirmed](case_type) cases in [Serbia](countries)
     - Show me a graph of cases in [Argentina](country)
+    - show me a graph of [deaths](case_type) in [chile](countries)
+    - show me a graph of [recoveries](case_type) in [venezuela](countries)
+    - show me a graph of [confirmed](case_type) cases in [haiti](countries)
+    - show me a graph of [new](scope) [deaths](case_type) in [germany](countries)
+    - show me a graph of [new](scope) [recoveries](case_type) in [poland](countries)
+    - show me a graph of [new](scope) [confirmed](case_type) cases in [russia](countries)
+    - show me a graph of [total](scope) [deaths](case_type) in [ukraine](countries)
+    - show me a graph of [total](scope) [recoveries](case_type) in [bosnia](countries)
+    - show me a graph of [total](scope) [confirmed](case_type) cases in [sweden](countries)
+    - graph [deaths](case_type) [germany](countries)
 - synonym: total
   examples: |
     - all

@@ -226,6 +226,8 @@ class ActionCaseCountByTimeMonth(Action):
         case_type = tracker.get_slot('case_type')
         if case_type == None:
             case_type = "confirmed"
+        elif case_type == "recoveries":
+            case_type = "recovered"
         countries = tracker.get_slot('countries')
         country = "world"
         if countries != None:
@@ -254,58 +256,68 @@ class ActionCaseCountByTimeMonth(Action):
                         counts[m] = counts[m] + y["Cases"]
 
         else:
-            text = "In " + country + " there have been "
-            r = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-03-01T00:00:00Z&to=2020-" + currentMonth + "-01T00:00:00Z")
-            summary = r.json()
-            m = 3
-            if summary[1]["Province"] == "":
-                for x in summary:
-                    if int(x["Date"][5:7]) == m:
-                        m += 1
-                        counts[m] = x["Cases"]
-            else:
-                for x in range(m,int(currentMonth) + 1):
-                    counts[x] = 0
-                for x in range(len(summary)):
-                    if int(summary[x]["Date"][5:7]) == m and int(summary[x]["Date"][8:10]) == 1:
-                        counts[m] += summary[x]["Cases"]
-                    if x+1 != len(summary) and int(summary[x+1]["Date"][5:7]) != m:
-                        m += 1
-        m = 1
-        numM = len(counts)
-        for x in counts:
-            text = text + str(counts[x]) + " " + scope + " " + case_type + " in "
-            if x == 1:
-                text = text + "January"
-            elif x == 2:
-                text = text + "February"
-            elif x == 3:
-                text = text + "March"
-            elif x == 4:
-                text = text + "April"
-            elif x == 5:
-                text = text + "May"
-            elif x == 6:
-                text = text + "June"
-            elif x == 7:
-                text = text + "July"
-            elif x == 8:
-                text = text + "August"
-            elif x == 9:
-                text = text + "September"
-            elif x == 10:
-                text = text + "October"
-            elif x == 11:
-                text = text + "November"
-            else:
-                text = text + "December"
-            
-            if numM == m + 1:
-                text = text + ", and "
-            elif numM != m:
-                text = text + ", "
-            m += 1
-        text = text + "."
+            for c in countries:
+                country = c
+                text = text + "In " + country + " there have been "
+                r = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-03-01T00:00:00Z&to=2020-" + currentMonth + "-01T00:00:00Z")
+                summary = r.json()
+                m = 3
+                if summary[1]["Province"] == "":
+                    for x in summary:
+                        if int(x["Date"][5:7]) == m:
+                            m += 1
+                            counts[m] = x["Cases"]
+                else:
+                    for x in range(m,int(currentMonth) + 1):
+                        counts[x] = 0
+                    for x in range(len(summary)):
+                        if int(summary[x]["Date"][5:7]) == m and int(summary[x]["Date"][8:10]) == 1:
+                            counts[m] += summary[x]["Cases"]
+                        if x+1 != len(summary) and int(summary[x+1]["Date"][5:7]) != m:
+                            m += 1
+                m = 1
+                numM = len(counts)
+                for x in counts:
+                    text = text + str(counts[x]) + " " + scope + " "
+                    if case_type == "recovered":
+                        text = text + "recoveries in "
+                    elif case_type == "confirmed":
+                        text = text + case_type + " cases in "
+                    else:
+                        text = text + case_type + " in "
+                    if x == 1:
+                        text = text + "January"
+                    elif x == 2:
+                        text = text + "February"
+                    elif x == 3:
+                        text = text + "March"
+                    elif x == 4:
+                        text = text + "April"
+                    elif x == 5:
+                        text = text + "May"
+                    elif x == 6:
+                        text = text + "June"
+                    elif x == 7:
+                        text = text + "July"
+                    elif x == 8:
+                        text = text + "August"
+                    elif x == 9:
+                        text = text + "September"
+                    elif x == 10:
+                        text = text + "October"
+                    elif x == 11:
+                        text = text + "November"
+                    else:
+                        text = text + "December"
+                    
+                    if numM == m + 1:
+                        text = text + ", and "
+                    elif numM != m:
+                        text = text + ", "
+                    m += 1
+                text = text + "."
+                if len(countries) > 1:
+                    text = text + "\n\n"
         dispatcher.utter_message(text = text)
         return []
 
@@ -385,46 +397,56 @@ class ActionCaseCountByTimeDay(Action):
             #  stuff
             text = "Globally there have been "
         else:
-            text = "In " + country + " there have been "
-            r = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-" + month + "-01T00:00:00Z&to=2020-" + month + "-" + day + "T00:00:00Z")
-            summary = r.json()
-            d = 1
-            days = []
-            for x in summary: 
-                days.append(int(x["Date"][8:10]))
-            days.sort()
-            d = days[0]
-            if summary[1]["Province"] == "":
-                for x in summary:    
-                    if int(x["Date"][8:10]) == d:
-                        counts[d] = x["Cases"]
-                        d += 1
-            else:
-                for x in range(d,int(day) + 1):
-                    counts[x] = 0
-                for x in range(len(summary)):
-                    if int(summary[x]["Date"][8:10]) == d:
-                        counts[d] += summary[x]["Cases"]
-                    if x+1 != len(summary) and int(summary[x+1]["Date"][8:10]) != d:
-                        d += 1
-            d = 1
-            for x in counts:
-                text = text + str(counts[x]) + " " + scope + " " + case_type + " on " + str(by_sub_time) + " " + str(x)
-                if str(x)[-1] == "1":
-                    text = text + "st"
-                elif str(x)[-1] == "2":
-                    text = text + "nd"
-                elif str(x)[-1] == "3":
-                    text = text + "rd"
+            for c in countries:
+                country = c
+                text =  text + "In " + country + " there have been "
+                r = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-" + month + "-01T00:00:00Z&to=2020-" + month + "-" + day + "T00:00:00Z")
+                summary = r.json()
+                d = 1
+                days = []
+                for x in summary: 
+                    days.append(int(x["Date"][8:10]))
+                days.sort()
+                d = days[0]
+                if summary[1]["Province"] == "":
+                    for x in summary:    
+                        if int(x["Date"][8:10]) == d:
+                            counts[d] = x["Cases"]
+                            d += 1
                 else:
-                    text = text + "th"
-                
-                if int(day) == d + 1:
-                    text = text + ", and "
-                elif int(day) != d:
-                    text = text + ", "
-                d += 1
-            text = text + "."
+                    for x in range(d,int(day) + 1):
+                        counts[x] = 0
+                    for x in range(len(summary)):
+                        if int(summary[x]["Date"][8:10]) == d:
+                            counts[d] += summary[x]["Cases"]
+                        if x+1 != len(summary) and int(summary[x+1]["Date"][8:10]) != d:
+                            d += 1
+                d = 1
+                for x in counts:
+                    text = text + str(counts[x]) + " " + scope + " " 
+                    if case_type == "recovered":
+                        text = text + "recoveries on " + str(by_sub_time) + " " + str(x)
+                    elif case_type == "confirmed":
+                        text = text + case_type + " cases on " + str(by_sub_time) + " " + str(x)
+                    else:
+                        text = text + case_type + " on " + str(by_sub_time) + " " + str(x)
+                    if str(x)[-1] == "1":
+                        text = text + "st"
+                    elif str(x)[-1] == "2":
+                        text = text + "nd"
+                    elif str(x)[-1] == "3":
+                        text = text + "rd"
+                    else:
+                        text = text + "th"
+                    
+                    if int(day) == d + 1:
+                        text = text + ", and "
+                    elif int(day) != d:
+                        text = text + ", "
+                    d += 1
+                text = text + "."
+                if len(countries) > 1:
+                    text = text + "\n\n"
         dispatcher.utter_message(text = text)
         return []
 

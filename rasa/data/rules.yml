@@ -48,3 +48,8 @@ rules:
   steps:
     - active_loop: null
     - action: action_case_count
+
+- rule: case summary graph
+  steps:
+  - intent: ask_about_case_summary_graph
+  - action: action_case_summary_graph

@@ -240,20 +240,21 @@ class ActionCaseCountByTimeMonth(Action):
         counts = {}
         currentMonth = date.today().strftime("%m")
         if country == "world":
-            for x in range(1,13):
-                counts[x] = 0
-            text = "Globally there have been "
-            r = requests.get("https://api.covid19api.com/countries")
-            summary = r.json()
-            for x in summary:
-                country = x["Country"]
-                r2 = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-03-01T00:00:00Z&to=2020-" + currentMonth + "-01T00:00:00Z")
-                summary2 = r2.json()
-                m = 3
-                for y in summary2:
-                    if int(y["Date"][5:7]) == m:
-                        m += 1
-                        counts[m] = counts[m] + y["Cases"]
+            text = "Sorry, but SCITalk cannot get global data over time because it would take too long to sum count totals for every country"
+            # for x in range(1,13):
+            #     counts[x] = 0
+            # text = "Globally there have been "
+            # r = requests.get("https://api.covid19api.com/countries")
+            # summary = r.json()
+            # for x in summary:
+            #     country = x["Country"]
+            #     r2 = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-03-01T00:00:00Z&to=2020-" + currentMonth + "-01T00:00:00Z")
+            #     summary2 = r2.json()
+            #     m = 3
+            #     for y in summary2:
+            #         if int(y["Date"][5:7]) == m:
+            #             m += 1
+            #             counts[m] = counts[m] + y["Cases"]
 
         else:
             for c in countries:
@@ -394,8 +395,7 @@ class ActionCaseCountByTimeDay(Action):
             month = "12"
             day = "31"
         if country == "world":
-            #  stuff
-            text = "Globally there have been "
+            text = "Sorry, but SCITalk cannot get global data over time because it would take too long to sum count totals for every country"
         else:
             for c in countries:
                 country = c

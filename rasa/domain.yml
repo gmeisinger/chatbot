@@ -11,7 +11,8 @@ intents:
 - deny
 - mood_great
 - mood_unhappy
-- ask_about_case_count_by_time
+- ask_about_case_count_by_time_month
+- ask_about_case_count_by_time_day
 - out_of_scope
 - inform_scope
 - inform_case_type
@@ -120,7 +121,8 @@ responses:
   - text: There are {count} {scope} {case_type} cases in {country}.
 actions:
 - action_case_count
-- action_case_count_by_time
+- action_case_count_by_time_month
+- action_case_count_by_time_day
 - action_case_summary_graph
 - utter_greet
 - utter_iamabot

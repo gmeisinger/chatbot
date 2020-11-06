@@ -17,10 +17,15 @@ rules:
   - intent: thankyou
   - action: utter_welcome
 
-- rule: Give case counts by time when the use asks
+- rule: Give case counts by time month when the use asks
   steps:
-  - intent: ask_about_case_count_by_time
-  - action: action_case_count_by_time
+  - intent: ask_about_case_count_by_time_month
+  - action: action_case_count_by_time_month
+
+- rule: Give case counts by time day when the use asks
+  steps:
+  - intent: ask_about_case_count_by_time_day
+  - action: action_case_count_by_time_day
 
 - rule: activate case count form
   steps:

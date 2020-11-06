@@ -126,7 +126,7 @@ stories:
   - action: utter_greet
   - intent: bot_challenge
   - action: utter_iamabot
-  - intent: ask_about_case_count_by_time
+  - intent: ask_about_case_count_by_time_month
     entities:
     - case_type: deaths
     - countries: 
@@ -137,26 +137,26 @@ stories:
     - countries: 
       - mexico
     - bytime: month
-  - action: action_case_count_by_time
+  - action: action_case_count_by_time_month
 
 - story: interactive_story_8
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: ask_about_case_count_by_time
+  - intent: ask_about_case_count_by_time_month
     entities:
     - case_type: deaths
     - bytime: month
   - slot_was_set:
     - case_type: deaths 
     - bytime: month
-  - action: action_case_count_by_time
+  - action: action_case_count_by_time_month
 
 - story: interactive_story_9
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: ask_about_case_count_by_time
+  - intent: ask_about_case_count_by_time_day
     entities:
     - case_type: deaths
     - countries: 
@@ -169,7 +169,26 @@ stories:
       - china
     - bytime: day
     - bysubtime: october
-  - action: action_case_count_by_time
+  - action: action_case_count_by_time_day
+
+- story: interactive_story_10
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_about_case_count_by_time_day
+    entities:
+    - case_type: deaths
+    - countries: 
+      - russia
+    - bytime: day
+    - bysubtime: march
+  - slot_was_set:
+    - case_type: deaths
+    - countries: 
+      - russia
+    - bytime: day
+    - bysubtime: march
+  - action: action_case_count_by_time_day
 
 - story: interactive_story_1
   steps:

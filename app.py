@@ -41,7 +41,7 @@ def get_rasa_response(text):
         "message" : text
     }
     r = req.post("http://localhost:5005/webhooks/rest/webhook", data = j.dumps(data), headers = headers)
-    response = r.json()
+    responses = r.json()
     rasa = {
         'question': 'Huh?',
         'name': 'SCITalk',
@@ -49,12 +49,12 @@ def get_rasa_response(text):
         'images': [],
         'relation': ''
     }
-    if response != None and len(response) > 0:
-        if 'text' in response[0].keys():
-            rasa['question'] = response[0]["text"]
-        if 'image' in response[0].keys():
-            if response[0]['image'] != None:
-                rasa['images'].append(response[0]['image'])
+    for response in responses:
+        if 'text' in response.keys():
+            rasa['question'] = response['text']
+        if 'image' in response.keys():
+            if response['image'] != None:
+                rasa['images'].append(response['image'])
                 if rasa['question'] == 'Huh?':
                     rasa['question'] = ""
     return rasa

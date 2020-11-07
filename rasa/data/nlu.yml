@@ -334,7 +334,7 @@ nlu:
     - show graph of [confirmed](case_type) cases in [Taiwan](countries)
     - graph [new](case_type) cases in [Canada](countries)
     - show me a graph of [confirmed](case_type) cases in [Serbia](countries)
-    - Show me a graph of cases in [Argentina](country)
+    - Show me a graph of cases in [Argentina](countries)
     - show me a graph of [deaths](case_type) in [chile](countries)
     - show me a graph of [recoveries](case_type) in [venezuela](countries)
     - show me a graph of [confirmed](case_type) cases in [haiti](countries)

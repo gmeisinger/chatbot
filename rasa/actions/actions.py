@@ -198,7 +198,7 @@ class ActionCaseSummaryGraph(Action):
             title = case_type.capitalize() + ' Cases in' + data['Country']
             # vtag = case_type
         linechart = self.Linechart(title, dayone, vtag, ltag)
-        dispatcher.utter_message(image=linechart)
+        dispatcher.utter_message(text="Here's the graph...", image=linechart)
         return []
 
 class ActionCaseCountByTimeMonth(Action):

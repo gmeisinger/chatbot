@@ -221,7 +221,7 @@ class ActionCaseSummaryGraph(Action):
             # vtag = case_type
         linechart = self.Linechart(title, dayone, vtag, ltag)
         # write linechart out to temporary file
-        path = 'rasa/tmp/graph.png'
+        path = 'tmp/graph.png'
         if (os.path.exists(path)):
             os.remove(path)
         f = open(path, 'xb')

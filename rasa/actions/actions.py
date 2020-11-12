@@ -39,6 +39,7 @@ import requests
 import json
 import pygal
 
+import os
 
 # resets slot values
 class ActionForgetSlots(Action):
@@ -169,7 +170,7 @@ class ActionCaseSummaryGraph(Action):
                 continue
             line_chart.add(province, data_num[province])
 
-        return line_chart.render_data_uri()
+        return line_chart.render()
 
     def run(self, dispatcher, tracker, domain):
         case_type = tracker.get_slot('case_type')
@@ -219,7 +220,23 @@ class ActionCaseSummaryGraph(Action):
             title = case_type.capitalize() + ' Cases in' + data['Country']
             # vtag = case_type
         linechart = self.Linechart(title, dayone, vtag, ltag)
-        dispatcher.utter_message(text="Here's the graph...", image=linechart)
+        # write linechart out to temporary file
+        path = 'tmp/graph.svg'
+        if (os.path.exists(path)):
+            os.remove(path)
+        f = open(path, 'xb')
+        f.write(linechart)
+        f.close()
+
+        # display graph
+        dispatcher.utter_message(text="Here's the graph...", image=path)
+
+        #delete temporary graph file
+        try:
+            os.remove(path)
+        except OSError:
+            print('Oh no! Error deleting file')
+
         return []
 
 class ActionCaseCountByTimeMonth(Action):

@@ -231,12 +231,6 @@ class ActionCaseSummaryGraph(Action):
         # display graph
         dispatcher.utter_message(text="Here's the graph...", image=path)
 
-        #delete temporary graph file
-        try:
-            os.remove(path)
-        except OSError:
-            print('Oh no! Error deleting file')
-
         return []
 
 class ActionCaseCountByTimeMonth(Action):

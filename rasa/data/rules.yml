@@ -20,6 +20,11 @@ rules:
   - action: utter_welcome
   - action: action_forget_slots
 
+#- rule: Identify yourself when asked
+#  steps:
+#  - intent: bot_challenge
+#  - action: utter_iamabot
+
 - rule: Give case counts by time month when the use asks
   steps:
   - intent: ask_about_case_count_by_time_month

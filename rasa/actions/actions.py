@@ -88,7 +88,7 @@ class ActionCaseCount(Action):
             key_string = scope.capitalize() + case_type.capitalize()
             count = data[key_string]
             # report the information
-            response = "There are " + count + " " + scope + " " + case_type + " cases globally."
+            response = "There are " + str(count) + " " + scope + " " + case_type + " cases globally."
             if case_type == "deaths":
                 response.replace("cases ", "")
             #dispatcher.utter_message(
@@ -100,12 +100,12 @@ class ActionCaseCount(Action):
             #)
             dispatcher.utter_message(text=response)
         elif len(country) == 1:
-            country = country[0]
-            data = next((item for item in countries if (item['Slug'] == country or item['Country'] == country)), None)
+            country = country[0].lower()
+            data = next((item for item in countries if (item['Slug'] == country or item['Country'].lower() == country)), None)
             key_string = scope.capitalize() + case_type.capitalize()
             count = data[key_string]
             # report the information
-            response = "There are " + count + " " + scope + " " + case_type + " cases in " + country + "."
+            response = "There are " + str(count) + " " + scope + " " + case_type + " cases in " + country + "."
             if case_type == "deaths":
                 response.replace("cases ", "")
             dispatcher.utter_message(text=response)
@@ -119,7 +119,7 @@ class ActionCaseCount(Action):
         else:
             text = "There are "
             for x in country:
-                data = next((item for item in countries if (item['Slug'] == x or item['Country'] == x)), None)
+                data = next((item for item in countries if (item['Slug'] == x.lower() or item['Country'].lower() == x.lower())), None)
                 key_string = scope.capitalize() + case_type.capitalize()
                 text = text + str(data[key_string]) + " " + scope + " " + case_type + " in " + x
                 if len(country) == 2 and country.index(x) != 1:

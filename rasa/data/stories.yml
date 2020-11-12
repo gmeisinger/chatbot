@@ -203,7 +203,7 @@ stories:
     - bysubtime: march
   - action: action_case_count_by_time_day
 
-- story: interactive_story_1
+- story: interactive_story_2
   steps:
   - intent: greet
   - action: utter_greet
@@ -212,3 +212,8 @@ stories:
     entities:
     - country: Argentina
   - action: action_case_summary_graph
+
+- story: interactive_story_11
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot

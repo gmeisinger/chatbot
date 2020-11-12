@@ -9,6 +9,7 @@ intents:
 - goodbye
 - affirm
 - deny
+- thankyou
 - mood_great
 - mood_unhappy
 - ask_about_case_count_by_time_month
@@ -104,6 +105,8 @@ responses:
   - text: Goodbye!
   utter_what_else:
   - text: Is there anything else I can help you with?
+  utter_sorry:
+  - text: I'm sorry, I didn't understand that.
   utter_searching:
   - text: Okay, let me look that up...
   - text: Got it. I'll get that data.

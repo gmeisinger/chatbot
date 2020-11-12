@@ -170,7 +170,7 @@ class ActionCaseSummaryGraph(Action):
                 continue
             line_chart.add(province, data_num[province])
 
-        return line_chart.render()
+        return line_chart.render_to_png()
 
     def run(self, dispatcher, tracker, domain):
         case_type = tracker.get_slot('case_type')
@@ -221,7 +221,7 @@ class ActionCaseSummaryGraph(Action):
             # vtag = case_type
         linechart = self.Linechart(title, dayone, vtag, ltag)
         # write linechart out to temporary file
-        path = 'tmp/graph.svg'
+        path = 'tmp/graph.png'
         if (os.path.exists(path)):
             os.remove(path)
         f = open(path, 'xb')

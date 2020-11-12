@@ -6,16 +6,19 @@ rules:
   steps:
   - intent: goodbye
   - action: utter_goodbye
+  - action: action_forget_slots
 
 - rule: Say hi anytime the user says hi
   steps:
   - intent: greet
   - action: utter_greet
+  - action: action_forget_slots
 
 - rule: Say you're welcome when thanked
   steps:
   - intent: thankyou
   - action: utter_welcome
+  - action: action_forget_slots
 
 - rule: Give case counts by time month when the use asks
   steps:

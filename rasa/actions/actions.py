@@ -39,6 +39,19 @@ import requests
 import json
 import pygal
 
+
+# resets slot values
+class ActionForgetSlots(Action):
+
+    def name(self):
+        return "action_forget_slots"
+    
+    def run(self, dispatcher, tracker, domain):
+        countries = SlotSet("countries", None)
+        scope = SlotSet("scope", None)
+        case_type = SlotSet("case_type", None)
+        return [countries, scope, case_type]
+
 # this action gets a case count for a specific country.
 # case types are (Confirmed, Recovered, Deaths)
 # scope is (Total, New)

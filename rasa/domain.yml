@@ -120,6 +120,7 @@ responses:
   utter_case_count:
   - text: There are {count} {scope} {case_type} cases in {country}.
 actions:
+- action_forget_slots
 - action_case_count
 - action_case_count_by_time_month
 - action_case_count_by_time_day

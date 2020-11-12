@@ -34,7 +34,7 @@ $(document).ready(function(){
         if (images === [])
             return;
         for (i = 0; i < images.length; i++) {
-            $("#chatbox").append('<div class="row"> <div class="col"><img src=' + '"' + images[i] + '"' + '></div> </div>')
+            $("#chatbox").append('<div class="row"> <div class="col"><img src=' + images[i] + '></div> </div>')
         }
     }
 

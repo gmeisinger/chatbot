@@ -63,6 +63,15 @@ class ActionClearChat(Action):
         dispatcher.utter_message(text="CMD clear")
         return []
 
+# reset bot
+#class ActionResetBot(Action):
+#
+#    def name(self):
+#        return "action_reset_bot"
+#    
+#    def run(self, dispatcher, tracker, domain):
+#        #dispatcher.utter_message(text="CMD clear")
+#        return [Restarted()]
 
 # this action gets a case count for a specific country.
 # case types are (Confirmed, Recovered, Deaths)

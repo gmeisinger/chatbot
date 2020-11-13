@@ -39,10 +39,8 @@ $(document).ready(function(){
     }
 
     var clear_chat = function () {
-        console.log("clearing chat...")
-        while($("#chatbox").firstChild){
-            $("#chatbox").removeChild($("#chatbox").firstChild);
-        }
+        console.log("clearing chat...");
+        $("#chatbox").html('');
     }
 
     var save_conversation = function() {

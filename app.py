@@ -285,7 +285,7 @@ def inputoutput(_json):
     response = generate_response(text, author)
     if response['question'].startswith("CMD "):
         command = response['question'].split(" ")[1]
-        emit('command', command)
+        emit('command', command.strip())
     else:
         emit('response', response)
 

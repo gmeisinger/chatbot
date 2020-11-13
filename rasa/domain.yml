@@ -18,6 +18,8 @@ intents:
 - inform_scope
 - inform_case_type
 - inform_countries
+- clear_chat
+- start_over
 entities:
 - bysubtime
 - bytime
@@ -124,6 +126,7 @@ responses:
   - text: There are {count} {scope} {case_type} cases in {country}.
 actions:
 - action_forget_slots
+- action_clear_chat
 - action_case_count
 - action_case_count_by_time_month
 - action_case_count_by_time_day

@@ -53,6 +53,17 @@ class ActionForgetSlots(Action):
         case_type = SlotSet("case_type", None)
         return [countries, scope, case_type]
 
+# clear chat
+class ActionClearChat(Action):
+
+    def name(self):
+        return "action_clear_chat"
+    
+    def run(self, dispatcher, tracker, domain):
+        dispatcher.utter_message(text="CMD clear")
+        return []
+
+
 # this action gets a case count for a specific country.
 # case types are (Confirmed, Recovered, Deaths)
 # scope is (Total, New)

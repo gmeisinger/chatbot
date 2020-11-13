@@ -53,6 +53,17 @@ nlu:
     - absolutely not
     - no thanks
     - nope
+- intent: clear_chat
+  examples: |
+    - clear
+    - erase
+    - clear the chat
+    - erase the chat
+- intent: start_over
+  examples: |
+    - start over
+    - reset
+    - restart
 - intent: thankyou
   examples: |
     - thank you

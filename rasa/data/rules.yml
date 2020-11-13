@@ -25,6 +25,16 @@ rules:
 #  - intent: bot_challenge
 #  - action: utter_iamabot
 
+- rule: restart the bot when asked
+  steps:
+  - intent: restart
+  - action: action_restart
+
+- rule: clear chat when asked
+  steps:
+  - intent: clear_chat
+  - action: action_clear_chat
+
 - rule: Give case counts by time month when the use asks
   steps:
   - intent: ask_about_case_count_by_time_month

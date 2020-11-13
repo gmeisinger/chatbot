@@ -283,7 +283,11 @@ def inputoutput(_json):
     text = _json['question']
     author = _json['name']
     response = generate_response(text, author)
-    emit('response', response)
+    if response['question'].startswith("CMD "):
+        command = response['question'].split(" ")[1]
+        emit('command', command)
+    else:
+        emit('response', response)
 
 # receiving user feedback
 @socketio.on('feedback')

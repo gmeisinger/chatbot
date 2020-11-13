@@ -38,6 +38,10 @@ $(document).ready(function(){
         }
     }
 
+    var clear_chat = function () {
+        $("#chatbox").innerHTML = "";
+    }
+
     var save_conversation = function() {
         // for now lets just save the html
         return chatbox.innerHTML
@@ -100,6 +104,15 @@ $(document).ready(function(){
         chatbox.scrollTop = chatbox.scrollHeight;
         console.log(chatbox.scrollTop);
         console.log(chatbox.scrollHeight);
+    })
+
+    socket.on('command', function(utterance) {
+        console.log('Command received:', utterance)
+        if(utterance === "clear") {
+            clear_chat();
+        }
+        //add_text(utterance.name, utterance.question)
+        chatbox.scrollTop = chatbox.scrollHeight;
     })
 
     socket.on('feedback_confirm', function() {

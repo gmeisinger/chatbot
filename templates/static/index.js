@@ -104,7 +104,7 @@ $(document).ready(function(){
 
     socket.on('command', function(utterance) {
         console.log('Command received:', utterance)
-        if(utterance === "clear") {
+        if(utterance.trim() === "clear") {
             $("#chatbox").innerHTML = "";
         }
         //add_text(utterance.name, utterance.question)

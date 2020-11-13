@@ -57,6 +57,7 @@ nlu:
   examples: |
     - clear
     - erase
+    - start over
     - clear the chat
     - erase the chat
 - intent: start_over

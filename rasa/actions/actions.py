@@ -303,7 +303,47 @@ class ActionCaseCountByTimeMonth(Action):
             #         if int(y["Date"][5:7]) == m:
             #             m += 1
             #             counts[m] = counts[m] + y["Cases"]
-
+                # m = 1
+                # numM = len(counts)
+                # for x in counts:
+                #     text = text + str(counts[x]) + " " + scope + " "
+                #     if case_type == "recovered":
+                #         text = text + "recoveries in "
+                #     elif case_type == "confirmed":
+                #         text = text + case_type + " cases in "
+                #     else:
+                #         text = text + case_type + " in "
+                #     if x == 1:
+                #         text = text + "January"
+                #     elif x == 2:
+                #         text = text + "February"
+                #     elif x == 3:
+                #         text = text + "March"
+                #     elif x == 4:
+                #         text = text + "April"
+                #     elif x == 5:
+                #         text = text + "May"
+                #     elif x == 6:
+                #         text = text + "June"
+                #     elif x == 7:
+                #         text = text + "July"
+                #     elif x == 8:
+                #         text = text + "August"
+                #     elif x == 9:
+                #         text = text + "September"
+                #     elif x == 10:
+                #         text = text + "October"
+                #     elif x == 11:
+                #         text = text + "November"
+                #     else:
+                #         text = text + "December"
+                    
+                #     if numM == m + 1:
+                #         text = text + ", and "
+                #     elif numM != m:
+                #         text = text + ", "
+                #     m += 1
+                # text = text + "."
         else:
             for c in countries:
                 country = c
@@ -444,6 +484,60 @@ class ActionCaseCountByTimeDay(Action):
             day = "31"
         if country == "world":
             text = "Sorry, but SCITalk cannot get global data over time because it would take too long to sum count totals for every country"
+            # for x in range(1,int(day) + 1):
+            #     counts[x] = 0
+            # text = "Globally there have been "
+            # r = requests.get("https://api.covid19api.com/countries")
+            # summary = r.json()
+            # for x in summary:
+            #     country = x["Country"]
+            #     r2 = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-" + month + "-01T00:00:00Z&to=2020-" + month + "-" + day + "T00:00:00Z")
+            #     summary2 = r2.json()
+            #     d = 1
+            #     days = []
+            #     for x in summary2: 
+            #         if("Date" in x):
+            #             days.append(int(x["Date"][8:10]))
+            #     days.sort()
+            #     if(days):
+            #         d = days[0]
+            #         if summary2[1]["Province"] == "":
+            #             for x in summary2:    
+            #                 if int(x["Date"][8:10]) == d:
+            #                     counts[d] += x["Cases"]
+            #                     d += 1
+            #         else:
+            #             for x in range(d,int(day) + 1):
+            #                 counts[x] = 0
+            #             for x in range(len(summary2)):
+            #                 if int(summary2[x]["Date"][8:10]) == d:
+            #                     counts[d] += summary2[x]["Cases"]
+            #                 if x+1 != len(summary2) and int(summary2[x+1]["Date"][8:10]) != d:
+            #                     d += 1
+            #         d = 1
+            #         for x in counts:
+            #             text = text + str(counts[x]) + " " + scope + " " 
+            #             if case_type == "recovered":
+            #                 text = text + "recoveries on " + str(by_sub_time) + " " + str(x)
+            #             elif case_type == "confirmed":
+            #                 text = text + case_type + " cases on " + str(by_sub_time) + " " + str(x)
+            #             else:
+            #                 text = text + case_type + " on " + str(by_sub_time) + " " + str(x)
+            #             if str(x)[-1] == "1":
+            #                 text = text + "st"
+            #             elif str(x)[-1] == "2":
+            #                 text = text + "nd"
+            #             elif str(x)[-1] == "3":
+            #                 text = text + "rd"
+            #             else:
+            #                 text = text + "th"
+                        
+            #             if int(day) == d + 1:
+            #                 text = text + ", and "
+            #             elif int(day) != d:
+            #                 text = text + ", "
+            #             d += 1
+            #     text = text + "."
         else:
             for c in countries:
                 country = c

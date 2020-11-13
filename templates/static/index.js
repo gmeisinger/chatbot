@@ -110,8 +110,9 @@ $(document).ready(function(){
     })
 
     socket.on('command', function(utterance) {
-        console.log('Command received:', utterance)
+        console.log('Command received:', utterance);
         if(utterance.trim() === "clear") {
+            console.log("clear");
             clear_chat();
         }
         //add_text(utterance.name, utterance.question)

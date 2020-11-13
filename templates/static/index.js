@@ -38,10 +38,6 @@ $(document).ready(function(){
         }
     }
 
-    var clear_chat = function () {
-        $("#chatbox").innerHTML = "";
-    }
-
     var save_conversation = function() {
         // for now lets just save the html
         return chatbox.innerHTML
@@ -109,7 +105,7 @@ $(document).ready(function(){
     socket.on('command', function(utterance) {
         console.log('Command received:', utterance)
         if(utterance === "clear") {
-            clear_chat();
+            $("#chatbox").innerHTML = "";
         }
         //add_text(utterance.name, utterance.question)
         chatbox.scrollTop = chatbox.scrollHeight;

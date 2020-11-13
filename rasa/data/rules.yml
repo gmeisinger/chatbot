@@ -27,7 +27,7 @@ rules:
 
 - rule: restart the bot when asked
   steps:
-  - intent: restart
+  - intent: start_over
   - action: action_restart
 
 - rule: clear chat when asked

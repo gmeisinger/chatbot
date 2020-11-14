@@ -87,7 +87,7 @@ slots:
     influence_conversation: false
 responses:
   utter_greet:
-  - text: Hey! How are you?
+  - text: Hey!
   - text: Hello!
   - text: Hi!
   utter_cheer_up:

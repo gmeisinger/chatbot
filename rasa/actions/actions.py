@@ -71,7 +71,7 @@ class ActionResetBot(Action):
         return "action_reset_bot"
     
     def run(self, dispatcher, tracker, domain):
-        #dispatcher.utter_message(text="CMD clear")
+        dispatcher.utter_message(text="Okay, let's start over.")
         return [Restarted()]
 
 # this action gets a case count for a specific country.

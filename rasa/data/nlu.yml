@@ -61,11 +61,12 @@ nlu:
     - how are things
     - are you ok
     - how do you feel
+    - and you
+    - how about you
 - intent: clear_chat
   examples: |
     - clear
     - erase
-    - start over
     - clear the chat
     - erase the chat
 - intent: start_over
@@ -73,6 +74,9 @@ nlu:
     - start over
     - reset
     - restart
+    - please restart
+    - reset please
+    - lets start over
 - intent: thankyou
   examples: |
     - thank you

@@ -15,6 +15,8 @@ stories:
   - intent: greet
   - action: utter_greet
   - action: action_forget_slots
+  - intent: how_are_you
+  - action: utter_mood_good
   - intent: bot_challenge
   - action: utter_iamabot
   - intent: goodbye
@@ -25,6 +27,8 @@ stories:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+  - intent: how_are_you
+  - action: utter_mood_good
   - intent: ask_about_case_count
   - action: case_count_form
   - active_loop: case_count_form
@@ -81,6 +85,9 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
+  - action: action_forget_slots
+  - intent: how_are_you
+  - action: utter_mood_good
   - action: action_forget_slots
   - intent: bot_challenge
   - action: utter_iamabot
@@ -154,6 +161,9 @@ stories:
   - intent: greet
   - action: utter_greet
   - action: action_forget_slots
+  - intent: how_are_you
+  - action: utter_mood_good
+  - action: action_forget_slots
   - intent: ask_about_case_count_by_time_month
     entities:
     - case_type: deaths
@@ -167,6 +177,9 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
+  - action: action_forget_slots
+  - intent: how_are_you
+  - action: utter_mood_good
   - action: action_forget_slots
   - intent: ask_about_case_count_by_time_day
     entities:
@@ -217,3 +230,8 @@ stories:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- story: interactive_story_12
+  steps:
+  - intent: how_are_you
+  - action: utter_mood_good

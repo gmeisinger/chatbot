@@ -53,6 +53,14 @@ nlu:
     - absolutely not
     - no thanks
     - nope
+- intent: how_are_you
+  examples: |
+    - how are you
+    - how are you feeling
+    - how are you doing
+    - how are things
+    - are you ok
+    - how do you feel
 - intent: clear_chat
   examples: |
     - clear

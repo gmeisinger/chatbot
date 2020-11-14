@@ -304,47 +304,47 @@ class ActionCaseCountByTimeMonth(Action):
             #         if int(y["Date"][5:7]) == m:
             #             m += 1
             #             counts[m] = counts[m] + y["Cases"]
-                # m = 1
-                # numM = len(counts)
-                # for x in counts:
-                #     text = text + str(counts[x]) + " " + scope + " "
-                #     if case_type == "recovered":
-                #         text = text + "recoveries in "
-                #     elif case_type == "confirmed":
-                #         text = text + case_type + " cases in "
-                #     else:
-                #         text = text + case_type + " in "
-                #     if x == 1:
-                #         text = text + "January"
-                #     elif x == 2:
-                #         text = text + "February"
-                #     elif x == 3:
-                #         text = text + "March"
-                #     elif x == 4:
-                #         text = text + "April"
-                #     elif x == 5:
-                #         text = text + "May"
-                #     elif x == 6:
-                #         text = text + "June"
-                #     elif x == 7:
-                #         text = text + "July"
-                #     elif x == 8:
-                #         text = text + "August"
-                #     elif x == 9:
-                #         text = text + "September"
-                #     elif x == 10:
-                #         text = text + "October"
-                #     elif x == 11:
-                #         text = text + "November"
-                #     else:
-                #         text = text + "December"
+            #     m = 1
+            #     numM = len(counts)
+            #     for x in counts:
+            #         text = text + str(counts[x]) + " " + scope + " "
+            #         if case_type == "recovered":
+            #             text = text + "recoveries in "
+            #         elif case_type == "confirmed":
+            #             text = text + case_type + " cases in "
+            #         else:
+            #             text = text + case_type + " in "
+            #         if x == 1:
+            #             text = text + "January"
+            #         elif x == 2:
+            #             text = text + "February"
+            #         elif x == 3:
+            #             text = text + "March"
+            #         elif x == 4:
+            #             text = text + "April"
+            #         elif x == 5:
+            #             text = text + "May"
+            #         elif x == 6:
+            #             text = text + "June"
+            #         elif x == 7:
+            #             text = text + "July"
+            #         elif x == 8:
+            #             text = text + "August"
+            #         elif x == 9:
+            #             text = text + "September"
+            #         elif x == 10:
+            #             text = text + "October"
+            #         elif x == 11:
+            #             text = text + "November"
+            #         else:
+            #             text = text + "December"
                     
-                #     if numM == m + 1:
-                #         text = text + ", and "
-                #     elif numM != m:
-                #         text = text + ", "
-                #     m += 1
-                # text = text + "."
+            #         if numM == m + 1:
+            #             text = text + ", and "
+            #         elif numM != m:
+            #             text = text + ", "
+            #         m += 1
+            #     text = text + "."
         else:
             for c in countries:
                 country = c

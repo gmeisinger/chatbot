@@ -433,6 +433,247 @@ nlu:
     - month
     - day
     - year
+- lookup: united states of america
+  examples: |
+    - the united states
+    - the united states of america
+    - united states of america
+    - the usa
+    - united states
+    - usa
+    - us
+    - the us
+    - america
+    - the states
+    - merica
+    - murica
+    - 'merica
+    - 'murica
+    - u.s.a
+    - the u.s.a
+    - u.s.
+    - the u.s.
+- lookup: netherlands
+  examples: |
+    - netherlands
+    - holland
+- lookup: china
+  examples: |
+    - china
+    - peoples republic of china
+    - the peoples republic of china
+    - people's republic of china
+    - the people's republic of china
+- lookup: russia
+  examples: |
+    - russia
+    - russian federation
+- lookup: united kingdom
+  examples: |
+    - united kingdom
+    - uk
+    - the united kingdom
+    - the uk
+    - the u.k.
+    - u.k.
+    - the united kingdom of great britain and northern ireland
+    - united kingdom of great britain and northern ireland
+    - the united kingdom of great britain
+    - united kingdom of great britain 
+    - britain
+- lookup: falkland islands malvinas
+  examples: |
+    - falkland islands malvinas
+    - falkland islands
+- lookup: british virgin islands
+  examples: |
+    - british virgin islands
+    - british virgin island
+- lookup: svalbard and jan mayen islands
+  examples: |
+    - valbard and jan mayen islands
+    - valbard and jan mayen island
+    - valbard and jan mayen
+    - jan mayen islands
+    - valbard islands
+    - jan mayen island
+    - valbard island
+- lookup: french polynesia
+  examples: |
+    - french polynesia
+    - polynesia
+- lookup: wallis and futuna islands
+  examples: |
+    - wallis and futuna islands
+    - wallis and futuna island
+    - wallis and futuna
+    - wallis islands
+    - futuna islands
+    - wallis island
+    - futuna island
+- lookup: antigua and barbuda
+  examples: |
+    - antigua and barbuda
+    - antigua
+    - barbuda
+- lookup: marshall islands
+  examples: |
+    - marshall islands
+    - marshall island
+    - marshall
+- lookup: norfolk island
+  examples: |
+    - norfolk island
+    - norfolk
+- lookup: bouvet island
+  examples: |
+    - bouvet island
+    - bouvet
+- lookup: cocos keeling islands
+  examples: |
+    - cocos keeling islands
+    - cocos keeling island
+    - cocos keeling
+    - cocos islands
+    - keeling islands
+    - cocos island
+    - keeling island
+- lookup: solomon islands
+  examples: |
+    - solomon islands
+    - solomon island
+    - solomon
+- lookup: christmas island
+  examples: |
+    - christmas island
+    - christmas
+- lookup: saint kitts and nevis
+  examples: |
+    - saint kitts and nevis
+    - saint kitts
+    - nevis
+    - kitts and nevis
+- lookup: turks and caicos islands
+  examples: |
+    - turks and caicos islands
+    - turks and caicos island
+    - turks and caicos
+    - turks islands
+    - caicos islands
+    - turks island
+    - caicos island
+- lookup: virgin islands
+  examples: |
+    - virgin islands
+    - virgin island
+- lookup: trinidad and tobago
+  examples: |
+    - trinidad and tobago
+    - tobago
+    - trinidad
+- lookup: hong kong sar china
+  examples: |
+    - hong kong sar china
+    - hong kong china
+    - hong kong
+    - hk
+- lookup: cook islands
+  examples: |
+    - cook islands
+    - cook island
+    - cook
+- lookup: heard and mcdonald islands
+  examples: |
+    - heard and mcdonald islands
+    - heard and mcdonald island
+    - heard and mcdonald
+    - heard islands
+    - mcdonald islands
+    - heard island
+    - mcdonald island
+- lookup: cayman islands
+  examples: |
+    - cayman islands
+    - cayman island
+    - cayman
+- lookup: south georgia and the south sandwich islands
+  examples: |
+    - south georgia and the south sandwich islands
+    - south georgia and the south sandwich island
+    - south georgia and the south sandwich
+    - south georgia and south sandwich islands
+    - south georgia and south sandwich island
+    - south georgia and south sandwich
+    - south georgia and sandwich islands
+    - south georgia and sandwich island
+    - south georgia and sandwich
+    - georgia and sandwich islands
+    - georgia and sandwich island
+    - georgia and sandwich
+    - south georgia islands
+    - georgia islands
+    - the south sandwich islands
+    - south sandwich islands
+    - sandwich islands
+    - south georgia island
+    - georgia island
+    - the south sandwich island
+    - south sandwich island
+    - sandwich island
+- lookup: holy see vatican city state
+  examples: |
+    - holy see vatican city state
+    - holy see vatican city
+    - vatican city state
+    - vatican city
+    - vatican
+    - the vatican
+    - pope house
+- lookup: el salvador
+  examples: |
+    - el salvador
+    - salvador
+- lookup: united arab emirates
+  examples: |
+    - united arab emirates
+    - the united arab emirates
+    - the uae
+    - uae
+    - the u.a.e.
+    - u.a.e.
+- lookup: ala aland islands
+  examples: |
+    - ala aland islands
+    - ala aland island
+    - ala aland
+- lookup: faroe islands
+  examples: |
+    - faroe islands
+    - faroe island
+    - faroe
+- lookup: saint pierre and miquelon
+  examples: |
+    - saint pierre and miquelon
+    - saint pierre
+    - miquelon
+    - pierre and miquelon
+- lookup: bosnia and herzegovina
+  examples: |
+    - bosnia and herzegovina
+    - bosnia
+    - herzegovina
+- lookup: northern mariana islands
+  examples: |
+    - northern mariana islands
+    - northern mariana island
+    - northern mariana
+    - mariana islands
+    - mariana island
+    - mariana
+- lookup: us minor outlying islands
+  examples: |
+    - us minor outlying islands
+    - us outlying islands
 - lookup: countries
   examples: |
     - niger

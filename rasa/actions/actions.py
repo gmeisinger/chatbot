@@ -244,8 +244,8 @@ class ActionCaseSummaryGraph(Action):
         # write linechart out to temporary file
         jspath = 'tmp/graph.png'
         path = '../../templates/static/tmp/graph.png'
-        if (os.path.exists(path)):
-            os.remove(path)
+        #if (os.path.exists(path)):
+        #    os.remove(path)
         f = open(path, 'xb')
         f.write(linechart)
         f.close()

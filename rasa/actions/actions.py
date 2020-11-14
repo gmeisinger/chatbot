@@ -593,6 +593,120 @@ class ActionCaseCountByTimeDay(Action):
                     text = text + "\n\n"
         dispatcher.utter_message(text = text)
         return []
+		
+		
+		
+		
+class ActionCaseCountSince(Action):
+
+    @staticmethod
+    def required_fields():
+        return [
+            #EntityFormField("scope", "scope"),
+            #EntityFormField("case_type", "case_type"),
+            EntityFormField("countries", "countries")
+        ]
+
+    def name(self):
+        return "action_case_count_since"
+    
+    def run(self, dispatcher, tracker, domain): 
+        scope = tracker.get_slot('scope')
+        if scope == None:
+            scope = "total"
+        case_type = tracker.get_slot('case_type')
+        if case_type == None:
+            case_type = "confirmed"
+        countries = tracker.get_slot('countries')
+        country = "world"
+        if countries != None:
+            country = countries[0]
+        by_sub_time = tracker.get_slot('bysubtime')
+        if by_sub_time == None:
+            by_sub_time = "january" 
+        
+        text = ""
+        counts = {}
+        month = ""
+        if by_sub_time == "january":
+            month = "01"
+        elif by_sub_time == "february":
+            month = "02"
+        elif by_sub_time == "march":
+            month = "03"
+        elif by_sub_time == "april":
+            month = "04"
+        elif by_sub_time == "may":
+            month = "05"
+        elif by_sub_time == "june":
+            month = "06"
+        elif by_sub_time == "july":
+            month = "07"
+        elif by_sub_time == "august":
+            month = "08"
+        elif by_sub_time == "september":
+            month = "09"
+        elif by_sub_time == "october":
+            month = "10"
+        elif by_sub_time == "november":
+            month = "11"
+        else:
+            month = "12"
+        if country == "world":
+            text = "Sorry, but SCITalk cannot get global data over time because it would take too long to sum count totals for every country"
+        else:
+            currentMonth = date.today().strftime("%m")		
+            currentDay = date.today().strftime("%d")		
+            currentTime = date.today().strftime("%H:M:S")	
+
+            if(currentMonth == month and currentDay == "01"):
+               dispatcher.utter_message(text = "Cannot calculate info")
+               return []			  
+			
+            for c in countries:
+                country = c
+                text =  text + "In " + country + " since " + by_sub_time + " there have been "
+                r = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-" + month + "-01T00:00:00Z&to=2020-" + currentMonth + "-" + currentDay + "T" + currentTime +"Z")
+                summary = r.json()
+                m = 3
+                if summary[1]["Province"] == "":
+                    for x in summary:
+                        if int(x["Date"][5:7]) == m:
+                            m += 1
+                            counts[m] = x["Cases"]
+                else:
+                    for x in range(m,int(currentMonth) + 1):
+                        counts[x] = 0
+                    for x in range(len(summary)):
+                        if int(summary[x]["Date"][5:7]) == m and int(summary[x]["Date"][8:10]) == 1:
+                            counts[m] += summary[x]["Cases"]
+                        if x+1 != len(summary) and int(summary[x+1]["Date"][5:7]) != m:
+                            m += 1
+                m = 1
+                numM = len(counts)
+				
+                total = 0
+                for x in counts:
+                    total = total + counts[x]
+                
+                text = text + str(total) + " " 
+                if case_type == "recovered":
+                    text = text + "recoveries in "
+                elif case_type == "confirmed":
+                    text = text + case_type + " cases in "
+                else:
+                   text = text + case_type + " in "
+                text = text + scope
+                   
+                    
+
+                text = text + "."
+                if len(countries) > 1:
+                    text = text + "\n\n"
+        dispatcher.utter_message(text = text)
+        return []
+
+	
 
 ###########
 #  FORMS  #

@@ -21,6 +21,7 @@ intents:
 - inform_countries
 - clear_chat
 - start_over
+- ask_about_cases_since
 entities:
 - bysubtime
 - bytime
@@ -141,6 +142,7 @@ actions:
 - utter_greet
 - utter_iamabot
 - validate_case_count_form
+- action_case_count_since
 forms:
   case_count_form:
     scope:

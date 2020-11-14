@@ -44,6 +44,11 @@ rules:
   steps:
   - intent: ask_about_case_count_by_time_day
   - action: action_case_count_by_time_day
+  
+- rule: Give case counts since a time when user asks
+  steps:
+  - intent: ask_about_cases_since
+  - action: action_case_count_since
 
 - rule: activate case count form
   steps:

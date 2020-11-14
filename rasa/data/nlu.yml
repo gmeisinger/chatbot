@@ -371,6 +371,19 @@ nlu:
     - show a graph of [total](scope) [recovered](case_type) in [bosnia](countries)
     - show a graph of [total](scope) [confirmed](case_type) cases in [sweden](countries)
     - graph [deaths](case_type) [germany](countries)
+- intent: ask_about_cases_since
+  examples: |
+    - deaths since [january](bysubtime) in [Russia](countries)
+    - [new](scope) cases since [february](bysubtime) in [germany](countries)
+    - cases since [march](bysubtime) in [india](countries)
+    - since [april](bysubtime) how many [deaths](case_type) in madagascar
+    - how many new cases since [may](bysubtime) in [new zealand](countries)
+    - how many cases since [june](bysubtime) in [chile](countries) and [australia](countries)
+    - recovered(case_type) since [july](bysubtime) in [sweden](countries) and [norway](countries)
+    - how many [recovered](case_type) in [italy](countries) and [france](countries) since [august](bysubtime)
+    - how many people [recovered](case_type) in [ecquador](countries) since [september](bysubtime)
+    - how many people confirmed(casetype) in [iceland[(countries) since [october](bysubtime)
+    - how many [deaths](case_type) in [canada](countries) since [november](bysubtime)
 - synonym: total
   examples: |
     - all

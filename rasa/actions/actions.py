@@ -242,8 +242,8 @@ class ActionCaseSummaryGraph(Action):
             # vtag = case_type
         linechart = self.Linechart(title, dayone, vtag, ltag)
         # write linechart out to temporary file
-        jspath = 'tmp/graph.png'
-        path = '/home/ubuntu/chatbot/tmp/graph.png'
+        jspath = 'images/graph.png'
+        path = '/var/www/html/images/graph.png'
         if (os.path.exists(path)):
             os.remove(path)
         f = open(path, 'xb')

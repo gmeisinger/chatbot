@@ -10,6 +10,7 @@ intents:
 - affirm
 - deny
 - thankyou
+- how_are_you
 - mood_great
 - mood_unhappy
 - ask_about_case_count_by_time_month
@@ -86,7 +87,7 @@ slots:
     influence_conversation: false
 responses:
   utter_greet:
-  - text: Hey! How are you?
+  - text: Hey!
   - text: Hello!
   - text: Hi!
   utter_cheer_up:
@@ -107,6 +108,11 @@ responses:
   - text: Goodbye!
   utter_what_else:
   - text: Is there anything else I can help you with?
+  utter_mood_good:
+  - text: I'm great, thanks!
+  - text: I'm good!
+  - text: Just fine!
+  - text: Feeling great!
   utter_sorry:
   - text: I'm sorry, I didn't understand that.
   utter_searching:
@@ -127,6 +133,7 @@ responses:
 actions:
 - action_forget_slots
 - action_clear_chat
+- action_reset_bot
 - action_case_count
 - action_case_count_by_time_month
 - action_case_count_by_time_day

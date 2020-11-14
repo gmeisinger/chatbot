@@ -10,11 +10,21 @@ stories:
   - intent: bot_challenge
   - action: utter_iamabot
 
+- story: chitchat_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_forget_slots
+  - intent: how_are_you
+  - action: utter_mood_good
+
 - story: goodbye_story
   steps:
   - intent: greet
   - action: utter_greet
   - action: action_forget_slots
+  - intent: how_are_you
+  - action: utter_mood_good
   - intent: bot_challenge
   - action: utter_iamabot
   - intent: goodbye
@@ -25,6 +35,8 @@ stories:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+  - intent: how_are_you
+  - action: utter_mood_good
   - intent: ask_about_case_count
   - action: case_count_form
   - active_loop: case_count_form
@@ -75,12 +87,17 @@ stories:
   - action: action_case_count
   - intent: bot_challenge
   - action: utter_iamabot
+  - intent: start_over
+  - action: action_reset_bot
 
 
 - story: interactive_story_4
   steps:
   - intent: greet
   - action: utter_greet
+  - action: action_forget_slots
+  - intent: how_are_you
+  - action: utter_mood_good
   - action: action_forget_slots
   - intent: bot_challenge
   - action: utter_iamabot
@@ -113,6 +130,8 @@ stories:
       - Argentina
   # - action: action_case_count
   - action: action_case_summary_graph
+  - intent: start_over
+  - action: action_reset_bot
 
 - story: interactive_story_6
   steps:
@@ -128,6 +147,8 @@ stories:
       - Canada
   # - action: action_case_count
   - action: action_case_summary_graph
+  - intent: start_over
+  - action: action_reset_bot
 
 - story: interactive_story_7
   steps:
@@ -154,6 +175,9 @@ stories:
   - intent: greet
   - action: utter_greet
   - action: action_forget_slots
+  - intent: how_are_you
+  - action: utter_mood_good
+  - action: action_forget_slots
   - intent: ask_about_case_count_by_time_month
     entities:
     - case_type: deaths
@@ -167,6 +191,9 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
+  - action: action_forget_slots
+  - intent: how_are_you
+  - action: utter_mood_good
   - action: action_forget_slots
   - intent: ask_about_case_count_by_time_day
     entities:
@@ -217,3 +244,24 @@ stories:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- story: interactive_story_12
+  steps:
+  - intent: how_are_you
+  - action: utter_mood_good
+  - intent: ask_about_case_count
+    entities:
+    - case_type: deaths
+    - countries: 
+      - china
+      - india
+  - slot_was_set:
+    - countries: 
+      - china
+      - india
+  - action: case_count_form
+  - active_loop: case_count_form
+  - active_loop: null
+  - action: action_case_count
+  - intent: start_over
+  - action: action_reset_bot

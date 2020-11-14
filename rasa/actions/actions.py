@@ -28,10 +28,10 @@
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet, FollowupAction, EventType
+from rasa_sdk.events import SlotSet, FollowupAction, EventType, Restarted
 from rasa_sdk import FormValidationAction
 from rasa_sdk.types import DomainDict
-from rasa_core_sdk.events import Restarted
+
 
 from typing import Any, Text, Dict, List, Union
 from datetime import date

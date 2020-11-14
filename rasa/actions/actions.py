@@ -242,8 +242,8 @@ class ActionCaseSummaryGraph(Action):
             # vtag = case_type
         linechart = self.Linechart(title, dayone, vtag, ltag)
         # write linechart out to temporary file
-        jspath = 'templates/static/tmp/graph.png'
-        path = 'templates/static/tmp/graph.png'
+        jspath = 'tmp/graph.png'
+        path = '../../templates/static/tmp/graph.png'
         if (os.path.exists(path)):
             os.remove(path)
         f = open(path, 'xb')

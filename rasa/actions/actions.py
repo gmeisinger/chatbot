@@ -657,7 +657,7 @@ class ActionCaseCountSince(Action):
         else:
             currentMonth = date.today().strftime("%m")		
             currentDay = date.today().strftime("%d")		
-            currentTime = date.today().strftime("%H:M:S")	
+            currentDay = str(int(currentDay) - 1)
 
             if(currentMonth == month and currentDay == "01"):
                dispatcher.utter_message(text = "Cannot calculate info")
@@ -666,30 +666,45 @@ class ActionCaseCountSince(Action):
             for c in countries:
                 country = c
                 text =  text + "In " + country + " since " + by_sub_time + " there have been "
-                r = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-" + month + "-01T00:00:00Z&to=2020-" + currentMonth + "-" + currentDay + "T" + currentTime +"Z")
+                r = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-" + month + "-01T00:00:00Z&to=2020-" + currentMonth + "-" + currentDay + "T00:00:00Z")
                 summary = r.json()
-                m = 3
-                if summary[1]["Province"] == "":
-                    for x in summary:
-                        if int(x["Date"][5:7]) == m:
-                            m += 1
-                            counts[m] = x["Cases"]
+                
+				
+                m = int(month)-1
+				
+                start = 0
+                end = 0
+                if summary[0]["Province"] == "" and summary[1]["Province"] == "":
+                    start = summary[0]["Cases"]
+                    end = summary[len(summary)-1]["Cases"]					
+					# for x in range(m,int(currentMonth) + 1):
+                        # counts[x] = 0
+                    # for x in range(len(summary)):
+                        # if int(summary[x]["Date"][5:7]) == m and int(summary[x]["Date"][8:10]) == 1:
+                            # counts[m] += summary[x]["Cases"]
+                        # if x+1 != len(summary) and int(summary[x+1]["Date"][5:7]) != m:
+                            # m += 1				
                 else:
-                    for x in range(m,int(currentMonth) + 1):
-                        counts[x] = 0
-                    for x in range(len(summary)):
-                        if int(summary[x]["Date"][5:7]) == m and int(summary[x]["Date"][8:10]) == 1:
-                            counts[m] += summary[x]["Cases"]
-                        if x+1 != len(summary) and int(summary[x+1]["Date"][5:7]) != m:
-                            m += 1
+                    r2 = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-03-01T00:00:00Z&to=2020-03-01T12:00:00Z")
+                    summary2 = r2.json()
+                    numProv = len(summary2)
+					
+                    for i in range(numProv):
+                        start += summary[i]["Cases"]
+                        end += summary[len(summary)-i-1]["Cases"]	
+	                    
                 m = 1
                 numM = len(counts)
 				
-                total = 0
-                for x in counts:
-                    total = total + counts[x]
+                total = end - start
+				#counts[numM] - counts[int(month)]
+                # i = 1
+                # for x in counts:
+                    # text = text + str(i) +": " + str(x) + " "				
+                    # total = total + counts[x]
+                    # i = i + 1
                 
-                text = text + str(total) + " " 
+                text = text + str(total) +  " " 
                 if case_type == "recovered":
                     text = text + "recoveries in "
                 elif case_type == "confirmed":

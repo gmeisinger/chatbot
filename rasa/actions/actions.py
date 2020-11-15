@@ -890,69 +890,74 @@ class ActionCaseCountSinceSpecific(Action):
         else:
             month = "12"
         
-        if by_day == 1 or by_day == "one" or by_day = "first":
+        if by_day == "1" or by_day == "one" or by_day == "first":
             day = "01"
-        elif by_day == 2 or by_day == "two" or by_day = "second":
+        elif by_day == "2" or by_day == "two" or by_day == "second":
             day = "02"
-        elif by_day == 3 or by_day == "three" or by_day = "third":
+        elif by_day == "3" or by_day == "three" or by_day == "third":
             day = "03"
-        elif by_day == 4 or by_day == "four" or by_day = "fourth":
+        elif by_day == "4" or by_day == "four" or by_day == "fourth":
             day = "04"
-        elif by_day == 5 or by_day == "five" or by_day = "fifth":
+        elif by_day == "5" or by_day == "five" or by_day == "fifth":
             day = "05"
-        elif by_day == 6 or by_day == "six" or by_day = "sixth":
+        elif by_day == "6" or by_day == "six" or by_day == "sixth":
             day = "06"
-        elif by_day == 7 or by_day == "seven" or by_day = "seventh":
+        elif by_day == "7" or by_day == "seven" or by_day == "seventh":
             day = "07"
-        elif by_day == 8 or by_day == "eight" or by_day = "eighth":
+        elif by_day == "8" or by_day == "eight" or by_day == "eighth":
             day = "08"
-        elif by_day == 9 or by_day == "nine" or by_day = "ninth":
+        elif by_day == "9" or by_day == "nine" or by_day == "ninth":
             day = "09"
-        elif by_day == 10 or by_day == "ten" or by_day = "tenth":
+        elif by_day == "10" or by_day == "ten" or by_day == "tenth":
             day = "10"
-        elif by_day == 11 or by_day == "eleven" or by_day = "eleventh":
+        elif by_day == "11" or by_day == "eleven" or by_day == "eleventh":
             day = "11"
-        elif by_day == 12 or by_day == "twelve" or by_day = "twelfth":
+        elif by_day == "12" or by_day == "twelve" or by_day == "twelfth":
             day = "12"
-        elif by_day == 13 or by_day == "thirteen" or by_day = "thirteenth":
+        elif by_day == "13" or by_day == "thirteen" or by_day == "thirteenth":
             day = "13"
-        elif by_day == 14 or by_day == "fourteen" or by_day = "fourteenth":
+        elif by_day == "14" or by_day == "fourteen" or by_day == "fourteenth":
             day = "14"
-        elif by_day == 15 or by_day == "fifteen" or by_day = "fifteenth":
+        elif by_day == "15" or by_day == "fifteen" or by_day == "fifteenth":
             day = "15"
-        elif by_day == 16 or by_day == "sixteen" or by_day = "sixteenth":
+        elif by_day == "16" or by_day == "sixteen" or by_day == "sixteenth":
             day = "16"
-        elif by_day == 17 or by_day == "seventeen" or by_day = "seventeenth":
+        elif by_day == "17" or by_day == "seventeen" or by_day == "seventeenth":
             day = "17"
-        elif by_day == 18 or by_day == "eighteen" or by_day = "eighteenth":
+        elif by_day == "18" or by_day == "eighteen" or by_day == "eighteenth":
             day = "18"
-        elif by_day == 19 or by_day == "nineteen" or by_day = "nineteenth":
+        elif by_day == "19" or by_day == "nineteen" or by_day == "nineteenth":
             day = "19"
-        elif by_day == 20 or by_day == "twenty" or by_day = "twentieth":
+        elif by_day == "20" or by_day == "twenty" or by_day == "twentieth":
             day = "20"
-        elif by_day == 21 or by_day == "twenty one" or by_day = "twenty first":
+        elif by_day == "21" or by_day == "twenty one" or by_day == "twenty first":
             day = "21"
-        elif by_day == 22 or by_day == "twenty two" or by_day = "twenty second":
+        elif by_day == "22" or by_day == "twenty two" or by_day == "twenty second":
             day = "22"
-        elif by_day == 23 or by_day == "twenty three" or by_day = "twenty third":
+        elif by_day == "23" or by_day == "twenty three" or by_day == "twenty third":
             day = "23"
-        elif by_day == 24 or by_day == "twenty four" or by_day = "twenty fourth":
+        elif by_day == "24" or by_day == "twenty four" or by_day == "twenty fourth":
             day = "24"
-        elif by_day == 25 or by_day == "twenty five" or by_day = "twenty fifth":
+        elif by_day == "25" or by_day == "twenty five" or by_day == "twenty fifth":
             day = "25"
-        elif by_day == 26 or by_day == "twenty six" or by_day = "twenty sixth":
+        elif by_day == "26" or by_day == "twenty six" or by_day == "twenty sixth":
             day = "26"
-        elif by_day == 27 or by_day == "twenty seven" or by_day = "twenty seventh":
+        elif by_day == "27" or by_day == "twenty seven" or by_day == "twenty seventh":
             day = "27"
-        elif by_day == 28 or by_day == "twenty eight" or by_day = "twenty eighth":
+        elif by_day == "28" or by_day == "twenty eight" or by_day == "twenty eighth":
             day = "28"
-        elif by_day == 29 or by_day == "twenty nine" or by_day = "twenty ninth":
+        elif by_day == "29" or by_day == "twenty nine" or by_day == "twenty ninth":
             day = "29"
-        elif by_day == 30 or by_day == "thirty" or by_day = "thirtieth":
+        elif by_day == "30" or by_day == "thirty" or by_day == "thirtieth":
             day = "30"
         else:
             day = "31"
-        
+
+        if month == "02" or month == "04" or month == "06" or month == "09" or month == "11":
+            if day == "31" or (month == "02" and day == "30"):
+                text = "Please enter a valid date."
+                dispatcher.utter_message(text = text)
+                return []
 
         if country == "world":
             text = "Sorry, but SCITalk cannot get global data over time because it would take too long to sum count totals for every country"
@@ -967,7 +972,29 @@ class ActionCaseCountSinceSpecific(Action):
 			
             for c in countries:
                 country = c
-                text =  text + "In " + country + " since " + by_sub_time + " there have been "
+                text =  text + "In " + country + " since " + by_sub_time + " "
+                if day[-1] == "1" and day[-2] != "1":
+                    if day[0] == "0":
+                        text = text + day[1] + "st"
+                    else:
+                        text = text + day + "st"
+                elif day[-1] == "2" and day[-2] != "1":
+                    if day[0] == "0":
+                        text = text + day[1] + "nd"
+                    else:
+                        text = text + day + "nd"
+                elif day[-1] == "3"and day[-2] != "1":
+                    if day[0] == "0":
+                        text = text + day[1] + "rd"
+                    else:
+                        text = text + day + "rd"
+                else:
+                    if day[0] == "0":
+                        text = text + day[1] + "th"
+                    else:
+                        text = text + day + "th"
+                text = text + " there have been "
+                
                 r = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-" + month + "-" + day + "T00:00:00Z&to=2020-" + currentMonth + "-" + currentDay + "T00:00:00Z")
                 summary = r.json()
                 
@@ -1081,76 +1108,103 @@ class ActionCaseCountBeforeSpecific(Action):
         else:
             month = "12"
         
-        if by_day == 1 or by_day == "one" or by_day = "first":
+        if by_day == "1" or by_day == "one" or by_day == "first":
             day = "01"
-        elif by_day == 2 or by_day == "two" or by_day = "second":
+        elif by_day == "2" or by_day == "two" or by_day == "second":
             day = "02"
-        elif by_day == 3 or by_day == "three" or by_day = "third":
+        elif by_day == "3" or by_day == "three" or by_day == "third":
             day = "03"
-        elif by_day == 4 or by_day == "four" or by_day = "fourth":
+        elif by_day == "4" or by_day == "four" or by_day == "fourth":
             day = "04"
-        elif by_day == 5 or by_day == "five" or by_day = "fifth":
+        elif by_day == "5" or by_day == "five" or by_day == "fifth":
             day = "05"
-        elif by_day == 6 or by_day == "six" or by_day = "sixth":
+        elif by_day == "6" or by_day == "six" or by_day == "sixth":
             day = "06"
-        elif by_day == 7 or by_day == "seven" or by_day = "seventh":
+        elif by_day == "7" or by_day == "seven" or by_day == "seventh":
             day = "07"
-        elif by_day == 8 or by_day == "eight" or by_day = "eighth":
+        elif by_day == "8" or by_day == "eight" or by_day == "eighth":
             day = "08"
-        elif by_day == 9 or by_day == "nine" or by_day = "ninth":
+        elif by_day == "9" or by_day == "nine" or by_day == "ninth":
             day = "09"
-        elif by_day == 10 or by_day == "ten" or by_day = "tenth":
+        elif by_day == "10" or by_day == "ten" or by_day == "tenth":
             day = "10"
-        elif by_day == 11 or by_day == "eleven" or by_day = "eleventh":
+        elif by_day == "11" or by_day == "eleven" or by_day == "eleventh":
             day = "11"
-        elif by_day == 12 or by_day == "twelve" or by_day = "twelfth":
+        elif by_day == "12" or by_day == "twelve" or by_day == "twelfth":
             day = "12"
-        elif by_day == 13 or by_day == "thirteen" or by_day = "thirteenth":
+        elif by_day == "13" or by_day == "thirteen" or by_day == "thirteenth":
             day = "13"
-        elif by_day == 14 or by_day == "fourteen" or by_day = "fourteenth":
+        elif by_day == "14" or by_day == "fourteen" or by_day == "fourteenth":
             day = "14"
-        elif by_day == 15 or by_day == "fifteen" or by_day = "fifteenth":
+        elif by_day == "15" or by_day == "fifteen" or by_day == "fifteenth":
             day = "15"
-        elif by_day == 16 or by_day == "sixteen" or by_day = "sixteenth":
+        elif by_day == "16" or by_day == "sixteen" or by_day == "sixteenth":
             day = "16"
-        elif by_day == 17 or by_day == "seventeen" or by_day = "seventeenth":
+        elif by_day == "17" or by_day == "seventeen" or by_day == "seventeenth":
             day = "17"
-        elif by_day == 18 or by_day == "eighteen" or by_day = "eighteenth":
+        elif by_day == "18" or by_day == "eighteen" or by_day == "eighteenth":
             day = "18"
-        elif by_day == 19 or by_day == "nineteen" or by_day = "nineteenth":
+        elif by_day == "19" or by_day == "nineteen" or by_day == "nineteenth":
             day = "19"
-        elif by_day == 20 or by_day == "twenty" or by_day = "twentieth":
+        elif by_day == "20" or by_day == "twenty" or by_day == "twentieth":
             day = "20"
-        elif by_day == 21 or by_day == "twenty one" or by_day = "twenty first":
+        elif by_day == "21" or by_day == "twenty one" or by_day == "twenty first":
             day = "21"
-        elif by_day == 22 or by_day == "twenty two" or by_day = "twenty second":
+        elif by_day == "22" or by_day == "twenty two" or by_day == "twenty second":
             day = "22"
-        elif by_day == 23 or by_day == "twenty three" or by_day = "twenty third":
+        elif by_day == "23" or by_day == "twenty three" or by_day == "twenty third":
             day = "23"
-        elif by_day == 24 or by_day == "twenty four" or by_day = "twenty fourth":
+        elif by_day == "24" or by_day == "twenty four" or by_day == "twenty fourth":
             day = "24"
-        elif by_day == 25 or by_day == "twenty five" or by_day = "twenty fifth":
+        elif by_day == "25" or by_day == "twenty five" or by_day == "twenty fifth":
             day = "25"
-        elif by_day == 26 or by_day == "twenty six" or by_day = "twenty sixth":
+        elif by_day == "26" or by_day == "twenty six" or by_day == "twenty sixth":
             day = "26"
-        elif by_day == 27 or by_day == "twenty seven" or by_day = "twenty seventh":
+        elif by_day == "27" or by_day == "twenty seven" or by_day == "twenty seventh":
             day = "27"
-        elif by_day == 28 or by_day == "twenty eight" or by_day = "twenty eighth":
+        elif by_day == "28" or by_day == "twenty eight" or by_day == "twenty eighth":
             day = "28"
-        elif by_day == 29 or by_day == "twenty nine" or by_day = "twenty ninth":
+        elif by_day == "29" or by_day == "twenty nine" or by_day == "twenty ninth":
             day = "29"
-        elif by_day == 30 or by_day == "thirty" or by_day = "thirtieth":
+        elif by_day == "30" or by_day == "thirty" or by_day == "thirtieth":
             day = "30"
         else:
             day = "31"
         
+        if month == "02" or month == "04" or month == "06" or month == "09" or month == "11":
+            if day == "31" or (month == "02" and day == "30"):
+                text = "Please enter a valid date."
+                dispatcher.utter_message(text = text)
+                return []
 
         if country == "world":
             text = "Sorry, but SCITalk cannot get global data over time because it would take too long to sum count totals for every country"
         else:
             for c in countries:
                 country = c
-                text =  text + "In " + country + " since " + by_sub_time + " there have been "
+                text =  text + "In " + country + " before " + by_sub_time + " "
+                if day[-1] == "1" and day[-2] != "1":
+                    if day[0] == "0":
+                        text = text + day[1] + "st"
+                    else:
+                        text = text + day + "st"
+                elif day[-1] == "2" and day[-2] != "1":
+                    if day[0] == "0":
+                        text = text + day[1] + "nd"
+                    else:
+                        text = text + day + "nd"
+                elif day[-1] == "3"and day[-2] != "1":
+                    if day[0] == "0":
+                        text = text + day[1] + "rd"
+                    else:
+                        text = text + day + "rd"
+                else:
+                    if day[0] == "0":
+                        text = text + day[1] + "th"
+                    else:
+                        text = text + day + "th"
+                text = text + " there have been "
+
                 r = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-01-01T00:00:00Z&to=2020-" + month + "-" + day + "T00:00:00Z")
                 summary = r.json()
                 

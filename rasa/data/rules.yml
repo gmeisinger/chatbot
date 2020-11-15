@@ -96,3 +96,8 @@ rules:
   steps:
   - intent: ask_about_case_summary_graph
   - action: action_case_summary_graph
+
+- rule: inform purpose when asked
+  steps:
+  - intent: ask_purpose
+  - action: utter_inform_purpose

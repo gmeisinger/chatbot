@@ -401,6 +401,12 @@ nlu:
     - how many [deaths](case_type) since [july](bysubtime) in [bouvet]{"entity": "countries", "value": "bouvet island"}
     - how many [total](scope) [deaths](case_type) since [march](bysubtime) in [tobago]{"entity": "countries", "value": "trinidad and tobago"}
     - how many [deaths](case_type) have there been in [faroe]{"entity": "countries", "value": "faroe islands"} since [april](bysubtime)
+- intent: ask_purpose
+  examples: |
+    - What do you do?
+    - Why were you built?
+    - What can you tell me?
+    - What can I ask you about?
 - intent: ask_about_cases_before
   examples: |
     - deaths before [january](bysubtime) in [Russia](countries)

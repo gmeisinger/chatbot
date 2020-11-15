@@ -459,7 +459,7 @@ nlu:
     - how many [new](scope) [confirmed](case_type) cases in [the u.k.]{"entity": "countries", "value": "united kingdom"}  since [july](bysubtime) [9](byday)
     - how many [new](scope) [deaths](case_type) in [u.k.]{"entity": "countries", "value": "united kingdom"} since [november](bysubtime) [8](byday)th
     - [deaths](case_type) in [antigua]{"entity": "countries", "value": "antiantigua and barbudagua"} since [december](bysubtime) [31](byday)
-    - how many [deaths](case_type) since [july](bysubtime) [2](bday)nd in [bouvet]{"entity": "countries", "value": "bouvet island"}
+    - how many [deaths](case_type) since [july](bysubtime) [2](byday)nd in [bouvet]{"entity": "countries", "value": "bouvet island"}
     - how many [total](scope) [deaths](case_type) since [march](bysubtime) [4](byday) in [tobago]{"entity": "countries", "value": "trinidad and tobago"}
     - how many [deaths](case_type) have there been in [faroe]{"entity": "countries", "value": "faroe islands"} since [april](bysubtime) [4](byday)th
     - deaths since [january](bysubtime) [twelfth](byday) in [Russia](countries)
@@ -468,15 +468,15 @@ nlu:
     - since [april](bysubtime) [nine](byday) how many [deaths](case_type) in [madagascar](countries)
     - how many new cases since [may](bysubtime) [sixth](byday) in [new zealand](countries)
     - how many cases since [june](bysubtime) [twenty nine](byday) in [chile](countries) and [australia](countries)
-    - recovered(case_type) since [july](bysubtime) [first](byday) in [sweden](countries) and [norway](countries)
-    - how many [recovered](case_type) in [italy](countries) and [france](countries) since [august](bysubtime) [seventh](byday)
+    - recovered(case_type) since [july](bysubtime) [twenty four](byday) in [sweden](countries) and [norway](countries)
+    - how many [recovered](case_type) in [italy](countries) and [france](countries) since [august](bysubtime) [twenty fifth](byday)
     - how many people [recovered](case_type) in [ecquador](countries) since [september](bysubtime) [twenty](byday)
     - how many people confirmed(casetype) in [iceland](countries) since [october](bysubtime) [thirty-first](byday)
-    - how many [deaths](case_type) in [canada](countries) since [november](bysubtime) [fourth](byday)
+    - how many [deaths](case_type) in [canada](countries) since [november](bysubtime) [twenty fourth](byday)
     - how many [new](scope) [confirmed](case_type) cases in [the u.k.]{"entity": "countries", "value": "united kingdom"}  since [july](bysubtime) [nine](byday)
     - how many [new](scope) [deaths](case_type) in [u.k.]{"entity": "countries", "value": "united kingdom"} since [november](bysubtime) [eighth](byday)
     - [deaths](case_type) in [antigua]{"entity": "countries", "value": "antiantigua and barbudagua"} since [december](bysubtime) [thirty one](byday)
-    - how many [deaths](case_type) since [july](bysubtime) [second](bday) in [bouvet]{"entity": "countries", "value": "bouvet island"}
+    - how many [deaths](case_type) since [july](bysubtime) [second](byday) in [bouvet]{"entity": "countries", "value": "bouvet island"}
     - how many [total](scope) [deaths](case_type) since [march](bysubtime) [four](byday) in [tobago]{"entity": "countries", "value": "trinidad and tobago"}
     - how many [deaths](case_type) have there been in [faroe]{"entity": "countries", "value": "faroe islands"} since [april](bysubtime) [fourth](byday)
 - intent: ask_about_cases_before_specific
@@ -516,11 +516,11 @@ nlu:
     - how many [total](scope) [deaths](case_type) prior to [march](bysubtime) [1](byday) in [tobago]{"entity": "countries", "value": "trinidad and tobago"}
     - how many [deaths](case_type) have there been in [faroe]{"entity": "countries", "value": "faroe islands"} prior to [april](bysubtime) [2](byday)nd
     - deaths before [january](bysubtime) [first](byday) in [Russia](countries)
-    - [new](scope) cases before [february](bysubtime) [two](byday) in [germany](countries)
+    - [new](scope) cases before [february](bysubtime) [twenty eight](byday) in [germany](countries)
     - cases before [march](bysubtime) [third](byday) in [india](countries)
-    - before [april](bysubtime) [four](byday) how many [deaths](case_type) in [madagascar](countries)
+    - before [april](bysubtime) [twenty four](byday) how many [deaths](case_type) in [madagascar](countries)
     - how many new cases before [may](bysubtime) [fifth](byday) in [new zealand](countries)
-    - how many cases before [june](bysubtime) [sixth](byday) in [chile](countries) and [australia](countries)
+    - how many cases before [june](bysubtime) [twenty sixth](byday) in [chile](countries) and [australia](countries)
     - recovered(case_type) before [july](bysubtime) [seven](byday) in [sweden](countries) and [norway](countries)
     - how many [recovered](case_type) in [italy](countries) and [france](countries) before [august](bysubtime) [eighth](byday)
     - how many people [recovered](case_type) in [ecquador](countries) before [september](bysubtime) [nine](byday)
@@ -532,12 +532,12 @@ nlu:
     - how many [deaths](case_type) before [july](bysubtime) [nineth](byday) in [bouvet]{"entity": "countries", "value": "bouvet island"}
     - how many [total](scope) [deaths](case_type) before [march](bysubtime) [first](byday) in [tobago]{"entity": "countries", "value": "trinidad and tobago"}
     - how many [deaths](case_type) have there been in [faroe]{"entity": "countries", "value": "faroe islands"} before [april](bysubtime) [second](byday)
-    - deaths prior to [january](bysubtime) [first](byday) in [Russia](countries)
-    - [new](scope) cases prior to [february](bysubtime) [two](byday) in [germany](countries)
+    - deaths prior to [january](bysubtime) [twenty first](byday) in [Russia](countries)
+    - [new](scope) cases prior to [february](bysubtime) [twenty](byday) in [germany](countries)
     - cases prior to [march](bysubtime) [third](byday) in [india](countries)
     - prior to [april](bysubtime) [four](byday) how many [deaths](case_type) in [madagascar](countries)
     - how many new cases prior to [may](bysubtime) [fifth](byday) in [new zealand](countries)
-    - how many cases prior to [june](bysubtime) [sixth](byday) in [chile](countries) and [australia](countries)
+    - how many cases prior to [june](bysubtime) [twenty sixth](byday) in [chile](countries) and [australia](countries)
     - recovered(case_type) prior to [july](bysubtime) [seven](byday) in [sweden](countries) and [norway](countries)
     - how many [recovered](case_type) in [italy](countries) and [france](countries) prior to [august](bysubtime) [eighth](byday)
     - how many people [recovered](case_type) in [ecquador](countries) prior to [september](bysubtime) [nine](byday)

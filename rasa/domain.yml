@@ -107,6 +107,7 @@ responses:
   utter_goodbye:
   - text: Bye
   - text: Goodbye!
+  - text: Hasta la vista, baby!
   utter_what_else:
   - text: Is there anything else I can help you with?
   utter_mood_good:

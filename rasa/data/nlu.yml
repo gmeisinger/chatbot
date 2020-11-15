@@ -212,6 +212,13 @@ nlu:
     - has anybody [deaths](case_type) in [south korea](countries) and [north korea](countries)?
     - how many [new](scope) [deaths](case_type) in [russia](countries) and [japan](countries)?
     - How many people have [deaths](case_type) in [Venezuela](countries) as well as [columbia](countries)?
+    - how many [deaths](case_type) in [murica]{"entity": "countries", "value": "united states of america"}
+    - how many [deaths](case_type) have there been in [the us]{"entity": "countries", "value": "united states of america"}
+    - how many [deaths](case_type) have there been in [murica]{"entity": "countries", "value": "united states of america"}
+    - how many [deaths](case_type) have there been in [the u.s.]{"entity": "countries", "value": "united states of america"}
+    - how many [new](scope) [confirmed](case_type) cases have there been in [murica]{"entity": "countries", "value": "united states of america"}
+    - how many [new](scope) [deaths](case_type) have there been in [u.s.a.]{"entity": "countries", "value": "united states of america"}
+    - how many [total](scope) [recoveries](case_type) have there been in [murica]{"entity": "countries", "value": "united states of america"}
 - intent: ask_about_case_count_by_time_month
   examples: |
     - how many [deaths](case_type) have there been in [mexico](countries) per [month](bytime)?
@@ -230,7 +237,6 @@ nlu:
     - how many [deaths](case_type) have there been in [russia](countries) and [ukraine](countries) by [month](bytime)?
     - how many [recovered](case_type) have there been in [ukraine](countries) and [poland](countries) per [month](bytime)?
     - how many [deaths](case_type) have there been in [poland](countries) and [germany](countries) by [month](bytime)?
-    - how many [confirmed](case_type) cases have there been per [month](bytime)
     - how many [deaths](case_type) per [month](bytime) in [canada](countries) and [the united states](countries)
     - how many [confirmed](case_type) cases per [month](bytime) in [russia](countries) and [germany](countries)
     - how many [recovered](case_type) per [month](bytime) in [zimbabwe](countries) and [canada](countries)
@@ -242,7 +248,7 @@ nlu:
     - how many [recovered](case_type) per [month](bytime) in [zimbabwe](countries), [canada](countries) and [france](countries)
     - how many [deaths](case_type) by [month](bytime) in [england](countries), [ireland](countries), and [scotland](countries)
     - how many [confirmed](case_type) cases by [month](bytime) in [italy](countries), [greece](countries) and [north korea](countries)
-    - how many [recovered](case_type) by [month](bytime) in [greece](countries), [spain](countries), and [portugal](countries)  
+    - how many [recovered](case_type) by [month](bytime) in [greece](countries), [spain](countries), and [portugal](countries)
     - how many [new](scope) [deaths](case_type) have there been in [mexico](countries) per [month](bytime)?
     - how many [total](scope) [deaths](case_type) have there been in [russia](countries) by [month](bytime)?
     - how many [new](scope) [recovered](case_type) have there been in [ukraine](countries) per [month](bytime)?
@@ -271,6 +277,9 @@ nlu:
     - how many [new](scope) [deaths](case_type) by [month](bytime) in [england](countries), [ireland](countries), and [scotland](countries)
     - how many [total](scope) [confirmed](case_type) cases by [month](bytime) in [italy](countries), [greece](countries) and [north korea](countries)
     - how many [new](scope) [recovered](case_type) by [month](bytime) in [greece](countries), [spain](countries), and [portugal](countries)
+    - how many [deaths](case_type) have happened by [month](bytime) in ['murica](countries)
+    - how many [deaths](case_type) in the [pope house](countries) by [month](bytime)
+    - how many [deaths](case_type) in [the uk](countries) by [month](bytime)
 - intent: ask_about_case_count_by_time_day
   examples: |
     - how many [deaths](case_type) have there been in [china](countries) by [day](bytime) in [january](bysubtime)?
@@ -351,7 +360,9 @@ nlu:
     - how many [total](scope) [confirmed](case_type) cases by [day](bytime) in [june](bysubtime) in [norway](countries), [sweden](countries), and [japan](countries)
     - how many [total](scope) [recovered](case_type) by [day](bytime) in [sweden](countries) and [italy](countries) and [switzerland](countries) in [august](bysubtime)
     - how many [total](scope) [recovered](case_type) by [day](bytime) in [december](bysubtime) in [ecquador](countries), [canada](countries) and [chile](countries)
-    - how many [deaths](case_type) have there been by [day](bytime) in [january](bysubtime)
+    - how many [deaths](case_type) have there been in [the vatican]{"entity": "countries", "value": "holy see vatican city state"} by [day](bytime) in [october](bysubtime)
+    - [deaths](case_type) in [vatican]{"entity": "countries", "value": "holy see vatican city state"} by [day](bytime) in [january](bysubtime)
+    - how many [new](scope) [recoveries](case_type) in [uk]{"entity": "countries", "value": "united kingdom"} by [day](bytime) in [november](bysubtime)
 - intent: ask_about_case_summary_graph
   examples: |
     - can you show me a graph of [new](case_type) cases in [Mexico](countries)?
@@ -384,6 +395,11 @@ nlu:
     - how many people [recovered](case_type) in [ecquador](countries) since [september](bysubtime)
     - how many people confirmed(casetype) in [iceland[(countries) since [october](bysubtime)
     - how many [deaths](case_type) in [canada](countries) since [november](bysubtime)
+    - how many [new](scope) [confirmed](case_type) cases in [the u.k.]{"entity": "countries", "value": "united kingdom"}  since [july](bysubtime)
+    - how many [new](scope) [deaths](case_type) in [u.k.]{"entity": "countries", "value": "united kingdom"} since [november](bysubtime)
+    - [deaths](case_type) in [antigua]{"entity": "countries", "value": "antiantigua and barbudagua"} since [december](bysubtime)
+    - how many [deaths](case_type) since [july](bysubtime) in [bouvet]{"entity": "countries", "value": "bouvet island"}
+    - how many [total](scope) [deaths](case_type) since [march](bysubtime) in [tobago]{"entity": "countries", "value": "trinidad and tobago"}
 - synonym: total
   examples: |
     - all
@@ -504,7 +520,7 @@ nlu:
     - the united kingdom of great britain and northern ireland
     - united kingdom of great britain and northern ireland
     - the united kingdom of great britain
-    - united kingdom of great britain 
+    - united kingdom of great britain
     - britain
 - synonym: falkland islands malvinas
   examples: |
@@ -699,6 +715,66 @@ nlu:
   examples: |
     - us minor outlying islands
     - us outlying islands
+- lookup: month
+  examples: |
+    - january
+    - february
+    - march
+    - april
+    - may
+    - june
+    - july
+    - august
+    - september
+    - october
+    - november
+    - december
+    - january
+    - february
+    - march
+    - april
+    - may
+    - june
+    - july
+    - august
+    - september
+    - october
+    - november
+    - december
+- lookup: weekday
+  examples: |
+    - monday
+    - tuesday
+    - wednesday
+    - thursday
+    - friday
+    - saturday
+    - sunday
+    - monday
+    - tuesday
+    - wednesday
+    - thursday
+    - friday
+    - saturday
+    - sunday
+- lookup: relative_time
+  examples: |
+    - today
+    - yesterday
+    - last week
+    - last month
+    - today
+    - yesterday
+    - last week
+    - last month
+- lookup: bytime
+  examples: |
+    - month
+    - day
+    - year
+    - month
+    - day
+    - year
 - lookup: countries
   examples: |
     - niger

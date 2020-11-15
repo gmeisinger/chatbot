@@ -265,3 +265,244 @@ stories:
   - action: action_case_count
   - intent: start_over
   - action: action_reset_bot
+
+- story: interactive_story_13
+  steps:
+  - intent: ask_about_case_count
+    entities:
+    - case_type: deaths
+    - countries: the us
+  - slot_was_set:
+    - case_type: deaths
+  - slot_was_set:
+    - countries:
+      - the us
+  - action: case_count_form
+  - action: action_case_count
+
+- story: interactive_story_14
+  steps:
+  - intent: ask_about_case_count
+    entities:
+    - scope: new
+    - case_type: confirmed
+    - countries: murica
+  - slot_was_set:
+    - case_type: confirmed
+  - slot_was_set:
+    - countries:
+      - murica
+  - slot_was_set:
+    - scope: new
+  - action: case_count_form
+  - action: action_case_count
+
+- story: interactive_story_15
+  steps:
+  - intent: ask_about_case_count
+    entities:
+    - scope: new
+    - case_type: deaths
+    - countries: u.s.a.
+  - slot_was_set:
+    - case_type: deaths
+  - slot_was_set:
+    - countries:
+      - u.s.a.
+  - slot_was_set:
+    - scope: new
+  - action: case_count_form
+  - action: action_case_count
+
+- story: interactive_story_16
+  steps:
+  - intent: ask_about_case_count
+    entities:
+    - scope: total
+    - case_type: recoveries
+    - countries: murica
+  - slot_was_set:
+    - case_type: recoveries
+  - slot_was_set:
+    - countries:
+      - murica
+  - slot_was_set:
+    - scope: total
+  - action: case_count_form
+  - action: action_case_count
+
+- story: interactive_story_17
+  steps:
+  - intent: ask_about_case_count_by_time_month
+    entities:
+    - case_type: deaths
+    - bytime: month
+    - countries: "'murica"
+  - slot_was_set:
+    - bytime: month
+  - slot_was_set:
+    - case_type: deaths
+  - slot_was_set:
+    - countries:
+      - "'murica"
+  - action: action_case_count_by_time_month
+
+- story: interactive_story_18
+  steps:
+  - intent: ask_about_case_count_by_time_day
+    entities:
+    - case_type: deaths
+    - countries: the vatican
+    - bytime: day
+    - bysubtime: october
+  - slot_was_set:
+    - bysubtime: october
+  - slot_was_set:
+    - bytime: day
+  - slot_was_set:
+    - case_type: deaths
+  - slot_was_set:
+    - countries:
+      - the vatican
+  - action: action_case_count_by_time_day
+
+- story: interactive_story_19
+  steps:
+  - intent: ask_about_case_count_by_time_month
+    entities:
+    - case_type: deaths
+    - countries: pope house
+    - bytime: month
+  - slot_was_set:
+    - bytime: month
+  - slot_was_set:
+    - case_type: deaths
+  - slot_was_set:
+    - countries:
+      - pope house
+  - action: action_case_count_by_time_month
+
+- story: interactive_story_1
+  steps:
+  - intent: ask_about_case_count_by_time_day
+    entities:
+    - case_type: deaths
+    - countries: vatican
+    - bytime: day
+    - bysubtime: january
+  - slot_was_set:
+    - bysubtime: january
+  - slot_was_set:
+    - bytime: day
+  - slot_was_set:
+    - case_type: deaths
+  - slot_was_set:
+    - countries:
+      - vatican
+  - action: action_case_count_by_time_day
+  - intent: ask_about_case_count_by_time_month
+    entities:
+    - case_type: deaths
+    - countries: the uk
+    - bytime: month
+  - slot_was_set:
+    - bytime: month
+  - slot_was_set:
+    - case_type: deaths
+  - slot_was_set:
+    - countries:
+      - the uk
+  - action: action_case_count_by_time_month
+  - intent: ask_about_case_count_by_time_day
+    entities:
+    - scope: new
+    - case_type: recoveries
+    - countries: uk
+    - bytime: day
+    - bysubtime: november
+  - slot_was_set:
+    - bysubtime: november
+  - slot_was_set:
+    - bytime: day
+  - slot_was_set:
+    - case_type: recoveries
+  - slot_was_set:
+    - countries:
+      - uk
+  - slot_was_set:
+    - scope: new
+  - action: action_case_count_by_time_day
+  - intent: ask_about_cases_since
+    entities:
+    - scope: new
+    - case_type: confirmed
+    - countries: the u.k.
+    - bysubtime: july
+  - slot_was_set:
+    - bysubtime: july
+  - slot_was_set:
+    - case_type: confirmed
+  - slot_was_set:
+    - countries:
+      - the u.k.
+  - slot_was_set:
+    - scope: new
+  - action: action_case_count_since
+  - intent: ask_about_cases_since
+    entities:
+    - scope: new
+    - case_type: deaths
+    - countries: u.k.
+    - bysubtime: november
+  - slot_was_set:
+    - bysubtime: november
+  - slot_was_set:
+    - case_type: deaths
+  - slot_was_set:
+    - countries:
+      - u.k.
+  - slot_was_set:
+    - scope: new
+  - action: action_case_count_since
+  - intent: ask_about_cases_since
+    entities:
+    - case_type: deaths
+    - countries: antigua
+    - bysubtime: december
+  - slot_was_set:
+    - bysubtime: december
+  - slot_was_set:
+    - case_type: deaths
+  - slot_was_set:
+    - countries:
+      - antigua
+  - action: action_case_count_since
+  - intent: ask_about_cases_since
+    entities:
+    - case_type: deaths
+    - bysubtime: july
+    - countries: bouvet
+  - slot_was_set:
+    - bysubtime: july
+  - slot_was_set:
+    - case_type: deaths
+  - slot_was_set:
+    - countries:
+      - bouvet
+  - action: action_case_count_since
+  - intent: ask_about_cases_since
+    entities:
+    - scope: total
+    - case_type: deaths
+    - bysubtime: march
+    - countries: trinidad and tobago
+  - slot_was_set:
+    - bysubtime: march
+  - slot_was_set:
+    - case_type: deaths
+  - slot_was_set:
+    - countries:
+      - trinidad and tobago
+  - slot_was_set:
+    - scope: total
+  - action: action_case_count_since

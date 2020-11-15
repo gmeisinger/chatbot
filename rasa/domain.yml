@@ -5,6 +5,8 @@ intents:
 - ask_about_case_count_by_time_day
 - ask_about_cases_since
 - ask_about_cases_before
+- ask_about_cases_since_specific
+- ask_about_cases_before_specific
 - ask_about_case_count_by_time_month
 - ask_about_case_count
 - greet
@@ -31,6 +33,7 @@ entities:
 - country
 - name
 - scope
+- byday
 slots:
   bysubtime:
     type: categorical
@@ -56,6 +59,123 @@ slots:
     - day
     - month
     - __other__
+  byday:
+    type: categorical
+    influence_conversation: true
+    values:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 17
+    - 18
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 26
+    - 27
+    - 28
+    - 29
+    - 30
+    - 31
+    - one
+    - two
+    - three
+    - four
+    - five
+    - six
+    - seven
+    - eight
+    - nine
+    - ten
+    - eleven
+    - twelve
+    - thirteen
+    - fourteen
+    - fifteen
+    - sixteen
+    - seventeen
+    - eightteen
+    - nineteen
+    - twenty 
+    - twenty one
+    - twenty two
+    - twenty three
+    - twenty four
+    - twenty five
+    - twenty six
+    - twenty seven
+    - twenty eight
+    - twenty nine
+    - thirty
+    - thirty one
+    - first
+    - second
+    - third
+    - fourth
+    - fifth
+    - sixth
+    - seventh
+    - eighth
+    - ninth
+    - tenth
+    - eleventh
+    - twelfth
+    - thirteenth
+    - fourteenth
+    - fifteenth
+    - sixteenth
+    - seventeenth
+    - eighteenth
+    - nineteenth
+    - twentieth
+    - twenty first
+    - twenty second
+    - twenty third
+    - twenty fourth
+    - twenty fifth
+    - twenty sixth
+    - twenty seventh
+    - twenty eighth
+    - twenty ninth
+    - thirtieth
+    - thirty first
+    - twenty-one
+    - twenty-two
+    - twenty-three
+    - twenty-four
+    - twenty-five
+    - twenty-six
+    - twenty-seven
+    - twenty-eight
+    - twenty-nine
+    - thirty-one
+    - twenty-first
+    - twenty-second
+    - twenty-third
+    - twenty-fourth
+    - twenty-fifth
+    - twenty-sixth
+    - twenty-seventh
+    - twenty-eighth
+    - twenty-ninth
+    - thirty-first
   case_type:
     type: categorical
     influence_conversation: false
@@ -139,6 +259,8 @@ actions:
 - action_case_count_by_time_month
 - action_case_count_since
 - action_case_count_before
+- action_case_count_since_specific
+- action_case_count_before_specific
 - action_case_summary_graph
 - action_clear_chat
 - action_forget_slots

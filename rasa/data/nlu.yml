@@ -458,7 +458,7 @@ nlu:
     - month
     - day
     - year
-- lookup: united states of america
+- synonym: united states of america
   examples: |
     - the united states
     - the united states of america
@@ -478,22 +478,22 @@ nlu:
     - the u.s.a
     - u.s.
     - the u.s.
-- lookup: netherlands
+- synonym: netherlands
   examples: |
     - netherlands
     - holland
-- lookup: china
+- synonym: china
   examples: |
     - china
     - peoples republic of china
     - the peoples republic of china
     - people's republic of china
     - the people's republic of china
-- lookup: russia
+- synonym: russia
   examples: |
     - russia
     - russian federation
-- lookup: united kingdom
+- synonym: united kingdom
   examples: |
     - united kingdom
     - uk
@@ -506,15 +506,15 @@ nlu:
     - the united kingdom of great britain
     - united kingdom of great britain 
     - britain
-- lookup: falkland islands malvinas
+- synonym: falkland islands malvinas
   examples: |
     - falkland islands malvinas
     - falkland islands
-- lookup: british virgin islands
+- synonym: british virgin islands
   examples: |
     - british virgin islands
     - british virgin island
-- lookup: svalbard and jan mayen islands
+- synonym: svalbard and jan mayen islands
   examples: |
     - valbard and jan mayen islands
     - valbard and jan mayen island
@@ -523,11 +523,11 @@ nlu:
     - valbard islands
     - jan mayen island
     - valbard island
-- lookup: french polynesia
+- synonym: french polynesia
   examples: |
     - french polynesia
     - polynesia
-- lookup: wallis and futuna islands
+- synonym: wallis and futuna islands
   examples: |
     - wallis and futuna islands
     - wallis and futuna island
@@ -536,25 +536,25 @@ nlu:
     - futuna islands
     - wallis island
     - futuna island
-- lookup: antigua and barbuda
+- synonym: antigua and barbuda
   examples: |
     - antigua and barbuda
     - antigua
     - barbuda
-- lookup: marshall islands
+- synonym: marshall islands
   examples: |
     - marshall islands
     - marshall island
     - marshall
-- lookup: norfolk island
+- synonym: norfolk island
   examples: |
     - norfolk island
     - norfolk
-- lookup: bouvet island
+- synonym: bouvet island
   examples: |
     - bouvet island
     - bouvet
-- lookup: cocos keeling islands
+- synonym: cocos keeling islands
   examples: |
     - cocos keeling islands
     - cocos keeling island
@@ -563,22 +563,22 @@ nlu:
     - keeling islands
     - cocos island
     - keeling island
-- lookup: solomon islands
+- synonym: solomon islands
   examples: |
     - solomon islands
     - solomon island
     - solomon
-- lookup: christmas island
+- synonym: christmas island
   examples: |
     - christmas island
     - christmas
-- lookup: saint kitts and nevis
+- synonym: saint kitts and nevis
   examples: |
     - saint kitts and nevis
     - saint kitts
     - nevis
     - kitts and nevis
-- lookup: turks and caicos islands
+- synonym: turks and caicos islands
   examples: |
     - turks and caicos islands
     - turks and caicos island
@@ -587,27 +587,27 @@ nlu:
     - caicos islands
     - turks island
     - caicos island
-- lookup: virgin islands
+- synonym: virgin islands
   examples: |
     - virgin islands
     - virgin island
-- lookup: trinidad and tobago
+- synonym: trinidad and tobago
   examples: |
     - trinidad and tobago
     - tobago
     - trinidad
-- lookup: hong kong sar china
+- synonym: hong kong sar china
   examples: |
     - hong kong sar china
     - hong kong china
     - hong kong
     - hk
-- lookup: cook islands
+- synonym: cook islands
   examples: |
     - cook islands
     - cook island
     - cook
-- lookup: heard and mcdonald islands
+- synonym: heard and mcdonald islands
   examples: |
     - heard and mcdonald islands
     - heard and mcdonald island
@@ -616,12 +616,12 @@ nlu:
     - mcdonald islands
     - heard island
     - mcdonald island
-- lookup: cayman islands
+- synonym: cayman islands
   examples: |
     - cayman islands
     - cayman island
     - cayman
-- lookup: south georgia and the south sandwich islands
+- synonym: south georgia and the south sandwich islands
   examples: |
     - south georgia and the south sandwich islands
     - south georgia and the south sandwich island
@@ -645,7 +645,7 @@ nlu:
     - the south sandwich island
     - south sandwich island
     - sandwich island
-- lookup: holy see vatican city state
+- synonym: holy see vatican city state
   examples: |
     - holy see vatican city state
     - holy see vatican city
@@ -654,11 +654,11 @@ nlu:
     - vatican
     - the vatican
     - pope house
-- lookup: el salvador
+- synonym: el salvador
   examples: |
     - el salvador
     - salvador
-- lookup: united arab emirates
+- synonym: united arab emirates
   examples: |
     - united arab emirates
     - the united arab emirates
@@ -666,28 +666,28 @@ nlu:
     - uae
     - the u.a.e.
     - u.a.e.
-- lookup: ala aland islands
+- synonym: ala aland islands
   examples: |
     - ala aland islands
     - ala aland island
     - ala aland
-- lookup: faroe islands
+- synonym: faroe islands
   examples: |
     - faroe islands
     - faroe island
     - faroe
-- lookup: saint pierre and miquelon
+- synonym: saint pierre and miquelon
   examples: |
     - saint pierre and miquelon
     - saint pierre
     - miquelon
     - pierre and miquelon
-- lookup: bosnia and herzegovina
+- synonym: bosnia and herzegovina
   examples: |
     - bosnia and herzegovina
     - bosnia
     - herzegovina
-- lookup: northern mariana islands
+- synonym: northern mariana islands
   examples: |
     - northern mariana islands
     - northern mariana island
@@ -695,7 +695,7 @@ nlu:
     - mariana islands
     - mariana island
     - mariana
-- lookup: us minor outlying islands
+- synonym: us minor outlying islands
   examples: |
     - us minor outlying islands
     - us outlying islands

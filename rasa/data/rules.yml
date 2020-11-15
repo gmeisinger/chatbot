@@ -50,6 +50,11 @@ rules:
   - intent: ask_about_cases_since
   - action: action_case_count_since
 
+- rule: Give case counts before a time when user asks
+  steps:
+  - intent: ask_about_cases_before
+  - action: action_case_count_before
+
 - rule: activate case count form
   steps:
     - intent: ask_about_case_count

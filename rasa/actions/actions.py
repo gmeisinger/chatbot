@@ -669,7 +669,6 @@ class ActionCaseCountSince(Action):
                 r = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-" + month + "-01T00:00:00Z&to=2020-" + currentMonth + "-" + currentDay + "T00:00:00Z")
                 summary = r.json()
                 
-				
                 m = int(month)-1
 				
                 start = 0
@@ -712,16 +711,122 @@ class ActionCaseCountSince(Action):
                 else:
                    text = text + case_type + " in "
                 text = text + scope
-                   
-                    
-
                 text = text + "."
                 if len(countries) > 1:
                     text = text + "\n\n"
         dispatcher.utter_message(text = text)
         return []
 
-	
+class ActionCaseCountBefore(Action):
+
+    @staticmethod
+    def required_fields():
+        return [
+            #EntityFormField("scope", "scope"),
+            #EntityFormField("case_type", "case_type"),
+            EntityFormField("countries", "countries")
+        ]
+
+    def name(self):
+        return "action_case_count_before"
+    
+    def run(self, dispatcher, tracker, domain): 
+        scope = tracker.get_slot('scope')
+        if scope == None:
+            scope = "total"
+        case_type = tracker.get_slot('case_type')
+        if case_type == None:
+            case_type = "confirmed"
+        countries = tracker.get_slot('countries')
+        country = "world"
+        if countries != None:
+            country = countries[0]
+        by_sub_time = tracker.get_slot('bysubtime')
+        if by_sub_time == None:
+            by_sub_time = "january" 
+        
+        text = ""
+        counts = {}
+        month = ""
+        if by_sub_time == "january":
+            month = "01"
+        elif by_sub_time == "february":
+            month = "02"
+        elif by_sub_time == "march":
+            month = "03"
+        elif by_sub_time == "april":
+            month = "04"
+        elif by_sub_time == "may":
+            month = "05"
+        elif by_sub_time == "june":
+            month = "06"
+        elif by_sub_time == "july":
+            month = "07"
+        elif by_sub_time == "august":
+            month = "08"
+        elif by_sub_time == "september":
+            month = "09"
+        elif by_sub_time == "october":
+            month = "10"
+        elif by_sub_time == "november":
+            month = "11"
+        else:
+            month = "12"
+        if country == "world":
+            text = "Sorry, but SCITalk cannot get global data over time because it would take too long to sum count totals for every country"
+        else:
+            for c in countries:
+                country = c
+                text =  text + "In " + country + " before " + by_sub_time + " there have been "
+                r = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-01-01T00:00:00Z&to=2020-" + month + "-01T00:00:00Z")
+                summary = r.json()
+                m = int(month)-1
+				
+                start = 0
+                end = 0
+                if summary[0]["Province"] == "" and summary[1]["Province"] == "":
+                    start = summary[0]["Cases"]
+                    end = summary[len(summary)-1]["Cases"]					
+					# for x in range(m,int(currentMonth) + 1):
+                        # counts[x] = 0
+                    # for x in range(len(summary)):
+                        # if int(summary[x]["Date"][5:7]) == m and int(summary[x]["Date"][8:10]) == 1:
+                            # counts[m] += summary[x]["Cases"]
+                        # if x+1 != len(summary) and int(summary[x+1]["Date"][5:7]) != m:
+                            # m += 1				
+                else:
+                    r2 = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-03-01T00:00:00Z&to=2020-03-01T12:00:00Z")
+                    summary2 = r2.json()
+                    numProv = len(summary2)
+					
+                    for i in range(numProv):
+                        start += summary[i]["Cases"]
+                        end += summary[len(summary)-i-1]["Cases"]	
+	                    
+                m = 1
+                numM = len(counts)
+				
+                total = end - start
+				#counts[numM] - counts[int(month)]
+                # i = 1
+                # for x in counts:
+                    # text = text + str(i) +": " + str(x) + " "				
+                    # total = total + counts[x]
+                    # i = i + 1
+                
+                text = text + str(total) +  " " 
+                if case_type == "recovered":
+                    text = text + "recoveries in "
+                elif case_type == "confirmed":
+                    text = text + case_type + " cases in "
+                else:
+                   text = text + case_type + " in "
+                text = text + scope
+                text = text + "."
+                if len(countries) > 1:
+                    text = text + "\n\n"
+        dispatcher.utter_message(text = text)
+        return []
 
 ###########
 #  FORMS  #

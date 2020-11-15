@@ -4,6 +4,7 @@ session_config:
 intents:
 - ask_about_case_count_by_time_day
 - ask_about_cases_since
+- ask_about_cases_before
 - ask_about_case_count_by_time_month
 - ask_about_case_count
 - greet
@@ -140,6 +141,7 @@ actions:
 - action_case_count_by_time_day
 - action_case_count_by_time_month
 - action_case_count_since
+- action_case_count_before
 - action_case_summary_graph
 - action_clear_chat
 - action_forget_slots

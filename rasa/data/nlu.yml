@@ -400,6 +400,64 @@ nlu:
     - [deaths](case_type) in [antigua]{"entity": "countries", "value": "antiantigua and barbudagua"} since [december](bysubtime)
     - how many [deaths](case_type) since [july](bysubtime) in [bouvet]{"entity": "countries", "value": "bouvet island"}
     - how many [total](scope) [deaths](case_type) since [march](bysubtime) in [tobago]{"entity": "countries", "value": "trinidad and tobago"}
+    - how many [deaths](case_type) have there been in [faroe]{"entity": "countries", "value": "faroe islands"} since [april](bysubtime)
+- synonym: united states of america
+  examples: |
+    - murica
+    - the us
+    - the u.s.
+    - u.s.a.
+    - the united states
+    - the united states of america
+    - united states of america
+    - the usa
+    - united states
+    - usa
+    - us
+    - america
+    - the states
+    - merica
+    - 'merica
+    - 'murica
+    - u.s.a
+    - the u.s.a
+    - u.s.
+- synonym: holy see vatican city state
+  examples: |
+    - the vatican
+    - vatican
+    - holy see vatican city state
+    - holy see vatican city
+    - vatican city state
+    - vatican city
+    - pope house
+- synonym: united kingdom
+  examples: |
+    - uk
+    - the u.k.
+    - u.k.
+    - united kingdom
+    - the united kingdom
+    - the uk
+    - the united kingdom of great britain and northern ireland
+    - united kingdom of great britain and northern ireland
+    - the united kingdom of great britain
+    - united kingdom of great britain
+    - britain
+- synonym: antigua and barbuda
+  examples: |
+    - antigua
+    - antigua and barbuda
+    - barbuda
+- synonym: bouvet island
+  examples: |
+    - bouvet
+    - bouvet island
+- synonym: trinidad and tobago
+  examples: |
+    - tobago
+    - trinidad and tobago
+    - trinidad
 - synonym: total
   examples: |
     - all
@@ -741,8 +799,27 @@ nlu:
     - october
     - november
     - december
+    - january
+    - february
+    - march
+    - april
+    - may
+    - june
+    - july
+    - august
+    - september
+    - october
+    - november
+    - december
 - lookup: weekday
   examples: |
+    - monday
+    - tuesday
+    - wednesday
+    - thursday
+    - friday
+    - saturday
+    - sunday
     - monday
     - tuesday
     - wednesday
@@ -767,8 +844,15 @@ nlu:
     - yesterday
     - last week
     - last month
+    - today
+    - yesterday
+    - last week
+    - last month
 - lookup: bytime
   examples: |
+    - month
+    - day
+    - year
     - month
     - day
     - year

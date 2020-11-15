@@ -527,3 +527,19 @@ stories:
   - slot_was_set:
     - scope: total
   - action: action_case_count_since
+
+- story: interactive_story_28
+  steps:
+  - intent: ask_about_cases_since
+    entities:
+    - case_type: deaths
+    - countries: faroe islands
+    - bysubtime: april
+  - slot_was_set:
+    - bysubtime: april
+  - slot_was_set:
+    - case_type: deaths
+  - slot_was_set:
+    - countries:
+      - faroe islands
+  - action: action_case_count_since

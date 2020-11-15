@@ -382,7 +382,7 @@ stories:
       - pope house
   - action: action_case_count_by_time_month
 
-- story: interactive_story_1
+- story: interactive_story_20
   steps:
   - intent: ask_about_case_count_by_time_day
     entities:
@@ -400,6 +400,9 @@ stories:
     - countries:
       - vatican
   - action: action_case_count_by_time_day
+
+- story: interactive_story_21
+  steps:
   - intent: ask_about_case_count_by_time_month
     entities:
     - case_type: deaths
@@ -413,6 +416,9 @@ stories:
     - countries:
       - the uk
   - action: action_case_count_by_time_month
+
+- story: interactive_story_22
+  steps:
   - intent: ask_about_case_count_by_time_day
     entities:
     - scope: new
@@ -432,6 +438,9 @@ stories:
   - slot_was_set:
     - scope: new
   - action: action_case_count_by_time_day
+
+- story: interactive_story_23
+  steps:
   - intent: ask_about_cases_since
     entities:
     - scope: new
@@ -448,6 +457,9 @@ stories:
   - slot_was_set:
     - scope: new
   - action: action_case_count_since
+
+- story: interactive_story_24
+  steps:
   - intent: ask_about_cases_since
     entities:
     - scope: new
@@ -464,6 +476,9 @@ stories:
   - slot_was_set:
     - scope: new
   - action: action_case_count_since
+
+- story: interactive_story_25
+  steps:
   - intent: ask_about_cases_since
     entities:
     - case_type: deaths
@@ -477,6 +492,9 @@ stories:
     - countries:
       - antigua
   - action: action_case_count_since
+
+- story: interactive_story_26
+  steps:
   - intent: ask_about_cases_since
     entities:
     - case_type: deaths
@@ -490,6 +508,9 @@ stories:
     - countries:
       - bouvet
   - action: action_case_count_since
+
+- story: interactive_story_27
+  steps:
   - intent: ask_about_cases_since
     entities:
     - scope: total

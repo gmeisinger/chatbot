@@ -22,6 +22,7 @@ intents:
 - inform_countries
 - clear_chat
 - start_over
+- ask_purpose
 entities:
 - bysubtime
 - bytime
@@ -132,6 +133,8 @@ responses:
   - text: Which countries would you like information about?
   utter_case_count:
   - text: There are {count} {scope} {case_type} cases in {country}.
+  utter_inform_purpose:
+  - text: I'm a conversational dialogue system powered by machine learning that's capable of answering a wide variety of your questions about COVID-19.
 actions:
 - action_case_count
 - action_case_count_by_time_day

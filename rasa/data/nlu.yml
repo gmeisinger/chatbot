@@ -208,7 +208,7 @@ nlu:
     - how many [total](scope) [confirmed](case_type) cases are there in [russia](countries) and [ukraine](countries)?
     - how many people [deaths](case_type) of [covid](virus) [today](relative_time) in [france](countries) and [belgium](countries)?
     - did anyone [deaths](case_type) in [south africa](countries) and [egypt](countries) [today](relative_time)?
-    - how many people [deaths](case_type) of [coronavirus](virus) in [china](countries), [taiwan](countries), and [hong kong](countries)?
+    - how many people [deaths](case_type) of [coronavirus](virus) in [china](countries), [taiwan](countries), and [hong kong]{"entity": "countries", "value": "hong kong sar china"}?
     - has anybody [deaths](case_type) in [south korea](countries) and [north korea](countries)?
     - how many [new](scope) [deaths](case_type) in [russia](countries) and [japan](countries)?
     - How many people have [deaths](case_type) in [Venezuela](countries) as well as [columbia](countries)?

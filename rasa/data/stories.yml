@@ -619,3 +619,35 @@ stories:
     - countries:
       - wallis and futuna islands
   - action: action_case_count_before_specific
+
+- story: interactive_story_33
+  steps:
+  - intent: ask_about_cases_since
+    entities:
+    - case_type: deaths
+    - countries: solomon islands
+    - bysubtime: june
+  - slot_was_set:
+    - bysubtime: june
+  - slot_was_set:
+    - case_type: deaths
+  - slot_was_set:
+    - countries:
+      - solomon islands
+  - action: action_case_count_since
+
+- story: interactive_story_34
+  steps:
+  - intent: ask_about_cases_before
+    entities:
+    - case_type: deaths
+    - countries: cook islands
+    - bysubtime: july
+  - slot_was_set:
+    - bysubtime: july
+  - slot_was_set:
+    - case_type: deaths
+  - slot_was_set:
+    - countries:
+      - cook islands
+  - action: action_case_count_before

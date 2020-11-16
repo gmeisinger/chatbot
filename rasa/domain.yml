@@ -2,9 +2,9 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- ask_about_cases_before
 - ask_about_cases_since
 - ask_about_cases_before_specific
-- ask_about_cases_before
 - ask_about_cases_since_specific
 - ask_about_case_count_by_time_day
 - ask_about_case_count_by_time_month

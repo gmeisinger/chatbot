@@ -543,3 +543,64 @@ stories:
     - countries:
       - faroe islands
   - action: action_case_count_since
+
+- story: interactive_story_1
+  steps:
+  - intent: ask_about_cases_since
+    entities:
+    - case_type: deaths
+    - countries: netherlands
+    - bysubtime: january
+  - slot_was_set:
+    - bysubtime: january
+  - slot_was_set:
+    - case_type: deaths
+  - slot_was_set:
+    - countries:
+      - netherlands
+  - action: action_case_count_since
+  - intent: ask_about_cases_before
+    entities:
+    - case_type: deaths
+    - countries: china
+    - bysubtime: july
+  - slot_was_set:
+    - bysubtime: july
+  - slot_was_set:
+    - case_type: deaths
+  - slot_was_set:
+    - countries:
+      - china
+  - action: action_case_count_before
+  - intent: ask_about_cases_since_specific
+    entities:
+    - case_type: deaths
+    - countries: bouvet island
+    - bysubtime: july
+    - byday: fourth
+  - slot_was_set:
+    - byday: fourth
+  - slot_was_set:
+    - bysubtime: july
+  - slot_was_set:
+    - case_type: deaths
+  - slot_was_set:
+    - countries:
+      - bouvet island
+  - action: action_case_count_since_specific
+  - intent: ask_about_cases_before_specific
+    entities:
+    - case_type: deaths
+    - countries: wallis and futuna islands
+    - bysubtime: august
+    - byday: twentieth
+  - slot_was_set:
+    - byday: twentieth
+  - slot_was_set:
+    - bysubtime: august
+  - slot_was_set:
+    - case_type: deaths
+  - slot_was_set:
+    - countries:
+      - wallis and futuna islands
+  - action: action_case_count_before_specific

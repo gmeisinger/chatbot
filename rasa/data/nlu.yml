@@ -401,6 +401,7 @@ nlu:
     - how many [deaths](case_type) since [july](bysubtime) in [bouvet]{"entity": "countries", "value": "bouvet island"}
     - how many [total](scope) [deaths](case_type) since [march](bysubtime) in [tobago]{"entity": "countries", "value": "trinidad and tobago"}
     - how many [deaths](case_type) have there been in [faroe]{"entity": "countries", "value": "faroe islands"} since [april](bysubtime)
+    - how many [deaths](case_type) in [holland]{"entity": "countries", "value": "netherlands"} since [january](bysubtime)
 - intent: ask_purpose
   examples: |
     - What do you do?
@@ -443,6 +444,7 @@ nlu:
     - how many [deaths](case_type) prior to [july](bysubtime) in [bouvet]{"entity": "countries", "value": "bouvet island"}
     - how many [total](scope) [deaths](case_type) prior to [march](bysubtime) in [tobago]{"entity": "countries", "value": "trinidad and tobago"}
     - how many [deaths](case_type) have there been in [faroe]{"entity": "countries", "value": "faroe islands"} prior to [april](bysubtime)
+    - how many [deaths](case_type) in [people's republic of china]{"entity": "countries", "value": "china"} before [july](bysubtime)
 - intent: ask_about_cases_since_specific
   examples: |
     - deaths since [january](bysubtime) [12](byday)th in [Russia](countries)
@@ -479,6 +481,7 @@ nlu:
     - how many [deaths](case_type) since [july](bysubtime) [second](byday) in [bouvet]{"entity": "countries", "value": "bouvet island"}
     - how many [total](scope) [deaths](case_type) since [march](bysubtime) [four](byday) in [tobago]{"entity": "countries", "value": "trinidad and tobago"}
     - how many [deaths](case_type) have there been in [faroe]{"entity": "countries", "value": "faroe islands"} since [april](bysubtime) [fourth](byday)
+    - how many [deaths](case_type) in [bouvet]{"entity": "countries", "value": "bouvet island"} since [july](bysubtime) [fourth](byday)
 - intent: ask_about_cases_before_specific
   examples: |
     - deaths before [january](bysubtime) [1](byday)st in [Russia](countries)
@@ -549,6 +552,7 @@ nlu:
     - how many [deaths](case_type) prior to [july](bysubtime) [nineth](byday) in [bouvet]{"entity": "countries", "value": "bouvet island"}
     - how many [total](scope) [deaths](case_type) prior to [march](bysubtime) [first](byday) in [tobago]{"entity": "countries", "value": "trinidad and tobago"}
     - how many [deaths](case_type) have there been in [faroe]{"entity": "countries", "value": "faroe islands"} prior to [april](bysubtime) [second](byday)
+    - how many [deaths](case_type) in [wallis]{"entity": "countries", "value": "wallis and futuna islands"} before [august](bysubtime) [twentieth](byday)
 - intent: ask_about_first_day
   examples: |
     - first case in [russia](countries)
@@ -562,6 +566,12 @@ nlu:
     - first
     - when did [india](countries) have its first case
     - when did [india](countries) have its 1st case
+- synonym: hong kong sar china
+  examples: |
+    - hong kong
+    - hong kong sar china
+    - hong kong china
+    - hk
 - synonym: united states of america
   examples: |
     - murica
@@ -619,6 +629,11 @@ nlu:
     - tobago
     - trinidad and tobago
     - trinidad
+- synonym: faroe islands
+  examples: |
+    - faroe
+    - faroe islands
+    - faroe island
 - synonym: total
   examples: |
     - all
@@ -659,60 +674,6 @@ nlu:
     - the virus
     - pandemic
     - the pandemic
-- lookup: month
-  examples: |
-    - january
-    - february
-    - march
-    - april
-    - may
-    - june
-    - july
-    - august
-    - september
-    - october
-    - november
-    - december
-- lookup: weekday
-  examples: |
-    - monday
-    - tuesday
-    - wednesday
-    - thursday
-    - friday
-    - saturday
-    - sunday
-- lookup: relative_time
-  examples: |
-    - today
-    - yesterday
-    - last week
-    - last month
-- lookup: bytime
-  examples: |
-    - month
-    - day
-    - year
-- synonym: united states of america
-  examples: |
-    - the united states
-    - the united states of america
-    - united states of america
-    - the usa
-    - united states
-    - usa
-    - us
-    - the us
-    - america
-    - the states
-    - merica
-    - murica
-    - 'merica
-    - 'murica
-    - u.s.a
-    - the u.s.a
-    - u.s.
-    - the u.s.
 - synonym: netherlands
   examples: |
     - netherlands
@@ -728,19 +689,6 @@ nlu:
   examples: |
     - russia
     - russian federation
-- synonym: united kingdom
-  examples: |
-    - united kingdom
-    - uk
-    - the united kingdom
-    - the uk
-    - the u.k.
-    - u.k.
-    - the united kingdom of great britain and northern ireland
-    - united kingdom of great britain and northern ireland
-    - the united kingdom of great britain
-    - united kingdom of great britain
-    - britain
 - synonym: falkland islands malvinas
   examples: |
     - falkland islands malvinas
@@ -758,6 +706,8 @@ nlu:
     - valbard islands
     - jan mayen island
     - valbard island
+    - jan mayen
+    - valbard
 - synonym: french polynesia
   examples: |
     - french polynesia
@@ -771,11 +721,8 @@ nlu:
     - futuna islands
     - wallis island
     - futuna island
-- synonym: antigua and barbuda
-  examples: |
-    - antigua and barbuda
-    - antigua
-    - barbuda
+    - wallis
+    - futuna
 - synonym: marshall islands
   examples: |
     - marshall islands
@@ -785,10 +732,6 @@ nlu:
   examples: |
     - norfolk island
     - norfolk
-- synonym: bouvet island
-  examples: |
-    - bouvet island
-    - bouvet
 - synonym: cocos keeling islands
   examples: |
     - cocos keeling islands
@@ -798,6 +741,8 @@ nlu:
     - keeling islands
     - cocos island
     - keeling island
+    - cocos
+    - keeling
 - synonym: solomon islands
   examples: |
     - solomon islands
@@ -822,21 +767,12 @@ nlu:
     - caicos islands
     - turks island
     - caicos island
+    - turks
+    - caicos
 - synonym: virgin islands
   examples: |
     - virgin islands
     - virgin island
-- synonym: trinidad and tobago
-  examples: |
-    - trinidad and tobago
-    - tobago
-    - trinidad
-- synonym: hong kong sar china
-  examples: |
-    - hong kong sar china
-    - hong kong china
-    - hong kong
-    - hk
 - synonym: cook islands
   examples: |
     - cook islands
@@ -851,6 +787,8 @@ nlu:
     - mcdonald islands
     - heard island
     - mcdonald island
+    - heard
+    - mcdonald
 - synonym: cayman islands
   examples: |
     - cayman islands
@@ -880,15 +818,6 @@ nlu:
     - the south sandwich island
     - south sandwich island
     - sandwich island
-- synonym: holy see vatican city state
-  examples: |
-    - holy see vatican city state
-    - holy see vatican city
-    - vatican city state
-    - vatican city
-    - vatican
-    - the vatican
-    - pope house
 - synonym: el salvador
   examples: |
     - el salvador
@@ -906,11 +835,6 @@ nlu:
     - ala aland islands
     - ala aland island
     - ala aland
-- synonym: faroe islands
-  examples: |
-    - faroe islands
-    - faroe island
-    - faroe
 - synonym: saint pierre and miquelon
   examples: |
     - saint pierre and miquelon
@@ -948,46 +872,8 @@ nlu:
     - october
     - november
     - december
-    - january
-    - february
-    - march
-    - april
-    - may
-    - june
-    - july
-    - august
-    - september
-    - october
-    - november
-    - december
-    - january
-    - february
-    - march
-    - april
-    - may
-    - june
-    - july
-    - august
-    - september
-    - october
-    - november
-    - december
 - lookup: weekday
   examples: |
-    - monday
-    - tuesday
-    - wednesday
-    - thursday
-    - friday
-    - saturday
-    - sunday
-    - monday
-    - tuesday
-    - wednesday
-    - thursday
-    - friday
-    - saturday
-    - sunday
     - monday
     - tuesday
     - wednesday
@@ -1001,22 +887,8 @@ nlu:
     - yesterday
     - last week
     - last month
-    - today
-    - yesterday
-    - last week
-    - last month
-    - today
-    - yesterday
-    - last week
-    - last month
 - lookup: bytime
   examples: |
-    - month
-    - day
-    - year
-    - month
-    - day
-    - year
     - month
     - day
     - year

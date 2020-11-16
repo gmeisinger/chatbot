@@ -3,11 +3,23 @@ digraph  {
 "-1" [class=end, fillcolor=red, fontsize=12, label=END, style=filled];
 1 [class=active, fontsize=12, label=action_session_start];
 2 [class=active, fontsize=12, label=action_case_count_since];
-3 [class="intent dashed active", label="  ?  ", shape=rect];
-4 [class="intent active", fillcolor=lightblue, label="how many deaths have there been in faroe since april", shape=rect, style=filled];
+3 [class=active, fontsize=12, label=action_case_count_before];
+4 [class=active, fontsize=12, label=action_case_count_since_specific];
+5 [class=active, fontsize=12, label=action_case_count_before_specific];
+6 [class="intent dashed active", label="  ?  ", shape=rect];
+7 [class="intent active", fillcolor=lightblue, label="how many deaths in holland since january", shape=rect, style=filled];
+8 [class="intent active", fillcolor=lightblue, label="how many deaths in people's republic of china before july", shape=rect, style=filled];
+9 [class="intent active", fillcolor=lightblue, label="how many deaths in bouvet since july fourth", shape=rect, style=filled];
+10 [class="intent active", fillcolor=lightblue, label="how many deaths in wallis before august twentieth", shape=rect, style=filled];
 0 -> "-1"  [class="", key=NONE, label=""];
 0 -> 1  [class=active, key=NONE, label=""];
-1 -> 4  [class=active, key=0];
-2 -> 3  [class=active, key=NONE, label=""];
-4 -> 2  [class=active, key=0];
+1 -> 7  [class=active, key=0];
+2 -> 8  [class=active, key=0];
+3 -> 9  [class=active, key=0];
+4 -> 10  [class=active, key=0];
+5 -> 6  [class=active, key=NONE, label=""];
+7 -> 2  [class=active, key=0];
+8 -> 3  [class=active, key=0];
+9 -> 4  [class=active, key=0];
+10 -> 5  [class=active, key=0];
 }

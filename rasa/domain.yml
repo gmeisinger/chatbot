@@ -2,11 +2,11 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- ask_about_case_count_by_time_day
 - ask_about_cases_since
+- ask_about_cases_before_specific
 - ask_about_cases_before
 - ask_about_cases_since_specific
-- ask_about_cases_before_specific
+- ask_about_case_count_by_time_day
 - ask_about_case_count_by_time_month
 - ask_about_case_count
 - greet
@@ -28,6 +28,7 @@ intents:
 - ask_purpose
 - ask_about_first_day
 entities:
+- byday
 - bysubtime
 - bytime
 - case_type
@@ -35,67 +36,42 @@ entities:
 - country
 - name
 - scope
-- byday
 slots:
-  bysubtime:
-    type: categorical
-    influence_conversation: true
-    values:
-    - january
-    - february
-    - march
-    - april
-    - may
-    - june
-    - july
-    - august
-    - september
-    - october
-    - november
-    - december
-    - __other__
-  bytime:
-    type: categorical
-    influence_conversation: true
-    values:
-    - day
-    - month
-    - __other__
   byday:
     type: categorical
     influence_conversation: true
     values:
-    - 1
-    - 2
-    - 3
-    - 4
-    - 5
-    - 6
-    - 7
-    - 8
-    - 9
-    - 10
-    - 11
-    - 12
-    - 13
-    - 14
-    - 15
-    - 16
-    - 17
-    - 18
-    - 19
-    - 20
-    - 21
-    - 22
-    - 23
-    - 24
-    - 25
-    - 26
-    - 27
-    - 28
-    - 29
-    - 30
-    - 31
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+    - '10'
+    - '11'
+    - '12'
+    - '13'
+    - '14'
+    - '15'
+    - '16'
+    - '17'
+    - '18'
+    - '19'
+    - '20'
+    - '21'
+    - '22'
+    - '23'
+    - '24'
+    - '25'
+    - '26'
+    - '27'
+    - '28'
+    - '29'
+    - '30'
+    - '31'
     - one
     - two
     - three
@@ -115,7 +91,7 @@ slots:
     - seventeen
     - eightteen
     - nineteen
-    - twenty 
+    - twenty
     - twenty one
     - twenty two
     - twenty three
@@ -178,6 +154,31 @@ slots:
     - twenty-eighth
     - twenty-ninth
     - thirty-first
+    - __other__
+  bysubtime:
+    type: categorical
+    influence_conversation: true
+    values:
+    - january
+    - february
+    - march
+    - april
+    - may
+    - june
+    - july
+    - august
+    - september
+    - october
+    - november
+    - december
+    - __other__
+  bytime:
+    type: categorical
+    influence_conversation: true
+    values:
+    - day
+    - month
+    - __other__
   case_type:
     type: categorical
     influence_conversation: false
@@ -259,20 +260,20 @@ responses:
   - text: I'm a conversational dialogue system powered by machine learning that's capable of answering a wide variety of your questions about COVID-19.
 actions:
 - action_case_count
+- action_case_count_before
+- action_case_count_before_specific
 - action_case_count_by_time_day
 - action_case_count_by_time_month
 - action_case_count_since
-- action_case_count_before
 - action_case_count_since_specific
-- action_case_count_before_specific
 - action_case_summary_graph
 - action_clear_chat
 - action_forget_slots
 - action_reset_bot
+- get_first_day
 - utter_greet
 - utter_iamabot
 - validate_case_count_form
-- get_first_day
 forms:
   case_count_form:
     scope:

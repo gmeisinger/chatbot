@@ -110,6 +110,11 @@ responses:
   - text: Hasta la vista, baby!
   utter_what_else:
   - text: Is there anything else I can help you with?
+  utter_how_can_i_help:
+  - text: So, how can I help?
+  - text: What can I do for you?
+  - text: How may I assist you?
+  - text: So, is there anything I can help with?
   utter_mood_good:
   - text: I'm great, thanks!
   - text: I'm good!

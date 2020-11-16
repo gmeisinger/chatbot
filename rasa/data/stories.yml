@@ -17,6 +17,8 @@ stories:
   - action: action_forget_slots
   - intent: how_are_you
   - action: utter_mood_good
+  - intent: positive_statement
+  - action: utter_how_can_i_help
 
 - story: goodbye_story
   steps:
@@ -25,6 +27,8 @@ stories:
   - action: action_forget_slots
   - intent: how_are_you
   - action: utter_mood_good
+  - intent: positive_statement
+  - action: utter_how_can_i_help
   - intent: bot_challenge
   - action: utter_iamabot
   - intent: goodbye
@@ -194,6 +198,8 @@ stories:
   - action: action_forget_slots
   - intent: how_are_you
   - action: utter_mood_good
+  - intent: positive_statement
+  - action: utter_how_can_i_help
   - action: action_forget_slots
   - intent: ask_about_case_count_by_time_day
     entities:

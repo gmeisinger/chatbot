@@ -53,6 +53,14 @@ nlu:
     - absolutely not
     - no thanks
     - nope
+- intent: positive_statement
+  examples: |
+    - cool
+    - sweet
+    - awesome
+    - good
+    - great
+    - nice
 - intent: how_are_you
   examples: |
     - how are you
@@ -395,7 +403,7 @@ nlu:
     - how many people [recovered](case_type) in [ecquador](countries) since [september](bysubtime)
     - how many people confirmed(casetype) in [iceland[(countries) since [october](bysubtime)
     - how many [deaths](case_type) in [canada](countries) since [november](bysubtime)
-    - how many [new](scope) [confirmed](case_type) cases in [the u.k.]{"entity": "countries", "value": "united kingdom"}  since [july](bysubtime)
+    - how many [new](scope) [confirmed](case_type) cases in [the u.k.]{"entity": "countries", "value": "united kingdom"} since [july](bysubtime)
     - how many [new](scope) [deaths](case_type) in [u.k.]{"entity": "countries", "value": "united kingdom"} since [november](bysubtime)
     - [deaths](case_type) in [antigua]{"entity": "countries", "value": "antiantigua and barbudagua"} since [december](bysubtime)
     - how many [deaths](case_type) since [july](bysubtime) in [bouvet]{"entity": "countries", "value": "bouvet island"}

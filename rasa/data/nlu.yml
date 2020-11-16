@@ -395,13 +395,13 @@ nlu:
     - deaths since [january](bysubtime) in [Russia](countries)
     - [new](scope) cases since [february](bysubtime) in [germany](countries)
     - cases since [march](bysubtime) in [india](countries)
-    - since [april](bysubtime) how many [deaths](case_type) in madagascar
+    - since [april](bysubtime) how many [deaths](case_type) in [madagascar](countries)
     - how many new cases since [may](bysubtime) in [new zealand](countries)
     - how many cases since [june](bysubtime) in [chile](countries) and [australia](countries)
     - recovered(case_type) since [july](bysubtime) in [sweden](countries) and [norway](countries)
     - how many [recovered](case_type) in [italy](countries) and [france](countries) since [august](bysubtime)
     - how many people [recovered](case_type) in [ecquador](countries) since [september](bysubtime)
-    - how many people confirmed(casetype) in [iceland[(countries) since [october](bysubtime)
+    - how many people confirmed(casetype) in [iceland](countries) since [october](bysubtime)
     - how many [deaths](case_type) in [canada](countries) since [november](bysubtime)
     - how many [new](scope) [confirmed](case_type) cases in [the u.k.]{"entity": "countries", "value": "united kingdom"} since [july](bysubtime)
     - how many [new](scope) [deaths](case_type) in [u.k.]{"entity": "countries", "value": "united kingdom"} since [november](bysubtime)
@@ -409,6 +409,177 @@ nlu:
     - how many [deaths](case_type) since [july](bysubtime) in [bouvet]{"entity": "countries", "value": "bouvet island"}
     - how many [total](scope) [deaths](case_type) since [march](bysubtime) in [tobago]{"entity": "countries", "value": "trinidad and tobago"}
     - how many [deaths](case_type) have there been in [faroe]{"entity": "countries", "value": "faroe islands"} since [april](bysubtime)
+    - how many [deaths](case_type) in [holland]{"entity": "countries", "value": "netherlands"} since [january](bysubtime)
+- intent: ask_purpose
+  examples: |
+    - What do you do?
+    - Why were you built?
+    - What can you tell me?
+    - What can I ask you about?
+- intent: ask_about_cases_before
+  examples: |
+    - deaths before [january](bysubtime) in [Russia](countries)
+    - [new](scope) cases before [february](bysubtime) in [germany](countries)
+    - cases before [march](bysubtime) in [india](countries)
+    - before [april](bysubtime) how many [deaths](case_type) in [madagascar](countries)
+    - how many new cases before [may](bysubtime) in [new zealand](countries)
+    - how many cases before [june](bysubtime) in [chile](countries) and [australia](countries)
+    - recovered(case_type) before [july](bysubtime) in [sweden](countries) and [norway](countries)
+    - how many [recovered](case_type) in [italy](countries) and [france](countries) before [august](bysubtime)
+    - how many people [recovered](case_type) in [ecquador](countries) before [september](bysubtime)
+    - how many people confirmed(casetype) in [iceland](countries) before [october](bysubtime)
+    - how many [deaths](case_type) in [canada](countries) before [november](bysubtime)
+    - how many [new](scope) [confirmed](case_type) cases in [the u.k.]{"entity": "countries", "value": "united kingdom"} before [july](bysubtime)
+    - how many [new](scope) [deaths](case_type) in [u.k.]{"entity": "countries", "value": "united kingdom"} before [november](bysubtime)
+    - [deaths](case_type) in [antigua]{"entity": "countries", "value": "antiantigua and barbudagua"} before [december](bysubtime)
+    - how many [deaths](case_type) before [july](bysubtime) in [bouvet]{"entity": "countries", "value": "bouvet island"}
+    - how many [total](scope) [deaths](case_type) before [march](bysubtime) in [tobago]{"entity": "countries", "value": "trinidad and tobago"}
+    - how many [deaths](case_type) have there been in [faroe]{"entity": "countries", "value": "faroe islands"} before [april](bysubtime)
+    - deaths prior to [june](bysubtime) in [ukraine](countries)
+    - [new](scope) cases prior to [february](bysubtime) in [poland](countries)
+    - cases prior to [march](bysubtime) in [india](countries)
+    - prior to [april](bysubtime) how many [deaths](case_type) in [madagascar](countries)
+    - how many new cases prior to [may](bysubtime) in [new zealand](countries)
+    - how many cases prior to [june](bysubtime) in [chile](countries) and [australia](countries)
+    - recovered(case_type) prior to [july](bysubtime) in [sweden](countries) and [norway](countries)
+    - how many [recovered](case_type) in [italy](countries) and [france](countries) prior to [august](bysubtime)
+    - how many people [recovered](case_type) in [ecquador](countries) prior to [september](bysubtime)
+    - how many people confirmed(casetype) in [iceland](countries) prior to [october](bysubtime)
+    - how many [deaths](case_type) in [canada](countries) prior to [november](bysubtime)
+    - how many [new](scope) [confirmed](case_type) cases in [the u.k.]{"entity": "countries", "value": "united kingdom"} prior to [july](bysubtime)
+    - how many [new](scope) [deaths](case_type) in [u.k.]{"entity": "countries", "value": "united kingdom"} prior to [november](bysubtime)
+    - [deaths](case_type) in [antigua]{"entity": "countries", "value": "antiantigua and barbudagua"} prior to [december](bysubtime)
+    - how many [deaths](case_type) prior to [july](bysubtime) in [bouvet]{"entity": "countries", "value": "bouvet island"}
+    - how many [total](scope) [deaths](case_type) prior to [march](bysubtime) in [tobago]{"entity": "countries", "value": "trinidad and tobago"}
+    - how many [deaths](case_type) have there been in [faroe]{"entity": "countries", "value": "faroe islands"} prior to [april](bysubtime)
+    - how many [deaths](case_type) in [people's republic of china]{"entity": "countries", "value": "china"} before [july](bysubtime)
+- intent: ask_about_cases_since_specific
+  examples: |
+    - deaths since [january](bysubtime) [12](byday)th in [Russia](countries)
+    - [new](scope) cases since [february](bysubtime) [8](byday) in [germany](countries)
+    - cases since [march](bysubtime) [2](byday)nd in [india](countries)
+    - since [april](bysubtime) [9](byday) how many [deaths](case_type) in [madagascar](countries)
+    - how many new cases since [may](bysubtime) [6](byday)th in [new zealand](countries)
+    - how many cases since [june](bysubtime) [29](byday) in [chile](countries) and [australia](countries)
+    - recovered(case_type) since [july](bysubtime) [1](byday)st in [sweden](countries) and [norway](countries)
+    - how many [recovered](case_type) in [italy](countries) and [france](countries) since [august](bysubtime) [7](byday)th
+    - how many people [recovered](case_type) in [ecquador](countries) since [september](bysubtime) [20](byday)
+    - how many people confirmed(casetype) in [iceland](countries) since [october](bysubtime) [31](byday)st
+    - how many [deaths](case_type) in [canada](countries) since [november](bysubtime) [4](byday)
+    - how many [new](scope) [confirmed](case_type) cases in [the u.k.]{"entity": "countries", "value": "united kingdom"}  since [july](bysubtime) [9](byday)
+    - how many [new](scope) [deaths](case_type) in [u.k.]{"entity": "countries", "value": "united kingdom"} since [november](bysubtime) [8](byday)th
+    - [deaths](case_type) in [antigua]{"entity": "countries", "value": "antiantigua and barbudagua"} since [december](bysubtime) [31](byday)
+    - how many [deaths](case_type) since [july](bysubtime) [2](byday)nd in [bouvet]{"entity": "countries", "value": "bouvet island"}
+    - how many [total](scope) [deaths](case_type) since [march](bysubtime) [4](byday) in [tobago]{"entity": "countries", "value": "trinidad and tobago"}
+    - how many [deaths](case_type) have there been in [faroe]{"entity": "countries", "value": "faroe islands"} since [april](bysubtime) [4](byday)th
+    - deaths since [january](bysubtime) [twelfth](byday) in [Russia](countries)
+    - [new](scope) cases since [february](bysubtime) [eight](byday) in [germany](countries)
+    - cases since [march](bysubtime) [second](byday) in [india](countries)
+    - since [april](bysubtime) [nine](byday) how many [deaths](case_type) in [madagascar](countries)
+    - how many new cases since [may](bysubtime) [sixth](byday) in [new zealand](countries)
+    - how many cases since [june](bysubtime) [twenty nine](byday) in [chile](countries) and [australia](countries)
+    - recovered(case_type) since [july](bysubtime) [twenty four](byday) in [sweden](countries) and [norway](countries)
+    - how many [recovered](case_type) in [italy](countries) and [france](countries) since [august](bysubtime) [twenty fifth](byday)
+    - how many people [recovered](case_type) in [ecquador](countries) since [september](bysubtime) [twenty](byday)
+    - how many people confirmed(casetype) in [iceland](countries) since [october](bysubtime) [thirty-first](byday)
+    - how many [deaths](case_type) in [canada](countries) since [november](bysubtime) [twenty fourth](byday)
+    - how many [new](scope) [confirmed](case_type) cases in [the u.k.]{"entity": "countries", "value": "united kingdom"}  since [july](bysubtime) [nine](byday)
+    - how many [new](scope) [deaths](case_type) in [u.k.]{"entity": "countries", "value": "united kingdom"} since [november](bysubtime) [eighth](byday)
+    - [deaths](case_type) in [antigua]{"entity": "countries", "value": "antiantigua and barbudagua"} since [december](bysubtime) [thirty one](byday)
+    - how many [deaths](case_type) since [july](bysubtime) [second](byday) in [bouvet]{"entity": "countries", "value": "bouvet island"}
+    - how many [total](scope) [deaths](case_type) since [march](bysubtime) [four](byday) in [tobago]{"entity": "countries", "value": "trinidad and tobago"}
+    - how many [deaths](case_type) have there been in [faroe]{"entity": "countries", "value": "faroe islands"} since [april](bysubtime) [fourth](byday)
+    - how many [deaths](case_type) in [bouvet]{"entity": "countries", "value": "bouvet island"} since [july](bysubtime) [fourth](byday)
+- intent: ask_about_cases_before_specific
+  examples: |
+    - deaths before [january](bysubtime) [1](byday)st in [Russia](countries)
+    - [new](scope) cases before [february](bysubtime) [2](byday) in [germany](countries)
+    - cases before [march](bysubtime) [3](byday)rd in [india](countries)
+    - before [april](bysubtime) [4](byday) how many [deaths](case_type) in [madagascar](countries)
+    - how many new cases before [may](bysubtime) [5](byday)th in [new zealand](countries)
+    - how many cases before [june](bysubtime) [6](byday)th in [chile](countries) and [australia](countries)
+    - recovered(case_type) before [july](bysubtime) [7](byday) in [sweden](countries) and [norway](countries)
+    - how many [recovered](case_type) in [italy](countries) and [france](countries) before [august](bysubtime) [8](byday)th
+    - how many people [recovered](case_type) in [ecquador](countries) before [september](bysubtime) [9](byday)
+    - how many people confirmed(casetype) in [iceland](countries) before [october](bysubtime) [10](byday)th
+    - how many [deaths](case_type) in [canada](countries) before [november](bysubtime) [11](byday)
+    - how many [new](scope) [confirmed](case_type) cases in [the u.k.]{"entity": "countries", "value": "united kingdom"} before [july](bysubtime) [12](byday)
+    - how many [new](scope) [deaths](case_type) in [u.k.]{"entity": "countries", "value": "united kingdom"} before [november](bysubtime) [31](byday)st
+    - [deaths](case_type) in [antigua]{"entity": "countries", "value": "antiantigua and barbudagua"} before [december](bysubtime) [8](byday)
+    - how many [deaths](case_type) before [july](bysubtime) [9](byday)th in [bouvet]{"entity": "countries", "value": "bouvet island"}
+    - how many [total](scope) [deaths](case_type) before [march](bysubtime) [1](byday) in [tobago]{"entity": "countries", "value": "trinidad and tobago"}
+    - how many [deaths](case_type) have there been in [faroe]{"entity": "countries", "value": "faroe islands"} before [april](bysubtime) [2](byday)nd
+    - deaths prior to [january](bysubtime) [1](byday)st in [Russia](countries)
+    - [new](scope) cases prior to [february](bysubtime) [2](byday) in [germany](countries)
+    - cases prior to [march](bysubtime) [3](byday)rd in [india](countries)
+    - prior to [april](bysubtime) [4](byday) how many [deaths](case_type) in [madagascar](countries)
+    - how many new cases prior to [may](bysubtime) [5](byday)th in [new zealand](countries)
+    - how many cases prior to [june](bysubtime) [6](byday)th in [chile](countries) and [australia](countries)
+    - recovered(case_type) prior to [july](bysubtime) [7](byday) in [sweden](countries) and [norway](countries)
+    - how many [recovered](case_type) in [italy](countries) and [france](countries) prior to [august](bysubtime) [8](byday)th
+    - how many people [recovered](case_type) in [ecquador](countries) prior to [september](bysubtime) [9](byday)
+    - how many people confirmed(casetype) in [iceland](countries) prior to [october](bysubtime) [10](byday)th
+    - how many [deaths](case_type) in [canada](countries) prior to [november](bysubtime) [11](byday)
+    - how many [new](scope) [confirmed](case_type) cases in [the u.k.]{"entity": "countries", "value": "united kingdom"} prior to [july](bysubtime) [12](byday)
+    - how many [new](scope) [deaths](case_type) in [u.k.]{"entity": "countries", "value": "united kingdom"} prior to [november](bysubtime) [31](byday)st
+    - [deaths](case_type) in [antigua]{"entity": "countries", "value": "antiantigua and barbudagua"} prior to [december](bysubtime) [8](byday)
+    - how many [deaths](case_type) prior to [july](bysubtime) [9](byday)th in [bouvet]{"entity": "countries", "value": "bouvet island"}
+    - how many [total](scope) [deaths](case_type) prior to [march](bysubtime) [1](byday) in [tobago]{"entity": "countries", "value": "trinidad and tobago"}
+    - how many [deaths](case_type) have there been in [faroe]{"entity": "countries", "value": "faroe islands"} prior to [april](bysubtime) [2](byday)nd
+    - deaths before [january](bysubtime) [first](byday) in [Russia](countries)
+    - [new](scope) cases before [february](bysubtime) [twenty eight](byday) in [germany](countries)
+    - cases before [march](bysubtime) [third](byday) in [india](countries)
+    - before [april](bysubtime) [twenty four](byday) how many [deaths](case_type) in [madagascar](countries)
+    - how many new cases before [may](bysubtime) [fifth](byday) in [new zealand](countries)
+    - how many cases before [june](bysubtime) [twenty sixth](byday) in [chile](countries) and [australia](countries)
+    - recovered(case_type) before [july](bysubtime) [seven](byday) in [sweden](countries) and [norway](countries)
+    - how many [recovered](case_type) in [italy](countries) and [france](countries) before [august](bysubtime) [eighth](byday)
+    - how many people [recovered](case_type) in [ecquador](countries) before [september](bysubtime) [nine](byday)
+    - how many people confirmed(casetype) in [iceland](countries) before [october](bysubtime) [tenth](byday)
+    - how many [deaths](case_type) in [canada](countries) before [november](bysubtime) [eleven](byday)
+    - how many [new](scope) [confirmed](case_type) cases in [the u.k.]{"entity": "countries", "value": "united kingdom"} before [july](bysubtime) [twelve](byday)
+    - how many [new](scope) [deaths](case_type) in [u.k.]{"entity": "countries", "value": "united kingdom"} before [november](bysubtime) [thirty first](byday)
+    - [deaths](case_type) in [antigua]{"entity": "countries", "value": "antiantigua and barbudagua"} before [december](bysubtime) [eighth](byday)
+    - how many [deaths](case_type) before [july](bysubtime) [nineth](byday) in [bouvet]{"entity": "countries", "value": "bouvet island"}
+    - how many [total](scope) [deaths](case_type) before [march](bysubtime) [first](byday) in [tobago]{"entity": "countries", "value": "trinidad and tobago"}
+    - how many [deaths](case_type) have there been in [faroe]{"entity": "countries", "value": "faroe islands"} before [april](bysubtime) [second](byday)
+    - deaths prior to [january](bysubtime) [twenty first](byday) in [Russia](countries)
+    - [new](scope) cases prior to [february](bysubtime) [twenty](byday) in [germany](countries)
+    - cases prior to [march](bysubtime) [third](byday) in [india](countries)
+    - prior to [april](bysubtime) [four](byday) how many [deaths](case_type) in [madagascar](countries)
+    - how many new cases prior to [may](bysubtime) [fifth](byday) in [new zealand](countries)
+    - how many cases prior to [june](bysubtime) [twenty sixth](byday) in [chile](countries) and [australia](countries)
+    - recovered(case_type) prior to [july](bysubtime) [seven](byday) in [sweden](countries) and [norway](countries)
+    - how many [recovered](case_type) in [italy](countries) and [france](countries) prior to [august](bysubtime) [eighth](byday)
+    - how many people [recovered](case_type) in [ecquador](countries) prior to [september](bysubtime) [nine](byday)
+    - how many people confirmed(casetype) in [iceland](countries) prior to [october](bysubtime) [tenth](byday)
+    - how many [deaths](case_type) in [canada](countries) prior to [november](bysubtime) [eleven](byday)
+    - how many [new](scope) [confirmed](case_type) cases in [the u.k.]{"entity": "countries", "value": "united kingdom"} prior to [july](bysubtime) [twelve](byday)
+    - how many [new](scope) [deaths](case_type) in [u.k.]{"entity": "countries", "value": "united kingdom"} prior to [november](bysubtime) [thirty first](byday)
+    - [deaths](case_type) in [antigua]{"entity": "countries", "value": "antiantigua and barbudagua"} prior to [december](bysubtime) [eighth](byday)
+    - how many [deaths](case_type) prior to [july](bysubtime) [nineth](byday) in [bouvet]{"entity": "countries", "value": "bouvet island"}
+    - how many [total](scope) [deaths](case_type) prior to [march](bysubtime) [first](byday) in [tobago]{"entity": "countries", "value": "trinidad and tobago"}
+    - how many [deaths](case_type) have there been in [faroe]{"entity": "countries", "value": "faroe islands"} prior to [april](bysubtime) [second](byday)
+    - how many [deaths](case_type) in [wallis]{"entity": "countries", "value": "wallis and futuna islands"} before [august](bysubtime) [twentieth](byday)
+- intent: ask_about_first_day
+  examples: |
+    - first case in [russia](countries)
+    - first cases in [russia](countries), [germany](countries], and [the united states](countries)
+    - when was the first in [china](countries)
+    - first in [finland](countries)
+    - first one in [italy](countries)
+    - first case in the world
+    - when was the first case
+    - first case
+    - first
+    - when did [india](countries) have its first case
+    - when did [india](countries) have its 1st case
+- synonym: hong kong sar china
+  examples: |
+    - hong kong
+    - hong kong sar china
+    - hong kong china
+    - hk
 - synonym: united states of america
   examples: |
     - murica
@@ -466,6 +637,11 @@ nlu:
     - tobago
     - trinidad and tobago
     - trinidad
+- synonym: faroe islands
+  examples: |
+    - faroe
+    - faroe islands
+    - faroe island
 - synonym: total
   examples: |
     - all
@@ -506,60 +682,6 @@ nlu:
     - the virus
     - pandemic
     - the pandemic
-- lookup: month
-  examples: |
-    - january
-    - february
-    - march
-    - april
-    - may
-    - june
-    - july
-    - august
-    - september
-    - october
-    - november
-    - december
-- lookup: weekday
-  examples: |
-    - monday
-    - tuesday
-    - wednesday
-    - thursday
-    - friday
-    - saturday
-    - sunday
-- lookup: relative_time
-  examples: |
-    - today
-    - yesterday
-    - last week
-    - last month
-- lookup: bytime
-  examples: |
-    - month
-    - day
-    - year
-- synonym: united states of america
-  examples: |
-    - the united states
-    - the united states of america
-    - united states of america
-    - the usa
-    - united states
-    - usa
-    - us
-    - the us
-    - america
-    - the states
-    - merica
-    - murica
-    - 'merica
-    - 'murica
-    - u.s.a
-    - the u.s.a
-    - u.s.
-    - the u.s.
 - synonym: netherlands
   examples: |
     - netherlands
@@ -575,19 +697,6 @@ nlu:
   examples: |
     - russia
     - russian federation
-- synonym: united kingdom
-  examples: |
-    - united kingdom
-    - uk
-    - the united kingdom
-    - the uk
-    - the u.k.
-    - u.k.
-    - the united kingdom of great britain and northern ireland
-    - united kingdom of great britain and northern ireland
-    - the united kingdom of great britain
-    - united kingdom of great britain
-    - britain
 - synonym: falkland islands malvinas
   examples: |
     - falkland islands malvinas
@@ -605,6 +714,8 @@ nlu:
     - valbard islands
     - jan mayen island
     - valbard island
+    - jan mayen
+    - valbard
 - synonym: french polynesia
   examples: |
     - french polynesia
@@ -618,11 +729,8 @@ nlu:
     - futuna islands
     - wallis island
     - futuna island
-- synonym: antigua and barbuda
-  examples: |
-    - antigua and barbuda
-    - antigua
-    - barbuda
+    - wallis
+    - futuna
 - synonym: marshall islands
   examples: |
     - marshall islands
@@ -632,10 +740,6 @@ nlu:
   examples: |
     - norfolk island
     - norfolk
-- synonym: bouvet island
-  examples: |
-    - bouvet island
-    - bouvet
 - synonym: cocos keeling islands
   examples: |
     - cocos keeling islands
@@ -645,6 +749,8 @@ nlu:
     - keeling islands
     - cocos island
     - keeling island
+    - cocos
+    - keeling
 - synonym: solomon islands
   examples: |
     - solomon islands
@@ -669,21 +775,12 @@ nlu:
     - caicos islands
     - turks island
     - caicos island
+    - turks
+    - caicos
 - synonym: virgin islands
   examples: |
     - virgin islands
     - virgin island
-- synonym: trinidad and tobago
-  examples: |
-    - trinidad and tobago
-    - tobago
-    - trinidad
-- synonym: hong kong sar china
-  examples: |
-    - hong kong sar china
-    - hong kong china
-    - hong kong
-    - hk
 - synonym: cook islands
   examples: |
     - cook islands
@@ -698,6 +795,8 @@ nlu:
     - mcdonald islands
     - heard island
     - mcdonald island
+    - heard
+    - mcdonald
 - synonym: cayman islands
   examples: |
     - cayman islands
@@ -727,15 +826,6 @@ nlu:
     - the south sandwich island
     - south sandwich island
     - sandwich island
-- synonym: holy see vatican city state
-  examples: |
-    - holy see vatican city state
-    - holy see vatican city
-    - vatican city state
-    - vatican city
-    - vatican
-    - the vatican
-    - pope house
 - synonym: el salvador
   examples: |
     - el salvador
@@ -753,11 +843,6 @@ nlu:
     - ala aland islands
     - ala aland island
     - ala aland
-- synonym: faroe islands
-  examples: |
-    - faroe islands
-    - faroe island
-    - faroe
 - synonym: saint pierre and miquelon
   examples: |
     - saint pierre and miquelon
@@ -795,46 +880,8 @@ nlu:
     - october
     - november
     - december
-    - january
-    - february
-    - march
-    - april
-    - may
-    - june
-    - july
-    - august
-    - september
-    - october
-    - november
-    - december
-    - january
-    - february
-    - march
-    - april
-    - may
-    - june
-    - july
-    - august
-    - september
-    - october
-    - november
-    - december
 - lookup: weekday
   examples: |
-    - monday
-    - tuesday
-    - wednesday
-    - thursday
-    - friday
-    - saturday
-    - sunday
-    - monday
-    - tuesday
-    - wednesday
-    - thursday
-    - friday
-    - saturday
-    - sunday
     - monday
     - tuesday
     - wednesday
@@ -848,22 +895,8 @@ nlu:
     - yesterday
     - last week
     - last month
-    - today
-    - yesterday
-    - last week
-    - last month
-    - today
-    - yesterday
-    - last week
-    - last month
 - lookup: bytime
   examples: |
-    - month
-    - day
-    - year
-    - month
-    - day
-    - year
     - month
     - day
     - year

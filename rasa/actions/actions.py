@@ -574,11 +574,11 @@ class ActionCaseCountByTimeDay(Action):
                         text = text + case_type + " cases on " + str(by_sub_time) + " " + str(x)
                     else:
                         text = text + case_type + " on " + str(by_sub_time) + " " + str(x)
-                    if str(x)[-1] == "1":
+                    if str(x)[-1] == "1" and str(x)[-2] != "1":
                         text = text + "st"
-                    elif str(x)[-1] == "2":
+                    elif str(x)[-1] == "2" and str(x)[-2] != "1":
                         text = text + "nd"
-                    elif str(x)[-1] == "3":
+                    elif str(x)[-1] == "3"and str(x)[-2] != "1":
                         text = text + "rd"
                     else:
                         text = text + "th"
@@ -669,7 +669,6 @@ class ActionCaseCountSince(Action):
                 r = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-" + month + "-01T00:00:00Z&to=2020-" + currentMonth + "-" + currentDay + "T00:00:00Z")
                 summary = r.json()
                 
-				
                 m = int(month)-1
 				
                 start = 0
@@ -712,16 +711,628 @@ class ActionCaseCountSince(Action):
                 else:
                    text = text + case_type + " in "
                 text = text + scope
-                   
-                    
-
                 text = text + "."
                 if len(countries) > 1:
                     text = text + "\n\n"
         dispatcher.utter_message(text = text)
         return []
 
-	
+class ActionCaseCountBefore(Action):
+
+    @staticmethod
+    def required_fields():
+        return [
+            #EntityFormField("scope", "scope"),
+            #EntityFormField("case_type", "case_type"),
+            EntityFormField("countries", "countries")
+        ]
+
+    def name(self):
+        return "action_case_count_before"
+    
+    def run(self, dispatcher, tracker, domain): 
+        scope = tracker.get_slot('scope')
+        if scope == None:
+            scope = "total"
+        case_type = tracker.get_slot('case_type')
+        if case_type == None:
+            case_type = "confirmed"
+        countries = tracker.get_slot('countries')
+        country = "world"
+        if countries != None:
+            country = countries[0]
+        by_sub_time = tracker.get_slot('bysubtime')
+        if by_sub_time == None:
+            by_sub_time = "january" 
+        
+        text = ""
+        counts = {}
+        month = ""
+        if by_sub_time == "january":
+            month = "01"
+        elif by_sub_time == "february":
+            month = "02"
+        elif by_sub_time == "march":
+            month = "03"
+        elif by_sub_time == "april":
+            month = "04"
+        elif by_sub_time == "may":
+            month = "05"
+        elif by_sub_time == "june":
+            month = "06"
+        elif by_sub_time == "july":
+            month = "07"
+        elif by_sub_time == "august":
+            month = "08"
+        elif by_sub_time == "september":
+            month = "09"
+        elif by_sub_time == "october":
+            month = "10"
+        elif by_sub_time == "november":
+            month = "11"
+        else:
+            month = "12"
+        if country == "world":
+            text = "Sorry, but SCITalk cannot get global data over time because it would take too long to sum count totals for every country"
+        else:
+            for c in countries:
+                country = c
+                text =  text + "In " + country + " before " + by_sub_time + " there have been "
+                r = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-01-01T00:00:00Z&to=2020-" + month + "-01T00:00:00Z")
+                summary = r.json()
+                m = int(month)-1
+				
+                start = 0
+                end = 0
+                if summary[0]["Province"] == "" and summary[1]["Province"] == "":
+                    start = summary[0]["Cases"]
+                    end = summary[len(summary)-1]["Cases"]					
+					# for x in range(m,int(currentMonth) + 1):
+                        # counts[x] = 0
+                    # for x in range(len(summary)):
+                        # if int(summary[x]["Date"][5:7]) == m and int(summary[x]["Date"][8:10]) == 1:
+                            # counts[m] += summary[x]["Cases"]
+                        # if x+1 != len(summary) and int(summary[x+1]["Date"][5:7]) != m:
+                            # m += 1				
+                else:
+                    r2 = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-03-01T00:00:00Z&to=2020-03-01T12:00:00Z")
+                    summary2 = r2.json()
+                    numProv = len(summary2)
+					
+                    for i in range(numProv):
+                        start += summary[i]["Cases"]
+                        end += summary[len(summary)-i-1]["Cases"]	
+	                    
+                m = 1
+                numM = len(counts)
+				
+                total = end - start
+				#counts[numM] - counts[int(month)]
+                # i = 1
+                # for x in counts:
+                    # text = text + str(i) +": " + str(x) + " "				
+                    # total = total + counts[x]
+                    # i = i + 1
+                
+                text = text + str(total) +  " " 
+                if case_type == "recovered":
+                    text = text + "recoveries in "
+                elif case_type == "confirmed":
+                    text = text + case_type + " cases in "
+                else:
+                   text = text + case_type + " in "
+                text = text + scope
+                text = text + "."
+                if len(countries) > 1:
+                    text = text + "\n\n"
+        dispatcher.utter_message(text = text)
+        return []
+
+class ActionCaseCountSinceSpecific(Action):
+
+    @staticmethod
+    def required_fields():
+        return [
+            #EntityFormField("scope", "scope"),
+            #EntityFormField("case_type", "case_type"),
+            EntityFormField("countries", "countries")
+        ]
+
+    def name(self):
+        return "action_case_count_since_specific"
+    
+    def run(self, dispatcher, tracker, domain): 
+        scope = tracker.get_slot('scope')
+        if scope == None:
+            scope = "total"
+        case_type = tracker.get_slot('case_type')
+        if case_type == None:
+            case_type = "confirmed"
+        countries = tracker.get_slot('countries')
+        country = "world"
+        if countries != None:
+            country = countries[0]
+        by_sub_time = tracker.get_slot('bysubtime')
+        if by_sub_time == None:
+            by_sub_time = "january" 
+        by_day = tracker.get_slot('byday')
+        if by_day == None:
+            by_day = 1
+        if "-" in by_day:
+            by_day = by_day.replace("-", " ")
+
+        text = ""
+        counts = {}
+        month = ""
+        day = ""
+        if by_sub_time == "january":
+            month = "01"
+        elif by_sub_time == "february":
+            month = "02"
+        elif by_sub_time == "march":
+            month = "03"
+        elif by_sub_time == "april":
+            month = "04"
+        elif by_sub_time == "may":
+            month = "05"
+        elif by_sub_time == "june":
+            month = "06"
+        elif by_sub_time == "july":
+            month = "07"
+        elif by_sub_time == "august":
+            month = "08"
+        elif by_sub_time == "september":
+            month = "09"
+        elif by_sub_time == "october":
+            month = "10"
+        elif by_sub_time == "november":
+            month = "11"
+        else:
+            month = "12"
+        
+        if by_day == "1" or by_day == "one" or by_day == "first":
+            day = "01"
+        elif by_day == "2" or by_day == "two" or by_day == "second":
+            day = "02"
+        elif by_day == "3" or by_day == "three" or by_day == "third":
+            day = "03"
+        elif by_day == "4" or by_day == "four" or by_day == "fourth":
+            day = "04"
+        elif by_day == "5" or by_day == "five" or by_day == "fifth":
+            day = "05"
+        elif by_day == "6" or by_day == "six" or by_day == "sixth":
+            day = "06"
+        elif by_day == "7" or by_day == "seven" or by_day == "seventh":
+            day = "07"
+        elif by_day == "8" or by_day == "eight" or by_day == "eighth":
+            day = "08"
+        elif by_day == "9" or by_day == "nine" or by_day == "ninth":
+            day = "09"
+        elif by_day == "10" or by_day == "ten" or by_day == "tenth":
+            day = "10"
+        elif by_day == "11" or by_day == "eleven" or by_day == "eleventh":
+            day = "11"
+        elif by_day == "12" or by_day == "twelve" or by_day == "twelfth":
+            day = "12"
+        elif by_day == "13" or by_day == "thirteen" or by_day == "thirteenth":
+            day = "13"
+        elif by_day == "14" or by_day == "fourteen" or by_day == "fourteenth":
+            day = "14"
+        elif by_day == "15" or by_day == "fifteen" or by_day == "fifteenth":
+            day = "15"
+        elif by_day == "16" or by_day == "sixteen" or by_day == "sixteenth":
+            day = "16"
+        elif by_day == "17" or by_day == "seventeen" or by_day == "seventeenth":
+            day = "17"
+        elif by_day == "18" or by_day == "eighteen" or by_day == "eighteenth":
+            day = "18"
+        elif by_day == "19" or by_day == "nineteen" or by_day == "nineteenth":
+            day = "19"
+        elif by_day == "20" or by_day == "twenty" or by_day == "twentieth":
+            day = "20"
+        elif by_day == "21" or by_day == "twenty one" or by_day == "twenty first":
+            day = "21"
+        elif by_day == "22" or by_day == "twenty two" or by_day == "twenty second":
+            day = "22"
+        elif by_day == "23" or by_day == "twenty three" or by_day == "twenty third":
+            day = "23"
+        elif by_day == "24" or by_day == "twenty four" or by_day == "twenty fourth":
+            day = "24"
+        elif by_day == "25" or by_day == "twenty five" or by_day == "twenty fifth":
+            day = "25"
+        elif by_day == "26" or by_day == "twenty six" or by_day == "twenty sixth":
+            day = "26"
+        elif by_day == "27" or by_day == "twenty seven" or by_day == "twenty seventh":
+            day = "27"
+        elif by_day == "28" or by_day == "twenty eight" or by_day == "twenty eighth":
+            day = "28"
+        elif by_day == "29" or by_day == "twenty nine" or by_day == "twenty ninth":
+            day = "29"
+        elif by_day == "30" or by_day == "thirty" or by_day == "thirtieth":
+            day = "30"
+        else:
+            day = "31"
+
+        if month == "02" or month == "04" or month == "06" or month == "09" or month == "11":
+            if day == "31" or (month == "02" and day == "30"):
+                text = "Please enter a valid date."
+                dispatcher.utter_message(text = text)
+                return []
+
+        if country == "world":
+            text = "Sorry, but SCITalk cannot get global data over time because it would take too long to sum count totals for every country"
+        else:
+            currentMonth = date.today().strftime("%m")		
+            currentDay = date.today().strftime("%d")		
+            currentDay = str(int(currentDay) - 1)
+
+            if(currentMonth == month and currentDay == "01"):
+               dispatcher.utter_message(text = "Cannot calculate info")
+               return []			  
+			
+            for c in countries:
+                country = c
+                text =  text + "In " + country + " since " + by_sub_time + " "
+                if day[-1] == "1" and day[-2] != "1":
+                    if day[0] == "0":
+                        text = text + day[1] + "st"
+                    else:
+                        text = text + day + "st"
+                elif day[-1] == "2" and day[-2] != "1":
+                    if day[0] == "0":
+                        text = text + day[1] + "nd"
+                    else:
+                        text = text + day + "nd"
+                elif day[-1] == "3"and day[-2] != "1":
+                    if day[0] == "0":
+                        text = text + day[1] + "rd"
+                    else:
+                        text = text + day + "rd"
+                else:
+                    if day[0] == "0":
+                        text = text + day[1] + "th"
+                    else:
+                        text = text + day + "th"
+                text = text + " there have been "
+                
+                r = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-" + month + "-" + day + "T00:00:00Z&to=2020-" + currentMonth + "-" + currentDay + "T00:00:00Z")
+                summary = r.json()
+                
+                m = int(month)-1
+				
+                start = 0
+                end = 0
+                if summary[0]["Province"] == "" and summary[1]["Province"] == "":
+                    start = summary[0]["Cases"]
+                    end = summary[len(summary)-1]["Cases"]					
+					# for x in range(m,int(currentMonth) + 1):
+                        # counts[x] = 0
+                    # for x in range(len(summary)):
+                        # if int(summary[x]["Date"][5:7]) == m and int(summary[x]["Date"][8:10]) == 1:
+                            # counts[m] += summary[x]["Cases"]
+                        # if x+1 != len(summary) and int(summary[x+1]["Date"][5:7]) != m:
+                            # m += 1				
+                else:
+                    r2 = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-03-01T00:00:00Z&to=2020-03-01T12:00:00Z")
+                    summary2 = r2.json()
+                    numProv = len(summary2)
+					
+                    for i in range(numProv):
+                        start += summary[i]["Cases"]
+                        end += summary[len(summary)-i-1]["Cases"]	
+	                    
+                m = 1
+                numM = len(counts)
+				
+                total = end - start
+				#counts[numM] - counts[int(month)]
+                # i = 1
+                # for x in counts:
+                    # text = text + str(i) +": " + str(x) + " "				
+                    # total = total + counts[x]
+                    # i = i + 1
+                
+                text = text + str(total) +  " " 
+                if case_type == "recovered":
+                    text = text + "recoveries in "
+                elif case_type == "confirmed":
+                    text = text + case_type + " cases in "
+                else:
+                   text = text + case_type + " in "
+                text = text + scope
+                text = text + "."
+                if len(countries) > 1:
+                    text = text + "\n\n"
+        dispatcher.utter_message(text = text)
+        return []
+
+class ActionCaseCountBeforeSpecific(Action):
+
+    @staticmethod
+    def required_fields():
+        return [
+            #EntityFormField("scope", "scope"),
+            #EntityFormField("case_type", "case_type"),
+            EntityFormField("countries", "countries")
+        ]
+
+    def name(self):
+        return "action_case_count_before_specific"
+    
+    def run(self, dispatcher, tracker, domain): 
+        scope = tracker.get_slot('scope')
+        if scope == None:
+            scope = "total"
+        case_type = tracker.get_slot('case_type')
+        if case_type == None:
+            case_type = "confirmed"
+        countries = tracker.get_slot('countries')
+        country = "world"
+        if countries != None:
+            country = countries[0]
+        by_sub_time = tracker.get_slot('bysubtime')
+        if by_sub_time == None:
+            by_sub_time = "january" 
+        by_day = tracker.get_slot('byday')
+        if by_day == None:
+            by_day = 1
+        if "-" in by_day:
+            by_day = by_day.replace("-", " ")
+
+        text = ""
+        counts = {}
+        month = ""
+        day = ""
+        if by_sub_time == "january":
+            month = "01"
+        elif by_sub_time == "february":
+            month = "02"
+        elif by_sub_time == "march":
+            month = "03"
+        elif by_sub_time == "april":
+            month = "04"
+        elif by_sub_time == "may":
+            month = "05"
+        elif by_sub_time == "june":
+            month = "06"
+        elif by_sub_time == "july":
+            month = "07"
+        elif by_sub_time == "august":
+            month = "08"
+        elif by_sub_time == "september":
+            month = "09"
+        elif by_sub_time == "october":
+            month = "10"
+        elif by_sub_time == "november":
+            month = "11"
+        else:
+            month = "12"
+        
+        if by_day == "1" or by_day == "one" or by_day == "first":
+            day = "01"
+        elif by_day == "2" or by_day == "two" or by_day == "second":
+            day = "02"
+        elif by_day == "3" or by_day == "three" or by_day == "third":
+            day = "03"
+        elif by_day == "4" or by_day == "four" or by_day == "fourth":
+            day = "04"
+        elif by_day == "5" or by_day == "five" or by_day == "fifth":
+            day = "05"
+        elif by_day == "6" or by_day == "six" or by_day == "sixth":
+            day = "06"
+        elif by_day == "7" or by_day == "seven" or by_day == "seventh":
+            day = "07"
+        elif by_day == "8" or by_day == "eight" or by_day == "eighth":
+            day = "08"
+        elif by_day == "9" or by_day == "nine" or by_day == "ninth":
+            day = "09"
+        elif by_day == "10" or by_day == "ten" or by_day == "tenth":
+            day = "10"
+        elif by_day == "11" or by_day == "eleven" or by_day == "eleventh":
+            day = "11"
+        elif by_day == "12" or by_day == "twelve" or by_day == "twelfth":
+            day = "12"
+        elif by_day == "13" or by_day == "thirteen" or by_day == "thirteenth":
+            day = "13"
+        elif by_day == "14" or by_day == "fourteen" or by_day == "fourteenth":
+            day = "14"
+        elif by_day == "15" or by_day == "fifteen" or by_day == "fifteenth":
+            day = "15"
+        elif by_day == "16" or by_day == "sixteen" or by_day == "sixteenth":
+            day = "16"
+        elif by_day == "17" or by_day == "seventeen" or by_day == "seventeenth":
+            day = "17"
+        elif by_day == "18" or by_day == "eighteen" or by_day == "eighteenth":
+            day = "18"
+        elif by_day == "19" or by_day == "nineteen" or by_day == "nineteenth":
+            day = "19"
+        elif by_day == "20" or by_day == "twenty" or by_day == "twentieth":
+            day = "20"
+        elif by_day == "21" or by_day == "twenty one" or by_day == "twenty first":
+            day = "21"
+        elif by_day == "22" or by_day == "twenty two" or by_day == "twenty second":
+            day = "22"
+        elif by_day == "23" or by_day == "twenty three" or by_day == "twenty third":
+            day = "23"
+        elif by_day == "24" or by_day == "twenty four" or by_day == "twenty fourth":
+            day = "24"
+        elif by_day == "25" or by_day == "twenty five" or by_day == "twenty fifth":
+            day = "25"
+        elif by_day == "26" or by_day == "twenty six" or by_day == "twenty sixth":
+            day = "26"
+        elif by_day == "27" or by_day == "twenty seven" or by_day == "twenty seventh":
+            day = "27"
+        elif by_day == "28" or by_day == "twenty eight" or by_day == "twenty eighth":
+            day = "28"
+        elif by_day == "29" or by_day == "twenty nine" or by_day == "twenty ninth":
+            day = "29"
+        elif by_day == "30" or by_day == "thirty" or by_day == "thirtieth":
+            day = "30"
+        else:
+            day = "31"
+        
+        if month == "02" or month == "04" or month == "06" or month == "09" or month == "11":
+            if day == "31" or (month == "02" and day == "30"):
+                text = "Please enter a valid date."
+                dispatcher.utter_message(text = text)
+                return []
+
+        if country == "world":
+            text = "Sorry, but SCITalk cannot get global data over time because it would take too long to sum count totals for every country"
+        else:
+            for c in countries:
+                country = c
+                text =  text + "In " + country + " before " + by_sub_time + " "
+                if day[-1] == "1" and day[-2] != "1":
+                    if day[0] == "0":
+                        text = text + day[1] + "st"
+                    else:
+                        text = text + day + "st"
+                elif day[-1] == "2" and day[-2] != "1":
+                    if day[0] == "0":
+                        text = text + day[1] + "nd"
+                    else:
+                        text = text + day + "nd"
+                elif day[-1] == "3"and day[-2] != "1":
+                    if day[0] == "0":
+                        text = text + day[1] + "rd"
+                    else:
+                        text = text + day + "rd"
+                else:
+                    if day[0] == "0":
+                        text = text + day[1] + "th"
+                    else:
+                        text = text + day + "th"
+                text = text + " there have been "
+
+                r = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-01-01T00:00:00Z&to=2020-" + month + "-" + day + "T00:00:00Z")
+                summary = r.json()
+                
+                m = int(month)-1
+				
+                start = 0
+                end = 0
+                if summary[0]["Province"] == "" and summary[1]["Province"] == "":
+                    start = summary[0]["Cases"]
+                    end = summary[len(summary)-1]["Cases"]					
+					# for x in range(m,int(currentMonth) + 1):
+                        # counts[x] = 0
+                    # for x in range(len(summary)):
+                        # if int(summary[x]["Date"][5:7]) == m and int(summary[x]["Date"][8:10]) == 1:
+                            # counts[m] += summary[x]["Cases"]
+                        # if x+1 != len(summary) and int(summary[x+1]["Date"][5:7]) != m:
+                            # m += 1				
+                else:
+                    r2 = requests.get("https://api.covid19api.com/country/" + country + "/status/" + case_type + "?from=2020-03-01T00:00:00Z&to=2020-03-01T12:00:00Z")
+                    summary2 = r2.json()
+                    numProv = len(summary2)
+					
+                    for i in range(numProv):
+                        start += summary[i]["Cases"]
+                        end += summary[len(summary)-i-1]["Cases"]	
+	                    
+                m = 1
+                numM = len(counts)
+				
+                total = end - start
+				#counts[numM] - counts[int(month)]
+                # i = 1
+                # for x in counts:
+                    # text = text + str(i) +": " + str(x) + " "				
+                    # total = total + counts[x]
+                    # i = i + 1
+                
+                text = text + str(total) +  " " 
+                if case_type == "recovered":
+                    text = text + "recoveries in "
+                elif case_type == "confirmed":
+                    text = text + case_type + " cases in "
+                else:
+                   text = text + case_type + " in "
+                text = text + scope
+                text = text + "."
+                if len(countries) > 1:
+                    text = text + "\n\n"
+        dispatcher.utter_message(text = text)
+        return []
+
+
+class ActionDayOne(Action):
+
+
+    @staticmethod
+    def required_fields():
+        return [
+            #EntityFormField("scope", "scope"),
+            #EntityFormField("case_type", "case_type"),
+            EntityFormField("countries", "countries")
+        ]
+    
+    def name(self):
+        return "get_first_day"
+        
+        
+    def run(self, dispatcher, tracker, domain): 
+        case_type = tracker.get_slot('case_type')
+        if case_type == None:
+            case_type = "confirmed"
+        countries = tracker.get_slot('countries')
+        country = "world"
+        if countries != None:
+            country = countries[0]
+
+        
+        text = ""
+        if country == "world":
+            text = "The first confirmed case occured in China on January 22"
+        else:
+            for c in countries:
+                r = requests.get("https://api.covid19api.com/total/dayone/country/" + c + "/status/confirmed")
+                summary = r.json()
+                
+                if(summary != []):
+                    date = summary[0]["Date"]
+                    text += "The first case in " + c + " was on "
+                    
+                    month = int(date[5:7])
+                    
+                    if month == 1:
+                        text += "January "
+                    if month == 2:
+                        text +="February "
+                    if month == 3:
+                        text +="March "
+                    if month == 4:
+                        text+= "April "
+                    if month==5:
+                        text+= "May "
+                    if month==6:
+                        text+= "June "
+                    if month==7:
+                        text+= "July "
+                    if month==8:
+                        text+= "August "
+                    if month==9:
+                        text+= "September"
+                    if month==10:
+                        text+= "October "
+                    if month==11:
+                        text+= "November "
+                    if month==12:
+                        text+= "December "
+                        
+                        
+                    text += date[8:10] + " " + date[0:4]
+                    text = text + "."
+                else:
+                    text += "No recorded cases in " + c
+                    
+                if len(countries) > 1:
+                    text = text + "\n\n"
+        dispatcher.utter_message(text = text)
+        return []
+
+
 
 ###########
 #  FORMS  #

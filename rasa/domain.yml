@@ -26,6 +26,7 @@ intents:
 - clear_chat
 - start_over
 - ask_purpose
+- ask_about_first_day
 entities:
 - bysubtime
 - bytime
@@ -271,6 +272,7 @@ actions:
 - utter_greet
 - utter_iamabot
 - validate_case_count_form
+- get_first_day
 forms:
   case_count_form:
     scope:

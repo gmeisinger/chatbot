@@ -101,3 +101,8 @@ rules:
   steps:
   - intent: ask_purpose
   - action: utter_inform_purpose
+  
+- rule: first day
+  steps:
+  - intent: ask_about_first_day
+  - action: get_first_day  

@@ -1256,6 +1256,84 @@ class ActionCaseCountBeforeSpecific(Action):
         dispatcher.utter_message(text = text)
         return []
 
+
+class ActionDayOne(Action):
+
+
+    @staticmethod
+    def required_fields():
+        return [
+            #EntityFormField("scope", "scope"),
+            #EntityFormField("case_type", "case_type"),
+            EntityFormField("countries", "countries")
+        ]
+    
+    def name(self):
+        return "get_first_day"
+        
+        
+    def run(self, dispatcher, tracker, domain): 
+        case_type = tracker.get_slot('case_type')
+        if case_type == None:
+            case_type = "confirmed"
+        countries = tracker.get_slot('countries')
+        country = "world"
+        if countries != None:
+            country = countries[0]
+
+        
+        text = ""
+        if country == "world":
+            text = "The first confirmed case occured in China on January 22"
+        else:
+            for c in countries:
+                r = requests.get("https://api.covid19api.com/total/dayone/country/" + c + "/status/confirmed")
+                summary = r.json()
+                
+                if(summary != []):
+                    date = summary[0]["Date"]
+                    text += "The first case in " + c + " was on "
+                    
+                    month = int(date[5:7])
+                    
+                    if month == 1:
+                        text += "January "
+                    if month == 2:
+                        text +="February "
+                    if month == 3:
+                        text +="March "
+                    if month == 4:
+                        text+= "April "
+                    if month==5:
+                        text+= "May "
+                    if month==6:
+                        text+= "June "
+                    if month==7:
+                        text+= "July "
+                    if month==8:
+                        text+= "August "
+                    if month==9:
+                        text+= "September"
+                    if month==10:
+                        text+= "October "
+                    if month==11:
+                        text+= "November "
+                    if month==12:
+                        text+= "December "
+                        
+                        
+                    text += date[8:10] + " " + date[0:4]
+                    text = text + "."
+                else:
+                    text += "No recorded cases in " + c
+                    
+                if len(countries) > 1:
+                    text = text + "\n\n"
+        dispatcher.utter_message(text = text)
+        return []
+
+
+
 ###########
 #  FORMS  #
 ###########

@@ -549,6 +549,19 @@ nlu:
     - how many [deaths](case_type) prior to [july](bysubtime) [nineth](byday) in [bouvet]{"entity": "countries", "value": "bouvet island"}
     - how many [total](scope) [deaths](case_type) prior to [march](bysubtime) [first](byday) in [tobago]{"entity": "countries", "value": "trinidad and tobago"}
     - how many [deaths](case_type) have there been in [faroe]{"entity": "countries", "value": "faroe islands"} prior to [april](bysubtime) [second](byday)
+- intent: ask_about_first_day
+  examples: |
+    - first case in [russia](countries)
+    - first cases in [russia](countries), [germany](countries], and [the united states](countries)
+    - when was the first in [china](countries)
+    - first in [finland](countries)
+    - first one in [italy](countries)
+    - first case in the world
+    - when was the first case
+    - first case
+    - first
+    - when did [india](countries) have its first case
+    - when did [india](countries) have its 1st case
 - synonym: united states of america
   examples: |
     - murica

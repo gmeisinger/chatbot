@@ -690,19 +690,30 @@ nlu:
   examples: |
     - bouvet
     - bouvet island
+    - bouve island
+    - bouve
+    - bouvt island
+    - bouvt
 - synonym: trinidad and tobago
   examples: |
     - tobago
     - trinidad and tobago
     - trinidad
+    - tabago
+    - trinidad and tabago
 - synonym: faroe islands
   examples: |
     - faroe
     - faroe islands
     - faroe island
+    - faro island
+    - faro islands
+    - faro
 - synonym: netherlands
   examples: |
     - holland
+    - holand
+    - netherland
     - netherlands
 - synonym: china
   examples: |
@@ -722,9 +733,19 @@ nlu:
     - wallis island
     - futuna island
     - futuna
+    - walis and futuna islands
+    - walis and futuna island
+    - walis and futuna
+    - walis
+    - wallis and furtuna islands
+    - wallis and furtuna island
+    - wallis and furtuna
+    - furtuna
 - synonym: bosnia and herzegovina
   examples: |
     - herzegovina
+    - hezegovina
+    - hezregovina
     - bosnia and herzegovina
     - bosnia
 - synonym: total
@@ -775,6 +796,9 @@ nlu:
   examples: |
     - falkland islands malvinas
     - falkland islands
+    - falkland
+    - fakland islands
+    - fakland
 - synonym: british virgin islands
   examples: |
     - british virgin islands
@@ -799,10 +823,15 @@ nlu:
     - marshall islands
     - marshall island
     - marshall
+    - marshal islands
+    - marshal island
+    - marshal
 - synonym: norfolk island
   examples: |
     - norfolk island
     - norfolk
+    - norfok island
+    - norfok
 - synonym: cocos keeling islands
   examples: |
     - cocos keeling islands
@@ -829,6 +858,8 @@ nlu:
     - saint kitts
     - nevis
     - kitts and nevis
+    - saint kits and nevis
+    - saint kits
 - synonym: turks and caicos islands
   examples: |
     - turks and caicos islands

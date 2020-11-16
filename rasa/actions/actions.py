@@ -1284,7 +1284,7 @@ class ActionDayOne(Action):
         
         text = ""
         if country == "world":
-            text = "The first confirmed case occured in China on January 22"
+            text = "The first confirmed case (reported in the api) occured in China on January 22, the actual first case according to an unpublicised report was November 17, 2019."
         else:
             for c in countries:
                 r = requests.get("https://api.covid19api.com/total/dayone/country/" + c + "/status/confirmed")
@@ -1292,7 +1292,7 @@ class ActionDayOne(Action):
                 
                 if(summary != []):
                     date = summary[0]["Date"]
-                    text += "The first case in " + c + " was on "
+                    text += "The first case (reported in the api) in " + c + " was on "
                     
                     month = int(date[5:7])
                     

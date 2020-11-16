@@ -561,6 +561,7 @@ nlu:
     - how many [total](scope) [deaths](case_type) prior to [march](bysubtime) [first](byday) in [tobago]{"entity": "countries", "value": "trinidad and tobago"}
     - how many [deaths](case_type) have there been in [faroe]{"entity": "countries", "value": "faroe islands"} prior to [april](bysubtime) [second](byday)
     - how many [deaths](case_type) in [wallis]{"entity": "countries", "value": "wallis and futuna islands"} before [august](bysubtime) [twentieth](byday)
+    - how many [deaths](case_type) in [herzegovina]{"entity": "countries", "value": "bosnia and herzegovina"} before [july](bysubtime) [fourth](byday)
 - intent: ask_about_first_day
   examples: |
     - first case in [russia](countries)
@@ -610,6 +611,7 @@ nlu:
     - vatican city state
     - vatican city
     - pope house
+    - pope's house
 - synonym: united kingdom
   examples: |
     - uk

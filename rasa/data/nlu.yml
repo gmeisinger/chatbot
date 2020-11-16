@@ -969,6 +969,14 @@ nlu:
     - october
     - november
     - december
+- synonym: netherlands antilles
+  examples: |
+    - antilles
+    - antiles
+    - netherlands antiles
+    - netherland antilles
+    - netherland antiles
+    - netherlands antilles
 - lookup: weekday
   examples: |
     - monday

@@ -162,7 +162,7 @@ class ActionCaseSummaryGraph(Action):
     @staticmethod
     def required_fields():
         return [
-            EntityFormField("country", "country")
+            EntityFormField("countries", "countries")
         ]
 
     def name(self):
@@ -172,24 +172,25 @@ class ActionCaseSummaryGraph(Action):
         line_chart = pygal.Line()
         line_chart.title = title
 
-        data_num = { }
+        data_num = []
         
         for entry in data:
-            p = entry['Province']
+            #p = entry['Province']
             c = entry['Cases']
-            
-            if p in data_num:
-                data_num[p].append(int(c))
-            else:
-                data_num[p] = [int(c)]
+            data_num.append(int(c))
+            #if p in data_num:
+            #    data_num[p].append(int(c))
+            #else:
+            #    data_num[p] = [int(c)]
+        line_chart.add(data[0][label_tag], data_num)
+        #if '' in data_num:
+        #    line_chart.add(str(data[0]['Country']), data_num[''])
         
-        if '' in data_num:
-            line_chart.add(str(data[0]['Country']), data_num[''])
-        
-        for province in data_num:
-            if province == '':
-                continue
-            line_chart.add(province, data_num[province])
+        #for province in data_num:
+        #    if province == '':
+        #        continue
+        #    line_chart.add(province, data_num[province])
+        #else:
 
         return line_chart.render_to_png()
 
@@ -224,7 +225,7 @@ class ActionCaseSummaryGraph(Action):
             return []
 
         # preparing to query api for dayone data
-        qstring = "https://api.covid19api.com/dayone/country/" + slug + "/status/" + case_type
+        qstring = "https://api.covid19api.com/total/dayone/country/" + slug + "/status/" + case_type
 
         # get data from api
         r = requests.get(qstring)
@@ -1284,7 +1285,7 @@ class ActionDayOne(Action):
         
         text = ""
         if country == "world":
-            text = "The first confirmed case occured in China on January 22"
+            text = "The first confirmed case (reported in the api) occured in China on January 22, the actual first case according to an unpublicised report was November 17, 2019."
         else:
             for c in countries:
                 r = requests.get("https://api.covid19api.com/total/dayone/country/" + c + "/status/confirmed")
@@ -1292,7 +1293,7 @@ class ActionDayOne(Action):
                 
                 if(summary != []):
                     date = summary[0]["Date"]
-                    text += "The first case in " + c + " was on "
+                    text += "The first case (reported in the api) in " + c + " was on "
                     
                     month = int(date[5:7])
                     

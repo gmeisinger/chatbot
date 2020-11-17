@@ -550,7 +550,7 @@ stories:
       - faroe islands
   - action: action_case_count_since
 
-- story: interactive_story_1
+- story: interactive_story_29
   steps:
   - intent: ask_about_cases_since
     entities:
@@ -565,6 +565,9 @@ stories:
     - countries:
       - netherlands
   - action: action_case_count_since
+
+- story: interactive_story_30
+  steps:
   - intent: ask_about_cases_before
     entities:
     - case_type: deaths
@@ -578,6 +581,9 @@ stories:
     - countries:
       - china
   - action: action_case_count_before
+
+- story: interactive_story_31
+  steps:
   - intent: ask_about_cases_since_specific
     entities:
     - case_type: deaths
@@ -594,6 +600,9 @@ stories:
     - countries:
       - bouvet island
   - action: action_case_count_since_specific
+
+- story: interactive_story_32
+  steps:
   - intent: ask_about_cases_before_specific
     entities:
     - case_type: deaths
@@ -610,3 +619,35 @@ stories:
     - countries:
       - wallis and futuna islands
   - action: action_case_count_before_specific
+
+- story: interactive_story_33
+  steps:
+  - intent: ask_about_cases_since
+    entities:
+    - case_type: deaths
+    - countries: solomon islands
+    - bysubtime: june
+  - slot_was_set:
+    - bysubtime: june
+  - slot_was_set:
+    - case_type: deaths
+  - slot_was_set:
+    - countries:
+      - solomon islands
+  - action: action_case_count_since
+
+- story: interactive_story_34
+  steps:
+  - intent: ask_about_cases_before
+    entities:
+    - case_type: deaths
+    - countries: cook islands
+    - bysubtime: july
+  - slot_was_set:
+    - bysubtime: july
+  - slot_was_set:
+    - case_type: deaths
+  - slot_was_set:
+    - countries:
+      - cook islands
+  - action: action_case_count_before

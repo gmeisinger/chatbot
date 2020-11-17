@@ -9,6 +9,8 @@ stories:
   - action: action_forget_slots
   - intent: bot_challenge
   - action: utter_iamabot
+  - intent: ask_purpose
+  - action: utter_inform_purpose
 
 - story: chitchat_1
   steps:
@@ -19,6 +21,16 @@ stories:
   - action: utter_mood_good
   - intent: positive_statement
   - action: utter_how_can_i_help
+
+- story: chitchat_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_forget_slots
+  - intent: how_are_you
+  - action: utter_mood_good
+  - intent: ask_purpose
+  - action: utter_inform_purpose
 
 - story: goodbye_story
   steps:
@@ -58,6 +70,57 @@ stories:
   - active_loop: null
   - action: action_case_count
 
+- story: case_count_form_happy_path_3
+  steps:
+  - intent: ask_purpose
+  - action: utter_inform_purpose
+  - intent: how_are_you
+  - action: utter_mood_good
+  - intent: ask_about_case_count
+  - action: case_count_form
+  - active_loop: case_count_form
+  - active_loop: null
+  - action: action_case_count
+  - intent: inform_countries
+  - action: case_count_form
+  - active_loop: case_count_form
+  - active_loop: null
+  - action: action_case_count
+
+- story: case_count_form_happy_path_4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_forget_slots
+  - intent: how_are_you
+  - action: utter_mood_good
+  - intent: ask_about_case_count
+  - action: case_count_form
+  - active_loop: case_count_form
+  - active_loop: null
+  - action: action_case_count
+  - intent: inform_scope
+  - action: case_count_form
+  - active_loop: case_count_form
+  - active_loop: null
+  - action: action_case_count
+
+- story: case_count_form_happy_path_5
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_forget_slots
+  - intent: ask_about_case_count
+  - action: case_count_form
+  - active_loop: case_count_form
+  - active_loop: null
+  - action: action_case_count
+  - intent: inform_case_type
+  - action: case_count_form
+  - active_loop: case_count_form
+  - active_loop: null
+  - action: action_case_count
+
 - story: case_count_form_stop
   steps:
   - intent: greet
@@ -77,6 +140,8 @@ stories:
   - intent: greet
   - action: utter_greet
   - action: action_forget_slots
+  - intent: ask_purpose
+  - action: utter_inform_purpose
   - intent: ask_about_case_count
     entities:
     - case_type: deaths
@@ -274,6 +339,8 @@ stories:
 
 - story: interactive_story_13
   steps:
+  - intent: ask_purpose
+  - action: utter_inform_purpose
   - intent: ask_about_case_count
     entities:
     - case_type: deaths

@@ -177,7 +177,7 @@ class ActionCaseSummaryGraph(Action):
         for entry in data:
             #p = entry['Province']
             c = entry['Cases']
-            data_num.append(c)
+            data_num.append(int(c))
             #if p in data_num:
             #    data_num[p].append(int(c))
             #else:

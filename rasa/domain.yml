@@ -28,6 +28,7 @@ intents:
 - ask_purpose
 - ask_about_first_day
 - be_mean
+- positive_statement
 entities:
 - byday
 - bysubtime

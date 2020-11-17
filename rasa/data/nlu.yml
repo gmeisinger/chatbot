@@ -669,7 +669,7 @@ nlu:
     - hong kong sar china
     - hong kong china
     - hk
-- synonym: united states of america
+- synonym: United States of America
   examples: |
     - murica
     - the us

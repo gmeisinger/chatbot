@@ -32,6 +32,16 @@ stories:
   - intent: ask_purpose
   - action: utter_inform_purpose
 
+- story: chitchat_3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_forget_slots
+  - intent: how_are_you
+  - action: utter_mood_good
+  - intent: be_mean
+  - action: utter_be_nice
+
 - story: goodbye_story
   steps:
   - intent: greet
@@ -43,6 +53,8 @@ stories:
   - action: utter_how_can_i_help
   - intent: bot_challenge
   - action: utter_iamabot
+  - intent: be_mean
+  - action: utter_be_nice
   - intent: goodbye
   - action: utter_goodbye
   - action: action_forget_slots
@@ -134,6 +146,8 @@ stories:
   - intent: out_of_scope
   - active_loop: null
   - action: utter_what_else
+  - intent: be_mean
+  - action: utter_be_nice
 
 - story: interactive_story_3
   steps:
@@ -266,6 +280,8 @@ stories:
   - intent: positive_statement
   - action: utter_how_can_i_help
   - action: action_forget_slots
+  - intent: be_mean
+  - action: utter_be_nice
   - intent: ask_about_case_count_by_time_day
     entities:
     - case_type: deaths

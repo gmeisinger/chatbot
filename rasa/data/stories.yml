@@ -133,6 +133,19 @@ stories:
   - active_loop: null
   - action: action_case_count
 
+- story: case_count_form_happy_path_6
+  steps:
+  - intent: ask_about_case_count
+  - action: case_count_form
+  - active_loop: case_count_form
+  - active_loop: null
+  - action: action_case_count
+  - intent: inform_countries
+  - action: case_count_form
+  - active_loop: case_count_form
+  - active_loop: null
+  - action: action_case_count
+
 - story: case_count_form_stop
   steps:
   - intent: greet

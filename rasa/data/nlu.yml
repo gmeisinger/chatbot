@@ -194,6 +194,11 @@ nlu:
     - how about [india](countries)
     - how about [senegal](countries)
     - and [the united states](countries)?
+    - what about [chile](countries)
+    - what about [bosnia](countries)
+    - how about [germany](countries)
+    - how about [poland](countries)
+    - and [canada](countries)?
     - [mexico](countries)
     - [canada](countries)
     - [china](countries)

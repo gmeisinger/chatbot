@@ -373,7 +373,7 @@ nlu:
     - how many [new](scope) [recoveries](case_type) in [uk]{"entity": "countries", "value": "united kingdom"} by [day](bytime) in [november](bysubtime)
 - intent: ask_about_case_summary_graph
   examples: |
-    - can you show me a graph of [new](case_type) cases in [Mexico](countries)?
+    - can you show me a graph of [new](scope) cases in [Mexico](countries)?
     - show a graph of [deaths](case_type) in [Ukraine](countries)
     - show graph of [confirmed](case_type) cases in [Taiwan](countries)
     - graph [new](scope) [confirmed](case_type) cases in [Canada](countries)

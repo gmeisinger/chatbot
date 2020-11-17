@@ -27,6 +27,7 @@ intents:
 - start_over
 - ask_purpose
 - ask_about_first_day
+- positive_statement
 entities:
 - byday
 - bysubtime

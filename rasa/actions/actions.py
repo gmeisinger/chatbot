@@ -156,7 +156,6 @@ class ActionCaseSummaryGraph(Action):
 
     def Linechart(self, title, data, value_tag, label_tag, new):
         line_chart = pygal.Line()
-        line_chart.title = title
 
         data_num = []
 
@@ -183,6 +182,8 @@ class ActionCaseSummaryGraph(Action):
                 #    data_num[p].append(int(c))
                 #else:
                 #    data_num[p] = [int(c)]
+        
+        line_chart.title = title
         line_chart.add(data[0][label_tag], data_num)
         if '' in data_num:
            line_chart.add(str(data[0]['Country']), data_num[''])

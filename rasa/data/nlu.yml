@@ -133,6 +133,15 @@ nlu:
     - Are you a bot?
     - Who are you?
     - What are you?
+- intent: be_mean
+  examples: |
+    - you stink
+    - i hate you
+    - youre dumb
+    - you are stupid
+    - you cant do anything right
+    - youre the worst chatbot
+    - you suck
 - intent: out_of_scope
   examples: |
     - that's not what I want to do
@@ -160,6 +169,10 @@ nlu:
     - [total](scope) cases
     - only [new](scope) cases
     - [all](scope) cases
+    - what about [total](scope) cases
+    - what about [new](scope) cases
+    - how about [new](scope) cases
+    - how about [total](scope)
 - intent: inform_case_type
   examples: |
     - [deaths](case_type)
@@ -171,8 +184,16 @@ nlu:
     - only [deaths](case_type)
     - just [confirmed](case_type)
     - only [recovered](case_type)
+    - what about [deaths](case_type)
+    - how about [recovered](case_type)
+    - what about [confirmed](case_type)
 - intent: inform_countries
   examples: |
+    - what about [china](countries)
+    - what about [senegal](countries)
+    - how about [india](countries)
+    - how about [senegal](countries)
+    - and [the united states](countries)?
     - [mexico](countries)
     - [canada](countries)
     - [china](countries)
@@ -187,29 +208,35 @@ nlu:
     - [slovakia](countries), [mayotte](countries), [new zealand](countries) and [samoa](countries)
 - intent: ask_about_case_count
   examples: |
+    - [deaths](case_type) in [argentina](countries)
+    - [confirmed] in [egypt]
+    - [new](scope) [recovered](case_type) cases in [bosnia](countries)
+    - [total](scope) [deaths](case_type) in [iraq](countries)
     - how many [total](scope) people [recovered](case_type) from covid in [ireland](countries)?
     - how many [new](scope) [confirmed](case_type) cases are in [mexico](countries)?
     - how many [new](scope) cases in [the united states](countries) [today](relative_time)?
     - how many [new](scope) [covid](virus) cases were there in [germany](countries) [today](relative_time)?
-    - how many [total](scope) [confirmed](case_type) cases are there in [russia](countries)?
+    - tell me how many [total](scope) [confirmed](case_type) cases are there in [russia](countries)?
     - how many people [deaths](case_type) of [covid](virus) [today](relative_time) in [france](countries)?
     - did anyone [deaths](case_type) in [south africa](countries) [today](relative_time)?
     - how many people [deaths](case_type) of [coronavirus](virus) in [china](countries)?
     - has anybody [deaths](case_type) in [south korea](countries)?
-    - how many people have [deaths](case_type) from [covid](virus)?
+    - tell me how many people have [deaths](case_type) from [covid](virus)?
     - how many people has covid [deaths](case_type)?
     - how many [deaths](case_type)?
     - how many people [deaths](case_type) in [april](month)?
     - were there any [deaths](case_type) in [january](month)?
-    - How many [deaths](case_type) are there in the [United States](country)?
-    - how many [new](scope) [deaths](case_type) in [russia](country)?
-    - How many people have [deaths](case_type) in [Venezuela](country)?
-    - How many cases in [Argentina](country)?
-    - How many cases in [Canada](country)?
+    - How many [deaths](case_type) are there in the [United States](countries)?
+    - how many [new](scope) [deaths](case_type) in [russia](countries)?
+    - How many people have [deaths](case_type) in [Venezuela](countries)?
+    - How many cases in [Argentina](countries)?
+    - tell me how many cases in [Canada](countries)?
+    - how many in [south africa](countries)?
+    - How many in [iceland](countries)?
     - How many [deaths](case_type) are there in [the United States](countries)?
     - how many [new](scope) [deaths](case_type) in [russia](countries)?
     - How many people have [deaths](case_type) in [Venezuela](countries)?
-    - how many [total](scope) people [recovered](case_type) from covid in [ireland](countries) and [england](countries)?
+    - tell me how many [total](scope) people [recovered](case_type) from covid in [ireland](countries) and [england](countries)?
     - how many [deaths](case_type) in [mexico](countries), [china](countries), and [canada](countries)?
     - how many [new](scope) cases in [the united states](countries) and [mexico](countries) [today](relative_time)?
     - how many [new](scope) [covid](virus) cases were there in [germany](countries) and [austria](countries) [today](relative_time)?
@@ -220,8 +247,8 @@ nlu:
     - has anybody [deaths](case_type) in [south korea](countries) and [north korea](countries)?
     - how many [new](scope) [deaths](case_type) in [russia](countries) and [japan](countries)?
     - How many people have [deaths](case_type) in [Venezuela](countries) as well as [columbia](countries)?
-    - how many [deaths](case_type) in [murica]{"entity": "countries", "value": "united states of america"}
-    - how many [deaths](case_type) have there been in [the us]{"entity": "countries", "value": "united states of america"}
+    - tell me how many [deaths](case_type) in [murica]{"entity": "countries", "value": "united states of america"}
+    - tell me how many [deaths](case_type) have there been in [the us]{"entity": "countries", "value": "united states of america"}
     - how many [deaths](case_type) have there been in [murica]{"entity": "countries", "value": "united states of america"}
     - how many [deaths](case_type) have there been in [the u.s.]{"entity": "countries", "value": "united states of america"}
     - how many [new](scope) [confirmed](case_type) cases have there been in [murica]{"entity": "countries", "value": "united states of america"}
@@ -240,30 +267,30 @@ nlu:
     - how many [recovered](case_type) per [month](bytime) in [russia](countries)
     - how many [deaths](case_type) by [month](bytime) in [england](countries)
     - how many [confirmed](case_type) cases by [month](bytime) in [italy](countries)
-    - how many [recovered](case_type) by [month](bytime) in [greece](countries)
+    - tell me how many [recovered](case_type) by [month](bytime) in [greece](countries)
     - how many [deaths](case_type) have there been in [mexico](countries) and [canada](countries) per [month](bytime)?
     - how many [deaths](case_type) have there been in [russia](countries) and [ukraine](countries) by [month](bytime)?
     - how many [recovered](case_type) have there been in [ukraine](countries) and [poland](countries) per [month](bytime)?
-    - how many [deaths](case_type) have there been in [poland](countries) and [germany](countries) by [month](bytime)?
-    - how many [deaths](case_type) per [month](bytime) in [canada](countries) and [the united states](countries)
+    - tell me how many [deaths](case_type) have there been in [poland](countries) and [germany](countries) by [month](bytime)?
+    - tell me how many [deaths](case_type) per [month](bytime) in [canada](countries) and [the united states](countries)
     - how many [confirmed](case_type) cases per [month](bytime) in [russia](countries) and [germany](countries)
     - how many [recovered](case_type) per [month](bytime) in [zimbabwe](countries) and [canada](countries)
     - how many [deaths](case_type) by [month](bytime) in [england](countries) and [ireland](countries)
-    - how many [confirmed](case_type) cases by [month](bytime) in [italy](countries) and [greece](countries)
-    - how many [recovered](case_type) by [month](bytime) in [greece](countries) and [spain](countries)
+    - tell me how many [confirmed](case_type) cases by [month](bytime) in [italy](countries) and [greece](countries)
+    - tell me how many [recovered](case_type) by [month](bytime) in [greece](countries) and [spain](countries)
     - how many [deaths](case_type) per [month](bytime) in [canada](countries), [the united states](countries), and [japan](countries)
     - how many [confirmed](case_type) cases per [month](bytime) in [russia](countries) and [germany](countries) and [china](countries)
     - how many [recovered](case_type) per [month](bytime) in [zimbabwe](countries), [canada](countries) and [france](countries)
     - how many [deaths](case_type) by [month](bytime) in [england](countries), [ireland](countries), and [scotland](countries)
     - how many [confirmed](case_type) cases by [month](bytime) in [italy](countries), [greece](countries) and [north korea](countries)
     - how many [recovered](case_type) by [month](bytime) in [greece](countries), [spain](countries), and [portugal](countries)
-    - how many [new](scope) [deaths](case_type) have there been in [mexico](countries) per [month](bytime)?
+    - tell me how many [new](scope) [deaths](case_type) have there been in [mexico](countries) per [month](bytime)?
     - how many [total](scope) [deaths](case_type) have there been in [russia](countries) by [month](bytime)?
     - how many [new](scope) [recovered](case_type) have there been in [ukraine](countries) per [month](bytime)?
     - how many [total](scope) [deaths](case_type) have there been in [poland](countries) by [month](bytime)?
     - how many [new](scope) [confirmed](case_type) cases have there been per [month](bytime)
     - how many [total](scope) [deaths](case_type) per [month](bytime) in [canada](countries)
-    - how many [new](scope) [confirmed](case_type) cases per [month](bytime) in [russia](countries)
+    - tell me how many [new](scope) [confirmed](case_type) cases per [month](bytime) in [russia](countries)
     - how many [total](scope) [recovered](case_type) per [month](bytime) in [russia](countries)
     - how many [new](scope) [deaths](case_type) by [month](bytime) in [england](countries)
     - how many [total](scope) [confirmed](case_type) cases by [month](bytime) in [italy](countries)
@@ -280,14 +307,14 @@ nlu:
     - how many [total](scope) [confirmed](case_type) cases by [month](bytime) in [italy](countries) and [greece](countries)
     - how many [new](scope) [recovered](case_type) by [month](bytime) in [greece](countries) and [spain](countries)
     - how many [total](scope) [deaths](case_type) per [month](bytime) in [canada](countries), [the united states](countries), and [japan](countries)
-    - how many [new](scope) [confirmed](case_type) cases per [month](bytime) in [russia](countries) and [germany](countries) and [china](countries)
-    - how many [total](scope) [recovered](case_type) per [month](bytime) in [zimbabwe](countries), [canada](countries) and [france](countries)
-    - how many [new](scope) [deaths](case_type) by [month](bytime) in [england](countries), [ireland](countries), and [scotland](countries)
+    - [new](scope) [confirmed](case_type) cases per [month](bytime) in [russia](countries) and [germany](countries) and [china](countries)
+    - [total](scope) [recovered](case_type) per [month](bytime) in [zimbabwe](countries), [canada](countries) and [france](countries)
+    - [new](scope) [deaths](case_type) by [month](bytime) in [england](countries), [ireland](countries), and [scotland](countries)
     - how many [total](scope) [confirmed](case_type) cases by [month](bytime) in [italy](countries), [greece](countries) and [north korea](countries)
     - how many [new](scope) [recovered](case_type) by [month](bytime) in [greece](countries), [spain](countries), and [portugal](countries)
     - how many [deaths](case_type) have happened by [month](bytime) in ['murica](countries)
-    - how many [deaths](case_type) in the [pope house](countries) by [month](bytime)
-    - how many [deaths](case_type) in [the uk](countries) by [month](bytime)
+    - [deaths](case_type) in the [pope house](countries) by [month](bytime)
+    - [deaths](case_type) in [the uk](countries) by [month](bytime)
 - intent: ask_about_case_count_by_time_day
   examples: |
     - how many [deaths](case_type) have there been in [china](countries) by [day](bytime) in [january](bysubtime)?
@@ -298,14 +325,14 @@ nlu:
     - how many [deaths](case_type) per [day](bytime) in [september](bysubtime) in [japan](countries)
     - how many [confirmed](case_type) cases per [day](bytime) in [china](countries) in [july](bysubtime)
     - how many [confirmed](case_type) cases per [day](bytime) in [december](bysubtime) in [south korea](countries)
-    - how many [recovered](case_type) per [day](bytime) in [ireland](countries) in [august](bysubtime)
-    - how many [recovered](case_type) per [day](bytime) in [november](bysubtime) in [chile](countries)
-    - how many [deaths](case_type) by [day](bytime) in [australia](countries) in [march](bysubtime)
-    - how many [deaths](case_type) by [day](bytime) in [april](bysubtime) in [new zealand](countries)
-    - how many [confirmed](case_type) cases by [day](bytime) in [iceland](countries) in [may](bysubtime)
-    - how many [confirmed](case_type) cases by [day](bytime) in [june](bysubtime) in [norway](countries)
-    - how many [recovered](case_type) by [day](bytime) in [sweden](countries) in [august](bysubtime)
-    - how many [recovered](case_type) by [day](bytime) in [december](bysubtime) in [ecquador](countries)
+    - [recovered](case_type) per [day](bytime) in [ireland](countries) in [august](bysubtime)
+    - [recovered](case_type) per [day](bytime) in [november](bysubtime) in [chile](countries)
+    - [deaths](case_type) by [day](bytime) in [australia](countries) in [march](bysubtime)
+    - [deaths](case_type) by [day](bytime) in [april](bysubtime) in [new zealand](countries)
+    - [confirmed](case_type) cases by [day](bytime) in [iceland](countries) in [may](bysubtime)
+    - [confirmed](case_type) cases by [day](bytime) in [june](bysubtime) in [norway](countries)
+    - [recovered](case_type) by [day](bytime) in [sweden](countries) in [august](bysubtime)
+    - [recovered](case_type) by [day](bytime) in [december](bysubtime) in [ecquador](countries)
     - how many [deaths](case_type) have there been by [day](bytime) in [january](bysubtime)
     - how many [deaths](case_type) have there been in [china](countries) by [day](bytime) in [january](bysubtime)?
     - how many [confirmed](case_type) cases has there been in [france](countries) per [day](bytime) in [february](bysubtime)?
@@ -353,16 +380,16 @@ nlu:
     - how many [total](scope) [deaths](case_type) per [day](bytime) in [china](countries) and [canada](countries) in [september](bysubtime)
     - how many [total](scope) [deaths](case_type) per [day](bytime) in [september](bysubtime) in [japan](countries) and [uganda](countries)
     - how many [total](scope) [confirmed](case_type) cases per [day](bytime) in [china](countries) and [north korea](countries) in [july](bysubtime)
-    - how many [total](scope) [confirmed](case_type) cases per [day](bytime) in [december](bysubtime) in [south korea](countries) and [the united states](countries)
-    - how many [total](scope) [recovered](case_type) per [day](bytime) in [ireland](countries) and [germany](countries) in [august](bysubtime)
-    - how many [total](scope) [recovered](case_type) per [day](bytime) in [november](bysubtime) in [chile](countries) and [vietnam](countries)
-    - how many [total](scope) [deaths](case_type) by [day](bytime) in [australia](countries) and [new zealand](countries) in [march](bysubtime)
-    - how many [total](scope) [deaths](case_type) by [day](bytime) in [april](bysubtime) in [new zealand](countries) and [mexico](countries)
-    - how many [total](scope) [confirmed](case_type) cases by [day](bytime) in [iceland](countries) and [india](countries) in [may](bysubtime)
-    - how many [total](scope) [confirmed](case_type) cases by [day](bytime) in [june](bysubtime) in [norway](countries) and [sweden](countries)
-    - how many [total](scope) [recovered](case_type) by [day](bytime) in [sweden](countries) and [italy](countries) in [august](bysubtime)
-    - how many [total](scope) [recovered](case_type) by [day](bytime) in [december](bysubtime) in [ecquador](countries) and [canada](countries)
-    - how many [total](scope) [deaths](case_type) by [day](bytime) in [australia](countries), [new zealand](countries), and [nepal](countries) in [march](bysubtime)
+    - tell me how many [total](scope) [confirmed](case_type) cases per [day](bytime) in [december](bysubtime) in [south korea](countries) and [the united states](countries)
+    - tell me how many [total](scope) [recovered](case_type) per [day](bytime) in [ireland](countries) and [germany](countries) in [august](bysubtime)
+    - tell me how many [total](scope) [recovered](case_type) per [day](bytime) in [november](bysubtime) in [chile](countries) and [vietnam](countries)
+    - tell me how many [total](scope) [deaths](case_type) by [day](bytime) in [australia](countries) and [new zealand](countries) in [march](bysubtime)
+    - tell me how many [total](scope) [deaths](case_type) by [day](bytime) in [april](bysubtime) in [new zealand](countries) and [mexico](countries)
+    - tell me how many [total](scope) [confirmed](case_type) cases by [day](bytime) in [iceland](countries) and [india](countries) in [may](bysubtime)
+    - tell me how many [total](scope) [confirmed](case_type) cases by [day](bytime) in [june](bysubtime) in [norway](countries) and [sweden](countries)
+    - tell me how many [total](scope) [recovered](case_type) by [day](bytime) in [sweden](countries) and [italy](countries) in [august](bysubtime)
+    - tell me how many [total](scope) [recovered](case_type) by [day](bytime) in [december](bysubtime) in [ecquador](countries) and [canada](countries)
+    - tell me how many [total](scope) [deaths](case_type) by [day](bytime) in [australia](countries), [new zealand](countries), and [nepal](countries) in [march](bysubtime)
     - how many [total](scope) [deaths](case_type) by [day](bytime) in [april](bysubtime) in [new zealand](countries) and [mexico](countries) and [hungary](countries)
     - how many [total](scope) [confirmed](case_type) cases by [day](bytime) in [iceland](countries), [india](countries) and [turkey](countries) in [may](bysubtime)
     - how many [total](scope) [confirmed](case_type) cases by [day](bytime) in [june](bysubtime) in [norway](countries), [sweden](countries), and [japan](countries)
@@ -373,23 +400,26 @@ nlu:
     - how many [new](scope) [recoveries](case_type) in [uk]{"entity": "countries", "value": "united kingdom"} by [day](bytime) in [november](bysubtime)
 - intent: ask_about_case_summary_graph
   examples: |
-    - can you show me a graph of [new](scope) cases in [Mexico]{"entity": "countries", "value": "Mexico"}?
-    - show a graph of [deaths](case_type) in [Ukraine]{"entity": "countries", "value": "Ukraine"}
-    - show graph of [confirmed](case_type) cases in [Taiwan]{"entity": "countries", "value": "Taiwan, Republic of China"}
-    - graph [new](scope) [confirmed](case_type) cases in [Canada]{"entity": "countries", "value": "Canada"}
-    - graph [deaths](case_type) cases in [Canada]{"entity": "countries", "value": "Canada"}
-    - show me a graph of [confirmed](case_type) cases in [Serbia]{"entity": "countries", "value": "Serbia"}
-    - Show me a graph of cases in [Argentina]{"entity": "countries", "value": "Argentina"}
-    - show me a graph of [deaths](case_type) in [chile]{"entity": "countries", "value": "chile"}
-    - show me a graph of [recovered](case_type) in [venezuela]{"entity": "countries", "value": "venezuela"}
-    - show me a graph of [confirmed](case_type) cases in [haiti]{"entity": "countries", "value": "haiti"}
-    - show me a graph of [new](scope) [deaths](case_type) in [germany]{"entity": "countries", "value": "germany"}
-    - show me a graph of [new](scope) [recovered](case_type) in [poland]{"entity": "countries", "value": "poland"}
-    - show me a graph of [new](scope) [confirmed](case_type) cases in [russia]{"entity": "countries", "value": "russia"}
-    - show a graph of [total](scope) [deaths](case_type) in [ukraine]{"entity": "countries", "value": "ukraine"}
-    - show a graph of [total](scope) [recovered](case_type) in [iran]{"entity": "countries", "value": "iran"}
-    - show a graph of [total](scope) [confirmed](case_type) cases in [sweden]{"entity": "countries", "value": "sweden"}
-    - graph [deaths](case_type) [germany]{"entity": "countries", "value": "germany"}
+    - can you show me a graph of [new](case_type) cases in [Mexico](countries)?
+    - show a graph of [deaths](case_type) in [Ukraine](countries)
+    - show graph of [confirmed](case_type) cases in [Taiwan](countries)
+    - graph [new](scope) [confirmed](case_type) cases in [Canada](countries)
+    - graph [deaths](case_type) cases in [Canada](countries)
+    - show me a graph of [confirmed](case_type) cases in [Serbia](countries)
+    - Show me a graph of cases in [Argentina](countries)
+    - show me a graph of [deaths](case_type) in [chile](countries)
+    - show me a graph of [recovered](case_type) in [venezuela](countries)
+    - show me a graph of [confirmed](case_type) cases in [haiti](countries)
+    - show me a graph of [new](scope) [deaths](case_type) in [germany](countries)
+    - show me a graph of [new](scope) [recovered](case_type) in [poland](countries)
+    - show me a graph of [new](scope) [confirmed](case_type) cases in [russia](countries)
+    - show a graph of [total](scope) [deaths](case_type) in [ukraine](countries)
+    - show a graph of [total](scope) [recovered](case_type) in [bosnia](countries)
+    - show a graph of [total](scope) [confirmed](case_type) cases in [sweden](countries)
+    - graph [deaths](case_type) [germany](countries)
+    - graph [confirmed](case_type) [switzerland](countries)
+    - show [deaths](case_type) in [zambia](countries)
+    - show [recovered](case_type) in [the united states](countries)
 - intent: ask_about_cases_since
   examples: |
     - deaths since [january](bysubtime) in [Russia](countries)
@@ -401,10 +431,10 @@ nlu:
     - recovered(case_type) since [july](bysubtime) in [sweden](countries) and [norway](countries)
     - how many [recovered](case_type) in [italy](countries) and [france](countries) since [august](bysubtime)
     - how many people [recovered](case_type) in [ecquador](countries) since [september](bysubtime)
-    - how many people confirmed(casetype) in [iceland](countries) since [october](bysubtime)
-    - how many [deaths](case_type) in [canada](countries) since [november](bysubtime)
-    - how many [new](scope) [confirmed](case_type) cases in [the u.k.]{"entity": "countries", "value": "united kingdom"} since [july](bysubtime)
-    - how many [new](scope) [deaths](case_type) in [u.k.]{"entity": "countries", "value": "united kingdom"} since [november](bysubtime)
+    - tell me how many people confirmed(casetype) in [iceland](countries) since [october](bysubtime)
+    - tell me how many [deaths](case_type) in [canada](countries) since [november](bysubtime)
+    - tell me how many [new](scope) [confirmed](case_type) cases in [the u.k.]{"entity": "countries", "value": "united kingdom"} since [july](bysubtime)
+    - tell me how many [new](scope) [deaths](case_type) in [u.k.]{"entity": "countries", "value": "united kingdom"} since [november](bysubtime)
     - [deaths](case_type) in [antigua]{"entity": "countries", "value": "antigua and barbuda"} since [december](bysubtime)
     - how many [deaths](case_type) since [july](bysubtime) in [bouvet]{"entity": "countries", "value": "bouvet island"}
     - how many [total](scope) [deaths](case_type) since [march](bysubtime) in [tobago]{"entity": "countries", "value": "trinidad and tobago"}
@@ -436,6 +466,8 @@ nlu:
     - Why were you built?
     - What can you tell me?
     - What can I ask you about?
+    - What kind of questions can you answer?
+    - What type of questions can you answer?
 - intent: ask_about_cases_before
   examples: |
     - deaths before [january](bysubtime) in [Russia](countries)

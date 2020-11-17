@@ -113,13 +113,6 @@ class ActionCaseCount(Action):
             response = "There are " + str(count) + " " + scope + " " + case_type + " cases globally."
             if case_type == "deaths":
                 response.replace("cases ", "")
-            #dispatcher.utter_message(
-            #    template="utter_case_count",
-            #    count=count,
-            #    scope=scope,
-            #    case_type=case_type,
-            #    country=country
-            #)
             dispatcher.utter_message(text=response)
         elif len(country) == 1:
             country = country[0].lower()
@@ -131,13 +124,6 @@ class ActionCaseCount(Action):
             if case_type == "deaths":
                 response.replace("cases ", "")
             dispatcher.utter_message(text=response)
-            #dispatcher.utter_message(
-            #    template="utter_case_count",
-            #    count=count,
-            #    scope=scope,
-            #    case_type=case_type,
-            #    country=country
-            #)
         else:
             text = "There are "
             for x in country:

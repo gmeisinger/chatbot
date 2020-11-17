@@ -239,7 +239,7 @@ class ActionCaseSummaryGraph(Action):
             title = 'Deaths in ' + data['Country']
             # vtag = 'deaths'
         else:
-            title = case_type.capitalize() + ' Cases in' + data['Country']
+            title = case_type.capitalize() + ' Cases in ' + data['Country']
             # vtag = case_type
         linechart = self.Linechart(title, dayone, vtag, ltag)
         # write linechart out to temporary file

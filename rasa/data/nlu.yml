@@ -373,23 +373,23 @@ nlu:
     - how many [new](scope) [recoveries](case_type) in [uk]{"entity": "countries", "value": "united kingdom"} by [day](bytime) in [november](bysubtime)
 - intent: ask_about_case_summary_graph
   examples: |
-    - can you show me a graph of [new](scope) cases in [Mexico](countries)?
-    - show a graph of [deaths](case_type) in [Ukraine](countries)
-    - show graph of [confirmed](case_type) cases in [Taiwan](countries)
-    - graph [new](scope) [confirmed](case_type) cases in [Canada](countries)
-    - graph [deaths](case_type) cases in [Canada](countries)
-    - show me a graph of [confirmed](case_type) cases in [Serbia](countries)
-    - Show me a graph of cases in [Argentina](countries)
-    - show me a graph of [deaths](case_type) in [chile](countries)
-    - show me a graph of [recovered](case_type) in [venezuela](countries)
-    - show me a graph of [confirmed](case_type) cases in [haiti](countries)
-    - show me a graph of [new](scope) [deaths](case_type) in [germany](countries)
-    - show me a graph of [new](scope) [recovered](case_type) in [poland](countries)
-    - show me a graph of [new](scope) [confirmed](case_type) cases in [russia](countries)
-    - show a graph of [total](scope) [deaths](case_type) in [ukraine](countries)
-    - show a graph of [total](scope) [recovered](case_type) in [bosnia](countries)
-    - show a graph of [total](scope) [confirmed](case_type) cases in [sweden](countries)
-    - graph [deaths](case_type) [germany](countries)
+    - can you show me a graph of [new](scope) cases in [Mexico]{"entity": "countries", "value": "Mexico"}?
+    - show a graph of [deaths](case_type) in [Ukraine]{"entity": "countries", "value": "Ukraine"}
+    - show graph of [confirmed](case_type) cases in [Taiwan]{"entity": "countries", "value": "Taiwan, Republic of China"}
+    - graph [new](scope) [confirmed](case_type) cases in [Canada]{"entity": "countries", "value": "Canada"}
+    - graph [deaths](case_type) cases in [Canada]{"entity": "countries", "value": "Canada"}
+    - show me a graph of [confirmed](case_type) cases in [Serbia]{"entity": "countries", "value": "Serbia"}
+    - Show me a graph of cases in [Argentina]{"entity": "countries", "value": "Argentina"}
+    - show me a graph of [deaths](case_type) in [chile]{"entity": "countries", "value": "chile"}
+    - show me a graph of [recovered](case_type) in [venezuela]{"entity": "countries", "value": "venezuela"}
+    - show me a graph of [confirmed](case_type) cases in [haiti]{"entity": "countries", "value": "haiti"}
+    - show me a graph of [new](scope) [deaths](case_type) in [germany]{"entity": "countries", "value": "germany"}
+    - show me a graph of [new](scope) [recovered](case_type) in [poland]{"entity": "countries", "value": "poland"}
+    - show me a graph of [new](scope) [confirmed](case_type) cases in [russia]{"entity": "countries", "value": "russia"}
+    - show a graph of [total](scope) [deaths](case_type) in [ukraine]{"entity": "countries", "value": "ukraine"}
+    - show a graph of [total](scope) [recovered](case_type) in [iran]{"entity": "countries", "value": "iran"}
+    - show a graph of [total](scope) [confirmed](case_type) cases in [sweden]{"entity": "countries", "value": "sweden"}
+    - graph [deaths](case_type) [germany]{"entity": "countries", "value": "germany"}
 - intent: ask_about_cases_since
   examples: |
     - deaths since [january](bysubtime) in [Russia](countries)
@@ -637,7 +637,7 @@ nlu:
     - hong kong sar china
     - hong kong china
     - hk
-- synonym: united states of america
+- synonym: United States of America
   examples: |
     - murica
     - the us

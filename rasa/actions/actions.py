@@ -162,7 +162,7 @@ class ActionCaseSummaryGraph(Action):
     @staticmethod
     def required_fields():
         return [
-            EntityFormField("country", "country")
+            EntityFormField("countries", "countries")
         ]
 
     def name(self):

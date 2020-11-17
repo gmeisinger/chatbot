@@ -168,23 +168,38 @@ class ActionCaseSummaryGraph(Action):
     def name(self):
         return "action_case_summary_graph"
 
-    def Linechart(self, title, data, value_tag, label_tag):
+    def Linechart(self, title, data, value_tag, label_tag, new):
         line_chart = pygal.Line()
         line_chart.title = title
 
         data_num = []
+
+
+        if (new):
+            num_entries = len(data)
+
+            for i in range(num_entries):
+                if i > 0:
+                    data[i]['newCases'] = int(data[i]['Cases']) - int(data[i-1]['Cases'])
+                else:
+                    data[i]['newCases'] = int(data[i]['Cases'])
+
+                data_num.append(data[i]['newCases'])
+
+            title = 'New ' + title
         
-        for entry in data:
-            #p = entry['Province']
-            c = entry['Cases']
-            data_num.append(int(c))
-            #if p in data_num:
-            #    data_num[p].append(int(c))
-            #else:
-            #    data_num[p] = [int(c)]
+        else:
+            for entry in data:
+                #p = entry['Province']
+                c = entry['Cases']
+                data_num.append(int(c))
+                #if p in data_num:
+                #    data_num[p].append(int(c))
+                #else:
+                #    data_num[p] = [int(c)]
         line_chart.add(data[0][label_tag], data_num)
-        #if '' in data_num:
-        #    line_chart.add(str(data[0]['Country']), data_num[''])
+        if '' in data_num:
+           line_chart.add(str(data[0]['Country']), data_num[''])
         
         #for province in data_num:
         #    if province == '':
@@ -200,6 +215,11 @@ class ActionCaseSummaryGraph(Action):
             case_type = "confirmed"
 
         countries_slot = tracker.get_slot('countries')
+        scope = tracker.get_slot('scope')
+
+        newCases = False
+        if scope == 'new':
+            newCases = True
 
         if countries_slot == None:
             return []
@@ -241,7 +261,8 @@ class ActionCaseSummaryGraph(Action):
         else:
             title = case_type.capitalize() + ' Cases in ' + data['Country']
             # vtag = case_type
-        linechart = self.Linechart(title, dayone, vtag, ltag)
+        
+        linechart = self.Linechart(title, dayone, vtag, ltag, newCases)
         # write linechart out to temporary file
         jspath = 'images/graph.png'
         path = '/var/www/html/images/graph.png'

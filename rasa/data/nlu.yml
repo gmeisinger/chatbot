@@ -405,26 +405,27 @@ nlu:
     - how many [new](scope) [recoveries](case_type) in [uk]{"entity": "countries", "value": "united kingdom"} by [day](bytime) in [november](bysubtime)
 - intent: ask_about_case_summary_graph
   examples: |
-    - can you show me a graph of [new](case_type) cases in [Mexico](countries)?
-    - show a graph of [deaths](case_type) in [Ukraine](countries)
-    - show graph of [confirmed](case_type) cases in [Taiwan](countries)
-    - graph [new](scope) [confirmed](case_type) cases in [Canada](countries)
-    - graph [deaths](case_type) cases in [Canada](countries)
-    - show me a graph of [confirmed](case_type) cases in [Serbia](countries)
-    - Show me a graph of cases in [Argentina](countries)
-    - show me a graph of [deaths](case_type) in [chile](countries)
-    - show me a graph of [recovered](case_type) in [venezuela](countries)
-    - show me a graph of [confirmed](case_type) cases in [haiti](countries)
-    - show me a graph of [new](scope) [deaths](case_type) in [germany](countries)
-    - show me a graph of [new](scope) [recovered](case_type) in [poland](countries)
-    - show me a graph of [new](scope) [confirmed](case_type) cases in [russia](countries)
-    - show a graph of [total](scope) [deaths](case_type) in [ukraine](countries)
-    - show a graph of [total](scope) [recovered](case_type) in [bosnia](countries)
-    - show a graph of [total](scope) [confirmed](case_type) cases in [sweden](countries)
-    - graph [deaths](case_type) [germany](countries)
-    - graph [confirmed](case_type) [switzerland](countries)
-    - show [deaths](case_type) in [zambia](countries)
-    - show [recovered](case_type) in [the united states](countries)
+    - can you show me a graph of [new](scope) cases in [Mexico]{"entity": "countries", "value": "Mexico"}?
+    - show a graph of [deaths](case_type) in [Ukraine]{"entity": "countries", "value": "Ukraine"}
+    - show graph of [confirmed](case_type) cases in [Taiwan]{"entity": "countries", "value": "Taiwan, Republic of China"}
+    - graph [new](scope) [confirmed](case_type) cases in [Canada]{"entity": "countries", "value": "Canada"}
+    - graph [deaths](case_type) cases in [Canada]{"entity": "countries", "value": "Canada"}
+    - show me a graph of [confirmed](case_type) cases in [Serbia]{"entity": "countries", "value": "Serbia"}
+    - Show me a graph of cases in [Argentina]{"entity": "countries", "value": "Argentina"}
+    - show me a graph of [deaths](case_type) in [chile]{"entity": "countries", "value": "Chile"}
+    - show me a graph of [recovered](case_type) in [venezuela]{"entity": "countries", "value": "Venezuela"}
+    - show me a graph of [confirmed](case_type) cases in [haiti]{"entity": "countries", "value": "Haiti"}
+    - show me a graph of [new](scope) [deaths](case_type) in [germany]{"entity": "countries", "value": "Germany"}
+    - show me a graph of [new](scope) [recovered](case_type) in [poland]{"entity": "countries", "value": "Poland"}
+    - show me a graph of [new](scope) [confirmed](case_type) cases in [russia]{"entity": "countries", "value": "Russian Federation"}
+    - show a graph of [total](scope) [deaths](case_type) in [ukraine]{"entity": "countries", "value": "Ukraine"}
+    - show a graph of [total](scope) [recovered](case_type) in [bosnia]{"entity": "countries", "value": "Bosnia and Herzegovina"}
+    - show a graph of [total](scope) [confirmed](case_type) cases in [sweden]{"entity": "countries", "value": "Sweden"}
+    - graph [deaths](case_type) [germany]{"entity": "countries", "value": "Germany"}
+    - graph [confirmed](case_type) [switzerland]{"entity": "countries", "value": "Switzerland"}
+    - show [deaths](case_type) in [zambia]{"entity": "countries", "value": "Zambia"}
+    - show [recovered](case_type) in [the united states]{"entity": "countries", "value": "United States of America"}
+    - let me see [new](scope) cases in [iran]{"entity": "countries, "value": "Iran, Islamic Republic of"}
 - intent: ask_about_cases_since
   examples: |
     - deaths since [january](bysubtime) in [Russia](countries)
@@ -668,12 +669,6 @@ nlu:
     - first
     - when did [india](countries) have its first case
     - when did [india](countries) have its 1st case
-- synonym: hong kong sar china
-  examples: |
-    - hong kong
-    - hong kong sar china
-    - hong kong china
-    - hk
 - synonym: South Africa
   examples: |
     - south africa
@@ -711,7 +706,7 @@ nlu:
     - vatican city
     - pope house
     - pope's house
-- synonym: united kingdom
+- synonym: United Kingdom
   examples: |
     - uk
     - the u.k.
@@ -729,61 +724,26 @@ nlu:
     - antigua
     - antigua and barbuda
     - barbuda
-- synonym: bouvet island
-  examples: |
-    - bouvet
-    - bouvet island
-    - bouve island
-    - bouve
-    - bouvt island
-    - bouvt
-- synonym: trinidad and tobago
+- synonym: Trinidad and Tobago
   examples: |
     - tobago
     - trinidad and tobago
     - trinidad
     - tabago
     - trinidad and tabago
-- synonym: faroe islands
-  examples: |
-    - faroe
-    - faroe islands
-    - faroe island
-    - faro island
-    - faro islands
-    - faro
-- synonym: netherlands
+- synonym: Netherlands
   examples: |
     - holland
     - holand
     - netherland
     - netherlands
-- synonym: china
+- synonym: China
   examples: |
     - people's republic of china
     - china
     - peoples republic of china
     - the peoples republic of china
     - the people's republic of china
-- synonym: wallis and futuna islands
-  examples: |
-    - wallis
-    - wallis and futuna islands
-    - wallis and futuna island
-    - wallis and futuna
-    - wallis islands
-    - futuna islands
-    - wallis island
-    - futuna island
-    - futuna
-    - walis and futuna islands
-    - walis and futuna island
-    - walis and futuna
-    - walis
-    - wallis and furtuna islands
-    - wallis and furtuna island
-    - wallis and furtuna
-    - furtuna
 - synonym: Bosnia and Herzegovina
   examples: |
     - herzegovina
@@ -831,37 +791,12 @@ nlu:
     - the virus
     - pandemic
     - the pandemic
-- synonym: russia
+- synonym: Russian Federation
   examples: |
     - russia
     - russian federation
-- synonym: falkland islands malvinas
-  examples: |
-    - falkland islands malvinas
-    - falkland islands
-    - falkland
-    - fakland islands
-    - fakland
-- synonym: british virgin islands
-  examples: |
-    - british virgin islands
-    - british virgin island
-- synonym: svalbard and jan mayen islands
-  examples: |
-    - svalbard and jan mayen islands
-    - svalbard and jan mayen island
-    - svalbard and jan mayen
-    - jan mayen islands
-    - svalbard islands
-    - jan mayen island
-    - svalbard island
-    - jan mayen
-    - svalbard
-- synonym: french polynesia
-  examples: |
-    - french polynesia
-    - polynesia
-- synonym: marshall islands
+    - the motherland
+- synonym: Marshall Islands
   examples: |
     - marshall islands
     - marshall island
@@ -869,33 +804,12 @@ nlu:
     - marshal islands
     - marshal island
     - marshal
-- synonym: norfolk island
-  examples: |
-    - norfolk island
-    - norfolk
-    - norfok island
-    - norfok
-- synonym: cocos keeling islands
-  examples: |
-    - cocos keeling islands
-    - cocos keeling island
-    - cocos keeling
-    - cocos islands
-    - keeling islands
-    - cocos island
-    - keeling island
-    - cocos
-    - keeling
-- synonym: solomon islands
+- synonym: Solomon Islands
   examples: |
     - solomon islands
     - solomon island
     - solomon
-- synonym: christmas island
-  examples: |
-    - christmas island
-    - christmas
-- synonym: saint kitts and nevis
+- synonym: Saint Kitts and Nevis
   examples: |
     - saint kitts and nevis
     - saint kitts
@@ -903,66 +817,6 @@ nlu:
     - kitts and nevis
     - saint kits and nevis
     - saint kits
-- synonym: turks and caicos islands
-  examples: |
-    - turks and caicos islands
-    - turks and caicos island
-    - turks and caicos
-    - turks islands
-    - caicos islands
-    - turks island
-    - caicos island
-    - turks
-    - caicos
-- synonym: virgin islands
-  examples: |
-    - virgin islands
-    - virgin island
-- synonym: cook islands
-  examples: |
-    - cook islands
-    - cook island
-    - cook
-- synonym: heard and mcdonald islands
-  examples: |
-    - heard and mcdonald islands
-    - heard and mcdonald island
-    - heard and mcdonald
-    - heard islands
-    - mcdonald islands
-    - heard island
-    - mcdonald island
-    - heard
-    - mcdonald
-- synonym: cayman islands
-  examples: |
-    - cayman islands
-    - cayman island
-    - cayman
-- synonym: south georgia and the south sandwich islands
-  examples: |
-    - south georgia and the south sandwich islands
-    - south georgia and the south sandwich island
-    - south georgia and the south sandwich
-    - south georgia and south sandwich islands
-    - south georgia and south sandwich island
-    - south georgia and south sandwich
-    - south georgia and sandwich islands
-    - south georgia and sandwich island
-    - south georgia and sandwich
-    - georgia and sandwich islands
-    - georgia and sandwich island
-    - georgia and sandwich
-    - south georgia islands
-    - georgia islands
-    - the south sandwich islands
-    - south sandwich islands
-    - sandwich islands
-    - south georgia island
-    - georgia island
-    - the south sandwich island
-    - south sandwich island
-    - sandwich island
 - synonym: United Arab Emirates
   examples: |
     - united arab emirates
@@ -971,42 +825,11 @@ nlu:
     - uae
     - the u.a.e.
     - u.a.e.
-- synonym: ala aland islands
-  examples: |
-    - ala aland islands
-    - ala aland island
-    - ala aland
-- synonym: saint pierre and miquelon
-  examples: |
-    - saint pierre and miquelon
-    - saint pierre
-    - miquelon
-    - pierre and miquelon
-- synonym: northern mariana islands
-  examples: |
-    - northern mariana islands
-    - northern mariana island
-    - northern mariana
-    - mariana islands
-    - mariana island
-    - mariana
-- synonym: us minor outlying islands
-  examples: |
-    - us minor outlying islands
-    - us outlying islands
 - synonym: Syrian Arab Republic (Syria)
   examples: |
     - syria
     - syrian arab republic
     - Syrian Arab Republic
-- synonym: netherlands antilles
-  examples: |
-    - antilles
-    - antiles
-    - netherlands antiles
-    - netherland antilles
-    - netherland antiles
-    - netherlands antilles
 - synonym: Brunei Darussalam
   examples: |
     - brunei darussalam

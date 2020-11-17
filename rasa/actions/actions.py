@@ -172,24 +172,25 @@ class ActionCaseSummaryGraph(Action):
         line_chart = pygal.Line()
         line_chart.title = title
 
-        data_num = { }
+        data_num = []
         
         for entry in data:
-            p = entry['Province']
+            #p = entry['Province']
             c = entry['Cases']
-            
-            if p in data_num:
-                data_num[p].append(int(c))
-            else:
-                data_num[p] = [int(c)]
+            data_num.append(c)
+            #if p in data_num:
+            #    data_num[p].append(int(c))
+            #else:
+            #    data_num[p] = [int(c)]
+        line_chart.add(data[label_tag], data_num)
+        #if '' in data_num:
+        #    line_chart.add(str(data[0]['Country']), data_num[''])
         
-        if '' in data_num:
-            line_chart.add(str(data[0]['Country']), data_num[''])
-        
-        for province in data_num:
-            if province == '':
-                continue
-            line_chart.add(province, data_num[province])
+        #for province in data_num:
+        #    if province == '':
+        #        continue
+        #    line_chart.add(province, data_num[province])
+        #else:
 
         return line_chart.render_to_png()
 
@@ -224,7 +225,7 @@ class ActionCaseSummaryGraph(Action):
             return []
 
         # preparing to query api for dayone data
-        qstring = "https://api.covid19api.com/dayone/country/" + slug + "/status/" + case_type
+        qstring = "https://api.covid19api.com/total/dayone/country/" + slug + "/status/" + case_type
 
         # get data from api
         r = requests.get(qstring)

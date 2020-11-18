@@ -265,7 +265,7 @@ class ActionCaseSummaryGraph(Action):
         countries_slot = SlotSet("countries", None)
         scope = SlotSet("scope", None)
         case_type = SlotSet("case_type", None)
-        return [countries, scope, case_type]
+        return [countries_slot, scope, case_type]
 
 class ActionCaseCountByTimeMonth(Action):
 

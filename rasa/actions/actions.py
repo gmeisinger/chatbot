@@ -262,7 +262,10 @@ class ActionCaseSummaryGraph(Action):
         # display graph
         dispatcher.utter_message(text="Here's the graph...", image=jspath)
 
-        return []
+        countries_slot = SlotSet("countries", None)
+        scope = SlotSet("scope", None)
+        case_type = SlotSet("case_type", None)
+        return [countries, scope, case_type]
 
 class ActionCaseCountByTimeMonth(Action):
 

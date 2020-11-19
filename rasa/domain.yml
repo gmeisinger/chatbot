@@ -212,6 +212,11 @@ slots:
   use_global:
     type: bool
     influence_conversation: false
+
+  # contextual slots
+  action_performed:
+    type: bool
+
 responses:
   utter_greet:
   - text: Hey!
@@ -265,6 +270,8 @@ responses:
   - text: I'm a conversational dialogue system powered by machine learning that's capable of answering a wide variety of your questions about COVID-19.
   utter_be_nice:
   - text: Please be nice :)
+  utter_what_action:
+  - text: What would you like me to do with this information?
 actions:
 - action_case_count
 - action_case_count_before

@@ -162,6 +162,43 @@ stories:
   - intent: be_mean
   - action: utter_be_nice
 
+- story: context_graphing
+  steps:
+  - intent: ask_about_case_summary_graph
+    entities:
+      - case_type: confirmed
+      - countries:
+        - United States of America
+  - slot_was_set:
+    - case_type: confirmed
+    - countries:
+      - United States of America
+  - action: action_case_summary_graph
+  - slot_was_set:
+    - action_performed: true
+  - intent: inform_countries
+    entities:
+      - countries:
+        - China
+  - slot_was_set:
+    - countries:
+      - China
+  - action: action_case_summary_graph
+
+- story: user_informs_no_context
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_forget_slots
+  - intent: inform_countries
+    entities:
+      - countries:
+        - Russian Federation
+  - slot_was_set:
+    - countries:
+      - Russian Federation
+  - action: utter_what_action
+  
 - story: interactive_story_3
   steps:
   - intent: greet

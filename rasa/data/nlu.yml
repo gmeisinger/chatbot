@@ -425,7 +425,7 @@ nlu:
     - graph [confirmed](case_type) [switzerland]{"entity": "countries", "value": "Switzerland"}
     - show [deaths](case_type) in [zambia]{"entity": "countries", "value": "Zambia"}
     - show [recovered](case_type) in [the united states]{"entity": "countries", "value": "United States of America"}
-    - let me see [new](scope) cases in [iran]{"entity": "countries, "value": "Iran, Islamic Republic of"}
+    - let me see [new](scope) cases in [iran]{"entity": "countries", "value": "Iran, Islamic Republic of"}
 - intent: ask_about_cases_since
   examples: |
     - deaths since [january](bysubtime) in [Russia](countries)
@@ -706,6 +706,8 @@ nlu:
     - vatican city
     - pope house
     - pope's house
+    - the pope house
+    - the pope's house
 - synonym: United Kingdom
   examples: |
     - uk
@@ -719,6 +721,16 @@ nlu:
     - the united kingdom of great britain
     - united kingdom of great britain
     - britain
+    - the UK
+    - the U.K.
+    - U.K.
+    - UK
+    - Great Britain
+    - GB
+    - Britain
+    - England
+    - Scotland
+    - Wales
 - synonym: Antigua and Barbuda
   examples: |
     - antigua

@@ -216,6 +216,7 @@ slots:
   # contextual slots
   action_performed:
     type: bool
+    initial_value: false
 
 responses:
   utter_greet:

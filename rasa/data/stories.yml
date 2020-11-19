@@ -198,7 +198,7 @@ stories:
     - countries:
       - Russian Federation
   - action: utter_what_action
-  
+
 - story: interactive_story_3
   steps:
   - intent: greet
@@ -263,6 +263,8 @@ stories:
       - Argentina
   # - action: action_case_count
   - action: action_case_summary_graph
+  - slot_was_set:
+    - action_performed: true
   - intent: start_over
   - action: action_reset_bot
 
@@ -280,6 +282,8 @@ stories:
       - Canada
   # - action: action_case_count
   - action: action_case_summary_graph
+  - slot_was_set:
+    - action_performed: true
   - intent: start_over
   - action: action_reset_bot
 
@@ -376,6 +380,8 @@ stories:
     entities:
     - country: Argentina
   - action: action_case_summary_graph
+  - slot_was_set:
+    - action_performed: true
 
 - story: interactive_story_11
   steps:

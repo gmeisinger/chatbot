@@ -175,7 +175,7 @@ stories:
       - United States of America
   - action: action_case_summary_graph
   - slot_was_set:
-    - action_performed: true
+    - action_performed: True
   - intent: inform_countries
     entities:
       - countries:
@@ -264,7 +264,7 @@ stories:
   # - action: action_case_count
   - action: action_case_summary_graph
   - slot_was_set:
-    - action_performed: true
+    - action_performed: True
   - intent: start_over
   - action: action_reset_bot
 
@@ -283,7 +283,7 @@ stories:
   # - action: action_case_count
   - action: action_case_summary_graph
   - slot_was_set:
-    - action_performed: true
+    - action_performed: True
   - intent: start_over
   - action: action_reset_bot
 
@@ -381,7 +381,7 @@ stories:
     - country: Argentina
   - action: action_case_summary_graph
   - slot_was_set:
-    - action_performed: true
+    - action_performed: True
 
 - story: interactive_story_11
   steps:

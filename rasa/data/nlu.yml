@@ -485,7 +485,7 @@ nlu:
     - recovered(case_type) before [july](bysubtime) in [sweden](countries) and [norway](countries)
     - how many [recovered](case_type) in [italy](countries) and [france](countries) before [august](bysubtime)
     - how many people [recovered](case_type) in [ecquador](countries) before [september](bysubtime)
-    - how many people confirmed(casetype) in [iceland](countries) before [october](bysubtime)
+    - how many people [confirmed](case_type) in [iceland](countries) before [october](bysubtime)
     - how many [deaths](case_type) in [canada](countries) before [november](bysubtime)
     - how many [new](scope) [confirmed](case_type) cases in [the u.k.]{"entity": "countries", "value": "United Kingdom"} before [july](bysubtime)
     - how many [new](scope) [deaths](case_type) in [u.k.]{"entity": "countries", "value": "United Kingdom"} before [november](bysubtime)

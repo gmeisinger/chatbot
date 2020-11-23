@@ -720,13 +720,13 @@ class ActionCaseCountSince(Action):
                 
                 text = text + str(total) +  " " 
                 if case_type == "recovered":
-                    text = text + "recoveries in "
+                    text = text + "recoveriesl"
                 elif case_type == "confirmed":
-                    text = text + case_type + " cases in "
+                    text = text + case_type + " cases."
                 else:
-                   text = text + case_type + " in "
-                text = text + scope
-                text = text + "."
+                   text = text + case_type + "."
+                #text = text + scope
+                #text = text + "."
                 if len(countries) > 1:
                     text = text + "\n\n"
         dispatcher.utter_message(text = text)

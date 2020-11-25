@@ -55,6 +55,11 @@ a {
     margin-top: 5px;
 }
 
+#chatbox.img {
+    max-width: 75%;
+    max-height: 75%;
+}
+
 #usermsg {
     width:395px;
     border:1px solid #ACD8F0; }

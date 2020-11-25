@@ -56,8 +56,8 @@ a {
 }
 
 #chat-img {
-    max-width: 75%;
-    max-height: 75%;
+    max-width: 400px;
+    max-height: 400px;
 }
 
 #usermsg {

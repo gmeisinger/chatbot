@@ -259,7 +259,7 @@ responses:
   - text: Okay, let me look that up...
   - text: Got it. I'll get that data.
   utter_iamabot:
-  - text: I am SCITalk, built by Pitt students and powered by Rasa.
+  - text: I am SCITalk, a conversational AI built by students at Pitt.
   utter_ask_scope:
   - text: New or total cases?
   utter_ask_case_type:

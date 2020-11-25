@@ -63,111 +63,10 @@ def get_rasa_response(text):
 
 # given a message from the user, generates and returns a response from Chatbot
 def generate_response(msg, author):
-    # clean the text
-    #cleaned_text = clean_text(msg)
     rasa = get_rasa_response(msg)
     #if rasa != None:
         #response['question'] = rasa
     return rasa
-
-# tokenizes and cleans text. returns a list of words
-def clean_text(text):
-    words = text.lower().split()
-    table = str.maketrans('', '', string.punctuation)
-    stripped = [w.translate(table) for w in words]
-    return stripped
-
-
-def demo(msg, cleaned):
-    msg = msg.replace("?","")
-    response = {
-        'question': 'Huh?',
-        'name': 'SCITalk',
-        'code': '',
-        'images': [],
-        'relation': ''
-    }
-    greetings = ['hey', 'hi', 'hello']
-    if msg in greetings:
-        response['question'] = "Hello, how can I help you?"
-        return response
-    # case count
-    death_count_regex = r".*how many .*(died|deaths|cases|confirmed|recovered).*"
-    match = re.search(death_count_regex, msg)
-    if match != None:
-        # finding case count
-        target_countries = []
-        case_type = ""
-        # get country slug
-        data = get_country_slugs()
-        for country in data:
-            if country['Slug'] in match.string or country['Country'] in match.string:
-                target_countries.append(country['Slug'])
-        # find case type
-        case_regex = r"(died|deaths|cases|confirmed|recovered)"
-        case_type = re.search(case_regex, msg).group()
-        if case_type == "died":
-            case_type = "deaths"
-        elif case_type == "cases":
-            case_type = "confirmed"
-        elif case_type == "":
-            case_type = "confirmed"
-        # get history
-        summary = get_summary()
-        countries = summary['Countries']
-        new_or_total = "Total"
-        if "new" in msg or "today" in msg:
-            new_or_total = "New"
-        case_string = new_or_total + case_type.capitalize()
-        print(case_string, flush=True)
-        if len(target_countries) == 0:
-            # show global data
-            response['question'] = "There are " + str(summary['Global'][case_string]) + " total " + case_type + " cases globally."
-            if case_type == "deaths":
-                response['question'] = response['question'].replace(" cases", "")
-            if new_or_total == "New":
-                response['question'] = response['question'].replace("total", "new")
-            return response
-        elif len(target_countries) == 1:
-            # one country, possible line chart
-            #history = get_case_history(target_countries[0], case_type)
-            target = target_countries[0]
-            data = next((item for item in countries if (item['Slug'] == target or item['Country'] == target)), None)
-            response['question'] = "There are " + str(data[case_string]) + " total " + case_type + " cases in " + target + "."
-            if case_type == "deaths":
-                response['question'] = response['question'].replace(" cases", "")
-            if new_or_total == "New":
-                response['question'] = response['question'].replace("total", "new")
-            return response
-        else:
-            # multiple countries, possible pie chart
-            targets = []
-            title = case_string + " in "
-            response['question'] = "There are "
-            for target in target_countries:
-                data = next((item for item in countries if (item['Slug'] == target or item['Country'].lower() == target)), None)
-                targets.append(data)
-                title += data['Country'] + ", "
-                response['question'] += str(data[case_string]) + " total " + case_type + " cases in " + target + ", "
-                if case_type == "deaths":
-                    response['question'] = response['question'].replace(" cases", "")
-                if new_or_total == "New":
-                    response['question'] = response['question'].replace("total", "new")
-            response['question'] += "."
-            response['question'] = response['question'].replace(", .", ".")
-            # pie chart
-            if "show" in msg:
-                title += "."
-                title = title.replace(", .", ".")
-                piechart = Pie(title, targets, case_string, "Country")
-                response['images'].append(piechart)
-            return response
-                #history = get_case_history(target, case_type)
-        # show or tell
-    else:
-        response['question'] = "Huh?"
-    return response
-        
 
 ### COVID API ###
 
@@ -305,7 +204,7 @@ def feedback(_json):
 def test_connect():
     print('Client connected', flush=True)
     
-    response_string = "Hello, I'm SCITalk! Ask me about global COVID data."
+    response_string = "Hello, I'm SCITalk!"
     #response_string = "Hello, I'm Chatbot! Ask me about global COVID data. Currently, " + random_country['Country'] + " has " + str(random_country['TotalConfirmed']) + " confirmed cases of COVID-19."
     response = {
         'question': response_string,

@@ -55,6 +55,11 @@ a {
     margin-top: 5px;
 }
 
+.chat-img {
+    max-width: 500px;
+    max-height: 500px;
+}
+
 #usermsg {
     width:395px;
     border:1px solid #ACD8F0; }

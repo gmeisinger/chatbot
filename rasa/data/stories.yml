@@ -790,3 +790,38 @@ stories:
     - countries:
       - cook islands
   - action: action_case_count_before
+
+- story: interactive_story_35
+  steps:
+  - intent: ask_about_cases_on_day
+    entities:
+    - case_type: deaths
+    - countries: cook islands
+    - bysubtime: july
+  - slot_was_set:
+    - bysubtime: july
+  - slot_was_set:
+    - case_type: deaths
+  - slot_was_set:
+    - countries:
+      - cook islands
+  - action: action_case_count_on_day
+
+- story: interactive_story_36
+  steps:
+  - intent: ask_about_cases_on_day
+    entities:
+    - case_type: deaths
+    - countries: wallis and futuna islands
+    - bysubtime: august
+    - byday: twentieth
+  - slot_was_set:
+    - byday: twentieth
+  - slot_was_set:
+    - bysubtime: august
+  - slot_was_set:
+    - case_type: deaths
+  - slot_was_set:
+    - countries:
+      - wallis and futuna islands
+  - action: action_case_count_on_day

@@ -437,7 +437,7 @@ nlu:
     - recovered(case_type) since [july](bysubtime) in [sweden](countries) and [norway](countries)
     - how many [recovered](case_type) in [italy](countries) and [france](countries) since [august](bysubtime)
     - how many people [recovered](case_type) in [ecquador](countries) since [september](bysubtime)
-    - tell me how many people confirmed(casetype) in [iceland](countries) since [october](bysubtime)
+    - tell me how many people [confirmed](case_type) in [iceland](countries) since [october](bysubtime)
     - tell me how many [deaths](case_type) in [canada](countries) since [november](bysubtime)
     - tell me how many [new](scope) [confirmed](case_type) cases in [the uk]{"entity": "countries", "value": "United Kingdom"} since [july](bysubtime)
     - tell me how many [new](scope) [deaths](case_type) in [uk]{"entity": "countries", "value": "United Kingdom"} since [november](bysubtime)
@@ -456,7 +456,7 @@ nlu:
     - recovered(case_type) after [july](bysubtime) in [sweden](countries) and [norway](countries)
     - how many [recovered](case_type) in [italy](countries) and [france](countries) after [august](bysubtime)
     - how many people [recovered](case_type) in [ecquador](countries) after [september](bysubtime)
-    - how many people confirmed(casetype) in [iceland](countries) after [october](bysubtime)
+    - how many people [confirmed](case_type) in [iceland](countries) after [october](bysubtime)
     - how many [deaths](case_type) in [canada](countries) after [november](bysubtime)
     - how many [new](scope) [confirmed](case_type) cases in [the uk]{"entity": "countries", "value": "United Kingdom"} after [july](bysubtime)
     - how many [new](scope) [deaths](case_type) in [uk]{"entity": "countries", "value": "United Kingdom"} after [november](bysubtime)
@@ -502,7 +502,7 @@ nlu:
     - recovered(case_type) prior to [july](bysubtime) in [sweden](countries) and [norway](countries)
     - how many [recovered](case_type) in [italy](countries) and [france](countries) prior to [august](bysubtime)
     - how many people [recovered](case_type) in [ecquador](countries) prior to [september](bysubtime)
-    - how many people confirmed(casetype) in [iceland](countries) prior to [october](bysubtime)
+    - how many people [confirmed](case_type) in [iceland](countries) prior to [october](bysubtime)
     - how many [deaths](case_type) in [canada](countries) prior to [november](bysubtime)
     - how many [new](scope) [confirmed](case_type) cases in [the uk]{"entity": "countries", "value": "United Kingdom"} prior to [july](bysubtime)
     - how many [new](scope) [deaths](case_type) in [uk]{"entity": "countries", "value": "United Kingdom"} prior to [november](bysubtime)
@@ -523,7 +523,7 @@ nlu:
     - recovered(case_type) since [july](bysubtime) [1](byday)st in [sweden](countries) and [norway](countries)
     - how many [recovered](case_type) in [italy](countries) and [france](countries) since [august](bysubtime) [7](byday)th
     - how many people [recovered](case_type) in [ecquador](countries) since [september](bysubtime) [20](byday)
-    - how many people confirmed(casetype) in [iceland](countries) since [october](bysubtime) [31](byday)st
+    - how many people [confirmed](case_type) in [iceland](countries) since [october](bysubtime) [31](byday)st
     - how many [deaths](case_type) in [canada](countries) since [november](bysubtime) [4](byday)
     - how many [new](scope) [confirmed](case_type) cases in [the uk]{"entity": "countries", "value": "United Kingdom"}  since [july](bysubtime) [9](byday)
     - how many [new](scope) [deaths](case_type) in [uk]{"entity": "countries", "value": "United Kingdom"} since [november](bysubtime) [8](byday)th
@@ -540,7 +540,7 @@ nlu:
     - recovered(case_type) since [july](bysubtime) [twenty four](byday) in [sweden](countries) and [norway](countries)
     - how many [recovered](case_type) in [italy](countries) and [france](countries) since [august](bysubtime) [twenty fifth](byday)
     - how many people [recovered](case_type) in [ecquador](countries) since [september](bysubtime) [twenty](byday)
-    - how many people confirmed(casetype) in [iceland](countries) since [october](bysubtime) [thirty-first](byday)
+    - how many people [confirmed](case_type) in [iceland](countries) since [october](bysubtime) [thirty-first](byday)
     - how many [deaths](case_type) in [canada](countries) since [november](bysubtime) [twenty fourth](byday)
     - how many [new](scope) [confirmed](case_type) cases in [the uk]{"entity": "countries", "value": "United Kingdom"}  since [july](bysubtime) [nine](byday)
     - how many [new](scope) [deaths](case_type) in [uk]{"entity": "countries", "value": "United Kingdom"} since [november](bysubtime) [eighth](byday)
@@ -558,7 +558,7 @@ nlu:
     - recovered(case_type) after [july](bysubtime) [1](byday)st in [sweden](countries) and [norway](countries)
     - how many [recovered](case_type) in [italy](countries) and [france](countries) after [august](bysubtime) [7](byday)th
     - how many people [recovered](case_type) in [ecquador](countries) after [september](bysubtime) [20](byday)
-    - how many people confirmed(casetype) in [iceland](countries) after [october](bysubtime) [31](byday)st
+    - how many people [confirmed](case_type) in [iceland](countries) after [october](bysubtime) [31](byday)st
     - how many [deaths](case_type) in [canada](countries) after [november](bysubtime) [4](byday)
     - how many [new](scope) [confirmed](case_type) cases in [the uk]{"entity": "countries", "value": "United Kingdom"}  after [july](bysubtime) [9](byday)
     - how many [new](scope) [deaths](case_type) in [uk]{"entity": "countries", "value": "United Kingdom"} after [november](bysubtime) [8](byday)th
@@ -575,7 +575,7 @@ nlu:
     - recovered(case_type) after [july](bysubtime) [twenty four](byday) in [sweden](countries) and [norway](countries)
     - how many [recovered](case_type) in [italy](countries) and [france](countries) after [august](bysubtime) [twenty fifth](byday)
     - how many people [recovered](case_type) in [ecquador](countries) after [september](bysubtime) [twenty](byday)
-    - how many people confirmed(casetype) in [iceland](countries) after [october](bysubtime) [thirty-first](byday)
+    - how many people [confirmed](case_type) in [iceland](countries) after [october](bysubtime) [thirty-first](byday)
     - how many [deaths](case_type) in [canada](countries) after [november](bysubtime) [twenty fourth](byday)
     - how many [new](scope) [confirmed](case_type) cases in [the uk]{"entity": "countries", "value": "United Kingdom"}  after [july](bysubtime) [nine](byday)
     - how many [new](scope) [deaths](case_type) in [uk]{"entity": "countries", "value": "United Kingdom"} after [november](bysubtime) [eighth](byday)
@@ -595,7 +595,7 @@ nlu:
     - recovered(case_type) before [july](bysubtime) [7](byday) in [sweden](countries) and [norway](countries)
     - how many [recovered](case_type) in [italy](countries) and [france](countries) before [august](bysubtime) [8](byday)th
     - how many people [recovered](case_type) in [ecquador](countries) before [september](bysubtime) [9](byday)
-    - how many people confirmed(casetype) in [iceland](countries) before [october](bysubtime) [10](byday)th
+    - how many people [confirmed](case_type) in [iceland](countries) before [october](bysubtime) [10](byday)th
     - how many [deaths](case_type) in [canada](countries) before [november](bysubtime) [11](byday)
     - how many [new](scope) [confirmed](case_type) cases in [the uk]{"entity": "countries", "value": "United Kingdom"} before [july](bysubtime) [12](byday)
     - how many [new](scope) [deaths](case_type) in [uk]{"entity": "countries", "value": "United Kingdom"} before [november](bysubtime) [31](byday)st
@@ -612,7 +612,7 @@ nlu:
     - recovered(case_type) prior to [july](bysubtime) [7](byday) in [sweden](countries) and [norway](countries)
     - how many [recovered](case_type) in [italy](countries) and [france](countries) prior to [august](bysubtime) [8](byday)th
     - how many people [recovered](case_type) in [ecquador](countries) prior to [september](bysubtime) [9](byday)
-    - how many people confirmed(casetype) in [iceland](countries) prior to [october](bysubtime) [10](byday)th
+    - how many people [confirmed](case_type) in [iceland](countries) prior to [october](bysubtime) [10](byday)th
     - how many [deaths](case_type) in [canada](countries) prior to [november](bysubtime) [11](byday)
     - how many [new](scope) [confirmed](case_type) cases in [the uk]{"entity": "countries", "value": "United Kingdom"} prior to [july](bysubtime) [12](byday)
     - how many [new](scope) [deaths](case_type) in [uk]{"entity": "countries", "value": "United Kingdom"} prior to [november](bysubtime) [31](byday)st
@@ -629,7 +629,7 @@ nlu:
     - recovered(case_type) before [july](bysubtime) [seven](byday) in [sweden](countries) and [norway](countries)
     - how many [recovered](case_type) in [italy](countries) and [france](countries) before [august](bysubtime) [eighth](byday)
     - how many people [recovered](case_type) in [ecquador](countries) before [september](bysubtime) [nine](byday)
-    - how many people confirmed(casetype) in [iceland](countries) before [october](bysubtime) [tenth](byday)
+    - how many people [confirmed](case_type) in [iceland](countries) before [october](bysubtime) [tenth](byday)
     - how many [deaths](case_type) in [canada](countries) before [november](bysubtime) [eleven](byday)
     - how many [new](scope) [confirmed](case_type) cases in [the uk]{"entity": "countries", "value": "United Kingdom"} before [july](bysubtime) [twelve](byday)
     - how many [new](scope) [deaths](case_type) in [uk]{"entity": "countries", "value": "United Kingdom"} before [november](bysubtime) [thirty first](byday)
@@ -646,7 +646,7 @@ nlu:
     - recovered(case_type) prior to [july](bysubtime) [seven](byday) in [sweden](countries) and [norway](countries)
     - how many [recovered](case_type) in [italy](countries) and [france](countries) prior to [august](bysubtime) [eighth](byday)
     - how many people [recovered](case_type) in [ecquador](countries) prior to [september](bysubtime) [nine](byday)
-    - how many people confirmed(casetype) in [iceland](countries) prior to [october](bysubtime) [tenth](byday)
+    - how many people [confirmed](case_type) in [iceland](countries) prior to [october](bysubtime) [tenth](byday)
     - how many [deaths](case_type) in [canada](countries) prior to [november](bysubtime) [eleven](byday)
     - how many [new](scope) [confirmed](case_type) cases in [the uk]{"entity": "countries", "value": "United Kingdom"} prior to [july](bysubtime) [twelve](byday)
     - how many [new](scope) [deaths](case_type) in [uk]{"entity": "countries", "value": "United Kingdom"} prior to [november](bysubtime) [thirty first](byday)
@@ -667,7 +667,7 @@ nlu:
     - recovered(case_type) on [july](bysubtime) [7](byday) in [sweden](countries) and [norway](countries)
     - how many [recovered](case_type) in [italy](countries) and [france](countries) on [august](bysubtime) [8](byday)th
     - how many people [recovered](case_type) in [ecquador](countries) on [september](bysubtime) [9](byday)
-    - how many people confirmed(casetype) in [iceland](countries) on [october](bysubtime) [10](byday)th
+    - how many people [confirmed](case_type) in [iceland](countries) on [october](bysubtime) [10](byday)th
     - how many [deaths](case_type) in [canada](countries) on [november](bysubtime) [11](byday)
     - how many [new](scope) [confirmed](case_type) cases in [the uk]{"entity": "countries", "value": "United Kingdom"} on [july](bysubtime) [12](byday)
     - how many [new](scope) [deaths](case_type) in [uk]{"entity": "countries", "value": "United Kingdom"} on [november](bysubtime) [31](byday)st
@@ -682,7 +682,7 @@ nlu:
     - recovered(case_type) on [july](bysubtime) [seven](byday) in [sweden](countries) and [norway](countries)
     - how many [recovered](case_type) in [italy](countries) and [france](countries) on [august](bysubtime) [eighth](byday)
     - how many people [recovered](case_type) in [ecquador](countries) on [september](bysubtime) [nine](byday)
-    - how many people confirmed(casetype) in [iceland](countries) on [october](bysubtime) [tenth](byday)
+    - how many people [confirmed](case_type) in [iceland](countries) on [october](bysubtime) [tenth](byday)
     - how many [deaths](case_type) in [canada](countries) on [november](bysubtime) [eleven](byday)
     - how many [new](scope) [confirmed](case_type) cases in [the uk]{"entity": "countries", "value": "United Kingdom"} on [july](bysubtime) [twelve](byday)
     - how many [new](scope) [deaths](case_type) in [uk]{"entity": "countries", "value": "United Kingdom"} on [november](bysubtime) [thirty first](byday)

@@ -35,7 +35,7 @@ $(document).ready(function(){
             return;
         for (i = 0; i < images.length; i++) {
             var d = new Date();
-            $("#chatbox").append('<div class="row"> <div class="col"><img src=' + images[i] + '?ver=' + d.getTime() + '></div> </div>');
+            $("#chatbox").append('<div class="row"> <div class="col"><img class="chat-img" src=' + images[i] + '?ver=' + d.getTime() + '></div> </div>');
         }
     }
 

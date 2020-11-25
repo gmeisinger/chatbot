@@ -55,7 +55,7 @@ a {
     margin-top: 5px;
 }
 
-#chat-img {
+.chat-img {
     max-width: 400px;
     max-height: 400px;
 }
